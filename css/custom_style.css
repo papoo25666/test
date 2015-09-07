@@ -19,8 +19,20 @@ body {
 }
 
 .btn-success {
-    width: 200px;
+    width: 180px;
     padding: 15px;
+    font-size: 1.1em;
     background-color: #00E676 !important;
     color: rgba(0, 0, 0, 0.65) !important;
-} 
+}
+
+.feature-text {
+    font-family: 'Ubuntu', sans-serif;
+}
+.feature {
+    height: 300px;
+}
+
+footer {
+    background-color: #4285f4;
+}
