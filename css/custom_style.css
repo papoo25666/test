@@ -1,0 +1,16 @@
+.text-blue {
+    color: #373277 !important;
+}
+
+body {
+    background-color: #fff;
+    color: #fff;
+}
+
+.jumbotron {
+    border-radius: 0 !important;
+}
+
+.navbar-inverse.navbar {
+    background-color: #4285f4;
+}
