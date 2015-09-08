@@ -77,3 +77,8 @@ footer {
     text-decoration: none;
     color: #B3E5FC;
 }
+
+.modal-header {
+    background-color: #4285f4;
+    padding-bottom: 24px !important;
+}
