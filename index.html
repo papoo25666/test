@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Scrum Board</title>
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,400italic,500,700' rel='stylesheet' type='text/css'>
     <link href="css/roboto.min.css" rel="stylesheet"/>
     <link href="css/bootstrap.min.css" rel="stylesheet"/>
     <link href="css/material.min.css" rel="stylesheet"/>
@@ -31,10 +30,43 @@
         </div>
         <div class="navbar-collapse collapse navbar-inverse-collapse">
             <ul class="nav navbar-nav navbar-right" style="margin-right: 0">
-                <li class="active text-center"><a href="#" class="login-button">Log In</a></li>
+                <li class="active text-center"><a class="login-button" data-toggle="modal" href='#modal-login'>Log
+                    In</a></li>
             </ul>
         </div>
     </section>
+
+
+    <!--Modal Log In-->
+    <div class="modal fade" id="modal-login">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: #4285f4;padding-bottom: 24px">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h2 class="modal-title" style="font-weight: bold">Log In</h2>
+                </div>
+                <div class="modal-body" style="padding-top: 20px">
+                    <div class="row">
+                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
+                            <form role="form">
+                                <div class="form-group">
+                                    <label class="control-label">username</label>
+                                    <input class="form-control" id="txtUsername"/>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">password</label>
+                                    <input class="form-control" id="txtPassword"/>
+                                </div>
+                                <div class="text-center">
+                                    <button class="btn btn-success">Log In</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <section class="header-content">
         <div class="">
@@ -62,7 +94,7 @@
                 <!--Right-->
                 <div class="col-lg-4 col-md-4 col-sm-4 feature">
                     <div class="text-center">
-                        <h3 class="feature-text">Work update</h3>
+                        <h2 class="feature-text">Work update</h2>
 
                         <p class="feature-text">...................................................</p>
 
@@ -85,7 +117,7 @@
                 <!--Right-->
                 <div class="col-lg-4 col-md-4 col-sm-4 feature">
                     <div class="text-center">
-                        <h3 class="feature-text">Work report</h3>
+                        <h2 class="feature-text">Work report</h2>
 
                         <p class="feature-text">...................................................</p>
 
@@ -108,7 +140,7 @@
                 <!--Right-->
                 <div class="col-lg-4 col-md-4 col-sm-4 feature">
                     <div class="text-center">
-                        <h3 class="feature-text">Work comment</h3>
+                        <h2 class="feature-text">Work comment</h2>
 
                         <p class="feature-text">...................................................</p>
 
@@ -131,7 +163,7 @@
                 <!--Right-->
                 <div class="col-lg-4 col-md-4 col-sm-4 feature">
                     <div class="text-center">
-                        <h3 class="feature-text">Work tracking</h3>
+                        <h2 class="feature-text">Work tracking</h2>
 
                         <p class="feature-text">...................................................</p>
 
@@ -154,7 +186,7 @@
                 <!--Right-->
                 <div class="col-lg-4 col-md-4 col-sm-4 feature">
                     <div class="text-center">
-                        <h3 class="feature-text">Work summary</h3>
+                        <h2 class="feature-text">Work summary</h2>
 
                         <p class="feature-text">...................................................</p>
 
