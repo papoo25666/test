@@ -14,6 +14,7 @@ body {
 .navbar-inverse.navbar {
     background-color: #4285f4;
 }
+
 .btn {
     font-weight: bold;
 }
@@ -27,12 +28,52 @@ body {
 }
 
 .feature-text {
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Roboto', sans-serif !important;
 }
+
 .feature {
     height: 300px;
 }
 
 footer {
     background-color: #4285f4;
+}
+
+.login-button {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.login-button:hover {
+    cursor: pointer;
+    transition: all 0.7s ease;
+    -webkit-transition: all 0.7s ease;
+    -o-transition: all 0.7s ease;
+    -moz-transition: all 0.7s ease;
+    color: #333 !important;
+}
+
+.btn-success:hover {
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    font-weight: 800;
+    background-color: #2ae6b0 !important;
+    color: #fff !important;
+}
+
+.link {
+    font-weight: 500;
+    color: #fff;
+    text-decoration: underline;
+}
+
+.link:hover {
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    text-decoration: none;
+    color: #333;
 }
