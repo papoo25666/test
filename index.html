@@ -9,6 +9,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet"/>
     <link href="css/material.min.css" rel="stylesheet"/>
     <link href="css/ripples.min.css" rel="stylesheet"/>
+    <link href="css/font-awesome.min.css" rel="stylesheet"/>
     <link href="css/custom_style.css" rel="stylesheet"/>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -70,7 +71,7 @@
 
     <section class="header-content">
         <div class="">
-            <div class="jumbotron text-center" style="background-color: #4285f4">
+            <div class="jumbotron text-center" style="background-color: #4285f4;margin-bottom: 0">
                 <h1 class="text-center" style="color:#fff">Welcome to Scrum Board</h1>
 
                 <h3>Issue and Progress tracking designed for Scrum team</h3>
@@ -88,147 +89,69 @@
         </div>
     </section>
 
-    <section class="body-content" style="color: #000;padding-top: 75px">
+    <section class="body-content" style="color: #000;">
         <div class="container-fluid">
-            <div class="row ">
-                <!--Right-->
-                <div class="col-lg-4 col-md-4 col-sm-4 feature">
-                    <div class="text-center">
-                        <h2 class="feature-text">Work update</h2>
+            <div class="row">
+                <div class="">
+                    <div id="carousel-id" class="carousel slide" data-ride="carousel" style="background-color: #b1deda">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel-id" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-id" data-slide-to="1" class=""></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <div class="container" style="width: 500px;height: 500px">
 
-                        <p class="feature-text">...................................................</p>
-
-                        <p class="feature-text">...................................................</p>
-
-                        <p class="feature-text">...................................................</p>
-
-                        <p class="feature-text">...................................................</p>
+                                    <div class="carousel-caption">
+                                        <h1>Example headline.</h1>
+                                        <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next"
+                                            and "previous" Glyphicon buttons on the left and right might not
+                                            load/display properly due to web browser security rules.</p>
+                                        <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="container" style="width: 500px;height: 500px">
+                                    <div class="carousel-caption">
+                                        <h1>Example headline.</h1>
+                                        <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
+                                        <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <!--Left-->
-                <div class="col-lg-8 col-md-8 col-sm-8 feature">
-                    <div class="text-center">
-                        <img class="img img-rounded" src="images/lollopop.png" style="height: 250px">
-                    </div>
-                </div>
-            </div>
 
-            <div class="row ">
-                <!--Right-->
-                <div class="col-lg-4 col-md-4 col-sm-4 feature">
-                    <div class="text-center">
-                        <h2 class="feature-text">Work report</h2>
-
-                        <p class="feature-text">...................................................</p>
-
-                        <p class="feature-text">...................................................</p>
-
-                        <p class="feature-text">...................................................</p>
-
-                        <p class="feature-text">...................................................</p>
-                    </div>
-                </div>
-                <!--Left-->
-                <div class="col-lg-8 col-md-8 col-sm-8 feature">
-                    <div class="text-center">
-                        <img class="img img-rounded" src="images/lollopop.png" style="height: 250px">
-                    </div>
-                </div>
-            </div>
-
-            <div class="row ">
-                <!--Right-->
-                <div class="col-lg-4 col-md-4 col-sm-4 feature">
-                    <div class="text-center">
-                        <h2 class="feature-text">Work comment</h2>
-
-                        <p class="feature-text">...................................................</p>
-
-                        <p class="feature-text">...................................................</p>
-
-                        <p class="feature-text">...................................................</p>
-
-                        <p class="feature-text">...................................................</p>
-                    </div>
-                </div>
-                <!--Left-->
-                <div class="col-lg-8 col-md-8 col-sm-8 feature">
-                    <div class="text-center">
-                        <img class="img img-rounded" src="images/lollopop.png" style="height: 250px">
-                    </div>
-                </div>
-            </div>
-
-            <div class="row ">
-                <!--Right-->
-                <div class="col-lg-4 col-md-4 col-sm-4 feature">
-                    <div class="text-center">
-                        <h2 class="feature-text">Work tracking</h2>
-
-                        <p class="feature-text">...................................................</p>
-
-                        <p class="feature-text">...................................................</p>
-
-                        <p class="feature-text">...................................................</p>
-
-                        <p class="feature-text">...................................................</p>
-                    </div>
-                </div>
-                <!--Left-->
-                <div class="col-lg-8 col-md-8 col-sm-8 feature">
-                    <div class="text-center">
-                        <img class="img img-rounded" src="images/lollopop.png" style="height: 250px">
-                    </div>
-                </div>
-            </div>
-
-            <div class="row ">
-                <!--Right-->
-                <div class="col-lg-4 col-md-4 col-sm-4 feature">
-                    <div class="text-center">
-                        <h2 class="feature-text">Work summary</h2>
-
-                        <p class="feature-text">...................................................</p>
-
-                        <p class="feature-text">...................................................</p>
-
-                        <p class="feature-text">...................................................</p>
-
-                        <p class="feature-text">...................................................</p>
-                    </div>
-                </div>
-                <!--Left-->
-                <div class="col-lg-8 col-md-8 col-sm-8 feature">
-                    <div class="text-center">
-                        <img class="img img-rounded" src="images/lollopop.png" style="height: 250px">
-                    </div>
                 </div>
             </div>
         </div>
-    </section>
-    <section class="footer-content">
-        <footer style="padding: 20px">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-2">
-                        <p>@2015 Scrum Board</p>
-                    </div>
-                    <div class="col-lg-1">
-                        <p>Team</p>
-                    </div>
-                    <div class="col-lg-1">
-                        <p>Privacy</p>
-                    </div>
+</div>
+</section>
+<section class="footer-content">
+    <footer style="padding: 20px">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2">
+                    <p>@2015 Scrum Board</p>
                 </div>
-                <div class="row">
-                    <div class="text-center">
-                        <p style="font-weight: bold;font-size: 1.1em">Develop by Computer Science. Khon Kaen University.
-                            Thailand</p>
-                    </div>
+                <div class="col-lg-1">
+                    <p>Team</p>
+                </div>
+                <div class="col-lg-1">
+                    <p>Privacy</p>
                 </div>
             </div>
-        </footer>
-    </section>
+            <div class="row">
+                <div class="text-center">
+                    <p style="font-weight: bold;font-size: 1.1em">Develop by Computer Science. Khon Kaen University.
+                        Thailand</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</section>
 </div>
 
 <!--JavaScript-->
