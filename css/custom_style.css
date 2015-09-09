@@ -82,3 +82,14 @@ footer {
     background-color: #4285f4;
     padding-bottom: 24px !important;
 }
+.carousel-indicators li{
+    background-color: #fff;
+    border: 0;
+}
+.carousel-indicators .active {
+    background-color: #bed7ff;
+}
+.fa {
+    font-size: 20em;
+    color: #fff;
+}
