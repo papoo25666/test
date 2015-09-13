@@ -53,6 +53,7 @@ footer {
     color: #33e0e6 !important;
 
 }
+
 .btn-success:hover {
     transition: all 0.5s ease;
     -webkit-transition: all 0.5s ease;
@@ -81,14 +82,47 @@ footer {
     background-color: #4285f4;
     padding-bottom: 24px !important;
 }
-.carousel-indicators li{
+
+.carousel-indicators li {
     background-color: #fff;
     border: 0;
 }
+
 .carousel-indicators .active {
     background-color: #bed7ff;
 }
+
 .fa {
     font-size: 20em;
     color: #fff;
+}
+
+.logout-button {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.logout-button:hover {
+    cursor: pointer;
+    transition: all 0.7s ease;
+    -webkit-transition: all 0.7s ease;
+    -o-transition: all 0.7s ease;
+    -moz-transition: all 0.7s ease;
+    color: #33e0e6 !important;
+}
+
+.navbar-brand:hover {
+    cursor: pointer;
+    transition: all 0.7s ease;
+    -webkit-transition: all 0.7s ease;
+    -o-transition: all 0.7s ease;
+    -moz-transition: all 0.7s ease;
+    color: #33e0e6 !important;
+}
+
+.navbar-brand {
+    font-weight: 300;
+}
+.content {
+    color: #000;
 }
