@@ -130,7 +130,7 @@ footer {
 }
 
 .form-backlog {
-    background-color: #5C6BC0;
+    background-color: #2196F3;
     height: 160px;
     margin-top: 30px;
 }
@@ -141,10 +141,26 @@ footer {
     -webkit-transition: all 0.7s ease;
     -o-transition: all 0.7s ease;
     -moz-transition: all 0.7s ease;
-    background-color: #2196F3;
+    background-color: #1565C0;
 }
 
 .badge {
-    background-color: #fff;
-    color: #000;
+    background-color: #FF5252;
+    color: #fff;
+    margin-right: 5px;
+}
+
+.mdi-hardware-desktop-mac {
+    color: #fff;
+    font-size: 4em;
+}
+
+.dropdown-group {
+    box-shadow: none;
+}
+
+.dropdown-caret {
+    padding-left: 5px;
+    padding-right: 10px;
+
 }
