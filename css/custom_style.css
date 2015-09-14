@@ -5,7 +5,7 @@
 body {
     background-color: #fff;
     color: #fff;
-    font-family: RobotoDraft,Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-family: RobotoDraft, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
 .jumbotron {
@@ -124,6 +124,27 @@ footer {
 .navbar-brand {
     font-weight: 300;
 }
+
 .content {
+    color: #000;
+}
+
+.form-backlog {
+    background-color: #5C6BC0;
+    height: 160px;
+    margin-top: 30px;
+}
+
+.form-backlog:hover {
+    cursor: pointer;
+    transition: all 0.7s ease;
+    -webkit-transition: all 0.7s ease;
+    -o-transition: all 0.7s ease;
+    -moz-transition: all 0.7s ease;
+    background-color: #2196F3;
+}
+
+.badge {
+    background-color: #fff;
     color: #000;
 }
