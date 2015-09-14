@@ -171,6 +171,7 @@ a.backlog-name > h3:hover {
     -o-transition: all 0.7s ease;
     -moz-transition: all 0.7s ease;
     color: #000 !important;
+
 }
 
 .menu-sprint ul li {
@@ -184,6 +185,7 @@ a.backlog-name > h3:hover {
 }
 
 .menu-sprint ul li:hover {
+
     transition: all 0.7s ease;
     -webkit-transition: all 0.7s ease;
     -ms-transition: all 0.7s ease;
@@ -193,10 +195,42 @@ a.backlog-name > h3:hover {
 }
 
 .menu-sprint ul li h4 {
-    font-size: 1.2em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    font-size: 1.3em;
+    letter-spacing: 1.2px;
+    padding-left: 30px;
 }
 
 .menu-sprint {
     overflow: auto;
     padding: 0;
+}
+
+.breadcrumb > li + li:before {
+    color: #fff;
+}
+
+.menu-sprint ul li:first-child {
+    background-color: #4DD0E1;
+}
+
+.breadcrumb {
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+}
+
+h3 {
+    font-family: 'Roboto', sans-serif;
+}
+
+span {
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+}
+
+label {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    letter-spacing: 1px;
 }

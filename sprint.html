@@ -12,6 +12,7 @@
     <link href="css/font-awesome.min.css" rel="stylesheet"/>
     <link href="css/ripples.min.css" rel="stylesheet"/>
     <link href="css/custom_style.css" rel="stylesheet"/>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -22,6 +23,7 @@
 </head>
 <body>
 <div class="wrapper" style="background-color: #B2EBF2">
+
     <!--Navbar-->
     <section class="navbar navbar-inverse navbar-static-top" style="margin: 0;">
         <div class="navbar-header">
@@ -54,14 +56,33 @@
     <!--End Navbar-->
 
     <section class="content" style="min-height: 500px;">
-        <nav class="col-lg-2 col-md-2 col-sm-2 menu-sprint" style="background-color: #03a9f4;height: 500px">
+        <nav class="col-lg-3 col-md-3 col-sm-3 menu-sprint" style="background-color: #03a9f4;height: 500px">
+            <div class="profile" style="height: 200px;background-color: #233239;">
+                <div class="" style="padding: 30px">
+                    <img src="images/user.jpg" style="width: 100px;height: 100px;"
+                         class="img img-circle img-responsive">
+                    <h4 style="color:#fff;">Kotchaphan Muangsan</h4>
+                </div>
+            </div>
             <ul ng-app="" style="padding-left: 0">
-                <li ng-repeat="n in [1,2,3,4,5,6,7,8,9,10,11,12] track by $index" class="withripple text-center"
-                    data-target="#about"><h4>Sprint {{n}}</h4>
+                <li ng-repeat="n in [1,2,3,4,5,6,7,8,9,10,11,12] track by $index" class="withripple active"
+                    data-target=""><h4>Sprint {{n}}</h4>
+
                     <div class="ripple-wrapper"></div>
                 </li>
             </ul>
         </nav>
+        <div class="col-lg-9 col-md-9 col-sm-9 col-sm-9">
+            <div class="">
+                <ul class="breadcrumb" style="background-color: transparent;padding: 20px 0 8px 0">
+                    <li style="font-size: 18px;">Product Backlog</li>
+                    <li style="font-size: 18px;">Sprint Backlog</li>
+                </ul>
+            </div>
+            <div>
+                <p>Demo</p>
+            </div>
+        </div>
     </section>
 
     <!--Footer-->
