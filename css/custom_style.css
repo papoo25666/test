@@ -150,7 +150,7 @@ footer {
     margin-right: 5px;
 }
 
-.mdi-hardware-desktop-mac {
+.mdi-hardware-memory {
     color: #fff;
     font-size: 4em;
 }
@@ -170,8 +170,8 @@ a.backlog-name > h3:hover {
     -webkit-transition: all 0.7s ease;
     -o-transition: all 0.7s ease;
     -moz-transition: all 0.7s ease;
-    color: #000 !important;
-
+    font-weight: 400;
+    color: #333 !important;
 }
 
 .menu-sprint ul li {
@@ -211,7 +211,7 @@ a.backlog-name > h3:hover {
     color: #fff;
 }
 
-.menu-sprint ul li:first-child {
+.menu-sprint ul li.active {
     background-color: #4DD0E1;
 }
 
@@ -233,4 +233,32 @@ label {
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
     letter-spacing: 1px;
+}
+
+.pages {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 0;
+    overflow: auto;
+}
+
+.page.active {
+    transform: translateY(0px);
+    transition: all 0.3s ease-out;
+    display: block;
+    opacity: 1;
+    margin-top: 100px;
+    min-height: 400px;
+}
+
+.modal-header {
+    background-color: #fff;
+}
+
+.modal-content {
+    min-height: 500px;
+    min-width: 700px;
+    max-width: 1024px;
 }

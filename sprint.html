@@ -65,22 +65,37 @@
                 </div>
             </div>
             <ul ng-app="" style="padding-left: 0">
-                <li ng-repeat="n in [1,2,3,4,5,6,7,8,9,10,11,12] track by $index" class="withripple active"
-                    data-target=""><h4>Sprint {{n}}</h4>
-
-                    <div class="ripple-wrapper"></div>
-                </li>
+                <li class="withripple" data-toggle="modal" data-target="#menu"><h4>Sprint 1</h4></li>
+                <li class="withripple" data-toggle="modal" data-target="#menu"><h4>Sprint 2</h4></li>
+                <li class="withripple" data-toggle="modal" data-target="#menu"><h4>Sprint 3</h4></li>
+                <li class="withripple" data-toggle="modal" data-target="#menu"><h4>Sprint 4</h4></li>
+                <li class="withripple" data-toggle="modal" data-target="#menu"><h4>Sprint 5</h4></li>
+                <li class="withripple" data-toggle="modal" data-target="#menu"><h4>Sprint 6</h4></li>
+                <li class="withripple" data-toggle="modal" data-target="#menu"><h4>Sprint 7</h4></li>
+                <li class="withripple" data-toggle="modal" data-target="#menu"><h4>Sprint 8</h4></li>
+                <li class="withripple" data-toggle="modal" data-target="#menu"><h4>Sprint 9</h4></li>
+                <li class="withripple" data-toggle="modal" data-target="#menu"><h4>Sprint 10</h4></li>
             </ul>
         </nav>
         <div class="col-lg-9 col-md-9 col-sm-9 col-sm-9">
-            <div class="">
-                <ul class="breadcrumb" style="background-color: transparent;padding: 20px 0 8px 0">
-                    <li style="font-size: 18px;">Product Backlog</li>
-                    <li style="font-size: 18px;">Sprint Backlog</li>
-                </ul>
-            </div>
-            <div>
-                <p>Demo</p>
+            <div class="col-xs-10">
+                <div class="modal fade" id="menu">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                <h4 class="modal-title">Demo</h4>
+                            </div>
+                            <div class="modal-body">
+                                ......................<br/>
+                                ......................<br/>
+                                ......................<br/>
+                                ......................<br/>
+                                ......................<br/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -116,5 +131,19 @@
 <script type="application/javascript" src="js/material.min.js?v=1"></script>
 <script type="application/javascript" src="js/bootstrap.min.js?v=1"></script>
 <script type="application/javascript" src="js/angular.min.js?v=1"></script>
+
+<script type="application/javascript">
+    $(function () {
+        $('.withripple:first-child').addClass('active');
+        $('.withripple:first-child').click();
+    });
+
+    $(function () {
+        $('.withripple').click(function () {
+            $('.withripple').removeClass('active');
+            $(this).addClass('active');
+        });
+    });
+</script>
 </body>
 </html>
