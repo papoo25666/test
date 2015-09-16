@@ -83,15 +83,15 @@
             <table class="table table-bordered">
                 <tr class="info" style="font-weight: bold">
                     <td>User Story</td>
-                    <td>Task</td>
+                    <td>Tasks</td>
                     <td>Doing</td>
                     <td>Done</td>
                 </tr>
-                <tr>
+                <tr class="">
                     <td>
                         <div class="col-lg-12 col-md-12 col-ms-12">
                             <form class="form-horizontal">
-                                <div class="form-group">
+                                <div class="form-group has-info">
                                     <input type="text" placeholder="user story" class="form-control"/>
                                 </div>
                             </form>
@@ -100,7 +100,7 @@
                     <td>
                         <div class="col-lg-12 col-md-12 col-ms-12">
                             <form class="form-horizontal">
-                                <div class="form-group">
+                                <div class="form-group has-info">
                                     <input type="text" class="form-control" placeholder="task"/>
                                     <input type="text" class="form-control" placeholder="estimate"/>
                                 </div>
@@ -110,7 +110,7 @@
                     <td>
                         <div class="col-lg-12 col-md-12 col-ms-12">
                             <form class="form-horizontal">
-                                <div class="form-group">
+                                <div class="form-group has-info">
                                     <input type="text" class="form-control" placeholder="doing"/>
                                 </div>
                             </form>
@@ -119,7 +119,7 @@
                     <td>
                         <div class="col-lg-12 col-md-12 col-ms-12">
                             <form class="form-horizontal">
-                                <div class="form-group">
+                                <div class="form-group has-info">
                                     <input type="text" class="form-control" placeholder="done"/>
                                 </div>
                             </form>
@@ -127,11 +127,12 @@
                     </td>
                 </tr>
 
+                <!-- -->
                 <tr>
                     <td>
                         <div class="col-lg-12 col-md-12 col-ms-12">
                             <form class="form-horizontal">
-                                <div class="form-group">
+                                <div class="form-group has-info">
                                     <input type="text" placeholder="user story" class="form-control"/>
                                 </div>
                             </form>
@@ -140,7 +141,7 @@
                     <td>
                         <div class="col-lg-12 col-md-12 col-ms-12">
                             <form class="form-horizontal">
-                                <div class="form-group">
+                                <div class="form-group has-info">
                                     <input type="text" class="form-control" placeholder="task"/>
                                     <input type="text" class="form-control" placeholder="estimate"/>
                                 </div>
@@ -150,7 +151,7 @@
                     <td>
                         <div class="col-lg-12 col-md-12 col-ms-12">
                             <form class="form-horizontal">
-                                <div class="form-group">
+                                <div class="form-group has-info">
                                     <input type="text" class="form-control" placeholder="doing"/>
                                 </div>
                             </form>
@@ -159,7 +160,7 @@
                     <td>
                         <div class="col-lg-12 col-md-12 col-ms-12">
                             <form class="form-horizontal">
-                                <div class="form-group">
+                                <div class="form-group has-info">
                                     <input type="text" class="form-control" placeholder="done"/>
                                 </div>
                             </form>
@@ -167,6 +168,46 @@
                     </td>
                 </tr>
 
+                <!-- -->
+                <tr>
+                    <td>
+                        <div class="col-lg-12 col-md-12 col-ms-12">
+                            <form class="form-horizontal">
+                                <div class="form-group has-info">
+                                    <input type="text" placeholder="user story" class="form-control"/>
+                                </div>
+                            </form>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-lg-12 col-md-12 col-ms-12">
+                            <form class="form-horizontal">
+                                <div class="form-group has-info">
+                                    <input type="text" class="form-control" placeholder="task"/>
+                                    <input type="text" class="form-control" placeholder="estimate"/>
+                                </div>
+                            </form>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-lg-12 col-md-12 col-ms-12">
+                            <form class="form-horizontal">
+                                <div class="form-group has-info">
+                                    <input type="text" class="form-control" placeholder="doing"/>
+                                </div>
+                            </form>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-lg-12 col-md-12 col-ms-12">
+                            <form class="form-horizontal">
+                                <div class="form-group has-info">
+                                    <input type="text" class="form-control" placeholder="done"/>
+                                </div>
+                            </form>
+                        </div>
+                    </td>
+                </tr>
             </table>
         </div>
     </section>
@@ -195,6 +236,23 @@
         </footer>
     </section>
 </div>
+<a class="btn btn-primary hidden" data-toggle="modal" href='#modal-id' id="btn-modal">Trigger modal</a>
+<!--modal-->
+<div class="modal fade" id="modal-id">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Problem</h4>
+            </div>
+            <div class="modal-body" style="color:#000">
+                <h3>Demo</h3>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
 
 <!--JavaScript-->
 <script type="application/javascript" src="js/jquery.js?v=1"></script>
@@ -215,6 +273,17 @@
             $('.withripple').removeClass('active');
             $(this).addClass('active');
             $('.sprint-backlog-centent').text(content);
+        });
+    });
+
+    $(function () {
+        $('table tr').mouseover(function () {
+            $('table tr').removeClass("warning");
+            $(this).addClass("warning");
+            $(this).css("cursor", "pointer");
+        });
+        $('table tr').click(function () {
+            $('#btn-modal').click();
         });
     });
 </script>
