@@ -79,6 +79,95 @@
         </nav>
         <div class="col-lg-9 col-md-9 col-sm-9 col-sm-9">
             <h3 class="sprint-backlog-centent">Sprint 1</h3>
+
+            <table class="table table-bordered">
+                <tr class="info" style="font-weight: bold">
+                    <td>User Story</td>
+                    <td>Task</td>
+                    <td>Doing</td>
+                    <td>Done</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="col-lg-12 col-md-12 col-ms-12">
+                            <form class="form-horizontal">
+                                <div class="form-group">
+                                    <input type="text" placeholder="user story" class="form-control"/>
+                                </div>
+                            </form>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-lg-12 col-md-12 col-ms-12">
+                            <form class="form-horizontal">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="task"/>
+                                    <input type="text" class="form-control" placeholder="estimate"/>
+                                </div>
+                            </form>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-lg-12 col-md-12 col-ms-12">
+                            <form class="form-horizontal">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="doing"/>
+                                </div>
+                            </form>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-lg-12 col-md-12 col-ms-12">
+                            <form class="form-horizontal">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="done"/>
+                                </div>
+                            </form>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div class="col-lg-12 col-md-12 col-ms-12">
+                            <form class="form-horizontal">
+                                <div class="form-group">
+                                    <input type="text" placeholder="user story" class="form-control"/>
+                                </div>
+                            </form>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-lg-12 col-md-12 col-ms-12">
+                            <form class="form-horizontal">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="task"/>
+                                    <input type="text" class="form-control" placeholder="estimate"/>
+                                </div>
+                            </form>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-lg-12 col-md-12 col-ms-12">
+                            <form class="form-horizontal">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="doing"/>
+                                </div>
+                            </form>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-lg-12 col-md-12 col-ms-12">
+                            <form class="form-horizontal">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="done"/>
+                                </div>
+                            </form>
+                        </div>
+                    </td>
+                </tr>
+
+            </table>
         </div>
     </section>
     <!--Footer-->
@@ -122,7 +211,7 @@
     $(function () {
         $('.withripple').click(function () {
             var content = $(this).text();
-            console.log('content : '+content);
+            console.log('content : ' + content);
             $('.withripple').removeClass('active');
             $(this).addClass('active');
             $('.sprint-backlog-centent').text(content);
