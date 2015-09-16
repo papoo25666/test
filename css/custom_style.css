@@ -82,6 +82,11 @@ footer {
 .modal-header {
     background-color: #4285f4;
     padding-bottom: 24px !important;
+    border-radius: 5px 5px 0 0;
+}
+
+.modal-content {
+    border-radius: 5px;
 }
 
 .carousel-indicators li {
@@ -253,12 +258,22 @@ label {
     min-height: 400px;
 }
 
-.modal-header {
-    background-color: #fff;
+.problem {
+    overflow: auto;
 }
 
-.modal-content {
-    min-height: 500px;
-    min-width: 700px;
-    max-width: 1024px;
+.imgage-login {
+    background-image: url("../images/user_login.png");
+    margin: 30px auto;
+    margin-top: 15px;
+    width: 100px;
+    height: 100px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;;
+}
+
+.parallax-window {
+    min-height: 1200px;
+    background: transparent;
 }
