@@ -276,3 +276,36 @@ label {
     min-height: 1200px;
     background: transparent;
 }
+.sprint-problem-centent {
+
+}
+
+.menu-problem ul li {
+    list-style: none;
+    font-size: 15px;
+    cursor: pointer;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    color: #fff;
+}
+
+.menu-problem ul li:hover {
+    transition: all 0.7s ease;
+    -webkit-transition: all 0.7s ease;
+    -ms-transition: all 0.7s ease;
+    -o-transition: all 0.7s ease;
+    -moz-transition: all 0.7s ease;
+    background-color: #4DD0E1;
+}
+
+.menu-problem ul li h4 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    letter-spacing: 1.2px;
+    padding-left: 30px;
+}
+
+.menu-problem {
+    overflow: auto;
+    padding: 0;
+}

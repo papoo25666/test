@@ -19,7 +19,8 @@
     <![endif]-->
 </head>
 <body>
-<div class="wrapper" style="background-color:#fff">
+<div class="wrapper" style="background-color: #d9e0e7;">
+
     <!--Navbar-->
     <section class="navbar navbar-inverse navbar-static-top" style="margin: 0;">
         <div class="navbar-header">
@@ -43,19 +44,10 @@
                 </li>
 
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Problem <span class="caret"></span></i>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Add problem</a></li>
-                        <li><a href="#">Problem lists</a></li>
-                    </ul>
-                </li>
-
-                <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Summary <span class="caret"></span></i>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="summary.php">This backlog</a></li>
+                        <li><a href="#">This sprint</a></li>
                     </ul>
                 </li>
             </ul>
@@ -78,64 +70,36 @@
     <!--End Navbar-->
 
     <section class="content" style="min-height: 500px;">
-        <div class="">
-            <div class="row" style="margin: 0">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <h3 style="font-weight: 500">Product Backlog</h3>
+        <nav class="col-lg-2 col-md-2 col-sm-2 menu-sprint" style="background-color: #333;height: 500px">
+            <ul ng-app="" style="padding-left: 0">
+                <li class="summary-menu" data-toggle="modal" data-target="#menu"><h4>Dashboad</h4></li>
+                <li class="summary-menu" data-toggle="modal" data-target="#menu"><h4>Project</h4></li>
+            </ul>
+        </nav>
+        <div class="col-lg-10 col-md-10 col-sm-10" ">
+            <div class="col-lg-6 col-sm-6 col-md-6">
+                <div class="text-center">
+                    <h4>Sprint</h4>
+                    <div class="panel col-lg-offset-2" style="width: 350px;height: 200px">
 
-                    <div class="backlog"
-                         style="border: 1px solid #90CAF9;border-left: 0;border-right: 0;border-bottom: 0">
-                        <div class="create-backlog" style="margin-top: 5px">
-                            <a href="#" class="btn btn-warning btn-fab btn-raised mdi-action-note-add"></a>
-                            <span style="font-size: 1.5em">Create Product Backlog</span>
-                        </div>
                     </div>
                 </div>
+
             </div>
-            <div class="row" style="margin-top: 0;margin-bottom: 20px;margin-left: 0;margin-right: 0">
-                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 col-lg-offset-1 col-md-offset-1 col-sm-offset-1"
-                     ng-app=""
-                    >
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"
-                         ng-repeat="n in ['Demo', 'Demo', 'Demo', 'Demo' , 'Demo' , 'Demo','Demo','Demo','Demo','Demo','Demo','Demo'] track by $index">
-                        <form role="form" class="form-backlog">
-                            <div class="btn-group pull-right dropdown-group" style="margin: 0;">
-                                <a href="#" data-target="#"
-                                   class="btn btn-default dropdown-toggle dropdown-caret" data-toggle="dropdown">
-                                    <span class="caret"></span>
-                                </a>
-                                <ul class="dropdown-menu" style="min-width: 100px;border-radius: 0">
-                                    <li><a href="#">Add team member</a></li>
-                                    <li><a href="#">Rename</a></li>
-                                    <li><a href="#">Delete</a></li>
-                                </ul>
-                            </div>
-                            <div class="form-group" style="padding: 20px">
-                                <div class="row">
-                                    <span class="badge pull-right">3</span>
-                                </div>
-                                <div class="row">
-                                    <div class="text-center">
-                                        <a href="sprint.php" class="backlog-name">
-                                            <h3 style="color: #fff;margin:5px 0">{{n}}</h3>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="text-center">
-                                        <i class="mdi-hardware-memory hidden-xs"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
+
+            <div class="col-lg-6 col-sm-6 col-md-6">
+                <div class="text-center">
+                    <h4>Problem</h4>
+                    <div class="panel col-lg-offset-2" style="width: 350px;height: 200px">
+
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
-
     <!--Footer-->
-    <section class="footer-content" style="margin-top: 30px">
+    <section class="footer-content">
         <footer style="padding: 20px">
             <div class="container">
                 <div class="row hidden-xs">
@@ -160,10 +124,14 @@
     </section>
 </div>
 
+
 <!--JavaScript-->
 <?php
 getSctiptPatch();
 ?>
+
+<script type="application/javascript">
+</script>
 
 </body>
 </html>

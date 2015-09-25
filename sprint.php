@@ -44,13 +44,6 @@
                 </li>
 
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Problem  <span class="caret"></span></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Add problem</a></li>
-                    </ul>
-                </li>
-
-                <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Summary  <span class="caret"></span></i></a>
                     <ul class="dropdown-menu">
                         <li><a href="#">This sprint</a></li>
@@ -97,7 +90,7 @@
                 <li class="withripple" data-toggle="modal" data-target="#menu"><h4>Sprint 10</h4></li>
             </ul>
         </nav>
-        <div class="col-lg-10 col-md-10 col-sm-10 col-sm-10">
+        <div class="col-lg-7 col-md-7 col-sm-7 col-sm-7">
             <h3 class="sprint-backlog-centent">Sprint 1</h3>
 
             <table class="table table-bordered">
@@ -230,6 +223,25 @@
                 </tr>
             </table>
         </div>
+
+<!--        Problem-->
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <h3 class="sprint-problem-centent">Problem</h3>
+            <nav class="menu-problem" style="background-color: #5c6bc0;height: 420px">
+                <ul ng-app="" style="padding-left: 0">
+                    <li class="problem" data-toggle="modal" data-target="#menu"><h4>Problem 1</h4></li>
+                    <li class="problem" data-toggle="modal" data-target="#menu"><h4>Problem 2</h4></li>
+                    <li class="problem" data-toggle="modal" data-target="#menu"><h4>Problem 3</h4></li>
+                    <li class="problem" data-toggle="modal" data-target="#menu"><h4>Problem 4</h4></li>
+                    <li class="problem" data-toggle="modal" data-target="#menu"><h4>Problem 5</h4></li>
+                    <li class="problem" data-toggle="modal" data-target="#menu"><h4>Problem 6</h4></li>
+                    <li class="problem" data-toggle="modal" data-target="#menu"><h4>Problem 7</h4></li>
+                    <li class="problem" data-toggle="modal" data-target="#menu"><h4>Problem 8</h4></li>
+                    <li class="problem" data-toggle="modal" data-target="#menu"><h4>Problem 9</h4></li>
+                    <li class="problem" data-toggle="modal" data-target="#menu"><h4>Problem 10</h4></li>
+                </ul>
+            </nav>
+        </div>
     </section>
     <!--Footer-->
     <section class="footer-content">
@@ -256,23 +268,7 @@
         </footer>
     </section>
 </div>
-<a class="btn btn-primary hidden" data-toggle="modal" href='#modal-id' id="btn-modal">Trigger modal</a>
-<!--modal-->
-<div class="modal fade" id="modal-id">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title" style="font-weight: bold;">Problem</h4>
-            </div>
-            <div class="modal-body" style="color:#000">
-                <h4>Demo</h4>
-            </div>
-            <div class="modal-footer">
-            </div>
-        </div>
-    </div>
-</div>
+
 
 <!--JavaScript-->
 <?php
@@ -297,13 +293,11 @@ getSctiptPatch();
 
     $(function () {
         $('table tr').mouseover(function () {
-            $('table tr').removeClass("warning");
-            $(this).addClass("warning");
+            $('table tr').removeClass("success");
+            $(this).addClass("success");
             $(this).css("cursor", "pointer");
         });
-        $('table tr').click(function () {
-            $('#btn-modal').click();
-        });
+
     });
 </script>
 
