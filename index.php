@@ -5,12 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Scrum Board</title>
-    <link href="css/roboto.min.css" rel="stylesheet"/>
-    <link href="css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="css/material.min.css" rel="stylesheet"/>
-    <link href="css/ripples.min.css" rel="stylesheet"/>
-    <link href="css/font-awesome.min.css" rel="stylesheet"/>
-    <link href="css/custom_style.css" rel="stylesheet"/>
+    <?php
+        include_once "function/link.php";
+        getStylePatch();
+    ?>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -34,7 +32,7 @@
         <div class="navbar-collapse collapse navbar-inverse-collapse">
             <ul class="nav navbar-nav navbar-right" style="margin-right: 0">
                 <li class="active text-center"><a class="login-button" data-toggle="modal" href='#modal-login'>Log
-                    In</a></li>
+                        In</a></li>
             </ul>
         </div>
     </section>
@@ -50,7 +48,8 @@
                 </div>
                 <div class="modal-body" style="padding-top: 20px">
                     <div class="row">
-                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
+                        <div
+                            class="col-lg-10 col-md-10 col-sm-10 col-xs-12 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
                             <h2 class="text-center" style="color: #333;font-weight: bold;margin-top: 10px">WELCOME</h2>
 
                             <div class="imgage-login">
@@ -132,10 +131,8 @@
 </div>
 
 <!--JavaScript-->
-<script type="application/javascript" src="js/jquery.js?v=1"></script>
-<script type="application/javascript" src="js/material.min.js?v=1"></script>
-<script type="application/javascript" src="js/bootstrap.min.js?v=1"></script>
-<script type="application/javascript" src="js/angular.min.js?v=1"></script>
-<script type="application/javascript" src="js/parallax.min.js?v=1"></script>
+<?php
+    getSctiptPatch();
+?>
 </body>
 </html>

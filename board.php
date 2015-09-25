@@ -5,12 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Scrum Board</title>
-    <link href="css/roboto.min.css" rel="stylesheet"/>
-    <link href="css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="css/material.min.css" rel="stylesheet"/>
-    <link href="css/ripples.min.css" rel="stylesheet"/>
-    <link href="css/font-awesome.min.css" rel="stylesheet"/>
-    <link href="css/custom_style.css" rel="stylesheet"/>
+    <?php
+    include_once "function/link.php";
+    getStylePatch();
+    ?>
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -71,7 +69,7 @@
             <div class="row" style="margin-top: 0;margin-bottom: 20px;margin-left: 0;margin-right: 0">
                 <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 col-lg-offset-1 col-md-offset-1 col-sm-offset-1"
                      ng-app=""
-                        >
+                    >
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"
                          ng-repeat="n in ['Demo', 'Demo', 'Demo', 'Demo' , 'Demo' , 'Demo','Demo','Demo','Demo','Demo','Demo','Demo'] track by $index">
                         <form role="form" class="form-backlog">
@@ -137,10 +135,9 @@
 </div>
 
 <!--JavaScript-->
-<script type="application/javascript" src="js/jquery.js?v=1"></script>
-<script type="application/javascript" src="js/material.min.js?v=1"></script>
-<script type="application/javascript" src="js/bootstrap.min.js?v=1"></script>
-<script type="application/javascript" src="js/angular.min.js?v=1"></script>
+<?php
+    getSctiptPatch();
+?>
 
 </body>
 </html>

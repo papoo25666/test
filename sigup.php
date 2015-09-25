@@ -5,12 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Scrum Board</title>
-    <link href="css/roboto.min.css" rel="stylesheet"/>
-    <link href="css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="css/material.min.css" rel="stylesheet"/>
-    <link href="css/ripples.min.css" rel="stylesheet"/>
-    <link href="css/font-awesome.min.css" rel="stylesheet"/>
-    <link href="css/custom_style.css" rel="stylesheet"/>
+    <?php
+    include_once "function/link.php";
+    getStylePatch();
+    ?>
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -54,6 +52,7 @@
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-lg-offset-3 col-md-offset-3 col-sm-offset-3"
                      style="background-color: #fff;">
                     <h3 style="font-weight: 400;">Sign up</h3>
+
                     <form role="form" class="form-horizontal" style="margin-top: 10px;padding: 10px">
                         <div class="form-group has-success">
                             <div class="col-lg-12" style="padding-left: 0">
@@ -118,9 +117,8 @@
 </div>
 
 <!--JavaScript-->
-<script type="application/javascript" src="js/jquery.js?v=1"></script>
-<script type="application/javascript" src="js/material.min.js?v=1"></script>
-<script type="application/javascript" src="js/bootstrap.min.js?v=1"></script>
-<script type="application/javascript" src="js/angular.min.js?v=1"></script>
+<?php
+getSctiptPatch();
+?>
 </body>
 </html>
