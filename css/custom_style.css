@@ -175,7 +175,7 @@ a.backlog-name > h3:hover {
     -webkit-transition: all 0.7s ease;
     -o-transition: all 0.7s ease;
     -moz-transition: all 0.7s ease;
-    font-weight: 400;
+    font-weight: 300;
     color: #333 !important;
 }
 

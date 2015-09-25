@@ -34,7 +34,7 @@
         <div class="navbar-collapse collapse navbar-inverse-collapse">
             <ul class="nav navbar-nav navbar-left" style="margin-top: 0">
                 <li class="active text-center">
-                    <a class="login-button" href="index.html">Home</a>
+                    <a class="login-button" href="index.php">Home</a>
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right" style="margin-right: 0">
@@ -44,27 +44,17 @@
     </section>
     <!--End Navbar-->
 
-    <section class="content" style="background-color: #fff;min-height: 550px;">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-center" >
-                    <img src="images/free.png" style="width: 100px;height: 100px;display: inline"/>
-
-                    <h2 style="display: inline;font-weight: bold;width: 100px;height: 100px;vertical-align: bottom;
-                    margin-bottom: 0">FREE</h2>
+    <section class="content" style="background-color: #fff">
+        <div class="container" style="background-color: #B2DFDB;min-height: 550px;">
+            <div class="row" style="margin-top: 20px;padding: 40px;">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-lg-offset-3 col-md-offset-3 col-sm-offset-3">
+                    </div>
                 </div>
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-center">
-                    <img src="images/free.png" style="width: 100px;height: 100px;display: inline"/>
-
-                    <h2 style="display: inline;font-weight: bold;width: 100px;height: 100px;vertical-align: bottom;
-                    margin-bottom: 0">UNLIMITED USER</h2>
-                </div>
-            </div>
-
-            <div class="row" style="margin-top: 20px;border: 2px solid #666;border-bottom: 0;border-left: 0;border-right: 0;">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-lg-offset-3 col-md-offset-3 col-sm-offset-3"
                      style="background-color: #fff;">
-                    <form role="form" class="form-horizontal" style="margin-top: 50px;padding: 10px">
+                    <h3 style="font-weight: 400;">Sign up</h3>
+                    <form role="form" class="form-horizontal" style="margin-top: 10px;padding: 10px">
                         <div class="form-group has-success">
                             <div class="col-lg-12" style="padding-left: 0">
                                 <input type="text" class="form-control" id="fname" placeholder="First name">
@@ -90,7 +80,7 @@
                                 <input type="email" class="form-control" id="email" placeholder="Email">
                             </div>
                         </div>
-                        <div class="form-group text-center">
+                        <div class="form-group text-center" style="margin-bottom: 0">
                             <button type="submit" class="btn btn-success" style="width: 100%">
                                 Sign up
                             </button>

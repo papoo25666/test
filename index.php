@@ -88,7 +88,7 @@
 
                 <div class="container" style="margin-top: 30px">
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-lg-offset-4 col-md-offset-4 col-sm-offset-4">
-                        <a class="btn btn-success" href="sigup.html">
+                        <a class="btn btn-success" href="sigup.php">
                             Sign Up
                         </a>
                         <h4>Available on <a href="#" class="link">Google play</a></h4>

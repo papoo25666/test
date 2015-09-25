@@ -31,7 +31,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="board.html">Scrum Board</a>
+            <a class="navbar-brand" href="board.php.html">Scrum Board</a>
         </div>
 
         <div class="navbar-collapse collapse navbar-inverse-collapse">
@@ -92,7 +92,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="text-center">
-                                        <a href="sprint.html" class="backlog-name">
+                                        <a href="sprint.php" class="backlog-name">
                                             <h3 style="color: #fff;margin:5px 0">{{n}}</h3>
                                         </a>
                                     </div>

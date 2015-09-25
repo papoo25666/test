@@ -33,7 +33,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="board.html">Scrum Board</a>
+            <a class="navbar-brand" href="board.php.html">Scrum Board</a>
         </div>
 
         <div class="navbar-collapse collapse navbar-inverse-collapse">
@@ -243,10 +243,10 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">Problem</h4>
+                <h4 class="modal-title" style="font-weight: bold;">Problem</h4>
             </div>
             <div class="modal-body" style="color:#000">
-                <h3>Demo</h3>
+                <h4>Demo</h4>
             </div>
             <div class="modal-footer">
             </div>
