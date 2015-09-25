@@ -30,10 +30,33 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="board.php.html">Scrum Board</a>
+            <a class="navbar-brand" href="board.php">Scrum Board</a>
         </div>
 
         <div class="navbar-collapse collapse navbar-inverse-collapse">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Team  <span class="caret"></span></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Create Team</a></li>
+                        <li><a href="#">Team members</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Problem  <span class="caret"></span></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Add problem</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Summary  <span class="caret"></span></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">This sprint</a></li>
+                    </ul>
+                </li>
+            </ul>
             <ul class="nav navbar-nav navbar-right" style="margin: 0;">
                 <li class="active dropdown">
                     <a href="#" class="dropdown-toggle" style="padding: 15px 0 0 0;height: 60px;"
@@ -53,7 +76,7 @@
     <!--End Navbar-->
 
     <section class="content" style="min-height: 500px;">
-        <nav class="col-lg-3 col-md-3 col-sm-3 menu-sprint" style="background-color: #03a9f4;height: 500px">
+        <nav class="col-lg-2 col-md-2 col-sm-2 menu-sprint" style="background-color: #03a9f4;height: 500px">
             <div class="profile" style="height: 200px;background-color: #233239;">
                 <div class="" style="padding: 30px">
                     <img src="images/user.jpg" style="width: 100px;height: 100px;"
@@ -74,7 +97,7 @@
                 <li class="withripple" data-toggle="modal" data-target="#menu"><h4>Sprint 10</h4></li>
             </ul>
         </nav>
-        <div class="col-lg-9 col-md-9 col-sm-9 col-sm-9">
+        <div class="col-lg-10 col-md-10 col-sm-10 col-sm-10">
             <h3 class="sprint-backlog-centent">Sprint 1</h3>
 
             <table class="table table-bordered">

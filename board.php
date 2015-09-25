@@ -29,10 +29,33 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="board.php.html">Scrum Board</a>
+            <a class="navbar-brand" href="board.php">Scrum Board</a>
         </div>
 
         <div class="navbar-collapse collapse navbar-inverse-collapse">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Team  <span class="caret"></span></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Create Team</a></li>
+                        <li><a href="#">Team members</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Problem  <span class="caret"></span></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Add problem</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Summary  <span class="caret"></span></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">This backlog</a></li>
+                    </ul>
+                </li>
+            </ul>
             <ul class="nav navbar-nav navbar-right" style="margin: 0;">
                 <li class="active dropdown">
                     <a href="#" class="dropdown-toggle" style="padding: 15px 0 0 0;height: 60px;"
