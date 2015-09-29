@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Scrum Board</title>
     <?php
-    include_once "function/link.php";
-    getStylePatch();
+    include_once "views/Styles.php";
+    Style::getStylePatch();
     ?>
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
 
@@ -94,41 +94,46 @@
             </div>
             <div class="row" style="margin-top: 0;margin-bottom: 20px;margin-left: 0;margin-right: 0">
                 <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 col-lg-offset-1 col-md-offset-1 col-sm-offset-1"
-                     ng-app=""
                     >
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"
-                         ng-repeat="n in ['Demo', 'Demo', 'Demo', 'Demo' , 'Demo' , 'Demo','Demo','Demo','Demo','Demo','Demo','Demo'] track by $index">
-                        <form role="form" class="form-backlog">
-                            <div class="btn-group pull-right dropdown-group" style="margin: 0;">
-                                <a href="#" data-target="#"
-                                   class="btn btn-default dropdown-toggle dropdown-caret" data-toggle="dropdown">
-                                    <span class="caret"></span>
-                                </a>
-                                <ul class="dropdown-menu" style="min-width: 100px;border-radius: 0">
-                                    <li><a href="#">Add team member</a></li>
-                                    <li><a href="#">Rename</a></li>
-                                    <li><a href="#">Delete</a></li>
-                                </ul>
-                            </div>
-                            <div class="form-group" style="padding: 20px">
-                                <div class="row">
-                                    <span class="badge pull-right">3</span>
+                    <?php
+                    for($i == 0;$i <= 20;$i++) {
+                        ?>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"
+                            >
+                            <form role="form" class="form-backlog">
+                                <div class="btn-group pull-right dropdown-group" style="margin: 0;">
+                                    <a href="#" data-target="#"
+                                       class="btn btn-default dropdown-toggle dropdown-caret" data-toggle="dropdown">
+                                        <span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu" style="min-width: 100px;border-radius: 0">
+                                        <li><a href="#">Add team member</a></li>
+                                        <li><a href="#">Rename</a></li>
+                                        <li><a href="#">Delete</a></li>
+                                    </ul>
                                 </div>
-                                <div class="row">
-                                    <div class="text-center">
-                                        <a href="sprint.php" class="backlog-name">
-                                            <h3 style="color: #fff;margin:5px 0">{{n}}</h3>
-                                        </a>
+                                <div class="form-group" style="padding: 20px">
+                                    <div class="row">
+                                        <span class="badge pull-right">3</span>
+                                    </div>
+                                    <div class="row">
+                                        <div class="text-center">
+                                            <a href="sprint.php" class="backlog-name">
+                                                <h3 style="color: #fff;margin:5px 0">Demo</h3>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="text-center">
+                                            <i class="mdi-hardware-memory hidden-xs"></i>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="text-center">
-                                        <i class="mdi-hardware-memory hidden-xs"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+                            </form>
+                        </div>
+                        <?php
+                    }
+                    ?>
                 </div>
             </div>
         </div>
@@ -162,7 +167,7 @@
 
 <!--JavaScript-->
 <?php
-getSctiptPatch();
+Style::getSctiptPatch();
 ?>
 
 </body>

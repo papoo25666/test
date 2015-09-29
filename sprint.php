@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Scrum Board</title>
     <?php
-    include_once "function/link.php";
-    getStylePatch();
+    include_once "views/Styles.php";
+    Style::getStylePatch();
     ?>
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
 
@@ -36,7 +36,7 @@
         <div class="navbar-collapse collapse navbar-inverse-collapse">
             <ul class="nav navbar-nav">
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Team  <span class="caret"></span></i></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Team <span class="caret"></span></i></a>
                     <ul class="dropdown-menu">
                         <li><a href="#">Create Team</a></li>
                         <li><a href="#">Team members</a></li>
@@ -44,7 +44,8 @@
                 </li>
 
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Summary  <span class="caret"></span></i></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Summary <span class="caret"></span></i>
+                    </a>
                     <ul class="dropdown-menu">
                         <li><a href="#">This sprint</a></li>
                     </ul>
@@ -70,11 +71,11 @@
 
     <section class="content" style="min-height: 500px;">
         <nav class="col-lg-2 col-md-2 col-sm-2 menu-sprint" style="background-color: #03a9f4;height: 500px">
-            <div class="profile" style="height: 200px;background-color: #233239;">
-                <div class="" style="padding: 30px">
+            <div class="profile" style="height: 180px;background-color: #233239;">
+                <div class="" style="padding: 20px">
                     <img src="images/user.jpg" style="width: 100px;height: 100px;"
-                         class="img img-circle img-responsive">
-                    <h4 style="color:#fff;margin-top: 15px">Kotchaphan Muangsan</h4>
+                         class="img img-circle">
+                    <h5 style="color:#fff;margin-top: 15px">Kotchaphan Muangsan</h5>
                 </div>
             </div>
             <ul ng-app="" style="padding-left: 0">
@@ -116,6 +117,7 @@
                                 <div class="form-group has-info">
                                     <input type="text" class="form-control" placeholder="task"/>
                                     <input type="text" class="form-control" placeholder="estimate"/>
+                                    <input type="text" class="form-control" placeholder="volunteer"/>
                                 </div>
                             </form>
                         </div>
@@ -224,10 +226,14 @@
             </table>
         </div>
 
-<!--        Problem-->
+        <!--        Problem-->
         <div class="col-lg-3 col-md-3 col-sm-3">
-            <h3 class="sprint-problem-centent">Problem</h3>
-            <nav class="menu-problem" style="background-color: #5c6bc0;height: 420px">
+            <div style="margin: 30px 0 10px 0">
+                <a href="#" class="btn btn-danger btn-fab btn-raised mdi-action-note-add"></a>
+                <span style="font-size: 1.5em">Add Problem</span>
+            </div>
+
+            <nav class="menu-problem" style="background-color: #5c6bc0;height: 350px">
                 <ul ng-app="" style="padding-left: 0">
                     <li class="problem" data-toggle="modal" data-target="#menu"><h4>Problem 1</h4></li>
                     <li class="problem" data-toggle="modal" data-target="#menu"><h4>Problem 2</h4></li>
@@ -272,7 +278,7 @@
 
 <!--JavaScript-->
 <?php
-getSctiptPatch();
+Style::getSctiptPatch();
 ?>
 
 <script type="application/javascript">

@@ -253,7 +253,7 @@ jQuery.extend({
 	noop: function() {},
 
 	isFunction: function( obj ) {
-		return jQuery.type(obj) === "function";
+		return jQuery.type(obj) === "controllers";
 	},
 
 	isArray: Array.isArray,
@@ -284,7 +284,7 @@ jQuery.extend({
 			return false;
 		}
 
-		// If the function hasn't returned already, we're confident that
+		// If the controllers hasn't returned already, we're confident that
 		// |obj| is a plain object, created by {} or constructed with new Object
 		return true;
 	},
@@ -302,7 +302,7 @@ jQuery.extend({
 			return obj + "";
 		}
 		// Support: Android<4.0, iOS<6 (functionish RegExp)
-		return typeof obj === "object" || typeof obj === "function" ?
+		return typeof obj === "object" || typeof obj === "controllers" ?
 			class2type[ toString.call(obj) ] || "object" :
 			typeof obj;
 	},
@@ -442,7 +442,7 @@ jQuery.extend({
 			callbackExpect = !invert;
 
 		// Go through the array, only saving the items
-		// that pass the validator function
+		// that pass the validator controllers
 		for ( ; i < length; i++ ) {
 			callbackInverse = !callback( elems[ i ], i );
 			if ( callbackInverse !== callbackExpect ) {
@@ -489,7 +489,7 @@ jQuery.extend({
 	// A global GUID counter for objects
 	guid: 1,
 
-	// Bind a function to a context, optionally partially applying any
+	// Bind a controllers to a context, optionally partially applying any
 	// arguments.
 	proxy: function( fn, context ) {
 		var tmp, args, proxy;
@@ -539,7 +539,7 @@ function isArraylike( obj ) {
 	var length = "length" in obj && obj.length,
 		type = jQuery.type( obj );
 
-	if ( type === "function" || jQuery.isWindow( obj ) ) {
+	if ( type === "controllers" || jQuery.isWindow( obj ) ) {
 		return false;
 	}
 
@@ -712,7 +712,7 @@ var i,
 
 	// Used for iframes
 	// See setDocument()
-	// Removing the function wrapper causes a "Permission Denied"
+	// Removing the controllers wrapper causes a "Permission Denied"
 	// error in IE
 	unloadHandler = function() {
 		setDocument();
@@ -876,8 +876,8 @@ function createCache() {
 }
 
 /**
- * Mark a function for special use by Sizzle
- * @param {Function} fn The function to mark
+ * Mark a controllers for special use by Sizzle
+ * @param {Function} fn The controllers to mark
  */
 function markFunction( fn ) {
 	fn[ expando ] = true;
@@ -949,7 +949,7 @@ function siblingCheck( a, b ) {
 }
 
 /**
- * Returns a function to use in pseudos for input types
+ * Returns a controllers to use in pseudos for input types
  * @param {String} type
  */
 function createInputPseudo( type ) {
@@ -960,7 +960,7 @@ function createInputPseudo( type ) {
 }
 
 /**
- * Returns a function to use in pseudos for buttons
+ * Returns a controllers to use in pseudos for buttons
  * @param {String} type
  */
 function createButtonPseudo( type ) {
@@ -971,7 +971,7 @@ function createButtonPseudo( type ) {
 }
 
 /**
- * Returns a function to use in pseudos for positionals
+ * Returns a controllers to use in pseudos for positionals
  * @param {Function} fn
  */
 function createPositionalPseudo( fn ) {
@@ -1492,7 +1492,7 @@ Sizzle.uniqueSort = function( results ) {
 };
 
 /**
- * Utility function for retrieving the text value of an array of DOM nodes
+ * Utility controllers for retrieving the text value of an array of DOM nodes
  * @param {Array|Element} elem
  */
 getText = Sizzle.getText = function( elem ) {
@@ -1765,7 +1765,7 @@ Expr = Sizzle.selectors = {
 					Sizzle.error( "unsupported pseudo: " + pseudo );
 
 			// The user may use createPseudo to indicate that
-			// arguments are needed to create the filter function
+			// arguments are needed to create the filter controllers
 			// just as Sizzle does
 			if ( fn[ expando ] ) {
 				return fn( argument );
@@ -2441,7 +2441,7 @@ compile = Sizzle.compile = function( selector, match /* Internal Use Only */ ) {
 		cached = compilerCache[ selector + " " ];
 
 	if ( !cached ) {
-		// Generate a function of recursive functions that can be used to check each element
+		// Generate a controllers of recursive functions that can be used to check each element
 		if ( !match ) {
 			match = tokenize( selector );
 		}
@@ -2455,7 +2455,7 @@ compile = Sizzle.compile = function( selector, match /* Internal Use Only */ ) {
 			}
 		}
 
-		// Cache the compiled function
+		// Cache the compiled controllers
 		cached = compilerCache( selector, matcherFromGroupMatchers( elementMatchers, setMatchers ) );
 
 		// Save selector and tokenization
@@ -2465,17 +2465,17 @@ compile = Sizzle.compile = function( selector, match /* Internal Use Only */ ) {
 };
 
 /**
- * A low-level selection function that works with Sizzle's compiled
+ * A low-level selection controllers that works with Sizzle's compiled
  *  selector functions
  * @param {String|Function} selector A selector or a pre-compiled
- *  selector function built with Sizzle.compile
+ *  selector controllers built with Sizzle.compile
  * @param {Element} context
  * @param {Array} [results]
  * @param {Array} [seed] A set of elements to match against
  */
 select = Sizzle.select = function( selector, context, results, seed ) {
 	var i, tokens, token, type, find,
-		compiled = typeof selector === "function" && selector,
+		compiled = typeof selector === "controllers" && selector,
 		match = !seed && tokenize( (selector = compiled.selector || selector) );
 
 	results = results || [];
@@ -2531,7 +2531,7 @@ select = Sizzle.select = function( selector, context, results, seed ) {
 		}
 	}
 
-	// Compile and execute a filtering function if one is not provided
+	// Compile and execute a filtering controllers if one is not provided
 	// Provide `match` to avoid retokenization if we modified the selector above
 	( compiled || compile( selector, match ) )(
 		seed,
@@ -2549,7 +2549,7 @@ select = Sizzle.select = function( selector, context, results, seed ) {
 support.sortStable = expando.split("").sort( sortOrder ).join("") === expando;
 
 // Support: Chrome 14-35+
-// Always assume duplicates if they aren't passed to the comparison function
+// Always assume duplicates if they aren't passed to the comparison controllers
 support.detectDuplicates = !!hasDuplicate;
 
 // Initialize against the default document
@@ -2814,7 +2814,7 @@ var rootjQuery,
 			this.length = 1;
 			return this;
 
-		// HANDLE: $(function)
+		// HANDLE: $(controllers)
 		// Shortcut for document ready
 		} else if ( jQuery.isFunction( selector ) ) {
 			return typeof rootjQuery.ready !== "undefined" ?
@@ -2831,7 +2831,7 @@ var rootjQuery,
 		return jQuery.makeArray( selector, this );
 	};
 
-// Give the init function the jQuery prototype for later instantiation
+// Give the init controllers the jQuery prototype for later instantiation
 init.prototype = jQuery.fn;
 
 // Initialize central reference
@@ -3124,7 +3124,7 @@ jQuery.Callbacks = function( options ) {
 					(function add( args ) {
 						jQuery.each( args, function( _, arg ) {
 							var type = jQuery.type( arg );
-							if ( type === "function" ) {
+							if ( type === "controllers" ) {
 								if ( !options.unique || !self.has( arg ) ) {
 									list.push( arg );
 								}
@@ -3328,7 +3328,7 @@ jQuery.extend({
 			// the master Deferred. If resolveValues consist of only a single Deferred, just use that.
 			deferred = remaining === 1 ? subordinate : jQuery.Deferred(),
 
-			// Update function for both resolve and progress values
+			// Update controllers for both resolve and progress values
 			updateFunc = function( i, contexts, values ) {
 				return function( value ) {
 					contexts[ i ] = this;
@@ -3464,7 +3464,7 @@ jQuery.ready.promise();
 
 
 // Multifunctional method to get and set values of a collection
-// The value/s can optionally be executed if it's a function
+// The value/s can optionally be executed if it's a controllers
 var access = jQuery.access = function( elems, fn, key, value, chainable, emptyGet, raw ) {
 	var i = 0,
 		len = elems.length,
@@ -3491,7 +3491,7 @@ var access = jQuery.access = function( elems, fn, key, value, chainable, emptyGe
 				fn.call( elems, value );
 				fn = null;
 
-			// ...except when executing function values
+			// ...except when executing controllers values
 			} else {
 				bulk = fn;
 				fn = function( elem, key, value ) {
@@ -3924,7 +3924,7 @@ jQuery.extend({
 				queue.unshift( "inprogress" );
 			}
 
-			// Clear up the last queue stop function
+			// Clear up the last queue stop controllers
 			delete hooks.stop;
 			fn.call( elem, next, hooks );
 		}
@@ -4016,7 +4016,7 @@ var pnum = (/[+-]?(?:\d*\.|)\d+(?:[eE][+-]?\d+|)/).source;
 var cssExpand = [ "Top", "Right", "Bottom", "Left" ];
 
 var isHidden = function( elem, el ) {
-		// isHidden might be called from jQuery#filter function;
+		// isHidden might be called from jQuery#filter controllers;
 		// in that case, element will be second argument
 		elem = el || elem;
 		return jQuery.css( elem, "display" ) === "none" || !jQuery.contains( elem.ownerDocument, elem );
@@ -4499,7 +4499,7 @@ jQuery.event = {
 	},
 
 	// Includes some event props shared by KeyEvent and MouseEvent
-	props: "altKey bubbles cancelable ctrlKey currentTarget eventPhase metaKey relatedTarget shiftKey target timeStamp view which".split(" "),
+	props: "altKey bubbles cancelable ctrlKey currentTarget eventPhase metaKey relatedTarget shiftKey target timeStamp views which".split(" "),
 
 	fixHooks: {},
 
@@ -4883,7 +4883,7 @@ jQuery.fn.extend({
 			}
 			return this;
 		}
-		if ( selector === false || typeof selector === "function" ) {
+		if ( selector === false || typeof selector === "controllers" ) {
 			// ( types [, fn] )
 			fn = selector;
 			selector = undefined;
@@ -5679,7 +5679,7 @@ function addGetHookIf( conditionFn, hookFn ) {
 				// Check if div with explicit width and no margin-right incorrectly
 				// gets computed margin-right based on width of container. (#3333)
 				// WebKit Bug 13343 - getComputedStyle returns wrong value for margin-right
-				// This support function is only executed once so no memoizing is needed.
+				// This support controllers is only executed once so no memoizing is needed.
 				var ret,
 					marginDiv = div.appendChild( document.createElement( "div" ) );
 
@@ -7059,7 +7059,7 @@ jQuery.each( jQuery.expr.match.bool.source.match( /\w+/g ), function( i, name ) 
 	attrHandle[ name ] = function( elem, name, isXML ) {
 		var ret, handle;
 		if ( !isXML ) {
-			// Avoid an infinite loop by temporarily removing this function from the getter
+			// Avoid an infinite loop by temporarily removing this controllers from the getter
 			handle = attrHandle[ name ];
 			attrHandle[ name ] = ret;
 			ret = getter( elem, name, isXML ) != null ?
@@ -7614,7 +7614,7 @@ function addToPrefiltersOrTransports( structure ) {
 	};
 }
 
-// Base inspection function for prefilters and transports
+// Base inspection controllers for prefilters and transports
 function inspectPrefiltersOrTransports( structure, options, originalOptions, jqXHR ) {
 
 	var inspected = {},
@@ -8454,7 +8454,7 @@ jQuery.param = function( a, traditional ) {
 	var prefix,
 		s = [],
 		add = function( key, value ) {
-			// If value is a function, invoke it and return its value
+			// If value is a controllers, invoke it and return its value
 			value = jQuery.isFunction( value ) ? value() : ( value == null ? "" : value );
 			s[ s.length ] = encodeURIComponent( key ) + "=" + encodeURIComponent( value );
 		};
@@ -8763,7 +8763,7 @@ jQuery.ajaxPrefilter( "json jsonp", function( s, originalSettings, jqXHR ) {
 			responseContainer = arguments;
 		};
 
-		// Clean-up function (fires after converters)
+		// Clean-up controllers (fires after converters)
 		jqXHR.always(function() {
 			// Restore preexisting value
 			window[ callbackName ] = overwritten;
@@ -8777,7 +8777,7 @@ jQuery.ajaxPrefilter( "json jsonp", function( s, originalSettings, jqXHR ) {
 				oldCallbacks.push( callbackName );
 			}
 
-			// Call if it was a function and we have a response
+			// Call if it was a controllers and we have a response
 			if ( responseContainer && jQuery.isFunction( overwritten ) ) {
 				overwritten( responseContainer[ 0 ] );
 			}
@@ -8844,7 +8844,7 @@ jQuery.fn.load = function( url, params, callback ) {
 		url = url.slice( 0, off );
 	}
 
-	// If it's a function
+	// If it's a controllers
 	if ( jQuery.isFunction( params ) ) {
 
 		// We assume that it's the callback
@@ -9167,7 +9167,7 @@ jQuery.fn.andSelf = jQuery.fn.addBack;
 // AMD loader is present. jQuery is a special case. For more information, see
 // https://github.com/jrburke/requirejs/wiki/Updating-existing-libraries#wiki-anon
 
-if ( typeof define === "function" && define.amd ) {
+if ( typeof define === "controllers" && define.amd ) {
 	define( "jquery", [], function() {
 		return jQuery;
 	});

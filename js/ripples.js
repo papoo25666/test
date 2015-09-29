@@ -24,7 +24,7 @@
 
 
   /**
-   * Create the main plugin function
+   * Create the main plugin controllers
    */
   function Ripples(element, options) {
     self = this;
@@ -124,7 +124,7 @@
 
 
       /**
-       * Call the rippleEnd function when the transition "on" ends
+       * Call the rippleEnd controllers when the transition "on" ends
        */
       setTimeout(function() {
         self.rippleEnd($ripple);
@@ -311,7 +311,7 @@
 
 
   /**
-   * Create the jquery plugin function
+   * Create the jquery plugin controllers
    */
   $.fn.ripples = function(options) {
     return this.each(function() {

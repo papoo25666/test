@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Scrum Board</title>
     <?php
-    include_once "function/link.php";
-    getStylePatch();
+    include_once "views/Styles.php";
+    Style::getStylePatch();
     ?>
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
 
@@ -118,7 +118,7 @@
 
 <!--JavaScript-->
 <?php
-getSctiptPatch();
+Style::getSctiptPatch();
 ?>
 </body>
 </html>

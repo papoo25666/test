@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Scrum Board</title>
     <?php
-    include_once "function/link.php";
-    getStylePatch();
+    include_once "views/Styles.php";
+    Style::getStylePatch();
     ?>
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
 
@@ -76,58 +76,59 @@
                 <li class="summary-menu" data-toggle="modal" data-target="#menu"><h4>Project</h4></li>
             </ul>
         </nav>
-        <div class="col-lg-10 col-md-10 col-sm-10" ">
-            <div class="col-lg-6 col-sm-6 col-md-6">
-                <div class="text-center">
-                    <h4>Sprint</h4>
-                    <div class="panel col-lg-offset-2" style="width: 350px;height: 200px">
+        <div class="col-lg-10 col-md-10 col-sm-10"
+        ">
+        <div class="col-lg-6 col-sm-6 col-md-6">
+            <div class="text-center">
+                <h4>Sprint</h4>
 
-                    </div>
+                <div class="panel col-lg-offset-2" style="width: 350px;height: 200px">
+
                 </div>
-
             </div>
 
-            <div class="col-lg-6 col-sm-6 col-md-6">
-                <div class="text-center">
-                    <h4>Problem</h4>
-                    <div class="panel col-lg-offset-2" style="width: 350px;height: 200px">
+        </div>
 
-                    </div>
+        <div class="col-lg-6 col-sm-6 col-md-6">
+            <div class="text-center">
+                <h4>Problem</h4>
+
+                <div class="panel col-lg-offset-2" style="width: 350px;height: 200px">
                 </div>
+            </div>
 
+        </div>
+</div>
+</section>
+<!--Footer-->
+<section class="footer-content">
+    <footer style="padding: 20px">
+        <div class="container">
+            <div class="row hidden-xs">
+                <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
+                    <p>@2015 Scrum Board</p>
+                </div>
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-4">
+                    <p>Team</p>
+                </div>
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-4">
+                    <p>Privacy</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="text-center">
+                    <p style="font-weight: bold;font-size: 1.1em">Develop by Computer Science. Khon Kaen
+                        University.Thailand </p>
+                </div>
             </div>
         </div>
-    </section>
-    <!--Footer-->
-    <section class="footer-content">
-        <footer style="padding: 20px">
-            <div class="container">
-                <div class="row hidden-xs">
-                    <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
-                        <p>@2015 Scrum Board</p>
-                    </div>
-                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-4">
-                        <p>Team</p>
-                    </div>
-                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-4">
-                        <p>Privacy</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="text-center">
-                        <p style="font-weight: bold;font-size: 1.1em">Develop by Computer Science. Khon Kaen
-                            University.Thailand </p>
-                    </div>
-                </div>
-            </div>
-        </footer>
-    </section>
+    </footer>
+</section>
 </div>
-
 
 <!--JavaScript-->
 <?php
-getSctiptPatch();
+Style::getSctiptPatch();
 ?>
 
 <script type="application/javascript">
