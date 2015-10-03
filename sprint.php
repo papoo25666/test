@@ -17,6 +17,21 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <style>
+        .problem {
+            border: 0;
+            border-top: 1px;
+            border-style: solid;
+        }
+
+        .withripple {
+            border: 0;
+            border-top: 1px;
+            border-style: solid;
+        }
+
+    </style>
 </head>
 <body>
 <div class="wrapper" style="background-color: #fff">
@@ -36,20 +51,13 @@
         <div class="navbar-collapse collapse navbar-inverse-collapse">
             <ul class="nav navbar-nav">
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Team <span class="caret"></span></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Create Team</a></li>
-                        <li><a href="#">Team members</a></li>
-                    </ul>
-                </li>
-
-                <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Summary <span class="caret"></span></i>
                     </a>
                     <ul class="dropdown-menu">
                         <li><a href="#">This sprint</a></li>
                     </ul>
                 </li>
+
             </ul>
             <ul class="nav navbar-nav navbar-right" style="margin: 0;">
                 <li class="active dropdown">
@@ -70,7 +78,8 @@
     <!--End Navbar-->
 
     <section class="content" style="min-height: 500px;">
-        <nav class="col-lg-2 col-md-2 col-sm-2 menu-sprint" style="background-color: #03a9f4;height: 500px">
+        <nav class="col-lg-2 col-md-2 col-sm-2 col-xs-12 hidden-xs menu-sprint"
+             style="background-color: #03a9f4;height: 500px">
             <div class="profile" style="height: 180px;background-color: #233239;">
                 <div class="" style="padding: 20px">
                     <img src="images/user.jpg" style="width: 100px;height: 100px;"
@@ -94,161 +103,97 @@
         <div class="col-lg-7 col-md-7 col-sm-7 col-sm-7">
             <h3 class="sprint-backlog-centent">Sprint 1</h3>
 
-            <table class="table table-bordered">
-                <tr class="info" style="font-weight: bold">
-                    <td>User Story</td>
-                    <td>Tasks</td>
-                    <td>Doing</td>
-                    <td>Done</td>
-                </tr>
-                <tr class="">
-                    <td>
-                        <div class="col-lg-12 col-md-12 col-ms-12">
-                            <form class="form-horizontal">
-                                <div class="form-group has-info">
-                                    <input type="text" placeholder="user story" class="form-control"/>
-                                </div>
-                            </form>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="col-lg-12 col-md-12 col-ms-12">
-                            <form class="form-horizontal">
-                                <div class="form-group has-info">
-                                    <input type="text" class="form-control" placeholder="task"/>
-                                    <input type="text" class="form-control" placeholder="estimate"/>
-                                    <input type="text" class="form-control" placeholder="volunteer"/>
-                                </div>
-                            </form>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="col-lg-12 col-md-12 col-ms-12">
-                            <form class="form-horizontal">
-                                <div class="form-group has-info">
-                                    <input type="text" class="form-control" placeholder="doing"/>
-                                </div>
-                            </form>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="col-lg-12 col-md-12 col-ms-12">
-                            <form class="form-horizontal">
-                                <div class="form-group has-info">
-                                    <input type="text" class="form-control" placeholder="done"/>
-                                </div>
-                            </form>
-                        </div>
-                    </td>
-                </tr>
-
-                <!-- -->
-                <tr>
-                    <td>
-                        <div class="col-lg-12 col-md-12 col-ms-12">
-                            <form class="form-horizontal">
-                                <div class="form-group has-info">
-                                    <input type="text" placeholder="user story" class="form-control"/>
-                                </div>
-                            </form>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="col-lg-12 col-md-12 col-ms-12">
-                            <form class="form-horizontal">
-                                <div class="form-group has-info">
-                                    <input type="text" class="form-control" placeholder="task"/>
-                                    <input type="text" class="form-control" placeholder="estimate"/>
-                                </div>
-                            </form>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="col-lg-12 col-md-12 col-ms-12">
-                            <form class="form-horizontal">
-                                <div class="form-group has-info">
-                                    <input type="text" class="form-control" placeholder="doing"/>
-                                </div>
-                            </form>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="col-lg-12 col-md-12 col-ms-12">
-                            <form class="form-horizontal">
-                                <div class="form-group has-info">
-                                    <input type="text" class="form-control" placeholder="done"/>
-                                </div>
-                            </form>
-                        </div>
-                    </td>
-                </tr>
-
-                <!-- -->
-                <tr>
-                    <td>
-                        <div class="col-lg-12 col-md-12 col-ms-12">
-                            <form class="form-horizontal">
-                                <div class="form-group has-info">
-                                    <input type="text" placeholder="user story" class="form-control"/>
-                                </div>
-                            </form>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="col-lg-12 col-md-12 col-ms-12">
-                            <form class="form-horizontal">
-                                <div class="form-group has-info">
-                                    <input type="text" class="form-control" placeholder="task"/>
-                                    <input type="text" class="form-control" placeholder="estimate"/>
-                                </div>
-                            </form>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="col-lg-12 col-md-12 col-ms-12">
-                            <form class="form-horizontal">
-                                <div class="form-group has-info">
-                                    <input type="text" class="form-control" placeholder="doing"/>
-                                </div>
-                            </form>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="col-lg-12 col-md-12 col-ms-12">
-                            <form class="form-horizontal">
-                                <div class="form-group has-info">
-                                    <input type="text" class="form-control" placeholder="done"/>
-                                </div>
-                            </form>
-                        </div>
-                    </td>
-                </tr>
-            </table>
+            <div class="row" style="margin: 0;">
+                <table class="table table-bordered">
+                    <tr class="info" style="font-weight: bold">
+                        <td>User Story</td>
+                        <td>Tasks</td>
+                        <td>Doing</td>
+                        <td>Done</td>
+                    </tr>
+                    <tr class="">
+                        <td>
+                            <div class="col-lg-12 col-md-12 col-ms-12">
+                                <form class="form-horizontal">
+                                    <div class="form-group has-info">
+                                        <input type="text" placeholder="user story"
+                                               value="As a customer, I want ot search for book by title"
+                                               class="form-control"/>
+                                    </div>
+                                </form>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="col-lg-12 col-md-12 col-ms-12">
+                                <form class="form-horizontal">
+                                    <div class="form-group has-info">
+                                        <input type="text" class="form-control" placeholder="task"
+                                               value="design form for search"/>
+                                        <input type="text" class="form-control" placeholder="3"/>
+                                        <input type="text" class="form-control" placeholder="Kotchaphan"/>
+                                    </div>
+                                </form>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="col-lg-12 col-md-12 col-ms-12">
+                                <form class="form-horizontal">
+                                    <div class="form-group has-info">
+                                        <input type="text" class="form-control" placeholder="doing"/>
+                                    </div>
+                                </form>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="col-lg-12 col-md-12 col-ms-12">
+                                <form class="form-horizontal">
+                                    <div class="form-group has-info">
+                                        <input type="text" class="form-control" placeholder="done"/>
+                                    </div>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
         </div>
 
-        <!--        Problem-->
-        <div class="col-lg-3 col-md-3 col-sm-3">
-            <div style="margin: 30px 0 10px 0">
-                <a href="#" class="btn btn-danger btn-fab btn-raised mdi-action-note-add"></a>
-                <span style="font-size: 1.5em">Add Problem</span>
-            </div>
+        <div class="col-lg-3 col-md-3 hidden-xs">
+            <div class="detailBox">
+                <div class="titleBox">
+                    <label>Comment Box</label>
+                    <button type="button" class="close" aria-hidden="true">&times;</button>
+                </div>
+                <div class="commentBox">
+                    <p class="taskDescription">Problem Tracking.</p>
+                </div>
+                <div class="actionBox">
+                    <ul class="commentList">
+                        <?php for ($i = 0; $i < 10; $i++) { ?>
+                            <li>
+                                <div class="commenterImage">
+                                    <img src="images/user.jpg" style="width: 50px;height: 50px"/>
+                                </div>
+                                <div class="commentText">
+                                    <p class="">Hello.</p> <span class="date sub-text">on March 5th, 2015</span>
 
-            <nav class="menu-problem" style="background-color: #5c6bc0;height: 350px">
-                <ul ng-app="" style="padding-left: 0">
-                    <li class="problem" data-toggle="modal" data-target="#menu"><h4>Problem 1</h4></li>
-                    <li class="problem" data-toggle="modal" data-target="#menu"><h4>Problem 2</h4></li>
-                    <li class="problem" data-toggle="modal" data-target="#menu"><h4>Problem 3</h4></li>
-                    <li class="problem" data-toggle="modal" data-target="#menu"><h4>Problem 4</h4></li>
-                    <li class="problem" data-toggle="modal" data-target="#menu"><h4>Problem 5</h4></li>
-                    <li class="problem" data-toggle="modal" data-target="#menu"><h4>Problem 6</h4></li>
-                    <li class="problem" data-toggle="modal" data-target="#menu"><h4>Problem 7</h4></li>
-                    <li class="problem" data-toggle="modal" data-target="#menu"><h4>Problem 8</h4></li>
-                    <li class="problem" data-toggle="modal" data-target="#menu"><h4>Problem 9</h4></li>
-                    <li class="problem" data-toggle="modal" data-target="#menu"><h4>Problem 10</h4></li>
-                </ul>
-            </nav>
+                                </div>
+                            </li>
+                        <?php } ?>
+                    </ul>
+                    <form class="form-inline" role="form">
+                        <div class="form-group">
+                            <input class="form-control" type="text" placeholder="Your comments"/>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-info" style="padding: 5px 0 5px 0">Add</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </section>
+
     <!--Footer-->
     <section class="footer-content">
         <footer style="padding: 20px">

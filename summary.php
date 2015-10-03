@@ -36,14 +36,6 @@
         <div class="navbar-collapse collapse navbar-inverse-collapse">
             <ul class="nav navbar-nav">
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Team <span class="caret"></span></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Create Team</a></li>
-                        <li><a href="#">Team members</a></li>
-                    </ul>
-                </li>
-
-                <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Summary <span class="caret"></span></i>
                     </a>
                     <ul class="dropdown-menu">
@@ -69,61 +61,38 @@
     </section>
     <!--End Navbar-->
 
-    <section class="content" style="min-height: 500px;">
-        <nav class="col-lg-2 col-md-2 col-sm-2 menu-sprint" style="background-color: #333;height: 500px">
-            <ul ng-app="" style="padding-left: 0">
-                <li class="summary-menu" data-toggle="modal" data-target="#menu"><h4>Dashboad</h4></li>
-                <li class="summary-menu" data-toggle="modal" data-target="#menu"><h4>Project</h4></li>
-            </ul>
-        </nav>
-        <div class="col-lg-10 col-md-10 col-sm-10"
-        ">
-        <div class="col-lg-6 col-sm-6 col-md-6">
-            <div class="text-center">
-                <h4>Sprint</h4>
+    <section class="content" style="min-height: 530px;">
+        <div class="col-lg-12 col-md-12 col-sm-12">
 
-                <div class="panel col-lg-offset-2" style="width: 350px;height: 200px">
-
-                </div>
-            </div>
-
-        </div>
-
-        <div class="col-lg-6 col-sm-6 col-md-6">
-            <div class="text-center">
-                <h4>Problem</h4>
-
-                <div class="panel col-lg-offset-2" style="width: 350px;height: 200px">
-                </div>
-            </div>
-
-        </div>
-</div>
-</section>
-<!--Footer-->
-<section class="footer-content">
-    <footer style="padding: 20px">
-        <div class="container">
-            <div class="row hidden-xs">
-                <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
-                    <p>@2015 Scrum Board</p>
-                </div>
-                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-4">
-                    <p>Team</p>
-                </div>
-                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-4">
-                    <p>Privacy</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="text-center">
-                    <p style="font-weight: bold;font-size: 1.1em">Develop by Computer Science. Khon Kaen
-                        University.Thailand </p>
-                </div>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-lg-offset-2 col-md-offset-2 col-sm-offset-2" style="background-color: #333;min-height: 400px;margin-top: 80px">
             </div>
         </div>
-    </footer>
-</section>
+    </section>
+
+    <!--Footer-->
+    <section class="footer-content">
+        <footer style="padding: 20px">
+            <div class="container">
+                <div class="row hidden-xs">
+                    <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
+                        <p>@2015 Scrum Board</p>
+                    </div>
+                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-4">
+                        <p>Team</p>
+                    </div>
+                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-4">
+                        <p>Privacy</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="text-center">
+                        <p style="font-weight: bold;font-size: 1.1em">Develop by Computer Science. Khon Kaen
+                            University.Thailand </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </section>
 </div>
 
 <!--JavaScript-->

@@ -34,21 +34,9 @@
 
         <div class="navbar-collapse collapse navbar-inverse-collapse">
             <ul class="nav navbar-nav">
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Team <span class="caret"></span></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Create Team</a></li>
-                        <li><a href="#">Team members</a></li>
-                    </ul>
-                </li>
-
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Problem <span class="caret"></span></i>
+                <li>
+                    <a href="sprint.php">Sprint Backlog</i>
                     </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Add problem</a></li>
-                        <li><a href="#">Problem lists</a></li>
-                    </ul>
                 </li>
 
                 <li class="dropdown">
@@ -81,13 +69,13 @@
         <div class="">
             <div class="row" style="margin: 0">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <h3 style="font-weight: 500">Product Backlog</h3>
+                    <h3 style="font-weight: 500">Product Backlog Items</h3>
 
                     <div class="backlog"
                          style="border: 1px solid #90CAF9;border-left: 0;border-right: 0;border-bottom: 0">
                         <div class="create-backlog" style="margin-top: 5px">
                             <a href="#" class="btn btn-warning btn-fab btn-raised mdi-action-note-add"></a>
-                            <span style="font-size: 1.5em">Create Product Backlog</span>
+                            <span style="font-size: 1.5em">Add Product Backlog Items</span>
                         </div>
                     </div>
                 </div>
@@ -95,45 +83,27 @@
             <div class="row" style="margin-top: 0;margin-bottom: 20px;margin-left: 0;margin-right: 0">
                 <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 col-lg-offset-1 col-md-offset-1 col-sm-offset-1"
                     >
-                    <?php
-                    for($i == 0;$i <= 20;$i++) {
-                        ?>
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"
-                            >
-                            <form role="form" class="form-backlog">
-                                <div class="btn-group pull-right dropdown-group" style="margin: 0;">
-                                    <a href="#" data-target="#"
-                                       class="btn btn-default dropdown-toggle dropdown-caret" data-toggle="dropdown">
-                                        <span class="caret"></span>
-                                    </a>
-                                    <ul class="dropdown-menu" style="min-width: 100px;border-radius: 0">
-                                        <li><a href="#">Add team member</a></li>
-                                        <li><a href="#">Rename</a></li>
-                                        <li><a href="#">Delete</a></li>
-                                    </ul>
-                                </div>
-                                <div class="form-group" style="padding: 20px">
-                                    <div class="row">
-                                        <span class="badge pull-right">3</span>
-                                    </div>
-                                    <div class="row">
-                                        <div class="text-center">
-                                            <a href="sprint.php" class="backlog-name">
-                                                <h3 style="color: #fff;margin:5px 0">Demo</h3>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="text-center">
-                                            <i class="mdi-hardware-memory hidden-xs"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr class="warning">
+                            <th>Items</th>
+                            <th>Value</th>
+                        </tr>
+                        </thead>
+                        <tbody>
                         <?php
-                    }
-                    ?>
+                        require_once "database/Backlog.php";
+                        $db = new BacklogItems("localhost", "root", "", "scrum_board");
+                        $result = $db->query("backlog_items");
+                        while ($row = mysqli_fetch_array($result)) {
+                            ?>
+                            <tr class="info">
+                                <td><?php echo $row['item_name'] ?></td>
+                                <td style="width: 15%"><?php echo $row['value'] ?></td>
+                            </tr>
+                        <?php } ?>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
