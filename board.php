@@ -92,8 +92,8 @@
                         </thead>
                         <tbody>
                         <?php
-                        require_once "database/Backlog.php";
-                        $db = new BacklogItems("localhost", "root", "", "scrum_board");
+                        require_once "database/backlog_db.php";
+                        $db = new BacklogItems();
                         $result = $db->query("backlog_items");
                         while ($row = mysqli_fetch_array($result)) {
                             ?>

@@ -1,4 +1,5 @@
 <?php
+require_once "../configs/config.php";
 
 class BacklogItems
 {
@@ -6,9 +7,9 @@ class BacklogItems
     private $result;
     private $numrows;
 
-    public function __construct($server, $username, $password, $dbname)
+    public function __construct()
     {
-        $this->conn = mysqli_connect($server, $username, $password, $dbname) or die(mysqli_connect_error());
+        $this->conn = mysqli_connect(SERVER, USERNAME, PASSWORD, DBNAME) or die(mysqli_connect_error());
     }
 
     public function query($sql)

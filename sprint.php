@@ -117,7 +117,7 @@
                                 <form class="form-horizontal">
                                     <div class="form-group has-info">
                                         <input type="text" placeholder="user story"
-                                               value="As a customer, I want ot search for book by title"
+                                               value="As a customer, I want to search for book by title"
                                                class="form-control"/>
                                     </div>
                                 </form>
