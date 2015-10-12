@@ -1,0 +1,47 @@
+.navbar-inverse .navbar-collapse {
+    border-color: #fff;
+}
+
+.navbar-inverse.navbar {
+    background-color: rgba(10, 33, 38, 0.9);
+}
+
+.navbar-inverse {
+    border-color: transparent;
+}
+
+.login-button {
+    font-weight: bold;
+    font-size: 15px;
+    color: #fff;
+    vertical-align: middle;
+}
+
+.login-button:hover {
+    cursor: pointer;
+    transition: all 0.7s ease;
+    -webkit-transition: all 0.7s ease;
+    -o-transition: all 0.7s ease;
+    background-color: rgba(10, 33, 38, 0.9);
+    -moz-transition: all 0.7s ease;
+    font-size: 15.2px;
+
+}
+
+.navbar-inverse .navbar-nav > .active > a {
+    background-color: transparent;
+    color: #fff;
+    padding-top: 20px;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #fff !important;
+    letter-spacing: 2px;
+    font-size: 22px;
+    font-family: sukhumvit;
+    font-weight: bold
+}
+
+.navbar-inverse .navbar-brand:hover {
+    color: #3081c1 !important;
+}

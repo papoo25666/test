@@ -9,6 +9,7 @@
     require_once "views/Styles.php";
     Style::getStylePatch();
     ?>
+    <link rel="stylesheet" href="css/navbar.css"/>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -21,17 +22,19 @@
 <div class="wrapper">
 
     <!--Navbar-->
-    <section class="navbar navbar-inverse navbar-static-top" style="margin: 0">
+    <section class="navbar navbar-inverse navbar-fixed-top" style="margin: 0">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-inverse-collapse">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
+            <a class="navbar-brand" href="index.php">Scrum Board</a>
         </div>
         <div class="navbar-collapse collapse navbar-inverse-collapse">
+
             <ul class="nav navbar-nav navbar-right" style="margin-right: 0">
-                <li class="active text-center"><a class="login-button" href="login.php">Log
+                <li class="active text-center text-login"><a class="login-button" href="login.php">Log
                         In</a></li>
             </ul>
         </div>
@@ -39,10 +42,10 @@
     <!--End Navbar-->
 
     <!--Welcome message -->
-    <section class="header-content">
+    <section class="header-content" style="margin-top: 30px">
         <div class="">
             <div class="jumbotron text-center" style="background-color: #4285f4;margin-bottom: 0">
-                <h1 class="text-center" style="color:#fff;font-family: sukhumvit" >ระบบติดตามการทำงานของสกรัมทีม</h1>
+                <h1 class="text-center" style="color:#fff;font-family: sukhumvit">ระบบติดตามการทำงานของสกรัมทีม</h1>
 
                 <h3>Issue and Progress tracking designed for Scrum team</h3>
 
@@ -65,15 +68,34 @@
         </div>
     </section>
 
-    <section class="about-feature">
-        <div class="col-lg-4 col-md-4 col-6 col-xs-12">
+    <section class="about-feature" style="background-color: #E0E0E0">
+        <div class="">
+            <div class="container">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 text-center" style="border-color:#E0E0E0;
+                border-style: solid;">
+                    <img src="images/ic_update.png" style="width: 60%;margin: 0" class="img img-circle"/>
 
-        </div>
-        <div class="col-lg-4 col-md-4 col-6 col-xs-12">
-        </div>
-        <div class="col-lg-4 col-md-4 col-6 col-xs-12">
-        </div>
-        <div class="col-lg-4 col-md-4 col-6 col-xs-12">
+                    <h2 style="font-family: sukhumvit;color: #000" class="text-center">อัพเดทงาน</h2>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 text-center" style="border-color:#E0E0E0;
+                border-style: solid;">
+                    <img src="images/ic_tracking.png" style="width: 60%;color: #000" class="img"/>
+
+                    <h2 style="font-family: sukhumvit;color: #000" class="text-center">ติดตามงาน</h2>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 text-center" style="border-color:#E0E0E0;
+                border-style: solid;">
+                    <img src="images/ic_report.png" style="width: 60%;" class="img"/>
+
+                    <h2 style="font-family: sukhumvit;color: #000" class="text-center">วางแผนงาน</h2>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 text-center" style="border-color:#E0E0E0;
+                border-style: solid;">
+                    <img src="images/ic_chart.png" style="width: 60%;" class="img"/>
+
+                    <h2 style="font-family: sukhumvit;color: #000" class="text-center">สรุปผลการทำงาน</h2>
+                </div>
+            </div>
         </div>
     </section>
 

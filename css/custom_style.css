@@ -1,7 +1,8 @@
 @font-face {
     font-family: sukhumvit;
-    src: url('../fonts/sukhumvitlight-webfont.eot') , url('../fonts/sukhumvitlight-webfont.ttf') , url('../fonts/fontawesome-webfont.svg');
+    src: url('../fonts/sukhumvitlight-webfont.eot'), url('../fonts/sukhumvitlight-webfont.ttf'), url('../fonts/fontawesome-webfont.svg');
 }
+
 .text-blue {
     color: #373277 !important;
 }
@@ -9,15 +10,10 @@
 body {
     background-color: #fff;
     color: #fff;
-    font-family: sukhumvit, Arial, sans-serif;
 }
 
 .jumbotron {
     border-radius: 0 !important;
-}
-
-.navbar-inverse.navbar {
-    background-color: #4285f4;
 }
 
 .btn {
@@ -41,23 +37,9 @@ body {
 }
 
 footer {
-    background-color: #4285f4;
+    background-color: rgba(10, 33, 38, 0.9);
 }
 
-.login-button {
-    font-weight: bold;
-    font-size: 15px;
-}
-
-.login-button:hover {
-    cursor: pointer;
-    transition: all 0.7s ease;
-    -webkit-transition: all 0.7s ease;
-    -o-transition: all 0.7s ease;
-    -moz-transition: all 0.7s ease;
-    color: #33e0e6 !important;
-
-}
 
 .btn-success:hover {
     transition: all 0.5s ease;
@@ -280,6 +262,7 @@ label {
     min-height: 1200px;
     background: transparent;
 }
+
 .sprint-problem-centent {
 
 }
@@ -393,4 +376,9 @@ label {
 .actionBox {
     border-top: 1px dotted #bbb;
     padding: 10px;
+}
+.well {
+    border: 0;
+    border-radius: 0;
+    background-color: #E0E0E0;
 }
