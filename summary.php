@@ -64,7 +64,10 @@
     <section class="content" style="min-height: 530px;">
         <div class="col-lg-12 col-md-12 col-sm-12">
 
-            <div class="col-lg-8 col-md-8 col-sm-8 col-lg-offset-2 col-md-offset-2 col-sm-offset-2" style="background-color: #333;min-height: 400px;margin-top: 80px">
+            <div class="col-lg-8 col-md-8 col-sm-8 col-lg-offset-2 col-md-offset-2 col-sm-offset-2"
+                 style="background-color: #333;min-height: 380px;margin-top: 80px;padding-left: 0; padding-right: 0">
+
+                <img src="images/bdc.png" class="img img-responsive" style="min-height: 380px;width: 100%"/>
             </div>
         </div>
     </section>

@@ -169,17 +169,44 @@
                 </div>
                 <div class="actionBox">
                     <ul class="commentList">
-                        <?php for ($i = 0; $i < 10; $i++) { ?>
-                            <li>
-                                <div class="commenterImage">
-                                    <img src="images/user.jpg" style="width: 50px;height: 50px"/>
-                                </div>
-                                <div class="commentText">
-                                    <p class="">Hello.</p> <span class="date sub-text">on March 5th, 2015</span>
+                        <li>
+                            <div class="commenterImage">
+                                <img src="images/user.jpg" style="width: 50px;height: 50px"/>
+                            </div>
+                            <div class="commentText">
+                                <p class="">API not working</p> <span class="date sub-text">on March 5th, 2015</span>
+                            </div>
+                        </li>
 
-                                </div>
-                            </li>
-                        <?php } ?>
+                        <li>
+                            <div class="commenterImage">
+                                <img src="images/user.jpg" style="width: 50px;height: 50px"/>
+                            </div>
+                            <div class="commentText">
+                                <p class="">Network die</p> <span class="date sub-text">on March 5th, 2015</span>
+                            </div>
+                        </li>
+
+
+                        <li>
+                            <div class="commenterImage">
+                                <img src="images/user.jpg" style="width: 50px;height: 50px"/>
+                            </div>
+                            <div class="commentText">
+                                <p class="">Fragments crash</p> <span class="date sub-text">on March 5th, 2015</span>
+                            </div>
+                        </li>
+
+
+                        <li>
+                            <div class="commenterImage">
+                                <img src="images/user.jpg" style="width: 50px;height: 50px"/>
+                            </div>
+                            <div class="commentText">
+                                <p class="">Android not working</p> <span class="date sub-text">on March 5th, 2015</span>
+                            </div>
+                        </li>
+
                     </ul>
                     <form class="form-inline" role="form">
                         <div class="form-group">

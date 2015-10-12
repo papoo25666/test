@@ -1,5 +1,5 @@
 <?php
-require_once "../configs/config.php";
+include "../configs/config.php";
 
 class BacklogItems
 {

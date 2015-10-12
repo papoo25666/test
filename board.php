@@ -88,18 +88,21 @@
                         <tr class="warning">
                             <th>Items</th>
                             <th>Value</th>
+                            <th>Priority</th>
                         </tr>
                         </thead>
                         <tbody>
                         <?php
-                        require_once "database/backlog_db.php";
+                        include  "configs/config.php";
+                        include "database/backlog_db.php";
                         $db = new BacklogItems();
                         $result = $db->query("backlog_items");
                         while ($row = mysqli_fetch_array($result)) {
                             ?>
                             <tr class="info">
                                 <td><?php echo $row['item_name'] ?></td>
-                                <td style="width: 15%"><?php echo $row['value'] ?></td>
+                                <td style="width: 10%"><?php echo $row['value'] ?></td>
+                                <td style="width: 10%"><?php echo $row['id'] ?></td>
                             </tr>
                         <?php } ?>
                         </tbody>

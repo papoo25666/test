@@ -81,7 +81,7 @@
     <section class="header-content">
         <div class="">
             <div class="jumbotron text-center" style="background-color: #4285f4;margin-bottom: 0">
-                <h1 class="text-center" style="color:#fff">Welcome to Scrum Board</h1>
+                <h1 class="text-center" style="color:#fff">ระบบ to Scrum Board</h1>
 
                 <h3>Issue and Progress tracking designed for Scrum team</h3>
 
@@ -101,6 +101,18 @@
     <section class="body-content">
         <div class="content-bg">
             <img src="images/bg_work_feature.png" class="img img-responsive" style="width: 100%">
+        </div>
+    </section>
+
+    <section class="about-feature">
+        <div class="col-lg-4 col-md-4 col-6 col-xs-12">
+
+        </div>
+        <div class="col-lg-4 col-md-4 col-6 col-xs-12">
+        </div>
+        <div class="col-lg-4 col-md-4 col-6 col-xs-12">
+        </div>
+        <div class="col-lg-4 col-md-4 col-6 col-xs-12">
         </div>
     </section>
 
