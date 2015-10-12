@@ -10,6 +10,8 @@
     Style::getStylePatch();
     ?>
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/button.css" />
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -19,62 +21,48 @@
     <![endif]-->
 </head>
 <body>
-<div class="wrapper" style="background-color: #B2EBF2">
+<div class="wrapper">
     <!--Navbar-->
-    <section class="navbar navbar-inverse navbar-static-top" style="margin: 0">
+    <section class="navbar navbar-inverse navbar-fixed-top" style="margin: 0">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-inverse-collapse">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-        </div>
-        <div class="navbar-collapse collapse navbar-inverse-collapse">
-            <ul class="nav navbar-nav navbar-left" style="margin-top: 0">
-                <li class="active text-center">
-                    <a class="login-button" href="index.php">Home</a>
-                </li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right" style="margin-right: 0">
-
-            </ul>
+            <a class="navbar-brand" href="index.php">Scrum Board</a>
         </div>
     </section>
     <!--End Navbar-->
 
-    <section class="content" style="background-color: #fff">
-        <div class="container" style="background-color: #B2DFDB;min-height: 550px;">
-            <div class="row" style="margin-top: 20px;padding: 40px;">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-lg-offset-3 col-md-offset-3 col-sm-offset-3">
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-lg-offset-3 col-md-offset-3 col-sm-offset-3"
-                     style="background-color: #fff;">
-                    <h3 style="font-weight: 400;">Sign up</h3>
-
+    <section class="content">
+        <div class="" style="margin-top: 70px">
+            <div class="row" style="margin:0;px;padding: 40px;">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-lg-offset-4 col-md-offset-4 col-sm-offset-4"
+                     style="background-color: #E0E0E0;padding: 20px">
+                    <h2 class="text-center" style="color: #333;font-weight: bold;margin-top: 10px">Sign up</h2>
                     <form role="form" class="form-horizontal" style="margin-top: 10px;padding: 10px">
-                        <div class="form-group has-success">
+                        <div class="form-group">
                             <div class="col-lg-12" style="padding-left: 0">
                                 <input type="text" class="form-control" id="fname" placeholder="First name">
                             </div>
                         </div>
-                        <div class="form-group  has-success">
+                        <div class="form-group">
                             <div class="col-lg-12" style="padding-left: 0">
                                 <input type="text" class="form-control" id="lname" placeholder="Last name">
                             </div>
                         </div>
-                        <div class="form-group  has-success">
+                        <div class="form-group">
                             <div class="col-lg-12" style="padding-left: 0">
                                 <input type="text" class="form-control" id="username" placeholder="Username">
                             </div>
                         </div>
-                        <div class="form-group  has-success">
+                        <div class="form-group">
                             <div class="col-lg-12" style="padding-left: 0">
                                 <input type="password" class="form-control" id="password" placeholder="Password">
                             </div>
                         </div>
-                        <div class="form-group  has-success">
+                        <div class="form-group">
                             <div class="col-lg-12" style="padding-left: 0">
                                 <input type="email" class="form-control" id="email" placeholder="Email">
                             </div>
@@ -91,7 +79,7 @@
     </section>
 
     <!--Footer-->
-    <section class="footer-content">
+    <section class="footer-content" style="margin-top: 10px">
         <footer style="padding: 20px">
             <div class="container">
                 <div class="row hidden-xs">

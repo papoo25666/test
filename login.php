@@ -9,6 +9,8 @@
     require_once "views/Styles.php";
     Style::getStylePatch();
     ?>
+    <link rel="stylesheet" href="css/navbar.css"/>
+    <link rel="stylesheet" href="css/button.css"/>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -18,32 +20,47 @@
     <![endif]-->
 </head>
 <body>
-<div class="modal-body" style="padding-top: 20px">
-    <div class="row">
-        <div
-            class="col-lg-10 col-md-10 col-sm-10 col-xs-12 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
-            <h2 class="text-center" style="color: #333;font-weight: bold;margin-top: 10px">WELCOME</h2>
-
-            <div class="imgage-login">
-            </div>
-            <form role="form">
-                <div class="form-group">
-                    <label class="control-label">username</label>
-                    <input class="form-control" type="texts" id="txtUsername"/>
-                </div>
-                <div class="form-group">
-                    <label class="control-label">password</label>
-                    <input class="form-control" type="password" id="txtPassword"/>
-                </div>
-                <div class="form-group">
-                    <a href="#" s>Forgot password</a>
-                </div>
-                <div class="text-center">
-                    <button class="btn btn-success" type="submit">Log In</button>
-                </div>
-            </form>
+<div class="wrapper">
+    <!--Navbar-->
+    <section class="navbar navbar-inverse navbar-fixed-top" style="margin: 0">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-inverse-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.php">Scrum Board</a>
         </div>
-    </div>
+    </section>
+    <!--End Navbar-->
+    <section style="margin-top: 80px">
+        <div class="row" style="margin: 0">
+            <div
+                class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-lg-offset-4 col-md-offset-4 col-sm-offset-4"
+                style="background-color: #E0E0E0;padding: 20px">
+                <h2 class="text-center" style="color: #333;font-weight: bold;margin-top: 10px">WELCOME</h2>
+
+                <div class="imgage-login">
+                </div>
+                <form role="form">
+                    <div class="form-group" style="color: #000">
+                        <label class="control-label">username</label>
+                        <input class="form-control" type="texts" id="txtUsername"/>
+                    </div>
+                    <div class="form-group"  style="color: #000">
+                        <label class="control-label">password</label>
+                        <input class="form-control" type="password" id="txtPassword"/>
+                    </div>
+                    <div class="form-group">
+                        <a href="#">Forgot password</a>
+                    </div>
+                    <div class="text-center">
+                        <button class="btn btn-success" type="submit">Log In</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
 </div>
 </body>
 </html>

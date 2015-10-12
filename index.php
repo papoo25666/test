@@ -10,6 +10,7 @@
     Style::getStylePatch();
     ?>
     <link rel="stylesheet" href="css/navbar.css"/>
+    <link rel="stylesheet" href="css/button.css"/>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -64,34 +65,34 @@
     <!--Feature-->
     <section class="body-content">
         <div class="content-bg">
-            <img src="images/bg_work_feature.png" class="img img-responsive" style="width: 100%">
+            <img src="images/bg_work_feature.png" class="img img-responsive" style="width: 100%;">
         </div>
     </section>
 
-    <section class="about-feature" style="background-color: #E0E0E0">
-        <div class="">
+    <section class="about-feature" style="background-color: #E0E0E0;">
+        <div style="padding-top: 15px">
             <div class="container">
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 text-center" style="border-color:#E0E0E0;
                 border-style: solid;">
-                    <img src="images/ic_update.png" style="width: 60%;margin: 0" class="img img-circle"/>
+                    <img src="images/ic_update.png" style="width: 50%;margin: 0" class="img img-circle"/>
 
                     <h2 style="font-family: sukhumvit;color: #000" class="text-center">อัพเดทงาน</h2>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 text-center" style="border-color:#E0E0E0;
                 border-style: solid;">
-                    <img src="images/ic_tracking.png" style="width: 60%;color: #000" class="img"/>
+                    <img src="images/ic_tracking.png" style="width: 50%;color: #000" class="img"/>
 
                     <h2 style="font-family: sukhumvit;color: #000" class="text-center">ติดตามงาน</h2>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 text-center" style="border-color:#E0E0E0;
                 border-style: solid;">
-                    <img src="images/ic_report.png" style="width: 60%;" class="img"/>
+                    <img src="images/ic_report.png" style="width: 50%;" class="img"/>
 
                     <h2 style="font-family: sukhumvit;color: #000" class="text-center">วางแผนงาน</h2>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 text-center" style="border-color:#E0E0E0;
                 border-style: solid;">
-                    <img src="images/ic_chart.png" style="width: 60%;" class="img"/>
+                    <img src="images/ic_chart.png" style="width: 50%;" class="img"/>
 
                     <h2 style="font-family: sukhumvit;color: #000" class="text-center">สรุปผลการทำงาน</h2>
                 </div>

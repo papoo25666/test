@@ -1,0 +1,22 @@
+.btn {
+    font-weight: bold;
+}
+
+.btn-success {
+    width: 180px;
+    padding: 10px;
+    font-size: 1.1em;
+    border-color: transparent;
+    background-color: #00E676 !important;
+    color: rgba(255, 255, 255, 2555) !important;
+}
+
+.btn-success:hover {
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    background-color: #13cfe6 !important;
+    border-color: transparent;
+    color: #fff !important;
+}

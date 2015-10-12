@@ -16,18 +16,6 @@ body {
     border-radius: 0 !important;
 }
 
-.btn {
-    font-weight: bold;
-}
-
-.btn-success {
-    width: 180px;
-    padding: 10px;
-    font-size: 1.1em;
-    background-color: #00E676 !important;
-    color: rgba(255, 255, 255, 2555) !important;
-}
-
 .feature-text {
     font-weight: bold;
 }
@@ -38,16 +26,6 @@ body {
 
 footer {
     background-color: rgba(10, 33, 38, 0.9);
-}
-
-
-.btn-success:hover {
-    transition: all 0.5s ease;
-    -webkit-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    background-color: #13cfe6 !important;
-    color: #fff !important;
 }
 
 .link {
@@ -251,8 +229,8 @@ label {
     background-image: url("../images/user_login.png");
     margin: 30px auto;
     margin-top: 15px;
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;;
