@@ -55,7 +55,7 @@
                         <a href="#">Forgot password</a>
                     </div>
                     <div class="text-center">
-                        <button class="btn btn-success" type="submit">Log In</button>
+                        <button class="btn btn-success" type="submit" style="width: 100%">LOG IN</button>
                     </div>
                 </form>
             </div>

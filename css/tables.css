@@ -10,7 +10,7 @@ thead{
     border-right: 0;
     border-left: 0;
     border-style: solid;
-    border-color: #000;
+    border-color: #333;
     border-radius: 10px;
 }
 td, th {

@@ -40,7 +40,7 @@
             <div class="row" style="margin:0;px;padding: 40px;">
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-lg-offset-4 col-md-offset-4 col-sm-offset-4"
                      style="background-color: #E0E0E0;padding: 20px">
-                    <h2 class="text-center" style="color: #333;font-weight: bold;margin-top: 10px">Sign up</h2>
+                    <h2 class="text-center" style="color: #333;font-weight: bold;margin-top: 10px">SIGN UP</h2>
                     <form role="form" class="form-horizontal" style="margin-top: 10px;padding: 10px">
                         <div class="form-group">
                             <div class="col-lg-12" style="padding-left: 0">
@@ -69,7 +69,7 @@
                         </div>
                         <div class="form-group text-center" style="margin-bottom: 0">
                             <button type="submit" class="btn btn-success" style="width: 100%">
-                                Sign up
+                                SIGN UP
                             </button>
                         </div>
                     </form>

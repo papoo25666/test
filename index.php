@@ -20,7 +20,7 @@
     <![endif]-->
 </head>
 <body style="background-color: #4285f4">
-<div class="wrapper" >
+<div class="wrapper">
     <!--Navbar-->
     <section class="navbar navbar-inverse navbar-fixed-top" style="margin: 0">
         <div class="navbar-header">
@@ -34,8 +34,7 @@
         <div class="navbar-collapse collapse navbar-inverse-collapse">
 
             <ul class="nav navbar-nav navbar-right" style="margin-right: 0">
-                <li class="active text-center text-login"><a class="login-button" href="login.php">Log
-                        In</a></li>
+                <li class="active text-center text-login"><a class="login-button" href="login.php">LOG IN</a></li>
             </ul>
         </div>
     </section>
@@ -51,8 +50,8 @@
 
                 <div class="container" style="margin-top: 30px">
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-lg-offset-4 col-md-offset-4 col-sm-offset-4">
-                        <a class="btn btn-success" href="sigup.php">
-                            Sign Up
+                        <a class="btn btn-success" href="sigup.php" style="color:#ffffff !important;font-weight: bold !important;">
+                            SIGN UP FOR FREE
                         </a>
                         <h4>Available on <a href="#" class="link">Google play</a></h4>
                     </div>
@@ -76,6 +75,7 @@
                     <img src="images/ic_update.png" style="width: 50%;margin: 0" class="img img-circle"/>
 
                     <h2 style="font-family: sukhumvit;color: #000" class="text-center">อัพเดทงาน</h2>
+
                     <p style="color: #000;font-family: sukhumvit;font-weight: 500;font-size: 18px">
                         สามารถอัพเดทงานของทีมได้ทุกที่ทุกเวลา สะดวกและรวดเร็ว
                     </p>
@@ -85,6 +85,7 @@
                     <img src="images/ic_tracking.png" style="width: 50%;color: #000" class="img"/>
 
                     <h2 style="font-family: sukhumvit;color: #000" class="text-center">ติดตามงาน</h2>
+
                     <p style="color: #000;font-family: sukhumvit;font-weight: 500;font-size: 18px">
                         สามารถติดตามงานและปัญหาของทีมได้ทุกที่ทุกเวลา
                     </p>
@@ -94,6 +95,7 @@
                     <img src="images/ic_report.png" style="width: 50%;" class="img"/>
 
                     <h2 style="font-family: sukhumvit;color: #000" class="text-center">วางแผนงาน</h2>
+
                     <p style="color: #000;font-family: sukhumvit;font-weight: 500;font-size: 18px">
                         สามารถวางแผนการทำงานได้ ถึงแม้จะอยู่ต่างสถานที่กัน
                     </p>
@@ -103,6 +105,7 @@
                     <img src="images/ic_chart.png" style="width: 50%;" class="img"/>
 
                     <h2 style="font-family: sukhumvit;color: #000" class="text-center">สรุปผลการทำงาน</h2>
+
                     <p style="color: #000;font-family: sukhumvit;font-weight: 500;font-size: 18px">
                         สามารถดูสรุปงานของทีมในรูป Burndown Chart
                     </p>

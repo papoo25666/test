@@ -10,6 +10,10 @@
     Style::getStylePatch();
     ?>
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/button.css"/>
+    <link rel="stylesheet" href="css/navbar.css"/>
+    <link rel="stylesheet" href="css/tables.css"/>
+
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -37,49 +41,21 @@
 <div class="wrapper" style="background-color: #fff">
 
     <!--Navbar-->
-    <section class="navbar navbar-inverse navbar-static-top" style="margin: 0;">
+    <section class="navbar navbar-inverse navbar-fixed-top" style="margin: 0">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                    data-target=".navbar-inverse-collapse">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-inverse-collapse">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="backlogitem.php">Scrum Board</a>
-        </div>
-
-        <div class="navbar-collapse collapse navbar-inverse-collapse">
-            <ul class="nav navbar-nav">
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Summary <span class="caret"></span></i>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">This sprint</a></li>
-                    </ul>
-                </li>
-
-            </ul>
-            <ul class="nav navbar-nav navbar-right" style="margin: 0;">
-                <li class="active dropdown">
-                    <a href="#" class="dropdown-toggle" style="padding: 15px 0 0 0;height: 60px;"
-                       data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                        <i class="mdi-action-account-circle" style="color:#fff;"></i>
-                        Kotchaphan Muangsan <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#"><i class="mdi-image-timer-auto"></i> View profile</a></li>
-                        <li><a href="#"><i class="mdi-image-brightness-7"></i> Settings</a></li>
-                        <li role="separator" class="divider" style="background: #90CAF9"></li>
-                        <li><a href="#">Log out</a></li>
-                    </ul>
-                </li>
-            </ul>
+            <a class="navbar-brand" href="index.php">Scrum Board</a>
         </div>
     </section>
     <!--End Navbar-->
 
-    <section class="content" style="min-height: 500px;">
+    <section class="content" style="min-height: 500px;margin-top: 50px">
         <nav class="col-lg-2 col-md-2 col-sm-2 col-xs-12 hidden-xs menu-sprint"
-             style="background-color: #03a9f4;height: 500px">
+             style="background-color: #03a9f4;height: 500px;">
             <div class="profile" style="height: 180px;background-color: #233239;">
                 <div class="" style="padding: 20px">
                     <img src="images/user.jpg" style="width: 100px;height: 100px;"
@@ -104,56 +80,18 @@
             <h3 class="sprint-backlog-centent">Sprint 1</h3>
 
             <div class="row" style="margin: 0;">
-                <table class="table table-bordered">
-                    <tr class="info" style="font-weight: bold">
-                        <td>User Story</td>
-                        <td>Tasks</td>
-                        <td>Doing</td>
-                        <td>Done</td>
+                <table>
+                    <thead>
+                    <tr style="font-weight: 500">
+                        <th>USER STORY</th>
+                        <th>TASKS</th>
+                        <th>DOING</th>
+                        <th>DONE</th>
                     </tr>
-                    <tr class="">
-                        <td>
-                            <div class="col-lg-12 col-md-12 col-ms-12">
-                                <form class="form-horizontal">
-                                    <div class="form-group has-info">
-                                        <input type="text" placeholder="user story"
-                                               value="As a customer, I want to search for book by title"
-                                               class="form-control"/>
-                                    </div>
-                                </form>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="col-lg-12 col-md-12 col-ms-12">
-                                <form class="form-horizontal">
-                                    <div class="form-group has-info">
-                                        <input type="text" class="form-control" placeholder="task"
-                                               value="design form for search"/>
-                                        <input type="text" class="form-control" placeholder="3"/>
-                                        <input type="text" class="form-control" placeholder="Kotchaphan"/>
-                                    </div>
-                                </form>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="col-lg-12 col-md-12 col-ms-12">
-                                <form class="form-horizontal">
-                                    <div class="form-group has-info">
-                                        <input type="text" class="form-control" placeholder="doing"/>
-                                    </div>
-                                </form>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="col-lg-12 col-md-12 col-ms-12">
-                                <form class="form-horizontal">
-                                    <div class="form-group has-info">
-                                        <input type="text" class="form-control" placeholder="done"/>
-                                    </div>
-                                </form>
-                            </div>
-                        </td>
-                    </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
                 </table>
             </div>
         </div>
@@ -203,7 +141,8 @@
                                 <img src="images/user.jpg" style="width: 50px;height: 50px"/>
                             </div>
                             <div class="commentText">
-                                <p class="">Android not working</p> <span class="date sub-text">on March 5th, 2015</span>
+                                <p class="">Android not working</p> <span
+                                    class="date sub-text">on March 5th, 2015</span>
                             </div>
                         </li>
 

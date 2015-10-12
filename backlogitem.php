@@ -39,12 +39,12 @@
     <section class="content" style="min-height: 500px;margin-top: 70px">
         <div class="">
             <div class="row" style="margin: 0">
-                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <h3 style="font-weight: bold;font-family: sukhumvit;letter-spacing: 1px">Product Backlog Items</h3>
 
                     <div class="backlog">
                         <div class="create-backlog" style="margin-top: 5px">
-                            <button class="btn btn-info" style="border: 0"><i class="glyphicon glyphicon-file"></i> Add
+                            <button class="btn btn-info" style="border: 0;width: 120px;height: 40px"><i class="glyphicon glyphicon-edit"></i> Add
                                 PBL
                             </button>
                         </div>
@@ -52,14 +52,14 @@
                 </div>
             </div>
             <div class="row" style="margin-top: 10px;margin-bottom: 20px;margin-left: 0;margin-right: 0">
-                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 col-lg-offset-1 col-md-offset-1 col-sm-offset-1"
+                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12"
                     >
                     <table>
                         <thead>
                         <tr>
+                            <th>ID</th>
                             <th>NAME</th>
                             <th>VALUE</th>
-                            <th>PRIORITY</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -68,14 +68,35 @@
                         include_once "classes/ManangePBL.php";
                         $db = new ManagePBL();
                         $result = $db->getPBL();
-                        foreach($result as $row){
-                        ?>
-                        <tr style="font-family: sukhumvit;font-size: 16px;font-weight: 500">
-                            <td class="name"><?php echo $row['item_name'] ?></td>
-                            <td class="value"><?php echo $row['value'] ?></td>
-                            <td class="priority"><?php echo $row['id'] ?></td>
-                        </tr>
+                        foreach ($result as $row) {
+                            ?>
+                            <tr style="font-family: sukhumvit;font-size: 16px;font-weight: 500">
+                                <td class="id"><?php echo $row['id'] ?></td>
+                                <td class="name"><?php echo $row['item_name'] ?></td>
+                                <td class="value"><?php echo $row['value'] ?></td>
+                            </tr>
                         <?php } ?>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>PRIORITY</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                        </tr>
                         </tbody>
                     </table>
                 </div>
