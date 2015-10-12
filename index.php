@@ -19,9 +19,8 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-<body>
-<div class="wrapper">
-
+<body style="background-color: #4285f4">
+<div class="wrapper" >
     <!--Navbar-->
     <section class="navbar navbar-inverse navbar-fixed-top" style="margin: 0">
         <div class="navbar-header">
@@ -77,24 +76,36 @@
                     <img src="images/ic_update.png" style="width: 50%;margin: 0" class="img img-circle"/>
 
                     <h2 style="font-family: sukhumvit;color: #000" class="text-center">อัพเดทงาน</h2>
+                    <p style="color: #000;font-family: sukhumvit;font-weight: 500;font-size: 18px">
+                        สามารถอัพเดทงานของทีมได้ทุกที่ทุกเวลา สะดวกและรวดเร็ว
+                    </p>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 text-center" style="border-color:#E0E0E0;
                 border-style: solid;">
                     <img src="images/ic_tracking.png" style="width: 50%;color: #000" class="img"/>
 
                     <h2 style="font-family: sukhumvit;color: #000" class="text-center">ติดตามงาน</h2>
+                    <p style="color: #000;font-family: sukhumvit;font-weight: 500;font-size: 18px">
+                        สามารถติดตามงานและปัญหาของทีมได้ทุกที่ทุกเวลา
+                    </p>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 text-center" style="border-color:#E0E0E0;
                 border-style: solid;">
                     <img src="images/ic_report.png" style="width: 50%;" class="img"/>
 
                     <h2 style="font-family: sukhumvit;color: #000" class="text-center">วางแผนงาน</h2>
+                    <p style="color: #000;font-family: sukhumvit;font-weight: 500;font-size: 18px">
+                        สามารถวางแผนการทำงานได้ ถึงแม้จะอยู่ต่างสถานที่กัน
+                    </p>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 text-center" style="border-color:#E0E0E0;
                 border-style: solid;">
                     <img src="images/ic_chart.png" style="width: 50%;" class="img"/>
 
                     <h2 style="font-family: sukhumvit;color: #000" class="text-center">สรุปผลการทำงาน</h2>
+                    <p style="color: #000;font-family: sukhumvit;font-weight: 500;font-size: 18px">
+                        สามารถดูสรุปงานของทีมในรูป Burndown Chart
+                    </p>
                 </div>
             </div>
         </div>

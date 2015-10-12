@@ -45,7 +45,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="board.php">Scrum Board</a>
+            <a class="navbar-brand" href="backlogitem.php">Scrum Board</a>
         </div>
 
         <div class="navbar-collapse collapse navbar-inverse-collapse">

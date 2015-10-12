@@ -37,11 +37,15 @@
 .navbar-inverse .navbar-brand {
     color: #fff !important;
     letter-spacing: 2px;
-    font-size: 22px;
+    font-size: 23px;
     font-family: sukhumvit;
-    font-weight: bold
+    font-weight: bold;
 }
 
 .navbar-inverse .navbar-brand:hover {
-    color: #3081c1 !important;
+    color: rgba(193, 193, 193, 0.47) !important;
+    font-weight: 900;
+}
+.navbar-nav>li:hover {
+    background-color: #0A2126;
 }
