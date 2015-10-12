@@ -1,3 +1,7 @@
+@font-face {
+    font-family: sukhumvit;
+    src: url('../fonts/sukhumvitlight-webfont.eot') , url('../fonts/sukhumvitlight-webfont.ttf') , url('../fonts/fontawesome-webfont.svg');
+}
 .text-blue {
     color: #373277 !important;
 }
@@ -5,7 +9,7 @@
 body {
     background-color: #fff;
     color: #fff;
-    font-family: RobotoDraft, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-family: sukhumvit, Arial, sans-serif;
 }
 
 .jumbotron {

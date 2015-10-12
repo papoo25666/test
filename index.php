@@ -31,57 +31,18 @@
         </div>
         <div class="navbar-collapse collapse navbar-inverse-collapse">
             <ul class="nav navbar-nav navbar-right" style="margin-right: 0">
-                <li class="active text-center"><a class="login-button" data-toggle="modal" href='#modal-login'>Log
+                <li class="active text-center"><a class="login-button" href="login.php">Log
                         In</a></li>
             </ul>
         </div>
     </section>
     <!--End Navbar-->
 
-    <!--Modal Log In-->
-    <div class="modal fade" id="modal-login">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h2 class="modal-title" style="font-weight: bold">Log In</h2>
-                </div>
-                <div class="modal-body" style="padding-top: 20px">
-                    <div class="row">
-                        <div
-                            class="col-lg-10 col-md-10 col-sm-10 col-xs-12 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
-                            <h2 class="text-center" style="color: #333;font-weight: bold;margin-top: 10px">WELCOME</h2>
-
-                            <div class="imgage-login">
-                            </div>
-                            <form role="form">
-                                <div class="form-group">
-                                    <label class="control-label">username</label>
-                                    <input class="form-control" type="texts" id="txtUsername"/>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label">password</label>
-                                    <input class="form-control" type="password" id="txtPassword"/>
-                                </div>
-                                <div class="form-group">
-                                    <a href="#" s>Forgot password</a>
-                                </div>
-                                <div class="text-center">
-                                    <button class="btn btn-success" type="submit">Log In</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!--Welcome message -->
     <section class="header-content">
         <div class="">
             <div class="jumbotron text-center" style="background-color: #4285f4;margin-bottom: 0">
-                <h1 class="text-center" style="color:#fff">ระบบ to Scrum Board</h1>
+                <h1 class="text-center" style="color:#fff;font-family: sukhumvit" >ระบบติดตามการทำงานของสกรัมทีม</h1>
 
                 <h3>Issue and Progress tracking designed for Scrum team</h3>
 
