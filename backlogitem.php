@@ -5,10 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Scrum Board</title>
-    <?php
-    include_once "views/Styles.php";
-    Style::getStylePatch();
-    ?>
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <link href ="css/font-awesome.min.css" rel = "stylesheet" />
+    <link href ="css/custom_style.css" rel = "stylesheet" />
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/navbar.css"/>
     <link rel="stylesheet" href="css/button.css"/>
@@ -134,9 +133,9 @@
 </div>
 
 <!--JavaScript-->
-<?php
-Style::getSctiptPatch();
-?>
+<script type="application/javascript" src="js/jquery-1.11.3.min.js"></script>
+<script type="application/javascript" src="js/bootstrap.min.js"></script>
+<script type="application/javascript" src="js/angular.min.js"></script>
 
 </body>
 </html>
