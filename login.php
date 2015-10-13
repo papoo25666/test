@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Scrum Board</title>
     <link href="css/bootstrap.min.css" rel="stylesheet"/>
-    <link href ="css/font-awesome.min.css" rel = "stylesheet" />
-    <link href ="css/custom_style.css" rel = "stylesheet" />
+    <link href="css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="css/custom_style.css" rel="stylesheet"/>
     <link rel="stylesheet" href="css/navbar.css"/>
     <link rel="stylesheet" href="css/button.css"/>
 
@@ -37,13 +37,15 @@
             <div
                 class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-lg-offset-4 col-md-offset-4 col-sm-offset-4"
                 style="background-color: #E0E0E0;padding: 20px">
-                <h2 class="text-center" style="color: #333;font-weight: bold;margin-top: 10px;font-family: sukhumvit;font-size: 3em">WELCOME</h2>
+                <h2 class="text-center"
+                    style="color: #333;font-weight: bold;margin-top: 10px;font-family: sukhumvit;font-size: 3em">
+                    WELCOME</h2>
 
-                <?php include "libs/login.php"; ?>
+                <?php include "libs/auth.php"; ?>
                 <div class="imgage-login"
                      style="background-image: url('<?php if (isset($err)) echo 'images/user_login_err.png'; else echo 'images/user_login.png'; ?>')">
                 </div>
-                <form role="form" method="post">
+                <form role="form" method="post" action="">
                     <?php if (isset($err)) echo "<span class='alert-danger' style='width: auto'>" . $err . "</span>"; ?>
                     <div class="form-group" style="color: #000">
                         <label class="control-label">username</label>

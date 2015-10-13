@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Scrum Board</title>
     <link href="css/bootstrap.min.css" rel="stylesheet"/>
-    <link href ="css/font-awesome.min.css" rel = "stylesheet" />
-    <link href ="css/custom_style.css" rel = "stylesheet" />
+    <link href="css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="css/custom_style.css" rel="stylesheet"/>
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/navbar.css"/>
     <link rel="stylesheet" href="css/button.css"/>
@@ -40,17 +40,32 @@
             <div class="row" style="margin: 0">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <h3 style="font-weight: bold;font-family: sukhumvit;letter-spacing: 1px">Product Backlog Items</h3>
-
-                    <div class="backlog">
+                </div>
+            </div>
+            <div class="row" style="margin: 0">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="col-lg-4 col-md-8 col-sm-10 col-xs-12" style="padding-left: 0">
                         <div class="create-backlog" style="margin-top: 5px">
                             <button class="btn btn-info" style="border: 0;height: 40px">
                                 <i class="glyphicon glyphicon-edit"></i> ADD PBL
                             </button>
-                            <button class="btn btn-warning" style="border: 0;height: 40px">
+                            <button class="btn btn-warning" id="create-sprint" style="border: 0;height: 40px">
                                 <i class="glyphicon glyphicon-edit"></i> CREATE SPRINT BACKLOG
                             </button>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div class="row" style="margin: 0;margin-top: 10px">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <form class="form-inline hidden" id="sprint-form">
+                        <div class="form-group">
+                            <label class="control-label">Sprint name </label>
+                            <input type="text" name="sprint" class="form-control" placeholder="sprint name"/>
+                            <button type="submit" class="btn btn-info" id="btn-create">CREATE</button>
+                            <button type="button" class="btn btn-danger" id="btn-close">CLOSE</button>
+                        </div>
+                    </form>
                 </div>
             </div>
             <div class="row" style="margin-top: 10px;margin-bottom: 20px;margin-left: 0;margin-right: 0">
@@ -66,13 +81,13 @@
                         </thead>
                         <tbody>
                         <?php
-                        include_once "configs/config.php";
-                        include_once "classes/ManangePBL.php";
+                        include "configs/config.php";
+                        include "classes/ManangePBL.php";
                         $db = new ManagePBL();
                         $result = $db->getPBL();
                         foreach ($result as $row) {
                             ?>
-                            <tr style="font-family: sukhumvit;font-size: 16px;font-weight: 500">
+                            <tr style="font-family: sukhumvit;font-size: 17px;font-weight: 500">
                                 <td class="id"><?php echo $row['id'] ?></td>
                                 <td class="name"><?php echo $row['item_name'] ?></td>
                                 <td class="value"><?php echo $row['value'] ?></td>
@@ -136,6 +151,19 @@
 <script type="application/javascript" src="js/jquery-1.11.3.min.js"></script>
 <script type="application/javascript" src="js/bootstrap.min.js"></script>
 <script type="application/javascript" src="js/angular.min.js"></script>
+
+<script type="application/javascript">
+    $(function(){
+        $('#create-sprint').click(function(){
+            $('#sprint-form').removeClass("hidden");
+            return false;
+        });
+        $('#btn-close').click(function () {
+            $('#sprint-form').addClass("hidden");
+           return false;
+        });
+    });
+</script>
 
 </body>
 </html>
