@@ -1,5 +1,5 @@
 <?php
-include "../configs/config.php";
+include "/configs/config.php";
 
 class Database
 {

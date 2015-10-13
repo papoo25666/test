@@ -40,16 +40,19 @@
                 style="background-color: #E0E0E0;padding: 20px">
                 <h2 class="text-center" style="color: #333;font-weight: bold;margin-top: 10px">WELCOME</h2>
 
-                <div class="imgage-login">
+                <?php include "libs/login.php"; ?>
+                <div class="imgage-login"
+                     style="background-image: url('<?php if (isset($err)) echo 'images/user_login_err.png'; else echo 'images/user_login.png'; ?>')">
                 </div>
-                <form role="form">
+                <form role="form" method="post">
+                    <?php if (isset($err)) echo "<span class='alert-danger' style='width: auto'>" . $err . "</span>"; ?>
                     <div class="form-group" style="color: #000">
                         <label class="control-label">username</label>
-                        <input class="form-control" type="texts" id="txtUsername"/>
+                        <input class="form-control" type="texts" id="username" name="username"/>
                     </div>
-                    <div class="form-group"  style="color: #000">
+                    <div class="form-group" style="color: #000">
                         <label class="control-label">password</label>
-                        <input class="form-control" type="password" id="txtPassword"/>
+                        <input class="form-control" type="password" id="password" name="password"/>
                     </div>
                     <div class="form-group">
                         <a href="#">Forgot password</a>

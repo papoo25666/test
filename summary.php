@@ -10,6 +10,8 @@
     Style::getStylePatch();
     ?>
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/button.css" />
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -22,52 +24,31 @@
 <div class="wrapper" style="background-color: #d9e0e7;">
 
     <!--Navbar-->
-    <section class="navbar navbar-inverse navbar-static-top" style="margin: 0;">
+    <section class="navbar navbar-inverse navbar-fixed-top" style="margin: 0">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                    data-target=".navbar-inverse-collapse">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-inverse-collapse">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="backlogitem.php">Scrum Board</a>
+            <a class="navbar-brand" href="index.php">Scrum Board</a>
         </div>
-
         <div class="navbar-collapse collapse navbar-inverse-collapse">
-            <ul class="nav navbar-nav">
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Summary <span class="caret"></span></i>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">This sprint</a></li>
-                    </ul>
-                </li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right" style="margin: 0;">
-                <li class="active dropdown">
-                    <a href="#" class="dropdown-toggle" style="padding: 15px 0 0 0;height: 60px;"
-                       data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                        <i class="mdi-action-account-circle" style="color:#fff;"></i>
-                        Kotchaphan Muangsan <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#"><i class="mdi-image-timer-auto"></i> View profile</a></li>
-                        <li><a href="#"><i class="mdi-image-brightness-7"></i> Settings</a></li>
-                        <li role="separator" class="divider" style="background: #90CAF9"></li>
-                        <li><a href="#">Log out</a></li>
-                    </ul>
-                </li>
+
+            <ul class="nav navbar-nav navbar-right" style="margin-right: 0">
+                <li class="active text-center text-login"><a class="login-button" href="login.php">LOG IN</a></li>
             </ul>
         </div>
     </section>
     <!--End Navbar-->
 
-    <section class="content" style="min-height: 530px;">
+    <section class="content" style="min-height: 530px;margin-top: 50px">
         <div class="col-lg-12 col-md-12 col-sm-12">
 
             <div class="col-lg-8 col-md-8 col-sm-8 col-lg-offset-2 col-md-offset-2 col-sm-offset-2"
                  style="background-color: #333;min-height: 380px;margin-top: 80px;padding-left: 0; padding-right: 0">
 
-                <img src="images/bdc.png" class="img img-responsive" style="min-height: 380px;width: 100%"/>
+                <img  class="img img-responsive" style="min-height: 380px;width: 100%"/>
             </div>
         </div>
     </section>

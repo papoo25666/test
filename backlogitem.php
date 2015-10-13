@@ -44,8 +44,11 @@
 
                     <div class="backlog">
                         <div class="create-backlog" style="margin-top: 5px">
-                            <button class="btn btn-info" style="border: 0;width: 120px;height: 40px"><i class="glyphicon glyphicon-edit"></i> Add
-                                PBL
+                            <button class="btn btn-info" style="border: 0;height: 40px">
+                                <i class="glyphicon glyphicon-edit"></i> ADD PBL
+                            </button>
+                            <button class="btn btn-warning" style="border: 0;height: 40px">
+                                <i class="glyphicon glyphicon-edit"></i> CREATE SPRINT BACKLOG
                             </button>
                         </div>
                     </div>

@@ -10,8 +10,8 @@
     Style::getStylePatch();
     ?>
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="css/navbar.css" />
-    <link rel="stylesheet" href="css/button.css" />
+    <link rel="stylesheet" href="css/navbar.css"/>
+    <link rel="stylesheet" href="css/button.css"/>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -41,30 +41,36 @@
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-lg-offset-4 col-md-offset-4 col-sm-offset-4"
                      style="background-color: #E0E0E0;padding: 20px">
                     <h2 class="text-center" style="color: #333;font-weight: bold;margin-top: 10px">SIGN UP</h2>
-                    <form role="form" class="form-horizontal" style="margin-top: 10px;padding: 10px">
+                    <?php include "libs/register.php"; ?>
+                    <form role="form" class="form-horizontal" action="" method="post"
+                          style="margin-top: 10px;padding: 10px">
+                        <?php if(isset($err)) echo "<span class='alert-danger' style='margin-left: -10px'>".$err."</span>"; ?>
                         <div class="form-group">
                             <div class="col-lg-12" style="padding-left: 0">
-                                <input type="text" class="form-control" id="fname" placeholder="First name">
+                                <input type="text" class="form-control" id="fname" name="fname"
+                                       placeholder="First name">
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-lg-12" style="padding-left: 0">
-                                <input type="text" class="form-control" id="lname" placeholder="Last name">
+                                <input type="text" class="form-control" id="lname" name="lname" placeholder="Last name">
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-lg-12" style="padding-left: 0">
-                                <input type="text" class="form-control" id="username" placeholder="Username">
+                                <input type="text" class="form-control" id="username" name="username"
+                                       placeholder="Username">
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-lg-12" style="padding-left: 0">
-                                <input type="password" class="form-control" id="password" placeholder="Password">
+                                <input type="password" class="form-control" id="password" name="password"
+                                       placeholder="Password">
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-lg-12" style="padding-left: 0">
-                                <input type="email" class="form-control" id="email" placeholder="Email">
+                                <input type="email" class="form-control" id="email" placeholder="Email" name="email">
                             </div>
                         </div>
                         <div class="form-group text-center" style="margin-bottom: 0">

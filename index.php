@@ -41,7 +41,7 @@
     <!--End Navbar-->
 
     <!--Welcome message -->
-    <section class="header-content" style="margin-top: 30px">
+    <section class="header-content" style="margin-top: 70px">
         <div class="">
             <div class="jumbotron text-center" style="background-color: #4285f4;margin-bottom: 0">
                 <h1 class="text-center" style="color:#fff;font-family: sukhumvit">ระบบติดตามการทำงานของสกรัมทีม</h1>
@@ -63,7 +63,7 @@
     <!--Feature-->
     <section class="body-content">
         <div class="content-bg">
-            <img src="images/bg_work_feature.png" class="img img-responsive" style="width: 100%;">
+            <img src="images/bg_work_feature.png?v=1" class="img img-responsive" style="width: 100%;min-height: 200px;background-color: #fff">
         </div>
     </section>
 
