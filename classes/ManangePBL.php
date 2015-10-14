@@ -1,4 +1,5 @@
 <?php
+include "../configs/config.php";
 include_once "ConnectDB.php";
 
 class ManagePBL

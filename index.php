@@ -74,7 +74,7 @@
             <div class="container">
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 text-center" style="border-color:#E0E0E0;
                 border-style: solid;">
-                    <img src="images/ic_update.png" style="width: 50%;margin: 0" class="img img-circle"/>
+                    <img src="images/ic_update.png?v=1" style="width: 50%;margin: 0" class="img img-circle"/>
 
                     <h2 style="font-family: sukhumvit;color: #000" class="text-center">อัพเดทงาน</h2>
 
@@ -84,7 +84,7 @@
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 text-center" style="border-color:#E0E0E0;
                 border-style: solid;">
-                    <img src="images/ic_tracking.png" style="width: 50%;color: #000" class="img"/>
+                    <img src="images/ic_tracking.png?v=1" style="width: 50%;color: #000" class="img"/>
 
                     <h2 style="font-family: sukhumvit;color: #000" class="text-center">ติดตามงาน</h2>
 
@@ -94,7 +94,7 @@
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 text-center" style="border-color:#E0E0E0;
                 border-style: solid;">
-                    <img src="images/ic_report.png" style="width: 50%;" class="img"/>
+                    <img src="images/ic_report.png?v=1" style="width: 50%;" class="img"/>
 
                     <h2 style="font-family: sukhumvit;color: #000" class="text-center">วางแผนงาน</h2>
 
@@ -104,7 +104,7 @@
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 text-center" style="border-color:#E0E0E0;
                 border-style: solid;">
-                    <img src="images/ic_chart.png" style="width: 50%;" class="img"/>
+                    <img src="images/ic_chart.png?v=1" style="width: 50%;" class="img"/>
 
                     <h2 style="font-family: sukhumvit;color: #000" class="text-center">สรุปผลการทำงาน</h2>
 
@@ -124,7 +124,7 @@
                 <h2 class="text-center" style="color: #696969;padding-top: 20px;
                 margin-bottom: 0;font-family: sukhumvit;font-weight: bold;font-size: 3em">POWER BY</h2>
                 <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 col-lg-offset-1 col-md-offset-1 col-sm-offset-1" style="margin-bottom: 55px">
-                    <img src="images/logo_cs.png" class="img img-responsive" style="width: 100%"/>
+                    <img src="images/logo_cs.png?v=1" class="img img-responsive" style="width: 100%"/>
                 </div>
             </div>
         </div>
