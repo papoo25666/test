@@ -37,39 +37,14 @@
 
     <section class="content" style="min-height: 500px;margin-top: 70px">
         <div class="">
-            <div class="row" style="margin: 0">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <h3 style="font-weight: bold;font-family: sukhumvit;letter-spacing: 1px">Product Backlog Items</h3>
-                </div>
-            </div>
-            <div class="row" style="margin: 0">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="col-lg-4 col-md-8 col-sm-10 col-xs-12" style="padding-left: 0">
-                        <div class="create-backlog" style="margin-top: 5px">
-                            <button class="btn btn-info" style="border: 0;height: 40px">
-                                <i class="glyphicon glyphicon-edit"></i> ADD PBL
-                            </button>
-                            <button class="btn btn-warning" id="create-sprint" style="border: 0;height: 40px">
-                                <i class="glyphicon glyphicon-edit"></i> CREATE SPRINT BACKLOG
-                            </button>
-                        </div>
+            <div class="row" style="margin-top: 10px;margin-bottom: 20px;margin-left: 0;margin-right: 0">
+                <div class="col-lg-2 col-md-2 col-sm-2">
+                    <div class="list-group">
+                        <button type="button" class="list-group-item" style="font-family: sukhumvit;font-weight: bold;font-size: 18px">แก้ไข Product Backlog</button>
+                        <button type="button" class="list-group-item" style="font-family: sukhumvit;font-weight: bold;font-size: 18px">แก้ไข Prioriry</button>
                     </div>
                 </div>
-            </div>
-            <div class="row" style="margin: 0;margin-top: 10px">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <form class="form-inline hidden" id="sprint-form">
-                        <div class="form-group">
-                            <label class="control-label">Sprint name </label>
-                            <input type="text" name="sprint" class="form-control" placeholder="sprint name"/>
-                            <button type="submit" class="btn btn-info" id="btn-create">CREATE</button>
-                            <button type="button" class="btn btn-danger" id="btn-close">CLOSE</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <div class="row" style="margin-top: 10px;margin-bottom: 20px;margin-left: 0;margin-right: 0">
-                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12"
+                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12"
                     >
                     <table>
                         <thead>
@@ -82,15 +57,19 @@
                         <tbody>
                         <?php
                         include "configs/config.php";
-                        include "classes/ManangePBL.php";
-                        $db = new ManagePBL();
-                        $result = $db->getPBL();
+                        include "classes/ManageUserStory.php";
+                        $db = new ManageUserStory();
+                        $result = $db->getUserStory();
                         foreach ($result as $row) {
                             ?>
                             <tr style="font-family: sukhumvit;font-size: 17px;font-weight: 500">
                                 <td class="id"><?php echo $row['id'] ?></td>
-                                <td class="name"><?php echo $row['item_name'] ?></td>
-                                <td class="value"><?php echo $row['value'] ?></td>
+                                <td class="name"><?php echo $row['user_story_name'] ?></td>
+                                <?php
+                                $price = $row['user_story_price'];
+                                $price = number_format($price, 2, ".", ",");
+                                ?>
+                                <td class="value" style="text-align: right"><?php echo $price; ?></td>
                             </tr>
                         <?php } ?>
                         </tbody>
@@ -152,18 +131,6 @@
 <script type="application/javascript" src="js/bootstrap.min.js"></script>
 <script type="application/javascript" src="js/angular.min.js"></script>
 
-<script type="application/javascript">
-    $(function(){
-        $('#create-sprint').click(function(){
-            $('#sprint-form').removeClass("hidden");
-            return false;
-        });
-        $('#btn-close').click(function () {
-            $('#sprint-form').addClass("hidden");
-           return false;
-        });
-    });
-</script>
 
 </body>
 </html>

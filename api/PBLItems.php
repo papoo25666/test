@@ -6,8 +6,8 @@ $result = $db->getPBL();
 foreach ($result as $row) {
     $items = array();
     $items['id'] = $row['id'];
-    $items['item_name'] = $row['item_name'];
-    $items['value'] = $row['value'];
+    $items['item_name'] = $row['user_story_name'];
+    $items['value'] = $row['user_story_price'];
 
     array_push($response['items'], $items);
 }

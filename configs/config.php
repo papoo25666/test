@@ -12,5 +12,5 @@
 define("SERVER", "localhost");
 define("USERNAME", "root");
 define("PASSWORD", "");
-define("DBNAME", "scrum_board");
+define("DBNAME", "scrum");
 ?>

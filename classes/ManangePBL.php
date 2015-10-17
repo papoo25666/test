@@ -15,7 +15,7 @@ class ManagePBL
 
     public function getPBL()
     {
-        $this->result = $this->db->prepare("SELECT *FROM backlog_items");
+        $this->result = $this->db->prepare("SELECT *FROM user_story");
         $this->result->execute();
         $this->result = $this->result->fetchAll();
         return $this->result;

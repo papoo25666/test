@@ -19,6 +19,15 @@ class ManageUserStory
         $data = $this->result->fetchAll();
         return $data;
     }
+
+    public function insertUserStory($userstory, $value)
+    {
+        $this->result = $this->db->prepare("INSERT INTO user_story(user_story_name, user_story_price) VALUES (?,?)");
+        $value = array($userstory, $value);
+        $this->result->execute($value);
+        return $this->result->rowCount();
+    }
+
 }
 
 ?>
