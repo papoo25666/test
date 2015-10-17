@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/navbar.css"/>
     <link rel="stylesheet" href="css/button.css"/>
     <link rel="stylesheet" href="css/tables.css"/>
+    <link rel="stylesheet" href="css/backlog.css"/>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -40,8 +41,9 @@
             <div class="row" style="margin-top: 10px;margin-bottom: 20px;margin-left: 0;margin-right: 0">
                 <div class="col-lg-2 col-md-2 col-sm-2">
                     <div class="list-group">
-                        <a type="button" href="edit_backlog.php" class="list-group-item"  style="font-family: sukhumvit;font-weight: bold;font-size: 18px">แก้ไข Product Backlog</a>
-                        <a type="button" href=" edit_priority.php" class="list-group-item" style="font-family: sukhumvit;font-weight: bold;font-size: 18px">แก้ไข Prioriry</a>
+                        <a type="button" href="backlog_item.php" class="list-group-item active">Product Backlog</a>
+                        <a type="button" href="edit_backlog.php" class="list-group-item">แก้ไข Product Backlog</a>
+                        <a type="button" href=" edit_priority.php" class="list-group-item">แก้ไข Prioriry</a>
                     </div>
                 </div>
                 <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12"

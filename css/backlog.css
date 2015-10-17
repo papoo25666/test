@@ -1,0 +1,9 @@
+.list-group-item {
+    font-family: sukhumvit;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.list-group-item:first-child, .list-group-item:last-child {
+    border-radius: 0;
+}
