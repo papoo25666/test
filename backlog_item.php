@@ -40,8 +40,8 @@
             <div class="row" style="margin-top: 10px;margin-bottom: 20px;margin-left: 0;margin-right: 0">
                 <div class="col-lg-2 col-md-2 col-sm-2">
                     <div class="list-group">
-                        <button type="button" class="list-group-item" style="font-family: sukhumvit;font-weight: bold;font-size: 18px">แก้ไข Product Backlog</button>
-                        <button type="button" class="list-group-item" style="font-family: sukhumvit;font-weight: bold;font-size: 18px">แก้ไข Prioriry</button>
+                        <a type="button" href="edit_backlog.php" class="list-group-item"  style="font-family: sukhumvit;font-weight: bold;font-size: 18px">แก้ไข Product Backlog</a>
+                        <a type="button" href=" edit_priority.php" class="list-group-item" style="font-family: sukhumvit;font-weight: bold;font-size: 18px">แก้ไข Prioriry</a>
                     </div>
                 </div>
                 <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12"
