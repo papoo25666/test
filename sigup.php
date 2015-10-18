@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Scrum Board</title>
     <link href="css/bootstrap.min.css" rel="stylesheet"/>
-    <link href ="css/font-awesome.min.css" rel = "stylesheet" />
-    <link href ="css/custom_style.css" rel = "stylesheet" />
+    <link href="css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="css/custom_style.css" rel="stylesheet"/>
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/navbar.css"/>
     <link rel="stylesheet" href="css/button.css"/>
@@ -39,12 +39,16 @@
             <div class="row" style="margin:0;px;padding: 40px;">
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-lg-offset-4 col-md-offset-4 col-sm-offset-4"
                      style="background-color: #E0E0E0;padding: 20px">
-                    <h2 class="text-center" style="color: #333;font-weight: bold;margin-top: 10px;font-family: sukhumvit;font-size: 3em;;">SIGN UP</h2>
-                    <?php include "libs/register.php"; ?>
+                    <h2 class="text-center"
+                        style="color: #333;font-weight: bold;margin-top: 10px;font-family: sukhumvit;font-size: 3em;;">
+                        SIGN UP</h2>
+                    <?php include_once "libs/register.php"; ?>
                     <form role="form" class="form-horizontal" action="" method="post"
                           style="margin-top: 10px;padding: 10px">
-                        <?php if(isset($err)) echo "<span class='alert-danger' style='margin-left: -10px'>".$err."</span>"; ?>
-                        <div class="form-group">
+                        <?php if (isset($success)) echo "<span style='margin-left: -10px;margin-bottom: 10px;color: green'>" . $success . "<a href='login.php'>  คลิกเพื่อเข้าสู่ระบบ</a></span>"; ?>
+                        <?php if (isset($warning)) echo "<span  style='margin-left: -10px;margin-bottom: 10px;color: orangered'>" . $warning . "</span>"; ?>
+                        <?php if (isset($err)) echo "<span style='margin-left: -10px;margin-bottom: 10px;color: red'>" . $err . "</span>"; ?>
+                        <div class="form-group" style="margin-top: 10px">
                             <div class="col-lg-12" style="padding-left: 0">
                                 <input type="text" class="form-control" id="fname" name="fname"
                                        placeholder="First name">
@@ -70,6 +74,21 @@
                         <div class="form-group">
                             <div class="col-lg-12" style="padding-left: 0">
                                 <input type="email" class="form-control" id="email" placeholder="Email" name="email">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-12" style="padding-left: 0">
+                                <select name="role" class="form-control">
+                                    <?php
+                                    include_once "classes/ManageUsers.php";
+                                    $conn = new ManageUsers();
+                                    $result = $conn->getRole();
+                                    foreach ($result as $row) {
+                                        ?>
+                                        <option
+                                            value="<?php echo $row['id']; ?>"><?php echo $row['user_type_name']; ?></option>
+                                    <?php } ?>
+                                </select>
                             </div>
                         </div>
                         <div class="form-group text-center" style="margin-bottom: 0">

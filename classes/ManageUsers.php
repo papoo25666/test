@@ -15,11 +15,11 @@ class ManageUsers
 
     public function getUserCount($username)
     {
-        $this->result = $this->db->prepare("SELECT *FROM users WHERE usersname = ?");
+        $this->result = $this->db->prepare("SELECT *FROM users WHERE username = ?");
         $values = array($username);
         $this->result->execute($values);
         $this->row = $this->result->rowCount();
-        return $this->result;
+        return $this->row;
     }
 
     public function loginUser($username, $password)
@@ -48,6 +48,13 @@ class ManageUsers
         $this->result->execute($value);
         $data = $this->result->fetchAll();
         return $data;
+    }
+
+    public function getRole()
+    {
+        $this->result = $this->db->prepare("SELECT *FROM user_types WHERE user_type_name != 'Admin'");
+        $this->result->execute();
+        return $this->result->fetchAll();
     }
 }
 

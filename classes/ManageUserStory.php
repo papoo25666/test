@@ -28,6 +28,26 @@ class ManageUserStory
         return $this->result->rowCount();
     }
 
+    public function deleteStoryItems()
+    {
+
+    }
+
+    public function editStoryItems()
+    {
+
+    }
+
+    public function updateStoryItems()
+    {
+
+    }
+
+    public function getPrioriry()
+    {
+
+    }
+
 }
 
 ?>

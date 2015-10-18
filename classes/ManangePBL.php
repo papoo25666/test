@@ -21,22 +21,22 @@ class ManagePBL
         return $this->result;
     }
 
-    public function deleteItems()
+    public function deleteStoryItems()
     {
 
     }
 
-    public function insertItems()
+    public function insertStoryItems()
     {
 
     }
 
-    public function editItems()
+    public function editStoryItems()
     {
 
     }
 
-    public function updateItems()
+    public function updateStoryItems()
     {
 
     }
