@@ -388,4 +388,7 @@ label {
     font-weight: bold;
 
 }
+.divider {
+    background-color: rgba(10, 33, 38, 1) !important;
+}
 

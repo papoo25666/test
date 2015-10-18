@@ -1,8 +1,9 @@
 <?php
-include "../classes/ManangePBL.php";
-$db = new ManagePBL();
+include_once "../configs/config.php";
+include_once "../classes/ManageUserStory.php";
+$db = new ManageUserStory();
 $response['items'] = array();
-$result = $db->getPBL();
+$result = $db->getUserStory();
 foreach ($result as $row) {
     $items = array();
     $items['id'] = $row['id'];

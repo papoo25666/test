@@ -1,5 +1,5 @@
 <?php
-include "ConnectDB.php";
+include_once "ConnectDB.php";
 
 class ManageUserStory
 {
