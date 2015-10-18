@@ -38,10 +38,11 @@
                     <li class="active text-center text-login"><a class="login-button" href="login.php">LOG IN</a></li>
                 <?php } else { ?>
                     <li class="dropdown">
-                        <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                           aria-expanded="false"><?php echo $_SESSION['username']; ?><span class="caret"></span></a>
+                        <a href="" class="dropdown-toggle username" data-toggle="dropdown" role="button"
+                           aria-haspopup="true"
+                           aria-expanded="false"><?php echo $_SESSION['username']; ?> <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Prodoct Backlog items</a></li>
+                            <li><a href="backlog_item.php">Prodoct Backlog items</a></li>
                             <li role="separator" class="divider"></li>
                             <li><a href="logout.php">Logout</a></li>
                         </ul>
@@ -62,10 +63,17 @@
 
                 <div class="container" style="margin-top: 30px">
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-lg-offset-4 col-md-offset-4 col-sm-offset-4">
-                        <a class="btn btn-success" href="sigup.php"
-                           style="color:#ffffff !important;font-weight: bold !important;">
-                            SIGN UP FOR FREE
-                        </a>
+                        <?php if (!ManageSession::isLogged()) { ?>
+                            <a class="btn btn-success" href="sigup.php"
+                               style="color:#ffffff !important;font-weight: bold !important;">
+                                SIGN UP FOR FREE
+                            </a>
+                        <?php } else { ?>
+                            <a class="btn btn-success" href="backlog_item.php"
+                               style="color:#ffffff !important;font-weight: bold !important;">
+                                PRODUCT BACKLOG
+                            </a>
+                        <?php } ?>
                         <h4>Available on <a href="#" class="link">Google play</a></h4>
                     </div>
                 </div>

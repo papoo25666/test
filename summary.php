@@ -1,3 +1,9 @@
+<?php
+include_once "classes/ManageSession.php";
+if (!ManageSession::isLogged()) {
+    header("location:login.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -12,23 +12,36 @@ class ManageSession
         return true;
     }
 
-    public function isAdmin()
+    public static function isAdmin()
     {
+        if ($_SESSION['role'] == "Admin") {
+            return true;
+        }
+        return false;
     }
 
-    public function isPO()
+    public static function isPO()
     {
-
+        if ($_SESSION['role'] == "Product Owner") {
+            return true;
+        }
+        return false;
     }
 
-    public function isSM()
+    public static function isSM()
     {
-
+        if ($_SESSION['role'] == "Scrum Master") {
+            return true;
+        }
+        return false;
     }
 
-    public function isTeam()
+    public static function isTeam()
     {
-
+        if ($_SESSION['role'] == "Development Team") {
+            return true;
+        }
+        return false;
     }
 }
 

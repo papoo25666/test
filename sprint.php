@@ -1,3 +1,9 @@
+<?php
+include_once "classes/ManageSession.php";
+if (!ManageSession::isLogged()) {
+    header("location:login.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,8 +12,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Scrum Board</title>
     <link href="css/bootstrap.min.css" rel="stylesheet"/>
-    <link href ="css/font-awesome.min.css" rel = "stylesheet" />
-    <link href ="css/custom_style.css" rel = "stylesheet" />
+    <link href="css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="css/custom_style.css" rel="stylesheet"/>
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/button.css"/>
     <link rel="stylesheet" href="css/navbar.css"/>
@@ -48,6 +54,25 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="index.php">Scrum Board</a>
+        </div>
+        <div class="navbar-collapse collapse navbar-inverse-collapse">
+            <?php include_once "classes/ManageSession.php"; ?>
+            <ul class="nav navbar-nav navbar-right" style="margin-right: 0">
+                <?php if (!ManageSession::isLogged()) { ?>
+
+                <?php } else { ?>
+                    <li class="dropdown">
+                        <a href="" class="dropdown-toggle username" data-toggle="dropdown" role="button"
+                           aria-haspopup="true"
+                           aria-expanded="false"><?php echo $_SESSION['username']; ?> <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="backlog_item.php">Prodoct Backlog items</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="logout.php">Logout</a></li>
+                        </ul>
+                    </li>
+                <?php } ?>
+            </ul>
         </div>
     </section>
     <!--End Navbar-->

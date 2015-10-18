@@ -39,6 +39,25 @@ if (!ManageSession::isLogged()) {
             </button>
             <a class="navbar-brand" href="index.php">Scrum Board</a>
         </div>
+        <div class="navbar-collapse collapse navbar-inverse-collapse">
+            <?php include_once "classes/ManageSession.php"; ?>
+            <ul class="nav navbar-nav navbar-right" style="margin-right: 0">
+                <?php if (!ManageSession::isLogged()) { ?>
+
+                <?php } else { ?>
+                    <li class="dropdown">
+                        <a href="" class="dropdown-toggle username" data-toggle="dropdown" role="button"
+                           aria-haspopup="true"
+                           aria-expanded="false"><?php echo $_SESSION['username']; ?> <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="backlog_item.php">Prodoct Backlog items</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="logout.php">Logout</a></li>
+                        </ul>
+                    </li>
+                <?php } ?>
+            </ul>
+        </div>
     </section>
     <!--End Navbar-->
 
@@ -47,9 +66,13 @@ if (!ManageSession::isLogged()) {
             <div class="row" style="margin-top: 10px;margin-bottom: 20px;margin-left: 0;margin-right: 0">
                 <div class="col-lg-2 col-md-2 col-sm-2">
                     <div class="list-group">
-                        <a type="button" href="backlog_item.php" class="list-group-item active">Product Backlog</a>
-                        <a type="button" href="edit_backlog.php" class="list-group-item">แก้ไข Product Backlog</a>
-                        <a type="button" href=" edit_priority.php" class="list-group-item">แก้ไข Prioriry</a>
+                        <a type="button" href="backlog_item.php" class="list-group-item active">แสดง Product Backlog</a>
+                        <a type="button" href="sprint.php" class="list-group-item">แสดง Sprint
+                            Backlog</a>
+                        <?php if (ManageSession::isPO() || ManageSession::isAdmin()) { ?>
+                            <a type="button" href="edit_backlog.php" class="list-group-item">แก้ไข Product Backlog</a>
+                            <a type="button" href=" edit_priority.php" class="list-group-item">แก้ไข Prioriry</a>
+                        <?php } ?>
                     </div>
                 </div>
                 <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12"

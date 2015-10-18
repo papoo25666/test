@@ -355,8 +355,37 @@ label {
     border-top: 1px dotted #bbb;
     padding: 10px;
 }
+
 .well {
     border: 0;
     border-radius: 0;
     background-color: #E0E0E0;
 }
+
+.username {
+    font-weight: bold;
+    font-size: 20px;
+    color: #fff !important;
+    font-family: sukhumvit;
+}
+
+.navbar-nav > li > .dropdown-menu {
+    background-color: rgba(10, 33, 38, 0.9);
+    color: #fff;
+}
+
+.navbar-inverse .navbar-nav > .open > a:hover {
+    background-color: rgba(10, 33, 38, 0.9);
+}
+
+.dropdown-menu > li > a {
+    color: #fff;
+    font-family: sukhumvit;
+    font-size: 16px;
+}
+
+.dropdown-menu > li > a:hover {
+    font-weight: bold;
+
+}
+
