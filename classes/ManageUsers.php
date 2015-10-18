@@ -56,6 +56,14 @@ class ManageUsers
         $this->result->execute();
         return $this->result->fetchAll();
     }
+
+    public function getUserRole($username)
+    {
+        $this->result = $this->db->prepare("SELECT *FROM user_types LEFT JOIN users ON users.user_types_id = user_types.id WHERE users.username = ?");
+        $value = array($username);
+        $this->result->execute($value);
+        return $this->result->fetchAll();
+    }
 }
 
 ?>

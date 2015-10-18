@@ -45,7 +45,7 @@
                     <?php include_once "libs/register.php"; ?>
                     <form role="form" class="form-horizontal" action="" method="post"
                           style="margin-top: 10px;padding: 10px">
-                        <?php if (isset($success)) echo "<span style='margin-left: -10px;margin-bottom: 10px;color: green'>" . $success . "<a href='login.php'>  คลิกเพื่อเข้าสู่ระบบ</a></span>"; ?>
+                        <?php if (isset($success)) echo "<span style='margin-left: -10px;margin-bottom: 10px;color: green;'>" . $success . "<a href='login.php' style='font-weight: bold'>  คลิกเพื่อเข้าสู่ระบบ</a></span>"; ?>
                         <?php if (isset($warning)) echo "<span  style='margin-left: -10px;margin-bottom: 10px;color: orangered'>" . $warning . "</span>"; ?>
                         <?php if (isset($err)) echo "<span style='margin-left: -10px;margin-bottom: 10px;color: red'>" . $err . "</span>"; ?>
                         <div class="form-group" style="margin-top: 10px">

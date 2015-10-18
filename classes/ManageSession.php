@@ -4,9 +4,16 @@ if (!isset($_SESSION))
 
 class ManageSession
 {
+    public static function isLogged()
+    {
+        if ($_SESSION['state'] != "logged") {
+            return false;
+        }
+        return true;
+    }
+
     public function isAdmin()
     {
-
     }
 
     public function isPO()

@@ -1,3 +1,4 @@
+<?php if (!isset($_SESSION)) session_start(); ?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -6,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Scrum Board</title>
     <link href="css/bootstrap.min.css" rel="stylesheet"/>
-    <link href ="css/font-awesome.min.css" rel = "stylesheet" />
-    <link href ="css/custom_style.css" rel = "stylesheet" />
+    <link href="css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="css/custom_style.css" rel="stylesheet"/>
     <link rel="stylesheet" href="css/navbar.css"/>
     <link rel="stylesheet" href="css/button.css"/>
 
@@ -31,9 +32,21 @@
             <a class="navbar-brand" href="index.php">Scrum Board</a>
         </div>
         <div class="navbar-collapse collapse navbar-inverse-collapse">
-
+            <?php include_once "classes/ManageSession.php"; ?>
             <ul class="nav navbar-nav navbar-right" style="margin-right: 0">
-                <li class="active text-center text-login"><a class="login-button" href="login.php">LOG IN</a></li>
+                <?php if (!ManageSession::isLogged()) { ?>
+                    <li class="active text-center text-login"><a class="login-button" href="login.php">LOG IN</a></li>
+                <?php } else { ?>
+                    <li class="dropdown">
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                           aria-expanded="false"><?php echo $_SESSION['username']; ?><span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Prodoct Backlog items</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="logout.php">Logout</a></li>
+                        </ul>
+                    </li>
+                <?php } ?>
             </ul>
         </div>
     </section>
@@ -123,7 +136,9 @@
             <div class="container">
                 <h2 class="text-center" style="color: #696969;padding-top: 20px;
                 margin-bottom: 0;font-family: sukhumvit;font-weight: bold;font-size: 3em">POWER BY</h2>
-                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 col-lg-offset-1 col-md-offset-1 col-sm-offset-1" style="margin-bottom: 55px">
+
+                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 col-lg-offset-1 col-md-offset-1 col-sm-offset-1"
+                     style="margin-bottom: 55px">
                     <img src="images/logo_cs.png?v=1" class="img img-responsive" style="width: 100%"/>
                 </div>
             </div>
