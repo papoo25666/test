@@ -39,9 +39,22 @@ if (!ManageSession::isLogged()) {
             <a class="navbar-brand" href="index.php">Scrum Board</a>
         </div>
         <div class="navbar-collapse collapse navbar-inverse-collapse">
-
+            <?php include_once "classes/ManageSession.php"; ?>
             <ul class="nav navbar-nav navbar-right" style="margin-right: 0">
-                <li class="active text-center text-login"><a class="login-button" href="login.php">LOG IN</a></li>
+                <?php if (!ManageSession::isLogged()) { ?>
+
+                <?php } else { ?>
+                    <li class="dropdown">
+                        <a href="" class="dropdown-toggle username" data-toggle="dropdown" role="button"
+                           aria-haspopup="true"
+                           aria-expanded="false"><?php echo $_SESSION['username']; ?> <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="backlog_item.php" style="padding: 10px">Prodoct Backlog items</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="logout.php" style="padding: 10px">Logout</a></li>
+                        </ul>
+                    </li>
+                <?php } ?>
             </ul>
         </div>
     </section>
