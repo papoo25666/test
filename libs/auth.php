@@ -2,7 +2,7 @@
 if (!isset($_SESSION))
     session_start();
 
-include "/classes/ManageUsers.php";
+include_once "/classes/ManageUsers.php";
 if (isset($_POST['username']) && isset($_POST['password'])) {
     if (empty($_POST['username']) == false && empty($_POST['password']) == false) {
         $username = $_POST['username'];

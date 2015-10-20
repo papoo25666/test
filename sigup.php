@@ -48,7 +48,7 @@ if (ManageSession::isLogged()) {
                     <h2 class="text-center"
                         style="color: #333;font-weight: bold;margin-top: 10px;font-family: sukhumvit;font-size: 3em;;">
                         SIGN UP</h2>
-                    <?php include_once "libs/register.php"; ?>
+                    <?php include_once "/libs/register.php"; ?>
                     <form role="form" class="form-horizontal" action="" method="post"
                           style="margin-top: 10px;padding: 10px">
                         <?php if (isset($success)) echo "<span style='margin-left: -10px;margin-bottom: 10px;color: green;'>" . $success . "<a href='login.php' style='font-weight: bold'>  คลิกเพื่อเข้าสู่ระบบ</a></span>"; ?>

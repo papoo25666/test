@@ -24,6 +24,9 @@ class ManageUsers
 
     public function loginUser($username, $password)
     {
+        $salt = "23143453458923scrum232342532";
+        //hash password
+        $password = hash_hmac('sha256', $password, $salt);
         $this->result = $this->db->prepare("SELECT *FROM users WHERE username = ? AND password = ?");
         $values = array($username, $password);
         $this->result->execute($values);

@@ -16,7 +16,7 @@ if (isset($_POST['fname']) && isset($_POST['lname'])
         $email = $_POST['email'];
         $role = $_POST['role'];
 
-        include "/classes/ManageUsers.php";
+        include_once "/classes/ManageUsers.php";
         $conn = new ManageUsers();
         if ($conn->getUserCount($username) == 0) {
             $counts = $conn->registerUser($username, $password, $fname, $lname, $email, $role);
