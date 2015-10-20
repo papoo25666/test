@@ -4,6 +4,7 @@ if (!ManageSession::isLogged()) {
     header("location:login.php");
 }
 ?>
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -66,66 +67,26 @@ if (!ManageSession::isLogged()) {
             <div class="row" style="margin-top: 10px;margin-bottom: 20px;margin-left: 0;margin-right: 0">
                 <div class="col-lg-2 col-md-2 col-sm-2">
                     <div class="list-group">
-                        <a type="button" href="backlog_item.php" class="list-group-item active">แสดง Product Backlog</a>
-                        <a type="button" href="sprint.php" class="list-group-item">แสดง Sprint
-                            Backlog</a>
+                        <a type="button" href="backlog_item.php" class="list-group-item">แสดง Product Backlog</a>
+                        <a type="button" href="sprint.php" class="list-group-item active">แสดง Sprint Backlog</a>
                         <?php if (ManageSession::isPO() || ManageSession::isAdmin()) { ?>
-                            <a type="button" href="edit_backlog.php" class="list-group-item">แก้ไข Product Backlog</a>
-                            <a type="button" href=" edit_priority.php" class="list-group-item">แก้ไข Prioriry</a>
+                            <a href="edit_backlog.php" type="button" class="list-group-item">แก้ไข Product Backlog</a>
+                            <a href="edit_priority.php" type="button" class="list-group-item">แก้ไข Prioriry</a>
                         <?php } ?>
                     </div>
                 </div>
-                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12"
-                    >
-                    <table>
-                        <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>NAME</th>
-                            <th>VALUE</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <?php
-                        include "configs/config.php";
-                        include "classes/ManageUserStory.php";
-                        $db = new ManageUserStory();
-                        $result = $db->getUserStory();
-                        foreach ($result as $row) {
-                            ?>
-                            <tr style="font-family: sukhumvit;font-size: 17px;font-weight: 500">
-                                <td class="id"><?php echo $row['id'] ?></td>
-                                <td class="name"><?php echo $row['user_story_name'] ?></td>
-                                <?php
-                                $price = $row['user_story_price'];
-                                $price = number_format($price, 2, ".", ",");
-                                ?>
-                                <td class="value" style="text-align: right"><?php echo $price; ?></td>
-                            </tr>
-                        <?php } ?>
-                        </tbody>
-                    </table>
-                </div>
+                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                    <style>
 
-                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
-                    <table>
-                        <thead>
-                        <tr>
-                            <th>PRIORITY</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>3</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                        </tr>
-                        </tbody>
-                    </table>
+                    </style>
+                    <?php for ($i = 1; $i <= 15; $i++) { ?>
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-4 col-lg-offset-1
+                        col-md-offset-1 col-sm-offset-1 col-xs-offset-1"
+                             style="height: 150px;background-color: #00E676;margin-bottom: 15px">
+                            <a href="#" style="font-family: sukhumvit;color: #fff;font-weight: bold;font-size: 24px" class="text-center">
+                                Sprint <?php echo $i; ?></a>
+                        </div>
+                    <?php } ?>
                 </div>
             </div>
         </div>
