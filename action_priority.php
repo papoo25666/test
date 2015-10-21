@@ -69,8 +69,8 @@ if (!ManageSession::isLogged()) {
                         <a type="button" href="backlog_item.php" class="list-group-item">แสดง Product Backlog</a>
                         <a type="button" href="sprint.php" class="list-group-item">แสดง Sprint Backlog</a>
                         <?php if (ManageSession::isPO() || ManageSession::isAdmin()) { ?>
-                            <a href="edit_backlog.php" type="button" class="list-group-item">แก้ไข Product Backlog</a>
-                            <a href="edit_priority.php" type="button" class="list-group-item active">แก้ไข Prioriry</a>
+                            <a href="action_backlog.php" type="button" class="list-group-item">แก้ไข Product Backlog</a>
+                            <a href="action_priority.php" type="button" class="list-group-item active">แก้ไข Prioriry</a>
                         <?php } ?>
                     </div>
                 </div>

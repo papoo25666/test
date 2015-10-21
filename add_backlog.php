@@ -3,6 +3,9 @@ include_once "classes/ManageSession.php";
 if (!ManageSession::isLogged()) {
     header("location:login.php");
 }
+if (!ManageSession::isPO()) {
+    header("location:action_backlog.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -69,19 +72,26 @@ if (!ManageSession::isLogged()) {
                         <a type="button" href="backlog_item.php" class="list-group-item">แสดง Product Backlog</a>
                         <a type="button" href="sprint.php" class="list-group-item">แสดง Sprint Backlog</a>
                         <?php if (ManageSession::isPO() || ManageSession::isAdmin()) { ?>
-                            <a href="edit_backlog.php" type="button" class="list-group-item active">แก้ไข Product
+                            <a href="action_backlog.php" type="button" class="list-group-item active">แก้ไข Product
                                 Backlog</a>
-                            <a type="button" href="edit_priority.php" class="list-group-item">แก้ไข Prioriry</a>
+                            <a type="button" href="action_priority.php" class="list-group-item">แก้ไข Prioriry</a>
                         <?php } ?>
                     </div>
                 </div>
-                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12"
-                    >
+                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-lg-offset-3
                         col-md-offset-3 col-sm-offset-3 col-xs-offset-3"
                              style="background-color: #E0E0E0;padding-top: 30px;padding-left: 30px;padding-right: 30px;padding-bottom: 20px">
-                            <form class="form" role="form">
+                            <form class="form" role="form" method="post" action="">
+                                <div class="form-group">
+                                    <?php
+                                    include_once "/libs/userstory.php";
+                                    if (isset($success)) echo "<span style='color: green;'>" . $success . "<a href='action_backlog.php' style='font-weight: bold'>  คลิกเพื่อแสดง</a></span>";
+                                    if (isset($warning)) echo "<span style='color: orangered;font-weight: bold'>" . $warning . "</span>";
+                                    if (isset($err)) echo "<span style='color: red;font-weight: bold'>" . $err . "</span>";
+                                    ?>
+                                </div>
                                 <div class="form-group">
                                     <label class="control-label">USER STORY NAME</label>
                                     <input class="form-control" placeholder="user story name" type="text"

@@ -49,11 +49,12 @@
                     <?php if (isset($err)) echo "<span class='alert-danger' style='width: auto'>" . $err . "</span>"; ?>
                     <div class="form-group" style="color: #000">
                         <label class="control-label">username</label>
-                        <input class="form-control" type="texts" id="username" name="username"/>
+                        <input class="form-control" type="texts" id="username" name="username" placeholder="username"/>
                     </div>
                     <div class="form-group" style="color: #000">
                         <label class="control-label">password</label>
-                        <input class="form-control" type="password" id="password" name="password"/>
+                        <input class="form-control" type="password" id="password" name="password"
+                               placeholder="password"/>
                     </div>
                     <div class="form-group">
                         <a href="#">Forgot password</a>

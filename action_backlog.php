@@ -69,9 +69,9 @@ if (!ManageSession::isLogged()) {
                         <a type="button" href="backlog_item.php" class="list-group-item">แสดง Product Backlog</a>
                         <a type="button" href="sprint.php" class="list-group-item">แสดง Sprint Backlog</a>
                         <?php if (ManageSession::isPO() || ManageSession::isAdmin()) { ?>
-                            <a href="edit_backlog.php" type="button" class="list-group-item active">แก้ไข Product
+                            <a href="action_backlog.php" type="button" class="list-group-item active">แก้ไข Product
                                 Backlog</a>
-                            <a type="button" href="edit_priority.php" class="list-group-item">แก้ไข Prioriry</a>
+                            <a type="button" href="action_priority.php" class="list-group-item">แก้ไข Prioriry</a>
                         <?php } ?>
                     </div>
                 </div>
@@ -81,7 +81,8 @@ if (!ManageSession::isLogged()) {
                         <thead>
                         <tr>
                             <th>ID</th>
-                            <th>NAME <a href="add_backlog.php" class="btn btn-warning">ADD USER STORY</a></th>
+                            <th>NAME <a href="add_backlog.php" style="margin-left: 10px"
+                                        class="btn btn-warning">ADD USER STORY</a></th>
                             <th>VALUE</th>
                             <th>ACTION</th>
                         </tr>
@@ -103,8 +104,7 @@ if (!ManageSession::isLogged()) {
                                 ?>
                                 <td class="value" style="text-align: right"><?php echo $price; ?></td>
                                 <td class="action" style="width: 15%">
-                                    <a href="#" style="display: inline;">Edit </a> | <a href="#"
-                                                                                        style="display: inline;">Delete</a>
+                                    <a href="#" style="display: inline;">Edit </a> | <a href="#" style="display: inline;">Delete</a>
                                 </td>
                             </tr>
                         <?php } ?>
