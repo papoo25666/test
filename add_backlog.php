@@ -94,8 +94,8 @@ if (!ManageSession::isPO()) {
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">USER STORY NAME</label>
-                                    <input class="form-control" placeholder="user story name" type="text"
-                                           name="userstory_name" id="userstory_name"/>
+                                    <textarea class="form-control" placeholder="user story name" type="text"
+                                              name="userstory_name" id="userstory_name"></textarea>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">USER STORY PRICE</label>

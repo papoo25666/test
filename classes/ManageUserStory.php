@@ -20,6 +20,16 @@ class ManageUserStory
         return $data;
     }
 
+    public function getUserStoryById($id)
+    {
+        $this->result = $this->db->prepare("SELECT *FROM user_story WHERE id = ?");
+        $value = array($id);
+        $this->result->execute($value);
+        $data = $this->result->fetchAll();
+        return $data;
+    }
+
+
     public function insertUserStory($userstory, $value)
     {
         $this->result = $this->db->prepare("INSERT INTO user_story(user_story_name, user_story_price) VALUES (?,?)");
