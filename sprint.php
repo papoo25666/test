@@ -4,7 +4,6 @@ if (!ManageSession::isLogged()) {
     header("location:login.php");
 }
 ?>
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -75,19 +74,11 @@ if (!ManageSession::isLogged()) {
                         <?php } ?>
                     </div>
                 </div>
-                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
-                    <style>
+                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12"
+                    >
 
-                    </style>
-                    <?php for ($i = 1; $i <= 15; $i++) { ?>
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-4 col-lg-offset-1
-                        col-md-offset-1 col-sm-offset-1 col-xs-offset-1"
-                             style="height: 150px;background-color: #00E676;margin-bottom: 15px">
-                            <a href="#" style="font-family: sukhumvit;color: #fff;font-weight: bold;font-size: 24px" class="text-center">
-                                Sprint <?php echo $i; ?></a>
-                        </div>
-                    <?php } ?>
                 </div>
+
             </div>
         </div>
     </section>
