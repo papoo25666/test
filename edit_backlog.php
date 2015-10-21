@@ -87,7 +87,7 @@ if (!ManageSession::isPO()) {
                                 <div class="form-group">
                                     <?php
                                     include_once "/libs/userstory.php";
-                                    if (isset($success)) echo "<span style='color: green;'>" . $success . "<a href='action_backlog.php' style='font-weight: bold'>  คลิกเพื่อแสดง</a></span>";
+                                    if (isset($success)) echo "<span style='color: green;font-weight: bold'>" . $success . "<a href='action_backlog.php' style='font-weight: bold'>  คลิกเพื่อแสดง</a></span>";
                                     if (isset($warning)) echo "<span style='color: orangered;font-weight: bold'>" . $warning . "</span>";
                                     if (isset($err)) echo "<span style='color: red;font-weight: bold'>" . $err . "</span>";
                                     ?>
@@ -114,6 +114,7 @@ if (!ManageSession::isPO()) {
                                            id="userstory_price"/>
                                 </div>
                                 <div class="form-group text-center">
+                                    <input type="hidden" name="id" value="<?php echo $row['id']; ?>"/>
                                     <input type="hidden" name="action" value="edit"/>
                                     <button type="submit" class="btn btn-success">SUBMIT</button>
                                 </div>

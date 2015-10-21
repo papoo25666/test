@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b83c9af4-d766-4356-b561-2a451746cd5a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/edit_backlog.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/ManageUserStory.php" afterPath="$PROJECT_DIR$/classes/ManageUserStory.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/action_backlog.php" afterPath="$PROJECT_DIR$/action_backlog.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/add_backlog.php" afterPath="$PROJECT_DIR$/add_backlog.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/edit_backlog.php" afterPath="$PROJECT_DIR$/edit_backlog.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/userstory.php" afterPath="$PROJECT_DIR$/libs/userstory.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Mockup.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,15 +29,15 @@
       <file leaf-file-name="ManageUserStory.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/classes/ManageUserStory.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.344828">
-              <caret line="26" column="37" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
+            <state vertical-scroll-proportion="-6.137931">
+              <caret line="50" column="86" selection-start-line="50" selection-start-column="86" selection-end-line="50" selection-end-column="86" />
               <folding>
-                <marker date="1445413209986" expanded="true" signature="302:325" placeholder="SELECT *FROM..user_story..." />
-                <marker date="1445413209986" expanded="true" signature="527:563" placeholder="SELECT *FROM..user_story..." />
-                <marker date="1445413209986" expanded="true" signature="815:885" placeholder="INSERT INTO ..." />
-                <marker date="1445413209986" expanded="true" signature="1398:1440" placeholder="UPDATE user_..." />
-                <marker date="1445413209986" expanded="true" signature="1398:1477" placeholder="UPDATE user_..." />
-                <marker date="1445413209986" expanded="true" signature="1720:1741" placeholder="SELECT *FROM..priority..." />
+                <marker date="1445414253842" expanded="true" signature="302:325" placeholder="SELECT *FROM..user_story..." />
+                <marker date="1445414253842" expanded="true" signature="527:563" placeholder="SELECT *FROM..user_story..." />
+                <marker date="1445414253842" expanded="true" signature="815:885" placeholder="INSERT INTO ..." />
+                <marker date="1445414253842" expanded="true" signature="1398:1440" placeholder="UPDATE user_..." />
+                <marker date="1445414253842" expanded="true" signature="1398:1473" placeholder="UPDATE user_..." />
+                <marker date="1445414253842" expanded="true" signature="1716:1737" placeholder="SELECT *FROM..priority..." />
               </folding>
             </state>
           </provider>
@@ -71,27 +68,28 @@
       <file leaf-file-name="userstory.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/libs/userstory.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.275862">
-              <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+            <state vertical-scroll-proportion="-4.7586207">
+              <caret line="15" column="162" selection-start-line="15" selection-start-column="162" selection-end-line="15" selection-end-column="162" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit_backlog.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="edit_backlog.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/edit_backlog.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.344828">
-              <caret line="106" column="104" selection-start-line="106" selection-start-column="104" selection-end-line="106" selection-end-column="104" />
+            <state vertical-scroll-proportion="-0.07266436">
+              <caret line="89" column="106" selection-start-line="89" selection-start-column="106" selection-end-line="89" selection-end-column="106" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#section#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#footer#0;n#section#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#div#0;n#footer#0;n#section#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1445413323131" expanded="true" signature="4674:4687" placeholder="..." />
-                <marker date="1445413323131" expanded="true" signature="4741:4758" placeholder="..." />
-                <marker date="1445413323131" expanded="true" signature="4865:4899" placeholder="..." />
-                <marker date="1445413323131" expanded="true" signature="4999:5027" placeholder="..." />
+                <marker date="1445414299914" expanded="true" signature="4674:4687" placeholder="..." />
+                <marker date="1445414299914" expanded="true" signature="4674:4704" placeholder="..." />
+                <marker date="1445414299914" expanded="true" signature="4758:4775" placeholder="..." />
+                <marker date="1445414299914" expanded="true" signature="4882:4916" placeholder="..." />
+                <marker date="1445414299914" expanded="true" signature="5016:5044" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -100,7 +98,7 @@
       <file leaf-file-name="action_backlog.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/action_backlog.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.068966">
+            <state vertical-scroll-proportion="-19.413794">
               <caret line="107" column="78" selection-start-line="107" selection-start-column="78" selection-end-line="107" selection-end-column="78" />
               <folding>
                 <element signature="n#style#0;n#a#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#0;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -109,11 +107,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="add_backlog.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="add_backlog.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/add_backlog.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.1384083">
-              <caret line="97" column="99" selection-start-line="97" selection-start-column="99" selection-end-line="97" selection-end-column="99" />
+            <state vertical-scroll-proportion="-52.344826">
+              <caret line="146" column="39" selection-start-line="146" selection-start-column="39" selection-end-line="146" selection-end-column="39" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#section#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -233,11 +231,11 @@
         <option value="$PROJECT_DIR$/sprint.php" />
         <option value="$PROJECT_DIR$/api/PBLItems.php" />
         <option value="$PROJECT_DIR$/login.php" />
-        <option value="$PROJECT_DIR$/libs/userstory.php" />
         <option value="$PROJECT_DIR$/action_backlog.php" />
+        <option value="$PROJECT_DIR$/add_backlog.php" />
+        <option value="$PROJECT_DIR$/libs/userstory.php" />
         <option value="$PROJECT_DIR$/classes/ManageUserStory.php" />
         <option value="$PROJECT_DIR$/edit_backlog.php" />
-        <option value="$PROJECT_DIR$/add_backlog.php" />
       </list>
     </option>
   </component>
@@ -297,34 +295,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Mockup" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Mockup" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Mockup" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="classes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Mockup" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Mockup" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="api" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -705,6 +675,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6557093">
           <caret line="46" column="67" selection-start-line="46" selection-start-column="60" selection-end-line="46" selection-end-column="67" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -719,6 +690,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="24.137932">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="5" selection-end-column="2" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -726,6 +698,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.32352942">
           <caret line="84" column="64" selection-start-line="84" selection-start-column="64" selection-end-line="84" selection-end-column="64" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -818,27 +791,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/action_backlog.php">
+    <entry file="file://$PROJECT_DIR$/add_backlog.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.068966">
-          <caret line="107" column="78" selection-start-line="107" selection-start-column="78" selection-end-line="107" selection-end-column="78" />
+        <state vertical-scroll-proportion="-52.344826">
+          <caret line="146" column="39" selection-start-line="146" selection-start-column="39" selection-end-line="146" selection-end-column="39" />
           <folding>
-            <element signature="n#style#0;n#a#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#0;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#footer#0;n#section#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#div#0;n#footer#0;n#section#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1445413427095" expanded="true" signature="4674:4687" placeholder="..." />
+            <marker date="1445413427095" expanded="true" signature="4741:4758" placeholder="..." />
+            <marker date="1445413427095" expanded="true" signature="4865:4899" placeholder="..." />
+            <marker date="1445413427095" expanded="true" signature="4999:5027" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classes/ManageUserStory.php">
+    <entry file="file://$PROJECT_DIR$/action_backlog.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.344828">
-          <caret line="26" column="37" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
+        <state vertical-scroll-proportion="-19.413794">
+          <caret line="107" column="78" selection-start-line="107" selection-start-column="78" selection-end-line="107" selection-end-column="78" />
           <folding>
-            <marker date="1445413209986" expanded="true" signature="302:325" placeholder="SELECT *FROM..user_story..." />
-            <marker date="1445413209986" expanded="true" signature="527:563" placeholder="SELECT *FROM..user_story..." />
-            <marker date="1445413209986" expanded="true" signature="815:885" placeholder="INSERT INTO ..." />
-            <marker date="1445413209986" expanded="true" signature="1398:1440" placeholder="UPDATE user_..." />
-            <marker date="1445413209986" expanded="true" signature="1398:1477" placeholder="UPDATE user_..." />
-            <marker date="1445413209986" expanded="true" signature="1720:1741" placeholder="SELECT *FROM..priority..." />
+            <element signature="n#style#0;n#a#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#0;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -853,31 +828,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/libs/userstory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.275862">
-          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/edit_backlog.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.344828">
-          <caret line="106" column="104" selection-start-line="106" selection-start-column="104" selection-end-line="106" selection-end-column="104" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#section#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#footer#0;n#section#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#div#0;n#footer#0;n#section#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1445413323131" expanded="true" signature="4674:4687" placeholder="..." />
-            <marker date="1445413323131" expanded="true" signature="4741:4758" placeholder="..." />
-            <marker date="1445413323131" expanded="true" signature="4865:4899" placeholder="..." />
-            <marker date="1445413323131" expanded="true" signature="4999:5027" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/action_priority.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.6896552">
@@ -886,19 +836,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/add_backlog.php">
+    <entry file="file://$PROJECT_DIR$/libs/userstory.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1384083">
-          <caret line="97" column="99" selection-start-line="97" selection-start-column="99" selection-end-line="97" selection-end-column="99" />
+        <state vertical-scroll-proportion="-4.7586207">
+          <caret line="15" column="162" selection-start-line="15" selection-start-column="162" selection-end-line="15" selection-end-column="162" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/ManageUserStory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.137931">
+          <caret line="50" column="86" selection-start-line="50" selection-start-column="86" selection-end-line="50" selection-end-column="86" />
+          <folding>
+            <marker date="1445414253842" expanded="true" signature="302:325" placeholder="SELECT *FROM..user_story..." />
+            <marker date="1445414253842" expanded="true" signature="527:563" placeholder="SELECT *FROM..user_story..." />
+            <marker date="1445414253842" expanded="true" signature="815:885" placeholder="INSERT INTO ..." />
+            <marker date="1445414253842" expanded="true" signature="1398:1440" placeholder="UPDATE user_..." />
+            <marker date="1445414253842" expanded="true" signature="1398:1473" placeholder="UPDATE user_..." />
+            <marker date="1445414253842" expanded="true" signature="1716:1737" placeholder="SELECT *FROM..priority..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/edit_backlog.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.07266436">
+          <caret line="89" column="106" selection-start-line="89" selection-start-column="106" selection-end-line="89" selection-end-column="106" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#section#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#footer#0;n#section#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#div#0;n#footer#0;n#section#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1445413427095" expanded="true" signature="4674:4687" placeholder="..." />
-            <marker date="1445413427095" expanded="true" signature="4741:4758" placeholder="..." />
-            <marker date="1445413427095" expanded="true" signature="4865:4899" placeholder="..." />
-            <marker date="1445413427095" expanded="true" signature="4999:5027" placeholder="..." />
+            <marker date="1445414299914" expanded="true" signature="4674:4687" placeholder="..." />
+            <marker date="1445414299914" expanded="true" signature="4674:4704" placeholder="..." />
+            <marker date="1445414299914" expanded="true" signature="4758:4775" placeholder="..." />
+            <marker date="1445414299914" expanded="true" signature="4882:4916" placeholder="..." />
+            <marker date="1445414299914" expanded="true" signature="5016:5044" placeholder="..." />
           </folding>
         </state>
       </provider>

@@ -48,7 +48,7 @@ class ManageUserStory
 
     public function editStoryItems($user_story_name, $user_story_price, $id)
     {
-        $this->result = $this->db->prepare("UPDATE user_story SET user_story_name = ?,SET user_story_price = ? WHERE id = ?");
+        $this->result = $this->db->prepare("UPDATE user_story SET user_story_name = ?,user_story_price = ? WHERE id = ?");
         $value = array($user_story_name, $user_story_price, $id);
         $this->result->execute($value);
         return $this->result->rowCount();
