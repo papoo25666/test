@@ -56,14 +56,25 @@ class ManageUserStory
 
     public function getPrioriry()
     {
-        $this->result = $this->db->prepare("SELECT *FROM priority");
+        $this->result = $this->db->prepare("SELECT *FROM priority WHERE id = 1");
         $this->result->execute();
         return $this->result->fetchAll();
     }
 
-    public function editPriority()
+    public function deletePriority($id)
     {
+        $this->result = $this->db->prepare("DELETE FROM priority WHERE id = ?");
+        $value = array($id);
+        $this->result->execute($value);
+        return $this->result->rowCount();
+    }
 
+    public function editPriority($id, $priority)
+    {
+        $this->result = $this->db->prepare("UPDATE priority SET priority = ? WHERE id = ?");
+        $value = array($priority, $id);
+        $this->result->execute($value);
+        return $this->result->rowCount();
     }
 
 }

@@ -3,9 +3,6 @@ include_once "classes/ManageSession.php";
 if (!ManageSession::isLogged()) {
     header("location:login.php");
 }
-if (!ManageSession::isPO()) {
-    header("location:action_backlog.php");
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -69,13 +66,20 @@ if (!ManageSession::isPO()) {
             <div class="row" style="margin-top: 10px;margin-bottom: 20px;margin-left: 0;margin-right: 0">
                 <div class="col-lg-2 col-md-2 col-sm-2">
                     <div class="list-group">
-                        <a type="button" href="backlog_item.php" class="list-group-item">แสดง Product Backlog</a>
-                        <a type="button" href="sprint.php" class="list-group-item">แสดง Sprint Backlog</a>
+                        <a type="button" href="backlog_item.php" class="list-group-item">
+                            <img src="images/ic_home.png" style="width: 20px;height: 20px">
+                            แสดง Product Backlog
+                        </a>
+                        <a type="button" href="action_sprint.php" class="list-group-item">
+                            <img src="images/ic_home.png" style="width: 20px;height: 20px">
+                            แสดง Sprint Backlog</a>
                         <?php if (ManageSession::isPO() || ManageSession::isAdmin()) { ?>
-                            <a href="action_backlog.php" type="button" class="list-group-item">แก้ไข Product
-                                Backlog</a>
-                            <a type="button" href="action_priority.php" class="list-group-item active">แก้ไข
-                                Prioriry</a>
+                            <a href="action_backlog.php" type="button" class="list-group-item">
+                                <img src="images/ic_mode.png" style="width: 20px;height: 20px">
+                                แก้ไข Product Backlog</a>
+                            <a href="action_priority.php" type="button" class="list-group-item">
+                                <img src="images/ic_mode.png" style="width: 20px;height: 20px">
+                                แก้ไข Prioriry</a>
                         <?php } ?>
                     </div>
                 </div>
@@ -84,24 +88,33 @@ if (!ManageSession::isPO()) {
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-lg-offset-3
                         col-md-offset-3 col-sm-offset-3 col-xs-offset-3"
                              style="background-color: #E0E0E0;padding-top: 30px;padding-left: 30px;padding-right: 30px;padding-bottom: 20px">
-                            <form role="form">
-                                <h3 style="font-family: sukhumvit">Manage priority</h3>
-                                <?php include_once "classes/ManageUserStory.php";
-                                $db = new  ManageUserStory();
+                            <?php include_once "libs/priority.php"; ?>
+                            <form class="form" role="form" method="post" action="">
+                                <?php
+                                include_once "classes/ManageUserStory.php";
+                                $db = new ManageUserStory();
                                 $result = $db->getPrioriry();
-                                foreach($result as $row){
-                                ?>
-                                <div class="form-group form-inline">
-                                    <input type="text" class="form-control" style="width: 80%" value="<?php echo $row['priority']; ?>"/>
-                                    <button class="btn btn-warning">SAVE</button>
+                                foreach ($result as $row) {
+                                    ?>
+                                    <div class="form-group form-inline">
+                                        <input class="form-control" name="priority" style="width: 80%"
+                                               value="<?php echo $row['priority']; ?>"/>
+
+                                        <button value="<?php echo $row['id']; ?>&action=delete"
+                                           class="btn btn-danger btn-delete"
+                                           >
+                                            Delete
+                                        </button>
+                                    </div>
+                                <?php } ?>
+                                <div class="form-group text-center">
+                                    <button type="submit" style="width: 50%" class="btn btn-warning">SAVE</button>
                                 </div>
-                                <?php }  ?>
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
     </section>
 
     <!--Footer-->
@@ -134,7 +147,14 @@ if (!ManageSession::isPO()) {
 <script type="application/javascript" src="js/jquery-1.11.3.min.js"></script>
 <script type="application/javascript" src="js/bootstrap.min.js"></script>
 <script type="application/javascript" src="js/angular.min.js"></script>
-
-
+<script type="application/javascript">
+    $(function () {
+        $('.btn-delete').click(function(){
+            var data = $(this).val();
+            alert(data);
+            return true;
+        });
+    });
+</script>
 </body>
 </html>

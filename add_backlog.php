@@ -69,12 +69,20 @@ if (!ManageSession::isPO()) {
             <div class="row" style="margin-top: 10px;margin-bottom: 20px;margin-left: 0;margin-right: 0">
                 <div class="col-lg-2 col-md-2 col-sm-2">
                     <div class="list-group">
-                        <a type="button" href="backlog_item.php" class="list-group-item">แสดง Product Backlog</a>
-                        <a type="button" href="sprint.php" class="list-group-item">แสดง Sprint Backlog</a>
+                        <a type="button" href="backlog_item.php" class="list-group-item">
+                            <img src="images/ic_home.png" style="width: 20px;height: 20px">
+                            แสดง Product Backlog
+                        </a>
+                        <a type="button" href="action_sprint.php" class="list-group-item">
+                            <img src="images/ic_home.png" style="width: 20px;height: 20px">
+                            แสดง Sprint Backlog</a>
                         <?php if (ManageSession::isPO() || ManageSession::isAdmin()) { ?>
-                            <a href="action_backlog.php" type="button" class="list-group-item active">แก้ไข Product
-                                Backlog</a>
-                            <a type="button" href="action_priority.php" class="list-group-item">แก้ไข Prioriry</a>
+                            <a href="action_backlog.php" type="button" class="list-group-item active">
+                                <img src="images/ic_mode.png" style="width: 20px;height: 20px">
+                                แก้ไข Product Backlog</a>
+                            <a type="button" href="action_priority.php" class="list-group-item">
+                                <img src="images/ic_mode.png" style="width: 20px;height: 20px">
+                                แก้ไข Prioriry</a>
                         <?php } ?>
                     </div>
                 </div>

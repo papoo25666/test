@@ -22,7 +22,7 @@
 }
 
 .btn-warning {
-    background-color: #EF6C00;
+    background-color: #FF9800;
 }
 
 .btn-warning:hover {
@@ -30,4 +30,11 @@
     -webkit-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
+    background-color: #FFA726;
+    border-radius: 0;
+    border-color: transparent;
+}
+.btn-primary {
+    background-color: #0091EA;
+    border-color: transparent;
 }

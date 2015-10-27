@@ -66,17 +66,38 @@ if (!ManageSession::isLogged()) {
             <div class="row" style="margin-top: 10px;margin-bottom: 20px;margin-left: 0;margin-right: 0">
                 <div class="col-lg-2 col-md-2 col-sm-2">
                     <div class="list-group">
-                        <a type="button" href="backlog_item.php" class="list-group-item">แสดง Product Backlog</a>
-                        <a type="button" href="sprint.php" class="list-group-item active">แสดง Sprint Backlog</a>
+                        <a type="button" href="backlog_item.php" class="list-group-item">
+                            <img src="images/ic_home.png" style="width: 20px;height: 20px">
+                            แสดง Product Backlog
+                        </a>
+                        <a type="button" href="action_sprint.php" class="list-group-item active">
+                            <img src="images/ic_home.png" style="width: 20px;height: 20px">
+                            แสดง Sprint Backlog</a>
                         <?php if (ManageSession::isPO() || ManageSession::isAdmin()) { ?>
-                            <a href="action_backlog.php" type="button" class="list-group-item">แก้ไข Product Backlog</a>
-                            <a href="action_priority.php" type="button" class="list-group-item">แก้ไข Prioriry</a>
+                            <a href="action_backlog.php" type="button" class="list-group-item">
+                                <img src="images/ic_mode.png" style="width: 20px;height: 20px">
+                                แก้ไข Product Backlog</a>
+                            <a href="action_priority.php" type="button" class="list-group-item">
+                                <img src="images/ic_mode.png" style="width: 20px;height: 20px">
+                                แก้ไข Prioriry</a>
                         <?php } ?>
                     </div>
                 </div>
-                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12"
-                    >
-
+                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
+                    <div class="row">
+                        <button class="btn btn-warning">Create Sprint Backlog</button>
+                    </div>
+                    <div class="row" style="margin-top: 10px">
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-6"
+                             style="background-color: #757575;height: 140px">
+                            <div class="text-center">
+                                <img src="images/ic_build.png" class="img img-rounded"/>
+                                <h3 style="color: #fff;font-weight: bold;font-family: sukhumvit;margin-bottom: 10px">
+                                    SPRINT 1
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
             </div>

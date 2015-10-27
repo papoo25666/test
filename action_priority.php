@@ -66,12 +66,20 @@ if (!ManageSession::isLogged()) {
             <div class="row" style="margin-top: 10px;margin-bottom: 20px;margin-left: 0;margin-right: 0">
                 <div class="col-lg-2 col-md-2 col-sm-2">
                     <div class="list-group">
-                        <a type="button" href="backlog_item.php" class="list-group-item">แสดง Product Backlog</a>
-                        <a type="button" href="sprint.php" class="list-group-item">แสดง Sprint Backlog</a>
+                        <a type="button" href="backlog_item.php" class="list-group-item">
+                            <img src="images/ic_home.png" style="width: 20px;height: 20px">
+                            แสดง Product Backlog
+                        </a>
+                        <a type="button" href="action_sprint.php" class="list-group-item">
+                            <img src="images/ic_home.png" style="width: 20px;height: 20px">
+                            แสดง Sprint Backlog</a>
                         <?php if (ManageSession::isPO() || ManageSession::isAdmin()) { ?>
-                            <a href="action_backlog.php" type="button" class="list-group-item">แก้ไข Product Backlog</a>
-                            <a href="action_priority.php" type="button" class="list-group-item active">แก้ไข
-                                Prioriry</a>
+                            <a href="action_backlog.php" type="button" class="list-group-item">
+                                <img src="images/ic_mode.png" style="width: 20px;height: 20px">
+                                แก้ไข Product Backlog</a>
+                            <a href="action_priority.php" type="button" class="list-group-item active">
+                                <img src="images/ic_mode.png" style="width: 20px;height: 20px">
+                                แก้ไข Prioriry</a>
                         <?php } ?>
                     </div>
                 </div>
@@ -108,27 +116,35 @@ if (!ManageSession::isLogged()) {
                 </div>
 
                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
-                    <table>
-                        <thead>
-                        <tr>
-                            <th>PRIORITY</th>
-                            <th>
-                                <a href="edit_priority.php" class="btn btn-warning">Edit</a>
-                            </th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <?php
-                        $pt = new ManageUserStory();
-                        $result = $pt->getPrioriry();
-                        foreach ($result as $row) {
-                            ?>
-                            <tr>
-                                <td colspan="2" class="text-center"><?php echo $row['priority']; ?></td>
-                            </tr>
-                        <?php } ?>
-                        </tbody>
-                    </table>
+                    <div style="background-color: #31bc86;padding: 10px;padding-bottom: 5px;
+                        border-bottom: 1px;border-top:0;border-right:0;border-left:0;
+                        border-color: #000;border-style: solid">
+                            <span
+                                style="font-family: sukhumvit;margin: 0px;color: #fff;font-weight: bold;font-size: 20px">
+                                Manage Priority
+                            </span>
+                        </a>
+                    </div>
+                    <?php include_once "libs/priority.php"; ?>
+                    <form role="form" method="post" action="">
+                        <div class="form-group" style="margin-bottom: 5px">
+                            <?php
+                            $pt = new ManageUserStory();
+                            $result = $pt->getPrioriry();
+                            foreach ($result as $row) {
+                                ?>
+                                <input class="form-control priority-input" name="priority"
+                                       value="<?php echo $row['priority']; ?>"
+                                       style="border-radius: 0"/>
+                                <input type="hidden" value="<?php echo $row['id']; ?>" name="id"/>
+                            <?php } ?>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-warning" type="submit" style="width: 100%">SAVE</button>
+                        </div>
+                        <?php if (isset($success)) echo "<p style='color: green'>" . $success . "</p>"; ?>
+                        <?php if (isset($err)) echo "<p style='color: red'>" . $err . "</p>"; ?>
+                    </form>
                 </div>
             </div>
         </div>
@@ -164,7 +180,6 @@ if (!ManageSession::isLogged()) {
 <script type="application/javascript" src="js/jquery-1.11.3.min.js"></script>
 <script type="application/javascript" src="js/bootstrap.min.js"></script>
 <script type="application/javascript" src="js/angular.min.js"></script>
-
 
 </body>
 </html>
