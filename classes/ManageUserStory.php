@@ -58,7 +58,7 @@ class ManageUserStory
     {
         $this->result = $this->db->prepare("SELECT *FROM priority");
         $this->result->execute();
-        return $this->result->rowCount();
+        return $this->result->fetchAll();
     }
 
     public function editPriority()

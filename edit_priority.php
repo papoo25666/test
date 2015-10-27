@@ -72,9 +72,10 @@ if (!ManageSession::isPO()) {
                         <a type="button" href="backlog_item.php" class="list-group-item">แสดง Product Backlog</a>
                         <a type="button" href="sprint.php" class="list-group-item">แสดง Sprint Backlog</a>
                         <?php if (ManageSession::isPO() || ManageSession::isAdmin()) { ?>
-                            <a href="action_backlog.php" type="button" class="list-group-item active">แก้ไข Product
+                            <a href="action_backlog.php" type="button" class="list-group-item">แก้ไข Product
                                 Backlog</a>
-                            <a type="button" href="action_priority.php" class="list-group-item">แก้ไข Prioriry</a>
+                            <a type="button" href="action_priority.php" class="list-group-item active">แก้ไข
+                                Prioriry</a>
                         <?php } ?>
                     </div>
                 </div>
@@ -83,7 +84,19 @@ if (!ManageSession::isPO()) {
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-lg-offset-3
                         col-md-offset-3 col-sm-offset-3 col-xs-offset-3"
                              style="background-color: #E0E0E0;padding-top: 30px;padding-left: 30px;padding-right: 30px;padding-bottom: 20px">
-                            
+                            <form role="form">
+                                <h3 style="font-family: sukhumvit">Manage priority</h3>
+                                <?php include_once "classes/ManageUserStory.php";
+                                $db = new  ManageUserStory();
+                                $result = $db->getPrioriry();
+                                foreach($result as $row){
+                                ?>
+                                <div class="form-group form-inline">
+                                    <input type="text" class="form-control" style="width: 80%" value="<?php echo $row['priority']; ?>"/>
+                                    <button class="btn btn-warning">SAVE</button>
+                                </div>
+                                <?php }  ?>
+                            </form>
                         </div>
                     </div>
                 </div>

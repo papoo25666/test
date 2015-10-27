@@ -115,15 +115,15 @@ if (!ManageSession::isLogged()) {
                         </tr>
                         </thead>
                         <tbody>
+                        <?php
+                        $pt = new ManageUserStory();
+                        $result  = $pt->getPrioriry();
+                        foreach($result as $row) {
+                        ?>
                         <tr>
-                            <td>3</td>
+                            <td><?php echo $row['priority']; ?></td>
                         </tr>
-                        <tr>
-                            <td>1</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                        </tr>
+                        <?php } ?>
                         </tbody>
                     </table>
                 </div>
