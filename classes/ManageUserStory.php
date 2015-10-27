@@ -61,6 +61,11 @@ class ManageUserStory
         return $this->result->rowCount();
     }
 
+    public function editPriority()
+    {
+
+    }
+
 }
 
 ?>
