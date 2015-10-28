@@ -47,20 +47,20 @@ if (!ManageSession::isLogged()) {
     <section class="content" style="min-height: 500px;margin-top: 70px">
         <div class="col-lg-12 col-md-12 col-sm-12">
             <div class="col-lg-3 col-md-3 col-sm-3" >
-                <div class="text-center" style="background-color: #333;height: 100px">
-                    <h3 style="font-family: sukhumvit;color: #fff;padding: 30px">User Story</h3>
+                <div class="text-center" style="background-color: #333;height: 100px;padding: 30px">
+                    <a href="user_story.php" style="font-family: sukhumvit;color: #fff;;font-size: 2em">User Story</a>
                 </div>
             </div>
 
             <div class="col-lg-3 col-md-3 col-sm-3" >
-                <div class="text-center" style="background-color: #333;height: 100px">
-                    <h3 style="font-family: sukhumvit;color: #fff;padding: 30px">Priority</h3>
+                <div class="text-center" style="background-color: #333;height: 100px;padding: 30px">
+                    <a href="priority.php" style="font-family: sukhumvit;color: #fff;;font-size: 2em">Priority</a>
                 </div>
             </div>
 
             <div class="col-lg-3 col-md-3 col-sm-3" >
-                <div class="text-center" style="background-color: #333;height: 100px">
-                    <h3 style="font-family: sukhumvit;color: #fff;padding: 30px">Isseus</h3>
+                <div class="text-center" style="background-color: #333;height: 100px;padding: 30px">
+                    <a href="issus.php" style="font-family: sukhumvit;color: #fff;;font-size: 2em">Issuss</a>
                 </div>
             </div>
         </div>
