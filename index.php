@@ -43,8 +43,9 @@
                            aria-expanded="false"><?php echo $_SESSION['username']; ?> <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="backlog_item.php" style="padding: 10px">Prodoct Backlog items</a></li>
+                            <li><a href="api/" style="padding: 10px">API</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="logout.php" style="padding: 10px">Logout</a></li>
+                            <li><a href="logout.php" style="padding: 5px 10px 5px 10px">Logout</a></li>
                         </ul>
                     </li>
                 <?php } ?>

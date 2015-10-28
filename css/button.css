@@ -23,6 +23,7 @@
 
 .btn-warning {
     background-color: #FF9800;
+    border-radius: 0;
 }
 
 .btn-warning:hover {
@@ -30,8 +31,8 @@
     -webkit-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
-    background-color: #FFA726;
-    border-radius: 0;
+    background-color: #ff8e2c;
+    border-radius: 5px;
     border-color: transparent;
 }
 .btn-primary {

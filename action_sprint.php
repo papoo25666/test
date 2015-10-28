@@ -84,26 +84,27 @@ if (!ManageSession::isLogged()) {
                     </div>
                 </div>
                 <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
-                    <div class="row">
+                    <div class="">
                         <button class="btn btn-warning">Create Sprint Backlog</button>
                     </div>
-                    <div class="row text-center" style="margin-top: 10px">
+                    <div class="" style="margin-top: 10px">
                         <?php for ($i = 1; $i <= 12; $i++) { ?>
                             <div class="col-lg-3 col-md-3 col-sm-3 col-6" style="padding-left: 0">
-                                <div class="text-center" style="background-color: #757575;height: 140px;margin-bottom: 15px">
+                                <div class="text-center"
+                                     style="background-color: #757575;height: 140px;margin-bottom: 15px">
                                     <img src="images/ic_build.png" class="img img-rounded"/>
 
-                                    <h3 style="color: #fff;font-weight: bold;font-family: sukhumvit;margin-bottom: 10px">
-                                        SPRINT <?php echo $i; ?>
-                                    </h3>
+                                    <div style="background-color: #333;padding: 10px">
+                                        <a style="color: #fff;font-weight: bold;font-family: sukhumvit;
+                                    margin-bottom: 10px;;margin-top: 20px;padding: 10px;font-size: 1.5em">
+                                            SPRINT <?php echo $i; ?>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         <?php } ?>
-
                     </div>
-
                 </div>
-
             </div>
         </div>
     </section>
