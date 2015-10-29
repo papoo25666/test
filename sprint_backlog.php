@@ -77,31 +77,9 @@ if (!ManageSession::isLogged()) {
     </section>
     <!--End Navbar-->
 
-    <section class="content" style="min-height: 500px;margin-top: 50px">
-        <nav class="col-lg-2 col-md-2 col-sm-2 col-xs-12 hidden-xs menu-sprint"
-             style="background-color: #03a9f4;height: 500px;">
-            <div class="profile" style="height: 180px;background-color: #233239;">
-                <div class="" style="padding: 20px">
-                    <img src="images/user.jpg" style="width: 100px;height: 100px;"
-                         class="img img-circle">
-                    <h5 style="color:#fff;margin-top: 15px">Kotchaphan Muangsan</h5>
-                </div>
-            </div>
-            <ul ng-app="" style="padding-left: 0">
-                <li class="withripple" data-toggle="modal" data-target="#menu"><h4>Sprint 1</h4></li>
-                <li class="withripple" data-toggle="modal" data-target="#menu"><h4>Sprint 2</h4></li>
-                <li class="withripple" data-toggle="modal" data-target="#menu"><h4>Sprint 3</h4></li>
-                <li class="withripple" data-toggle="modal" data-target="#menu"><h4>Sprint 4</h4></li>
-                <li class="withripple" data-toggle="modal" data-target="#menu"><h4>Sprint 5</h4></li>
-                <li class="withripple" data-toggle="modal" data-target="#menu"><h4>Sprint 6</h4></li>
-                <li class="withripple" data-toggle="modal" data-target="#menu"><h4>Sprint 7</h4></li>
-                <li class="withripple" data-toggle="modal" data-target="#menu"><h4>Sprint 8</h4></li>
-                <li class="withripple" data-toggle="modal" data-target="#menu"><h4>Sprint 9</h4></li>
-                <li class="withripple" data-toggle="modal" data-target="#menu"><h4>Sprint 10</h4></li>
-            </ul>
-        </nav>
-        <div class="col-lg-7 col-md-7 col-sm-7 col-sm-7">
-            <h3 class="sprint-backlog-centent">Sprint 1</h3>
+    <section class="content container-fluid" style="min-height: 500px;margin-top: 50px">
+        <div class="col-lg-9 col-md-9 col-sm-9 col-sm-9">
+            <h3 class="sprint-backlog-centent" style="font-family: sukhumvit;font-weight: bold;font-size: 2em">Sprint 1</h3>
 
             <div class="row" style="margin: 0;">
                 <table>

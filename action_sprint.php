@@ -19,6 +19,7 @@ if (!ManageSession::isLogged()) {
     <link rel="stylesheet" href="css/button.css"/>
     <link rel="stylesheet" href="css/tables.css"/>
     <link rel="stylesheet" href="css/backlog.css"/>
+    <link rel="stylesheet" href="css/link.css" />
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -95,8 +96,7 @@ if (!ManageSession::isLogged()) {
                                     <img src="images/ic_build.png" class="img img-rounded"/>
 
                                     <div style="background-color: #333;padding: 10px">
-                                        <a style="color: #fff;font-weight: bold;font-family: sukhumvit;
-                                    margin-bottom: 10px;;margin-top: 20px;padding: 10px;font-size: 1.5em">
+                                        <a href="sprint_backlog.php" class="link-sprint">
                                             SPRINT <?php echo $i; ?>
                                         </a>
                                     </div>

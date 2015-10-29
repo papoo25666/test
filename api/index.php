@@ -1,7 +1,7 @@
 <?php
 include_once "../classes/ManageSession.php";
 if (!ManageSession::isLogged()) {
-    header("location:login.php");
+    header("location: ../login.php");
 }
 ?>
 <!DOCTYPE html>
@@ -40,25 +40,28 @@ if (!ManageSession::isLogged()) {
             <a class="navbar-brand" href="../index.php">Scrum Board</a>
         </div>
         <div class="navbar-collapse collapse navbar-inverse-collapse">
+            <ul class="nav navbar-nav navbar-right" style="margin-right: 0">
+                <li class="active text-center text-login"><a class="login-button" href="../logout.php">LOG OUT</a></li>
+            </ul>
         </div>
     </section>
     <!--End Navbar-->
 
     <section class="content" style="min-height: 500px;margin-top: 70px">
         <div class="col-lg-12 col-md-12 col-sm-12">
-            <div class="col-lg-3 col-md-3 col-sm-3" >
+            <div class="col-lg-3 col-md-3 col-sm-3">
                 <div class="text-center" style="background-color: #333;height: 100px;padding: 30px">
                     <a href="user_story.php" style="font-family: sukhumvit;color: #fff;;font-size: 2em">User Story</a>
                 </div>
             </div>
 
-            <div class="col-lg-3 col-md-3 col-sm-3" >
+            <div class="col-lg-3 col-md-3 col-sm-3">
                 <div class="text-center" style="background-color: #333;height: 100px;padding: 30px">
                     <a href="priority.php" style="font-family: sukhumvit;color: #fff;;font-size: 2em">Priority</a>
                 </div>
             </div>
 
-            <div class="col-lg-3 col-md-3 col-sm-3" >
+            <div class="col-lg-3 col-md-3 col-sm-3">
                 <div class="text-center" style="background-color: #333;height: 100px;padding: 30px">
                     <a href="issus.php" style="font-family: sukhumvit;color: #fff;;font-size: 2em">Issuss</a>
                 </div>
