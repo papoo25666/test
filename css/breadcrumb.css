@@ -1,11 +1,13 @@
 .breadcrumb {
     background-color: transparent;
     padding-left: 0;
+    margin-bottom: 0;
 }
 
 .breadcrumb > li > a {
     text-decoration: none;
-    font-family: sukhumvit;font-size: 1.2em
+    font-family: sukhumvit;
+    font-size: 1.2em
 }
 
 .breadcrumb > li + li:before {

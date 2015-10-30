@@ -19,6 +19,7 @@ if (!ManageSession::isLogged()) {
     <link rel="stylesheet" href="css/button.css"/>
     <link rel="stylesheet" href="css/tables.css"/>
     <link rel="stylesheet" href="css/backlog.css"/>
+    <link rel="stylesheet" href="css/breadcrumb.css"/>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -83,70 +84,79 @@ if (!ManageSession::isLogged()) {
                         <?php } ?>
                     </div>
                 </div>
-                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12"
-                    >
-                    <table>
-                        <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>NAME</th>
-                            <th>VALUE</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <?php
-                        include "configs/config.php";
-                        include "classes/ManageUserStory.php";
-                        $db = new ManageUserStory();
-                        $result = $db->getUserStory();
-                        foreach ($result as $row) {
-                            ?>
-                            <tr style="font-family: sukhumvit;font-size: 17px;font-weight: 500">
-                                <td class="id"><?php echo $row['id'] ?></td>
-                                <td class="name"><?php echo $row['user_story_name'] ?></td>
-                                <?php
-                                $price = $row['user_story_price'];
-                                $price = number_format($price, 2, ".", ",");
-                                ?>
-                                <td class="value" style="text-align: right"><?php echo $price; ?></td>
-                            </tr>
-                        <?php } ?>
-                        </tbody>
-                    </table>
-                </div>
+                <div >
+                    <div class="breadcrumb" >
+                        <li>
+                            <a href="action_priority.php" style="padding-left: 15px">แก้ไข Priority</a>
+                        </li>
+                        <li class="active">
 
-                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
-                    <div style="background-color: #31bc86;padding: 10px;padding-bottom: 5px;
+                        </li>
+                    </div>
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>NAME</th>
+                                <th>VALUE</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php
+                            include "configs/config.php";
+                            include "classes/ManageUserStory.php";
+                            $db = new ManageUserStory();
+                            $result = $db->getUserStory();
+                            foreach ($result as $row) {
+                                ?>
+                                <tr style="font-family: sukhumvit;font-size: 17px;font-weight: 500">
+                                    <td class="id"><?php echo $row['id'] ?></td>
+                                    <td class="name"><?php echo $row['user_story_name'] ?></td>
+                                    <?php
+                                    $price = $row['user_story_price'];
+                                    $price = number_format($price, 2, ".", ",");
+                                    ?>
+                                    <td class="value" style="text-align: right"><?php echo $price; ?></td>
+                                </tr>
+                            <?php } ?>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                        <div style="background-color: #31bc86;padding: 10px;padding-bottom: 5px;
                         border-bottom: 1px;border-top:0;border-right:0;border-left:0;
                         border-color: #000;border-style: solid">
                             <span
                                 style="font-family: sukhumvit;margin: 0px;color: #fff;font-weight: bold;font-size: 20px">
                                 Manage Priority
                             </span>
-                        </a>
+                            </a>
+                        </div>
+                        <?php include_once "libs/priority.php"; ?>
+                        <form role="form" method="post" action="">
+                            <div class="form-group" style="margin-bottom: 5px">
+                                <?php
+                                $pt = new ManageUserStory();
+                                $result = $pt->getPrioriry();
+                                foreach ($result as $row) {
+                                    ?>
+                                    <input class="form-control priority-input" name="priority"
+                                           value="<?php echo $row['priority']; ?>"
+                                           style="border-radius: 0"/>
+                                    <input type="hidden" value="<?php echo $row['id']; ?>" name="id"/>
+                                <?php } ?>
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-warning" type="submit"
+                                        style="width: 100%;font-size: 1.1em;font-family: sukhumvit">บันทึก
+                                </button>
+                            </div>
+                            <?php if (isset($success)) echo "<p style='color: green'>" . $success . "</p>"; ?>
+                            <?php if (isset($err)) echo "<p style='color: red'>" . $err . "</p>"; ?>
+                        </form>
                     </div>
-                    <?php include_once "libs/priority.php"; ?>
-                    <form role="form" method="post" action="">
-                        <div class="form-group" style="margin-bottom: 5px">
-                            <?php
-                            $pt = new ManageUserStory();
-                            $result = $pt->getPrioriry();
-                            foreach ($result as $row) {
-                                ?>
-                                <input class="form-control priority-input" name="priority"
-                                       value="<?php echo $row['priority']; ?>"
-                                       style="border-radius: 0"/>
-                                <input type="hidden" value="<?php echo $row['id']; ?>" name="id"/>
-                            <?php } ?>
-                        </div>
-                        <div class="form-group">
-                            <button class="btn btn-warning" type="submit"
-                                    style="width: 100%;font-size: 1.1em;font-family: sukhumvit">บันทึก
-                            </button>
-                        </div>
-                        <?php if (isset($success)) echo "<p style='color: green'>" . $success . "</p>"; ?>
-                        <?php if (isset($err)) echo "<p style='color: red'>" . $err . "</p>"; ?>
-                    </form>
                 </div>
             </div>
         </div>

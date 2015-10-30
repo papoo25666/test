@@ -20,6 +20,7 @@ if (!ManageSession::isLogged()) {
     <link rel="stylesheet" href="css/tables.css"/>
     <link rel="stylesheet" href="css/backlog.css"/>
     <link rel="stylesheet" href="css/link.css"/>
+    <link rel="stylesheet" href="css/breadcrumb.css"/>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -86,10 +87,19 @@ if (!ManageSession::isLogged()) {
                 </div>
                 <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
                     <div class="">
+                        <div class="breadcrumb">
+                            <li>
+                                <a href="action_sprint.php">Sprint Backlog</a>
+                            </li>
+                            <li class="active">
+
+                            </li>
+                        </div>
                         <div class="col-lg-10 col-md-10 col-sm-10" style="padding: 0;">
-                            <form class="form">
+                            <form class="form" id="form-add-sprint" method="post">
                                 <div class="form-group form-inline">
-                                    <input type="text" class="form-control"/>
+                                    <input type="text" class="form-control" name="sprint_name" id="sprint_name"
+                                           style="width: 50%"/>
                                     <button type="submit" class="btn btn-warning form-control"
                                             style="font-family: sukhumvit;font-size: 1.2em">
                                         เพิ่ม Sprint Backlog
@@ -99,8 +109,14 @@ if (!ManageSession::isLogged()) {
                         </div>
 
                     </div>
-                    <div class="" style="margin-top: 10px">
-                        <?php for ($i = 1; $i <= 12; $i++) { ?>
+                    <div class="list" style="margin-top: 10px">
+                        <?php include_once "configs/config.php"; ?>
+                        <?php include_once "classes/ManageSprint.php"; ?>
+                        <?php
+                        $db = new ManageSprint();
+                        $result = $db->getSprint();
+                        foreach ($result as $row) {
+                            ?>
                             <div class="col-lg-3 col-md-3 col-sm-3 col-6" style="padding-left: 0">
                                 <div class="text-center"
                                      style="background-color: #757575;height: 140px;margin-bottom: 15px">
@@ -116,18 +132,20 @@ if (!ManageSession::isLogged()) {
                                         </button>
                                         <ul class="dropdown-menu" style="background-color: #333">
                                             <li><a href="#">แก้ไข</a></li>
-                                            <li><a href="add_sprint.php?id=<?php echo $i; ?>">เพิ่ม User Stoty</a></li>
+                                            <li><a href="add_sprint.php?id=<?php echo $row['id']; ?>">เพิ่ม User
+                                                    Stoty</a></li>
                                             <li><a href="#">ลบ</a></li>
                                         </ul>
                                     </div>
                                     <div style="background-color: #333;padding: 10px">
-                                        <a href="sprint_backlog.php?id=<?php echo $i; ?>" class="link-sprint">
-                                            SPRINT <?php echo $i; ?>
+                                        <a href="sprint_backlog.php?id=<?php echo $row['id']; ?>" class="link-sprint">
+                                            <?php echo $row['sbl_name']; ?>
                                         </a>
                                     </div>
                                 </div>
                             </div>
                         <?php } ?>
+                        <!-- end php-->
                     </div>
                 </div>
             </div>
@@ -165,6 +183,22 @@ if (!ManageSession::isLogged()) {
 <script type="application/javascript" src="js/bootstrap.min.js"></script>
 <script type="application/javascript" src="js/angular.min.js"></script>
 
-
+<script type="application/javascript">
+    $(function () {
+        $('#form-add-sprint').submit(function () {
+            var data = $('#form-add-sprint').serializeArray();
+            $.ajax({
+                url: 'libs/sprint.php',
+                data: data,
+                type: 'post',
+                success: function (state) {
+                    $('.list').append(state);
+                    $('#sprint_name').val("");
+                }
+            });
+            return false;
+        });
+    });
+</script>
 </body>
 </html>

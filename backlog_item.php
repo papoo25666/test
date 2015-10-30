@@ -19,6 +19,7 @@ if (!ManageSession::isLogged()) {
     <link rel="stylesheet" href="css/button.css"/>
     <link rel="stylesheet" href="css/tables.css"/>
     <link rel="stylesheet" href="css/backlog.css"/>
+    <link rel="stylesheet" href="css/breadcrumb.css"/>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -84,8 +85,15 @@ if (!ManageSession::isLogged()) {
                         <?php } ?>
                     </div>
                 </div>
-                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12"
-                    >
+                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                    <div class="breadcrumb">
+                        <li>
+                            <a href="backlog_item.php">Product Backlog</a>
+                        </li>
+                        <li class="active">
+
+                        </li>
+                    </div>
                     <table>
                         <thead>
                         <tr>
