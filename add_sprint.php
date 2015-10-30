@@ -88,7 +88,7 @@ if (!ManageSession::isPO()) {
                     </div>
                 </div>
                 <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
-                    <div class="row">
+                    <div class="">
                         <div class="breadcrumb">
                             <li>
                                 <a href="action_sprint.php">Sprint Backlog</a>
@@ -97,42 +97,37 @@ if (!ManageSession::isPO()) {
                                 เพิ่ม Sprint Backlog
                             </li>
                         </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-lg-offset-3
-                        col-md-offset-3 col-sm-offset-3 col-xs-offset-3"
-                             style="background-color: #E0E0E0;padding-top: 30px;padding-left: 30px;padding-right: 30px;padding-bottom: 20px">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"
+                             style=" background-color: #E0E0E0;padding-top: 10px;padding-left: 30px;padding-right:
+                             30px;padding-bottom: 20px
+                        ">
+                            <h3 style="font-family: sukhumvit;font-weight: bold">Sprint <?php echo $_GET['id']; ?></h3>
+
                             <form class="form" role="form" method="post" action="">
-                                <div class="form-group">
-                                    <?php
-                                    include_once "/libs/sprint.php";
-                                    if (isset($success)) echo "<span style='color: green;'>" . $success . "<a href='backlog_item.php' style='font-weight: bold'>  คลิกเพื่อแสดง</a></span>";
-                                    if (isset($warning)) echo "<span style='color: orangered;font-weight: bold'>" . $warning . "</span>";
-                                    if (isset($err)) echo "<span style='color: red;font-weight: bold'>" . $err . "</span>";
-                                    ?>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label">SPRINT BACKLOG NAME</label>
-                                    <textarea class="form-control" placeholder="user story name" type="text"
-                                              name="sprint backlog name" id="sprint_name"></textarea>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label">SELECT USER STORY</label>
-                                    <select class="form-control" name="user_story">
-                                        <?php include_once "classes/ManageUserStory.php"; ?>
+                                <?php include_once "classes/ManageUserStory.php"; ?>
+                                <?php
+                                $db = new ManageUserStory();
+                                $result = $db->getUserStory();
+                                ?>
+                                <div class="form-group  form-inline">
+                                    <select name="user_story" class="form-control" style="width: 94%">
                                         <?php
-                                        $db = new ManageUserStory();
-                                        $result = $db->getUserStory();
                                         foreach ($result as $row) {
                                             ?>
-                                            <option
-                                                value="<?php echo $row['id']; ?>"><?php echo $row['user_story_name']; ?></option>
+                                            <option value="<?php $row['id']; ?>">
+                                                <?php echo $row['id'] . '. ' . $row['user_story_name']; ?>
+                                            </option>
                                         <?php } ?>
                                     </select>
+                                    <button type="submit" class="btn btn-warning"
+                                            style="font-family: sukhumvit;font-size: 1.2em;">เพิ่ม
+                                    </button>
                                 </div>
-                                <div class="form-group text-center">
-                                    <input type="hidden" name="action" value="add"/>
-                                    <button type="submit" class="btn btn-success">SUBMIT</button>
-                                </div>
+                                <div></div>
                             </form>
+                            <div class="list" style="background-color: #fff;height: 200px">
+
+                            </div>
                         </div>
                     </div>
                 </div>

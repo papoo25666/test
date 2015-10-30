@@ -86,7 +86,18 @@ if (!ManageSession::isLogged()) {
                 </div>
                 <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
                     <div class="">
-                        <a href="add_sprint.php" class="btn btn-warning" style="font-family: sukhumvit;font-size: 1.2em">เพิ่ม Sprint Backlog</a>
+                        <div class="col-lg-10 col-md-10 col-sm-10" style="padding: 0;">
+                            <form class="form">
+                                <div class="form-group form-inline">
+                                    <input type="text" class="form-control"/>
+                                    <button type="submit" class="btn btn-warning form-control"
+                                            style="font-family: sukhumvit;font-size: 1.2em">
+                                        เพิ่ม Sprint Backlog
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+
                     </div>
                     <div class="" style="margin-top: 10px">
                         <?php for ($i = 1; $i <= 12; $i++) { ?>
@@ -95,6 +106,20 @@ if (!ManageSession::isLogged()) {
                                      style="background-color: #757575;height: 140px;margin-bottom: 15px">
                                     <img src="images/ic_build.png" class="img img-rounded"/>
 
+                                    <div class="btn-group pull-right">
+                                        <button class="btn btn-default dropdown-toggle" type="button"
+                                                data-toggle="dropdown" aria-haspopup="true"
+                                                aria-expanded="false"
+                                                style="border-radius: 0"
+                                            >
+                                            <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu" style="background-color: #333">
+                                            <li><a href="#">แก้ไข</a></li>
+                                            <li><a href="add_sprint.php?id=<?php echo $i; ?>">เพิ่ม User Stoty</a></li>
+                                            <li><a href="#">ลบ</a></li>
+                                        </ul>
+                                    </div>
                                     <div style="background-color: #333;padding: 10px">
                                         <a href="sprint_backlog.php?id=<?php echo $i; ?>" class="link-sprint">
                                             SPRINT <?php echo $i; ?>

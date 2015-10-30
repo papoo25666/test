@@ -101,19 +101,23 @@ if (!ManageSession::isPO()) {
                                     ?>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label">USER STORY NAME</label>
-                                    <textarea class="form-control" placeholder="user story name" type="text"
+                                    <label class="control-label" style="font-family: sukhumvit;font-size: 1.2em">ชื่อ
+                                        USER STORY</label>
+                                    <textarea class="form-control" placeholder="ชื่อ user story" type="text"
                                               name="userstory_name" id="userstory_name"></textarea>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label">USER STORY PRICE</label>
+                                    <label class="control-label" style="font-family: sukhumvit;font-size: 1.2em">ราคา
+                                        USER STORY</label>
                                     <input class="form-control" type="text" name="userstory_price"
-                                           placeholder="user story price"
+                                           placeholder="ราคา user story"
                                            id="userstory_price"/>
                                 </div>
                                 <div class="form-group text-center">
                                     <input type="hidden" name="action" value="add"/>
-                                    <button type="submit" class="btn btn-success">SUBMIT</button>
+                                    <button type="submit" class="btn btn-success"
+                                            style="font-family: sukhumvit;font-size: 1.2em">บันทึก
+                                    </button>
                                 </div>
                             </form>
                         </div>

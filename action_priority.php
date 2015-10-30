@@ -140,7 +140,9 @@ if (!ManageSession::isLogged()) {
                             <?php } ?>
                         </div>
                         <div class="form-group">
-                            <button class="btn btn-warning" type="submit" style="width: 100%">SAVE</button>
+                            <button class="btn btn-warning" type="submit"
+                                    style="width: 100%;font-size: 1.1em;font-family: sukhumvit">บันทึก
+                            </button>
                         </div>
                         <?php if (isset($success)) echo "<p style='color: green'>" . $success . "</p>"; ?>
                         <?php if (isset($err)) echo "<p style='color: red'>" . $err . "</p>"; ?>

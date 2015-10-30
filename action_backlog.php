@@ -89,8 +89,8 @@ if (!ManageSession::isLogged()) {
                         <thead>
                         <tr>
                             <th>ID</th>
-                            <th>NAME <a href="add_backlog.php" style="margin-left: 10px"
-                                        class="btn btn-warning">ADD USER STORY</a></th>
+                            <th>NAME <a href="add_backlog.php" style="margin-left: 10px;font-family: sukhumvit;font-size: 1.1em"
+                                        class="btn btn-warning">เพิ่ม USER STORY</a></th>
                             <th>VALUE</th>
                             <th>ACTION</th>
                         </tr>
@@ -115,9 +115,9 @@ if (!ManageSession::isLogged()) {
                                 <td class="value" style="text-align: right"><?php echo $price; ?></td>
                                 <td class="action" style="width: 15%">
                                     <a href="edit_backlog.php?id=<?php echo $row['id'] ?>"
-                                       style="display: inline;">Edit </a> | <a
+                                       style="display: inline;">แก้ไข </a> | <a
                                         href="delete_backlog.php?id=<?php echo $row['id'] ?>"
-                                        style="display: inline;">Delete</a>
+                                        style="display: inline;">ลบ</a>
                                 </td>
                             </tr>
                         <?php } ?>
