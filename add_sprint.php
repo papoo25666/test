@@ -103,18 +103,18 @@ if (!ManageSession::isPO()) {
                         ">
                             <h3 style="font-family: sukhumvit;font-weight: bold">Sprint <?php echo $_GET['id']; ?></h3>
 
-                            <form class="form" role="form" method="post" action="">
+                            <form class="form form-add-sprint" role="form" method="post" action="">
                                 <?php include_once "classes/ManageUserStory.php"; ?>
                                 <?php
                                 $db = new ManageUserStory();
                                 $result = $db->getUserStory();
                                 ?>
                                 <div class="form-group  form-inline">
-                                    <select name="user_story" class="form-control" style="width: 94%">
+                                    <select id="user_story" class="form-control" style="width: 94%">
                                         <?php
                                         foreach ($result as $row) {
                                             ?>
-                                            <option value="<?php $row['id']; ?>">
+                                            <option value="<?php echo $row['id']; ?>">
                                                 <?php echo $row['id'] . '. ' . $row['user_story_name']; ?>
                                             </option>
                                         <?php } ?>
@@ -125,8 +125,10 @@ if (!ManageSession::isPO()) {
                                 </div>
                                 <div></div>
                             </form>
-                            <div class="list" style="background-color: #fff;height: 200px">
+                            <div class="list" style="background-color: #fff;height: 300px">
+                                <ul class="list-group story" style="overflow: auto;height: 300px;">
 
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -165,7 +167,17 @@ if (!ManageSession::isPO()) {
 <script type="application/javascript" src="js/jquery-1.11.3.min.js"></script>
 <script type="application/javascript" src="js/bootstrap.min.js"></script>
 <script type="application/javascript" src="js/angular.min.js"></script>
-
-
+<script type="application/javascript">
+    $(function () {
+        $('.form-add-sprint').submit(function () {
+            var id = $('#user_story').val();
+            var content = $('#user_story option:selected').text();
+            var text = '<li class="list-group-item" style="font-weight: normal">' + content + '</li>';
+            //$.ajax({});
+            $('.list-group.story').append(text);
+            return false;
+        });
+    });
+</script>
 </body>
 </html>
