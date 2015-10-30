@@ -95,7 +95,7 @@ if (!ManageSession::isPO()) {
                                 <div class="form-group">
                                     <?php
                                     include_once "/libs/userstory.php";
-                                    if (isset($success)) echo "<span style='color: green;'>" . $success . "<a href='action_backlog.php' style='font-weight: bold'>  คลิกเพื่อแสดง</a></span>";
+                                    if (isset($success)) echo "<span style='color: green;'>" . $success . "<a href='backlog_item.php' style='font-weight: bold'>  คลิกเพื่อแสดง</a></span>";
                                     if (isset($warning)) echo "<span style='color: orangered;font-weight: bold'>" . $warning . "</span>";
                                     if (isset($err)) echo "<span style='color: red;font-weight: bold'>" . $err . "</span>";
                                     ?>

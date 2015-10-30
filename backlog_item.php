@@ -100,10 +100,12 @@ if (!ManageSession::isLogged()) {
                         include "classes/ManageUserStory.php";
                         $db = new ManageUserStory();
                         $result = $db->getUserStory();
+                        $id = 0;
                         foreach ($result as $row) {
+                            $id += 1;
                             ?>
                             <tr style="font-family: sukhumvit;font-size: 17px;font-weight: 500">
-                                <td class="id"><?php echo $row['id'] ?></td>
+                                <td class="id"><?php echo $id; ?></td>
                                 <td class="name"><?php echo $row['user_story_name'] ?></td>
                                 <?php
                                 $price = $row['user_story_price'];
@@ -127,7 +129,7 @@ if (!ManageSession::isLogged()) {
                         <?php
                         $pt = new ManageUserStory();
                         $result = $pt->getPrioriry();
-                        foreach($result as $row){
+                        foreach ($result as $row) {
                             $value = explode(",", $row['priority']);
                         }
                         foreach ($value as $row) {

@@ -19,6 +19,7 @@ if (!ManageSession::isLogged()) {
     <link rel="stylesheet" href="../css/button.css"/>
     <link rel="stylesheet" href="../css/tables.css"/>
     <link rel="stylesheet" href="../css/backlog.css"/>
+    <link rel="stylesheet" href="../css/link.css" />
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -41,7 +42,16 @@ if (!ManageSession::isLogged()) {
         </div>
         <div class="navbar-collapse collapse navbar-inverse-collapse">
             <ul class="nav navbar-nav navbar-right" style="margin-right: 0">
-                <li class="active text-center text-login"><a class="login-button" href="../logout.php">LOG OUT</a></li>
+                <li class="dropdown">
+                    <a href="" class="dropdown-toggle username" data-toggle="dropdown" role="button"
+                       aria-haspopup="true"
+                       aria-expanded="false"><?php echo $_SESSION['username']; ?> <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../backlog_item.php" style="padding: 10px">Prodoct Backlog items</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="../logout.php" style="padding: 5px 10px 5px 10px">Logout</a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </section>
@@ -50,20 +60,20 @@ if (!ManageSession::isLogged()) {
     <section class="content" style="min-height: 500px;margin-top: 70px">
         <div class="col-lg-12 col-md-12 col-sm-12">
             <div class="col-lg-3 col-md-3 col-sm-3">
-                <div class="text-center" style="background-color: #333;height: 100px;padding: 30px">
-                    <a href="user_story.php" style="font-family: sukhumvit;color: #fff;;font-size: 2em">User Story</a>
+                <div class="text-center" style="background-color: #333;height: 90px;padding: 30px">
+                    <a href="user_story.php" class="link-sprint" >User Story</a>
                 </div>
             </div>
 
             <div class="col-lg-3 col-md-3 col-sm-3">
-                <div class="text-center" style="background-color: #333;height: 100px;padding: 30px">
-                    <a href="priority.php" style="font-family: sukhumvit;color: #fff;;font-size: 2em">Priority</a>
+                <div class="text-center" style="background-color: #333;height: 90px;padding: 30px">
+                    <a href="priority.php" class="link-sprint" >Priority</a>
                 </div>
             </div>
 
             <div class="col-lg-3 col-md-3 col-sm-3">
-                <div class="text-center" style="background-color: #333;height: 100px;padding: 30px">
-                    <a href="issus.php" style="font-family: sukhumvit;color: #fff;;font-size: 2em">Issuss</a>
+                <div class="text-center" style="background-color: #333;height: 90px;padding: 30px">
+                    <a href="issues.php" class="link-sprint" >Issuss</a>
                 </div>
             </div>
         </div>
@@ -96,9 +106,9 @@ if (!ManageSession::isLogged()) {
 </div>
 
 <!--JavaScript-->
-<script type="application/javascript" src="js/jquery-1.11.3.min.js"></script>
-<script type="application/javascript" src="js/bootstrap.min.js"></script>
-<script type="application/javascript" src="js/angular.min.js"></script>
+<script type="application/javascript" src="../js/jquery-1.11.3.min.js"></script>
+<script type="application/javascript" src="../js/bootstrap.min.js"></script>
+<script type="application/javascript" src="../js/angular.min.js"></script>
 
 
 </body>

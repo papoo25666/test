@@ -88,6 +88,7 @@ if (!ManageSession::isLogged()) {
                     <table>
                         <thead>
                         <tr>
+                            <th>ID</th>
                             <th>NAME <a href="add_backlog.php" style="margin-left: 10px"
                                         class="btn btn-warning">ADD USER STORY</a></th>
                             <th>VALUE</th>
@@ -100,9 +101,12 @@ if (!ManageSession::isLogged()) {
                         include "classes/ManageUserStory.php";
                         $db = new ManageUserStory();
                         $result = $db->getUserStory();
+                        $id = 0;
                         foreach ($result as $row) {
+                            $id += 1;
                             ?>
                             <tr style="font-family: sukhumvit;font-size: 17px;font-weight: 500">
+                                <td><?php echo $id; ?></td>
                                 <td class="name"><?php echo $row['user_story_name'] ?></td>
                                 <?php
                                 $price = $row['user_story_price'];

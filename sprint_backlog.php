@@ -79,7 +79,9 @@ if (!ManageSession::isLogged()) {
 
     <section class="content container-fluid" style="min-height: 500px;margin-top: 50px">
         <div class="col-lg-9 col-md-9 col-sm-9 col-sm-9">
-            <h3 class="sprint-backlog-centent" style="font-family: sukhumvit;font-weight: bold;font-size: 2em">Sprint 1</h3>
+            <h3 class="sprint-backlog-centent" style="font-family: sukhumvit;font-weight: bold;font-size: 2em">
+                Sprint <?php echo $_GET['id']; ?>
+            </h3>
 
             <div class="row" style="margin: 0;">
                 <table>

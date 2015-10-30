@@ -1,0 +1,12 @@
+.breadcrumb {
+    background-color: transparent;
+}
+
+.breadcrumb > li > a {
+    text-decoration: none;
+    font-family: sukhumvit;font-size: 1.2em
+}
+
+.breadcrumb > li + li:before {
+    color: #333;
+}

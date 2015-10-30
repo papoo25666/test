@@ -54,3 +54,7 @@
 .navbar-nav>li:hover {
     background-color: #0A2126;
 }
+.divider {
+    margin: 0 !important;
+    background-color: #bed7ff !important;
+}
