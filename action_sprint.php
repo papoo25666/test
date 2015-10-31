@@ -132,9 +132,17 @@ if (!ManageSession::isLogged()) {
                                         </button>
                                         <ul class="dropdown-menu" style="background-color: #333">
                                             <li><a href="#">แก้ไข</a></li>
-                                            <li><a href="add_sprint.php?id=<?php echo $row['id']; ?>">เพิ่ม User
-                                                    Stoty</a></li>
-                                            <li><a href="#">ลบ</a></li>
+                                            <li>
+                                                <a href="add_sprint.php?id=<?php echo $row['id']; ?>">
+                                                    เพิ่ม User Story
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="delete_sprint.php?id=<?php echo $row['id']; ?>"
+                                                   onclick="return confirm('Are you sure?')">
+                                                    ลบ
+                                                </a>
+                                            </li>
                                         </ul>
                                     </div>
                                     <div style="background-color: #333;padding: 10px">

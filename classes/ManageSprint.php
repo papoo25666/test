@@ -21,7 +21,8 @@ class ManageSprint
         return $this->result->rowCount();
     }
 
-    public function getLastSprint(){
+    public function getLastSprint()
+    {
         $this->result = $this->db->prepare("SELECT *FROM sprint_backlog ORDER BY id DESC LIMIT 1;");
         $this->result->execute();
         return $this->result->fetchAll();
@@ -34,9 +35,12 @@ class ManageSprint
         return $this->result->fetchAll();
     }
 
-    public function deleteSprint()
+    public function deleteSprint($id)
     {
-
+        $this->result = $this->db->prepare("DELETE FROM sprint_backlog WHERE id = ?");
+        $value = array($id);
+        $this->result->execute($value);
+        return $this->result->rowCount();
     }
 
     public function getInfo()
