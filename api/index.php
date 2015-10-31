@@ -19,7 +19,7 @@ if (!ManageSession::isLogged()) {
     <link rel="stylesheet" href="../css/button.css"/>
     <link rel="stylesheet" href="../css/tables.css"/>
     <link rel="stylesheet" href="../css/backlog.css"/>
-    <link rel="stylesheet" href="../css/link.css" />
+    <link rel="stylesheet" href="../css/link.css"/>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -61,19 +61,25 @@ if (!ManageSession::isLogged()) {
         <div class="col-lg-12 col-md-12 col-sm-12">
             <div class="col-lg-3 col-md-3 col-sm-3">
                 <div class="text-center" style="background-color: #333;height: 90px;padding: 30px">
-                    <a href="user_story.php" class="link-sprint" >User Story</a>
+                    <a href="user_story.php" class="link-sprint">User Story</a>
                 </div>
             </div>
 
             <div class="col-lg-3 col-md-3 col-sm-3">
                 <div class="text-center" style="background-color: #333;height: 90px;padding: 30px">
-                    <a href="priority.php" class="link-sprint" >Priority</a>
+                    <a href="priority.php" class="link-sprint">Priority</a>
                 </div>
             </div>
 
             <div class="col-lg-3 col-md-3 col-sm-3">
                 <div class="text-center" style="background-color: #333;height: 90px;padding: 30px">
-                    <a href="issues.php" class="link-sprint" >Issuss</a>
+                    <a href="sprint_backlog.php" class="link-sprint">Sprint Backlog</a>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-3 col-sm-3">
+                <div class="text-center" style="background-color: #333;height: 90px;padding: 30px">
+                    <a href="issues.php" class="link-sprint">Issuss</a>
                 </div>
             </div>
         </div>
