@@ -130,6 +130,11 @@ if (!ManageSession::isPO()) {
 
                                 </ul>
                             </div>
+                            <div class="text-center" style="margin-top: 10px">
+                                <button class="btn btn-warning"
+                                        style="font-family: sukhumvit;font-size: 1.2em;width: 200px">ตกลง
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>

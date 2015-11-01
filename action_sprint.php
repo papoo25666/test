@@ -138,6 +138,11 @@ if (!ManageSession::isLogged()) {
                                                 </a>
                                             </li>
                                             <li>
+                                                <a href="action_issues.php">
+                                                    ปัญหา
+                                                </a>
+                                            </li>
+                                            <li>
                                                 <a href="delete_sprint.php?id=<?php echo $row['id']; ?>"
                                                    onclick="return confirm('Are you sure?')">
                                                     ลบ

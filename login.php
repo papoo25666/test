@@ -48,16 +48,16 @@
                 <form role="form" method="post" action="">
                     <?php if (isset($err)) echo "<span class='alert-danger' style='width: auto'>" . $err . "</span>"; ?>
                     <div class="form-group" style="color: #000">
-                        <label class="control-label">username</label>
+                        <label class="control-label" style="font-family: sukhumvit;font-size: 1.2em">username</label>
                         <input class="form-control" type="texts" id="username" name="username" placeholder="username"/>
                     </div>
                     <div class="form-group" style="color: #000">
-                        <label class="control-label">password</label>
+                        <label class="control-label" style="font-family: sukhumvit;font-size: 1.2em">password</label>
                         <input class="form-control" type="password" id="password" name="password"
                                placeholder="password"/>
                     </div>
                     <div class="form-group">
-                        <a href="#">Forgot password</a>
+                        <a href="sigup.php">Don't have account</a>
                     </div>
                     <div class="text-center">
                         <button class="btn btn-success" type="submit" style="width: 100%">LOG IN</button>

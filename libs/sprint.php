@@ -17,6 +17,7 @@ if (isset($_POST['sprint_name'])) {
             . '<ul class="dropdown-menu" style="background-color: #333"> '
             . '<li><a href="#">แก้ไข</a></li> '
             . '<li><a href="add_sprint.php?id=' . $row['id'] . '">เพิ่ม User Story</a></li>'
+            . '<li><a href="action_issues.php">ปัญหา</a></li>'
             . '<li><a href="delete_sprint.php?id=' . $row['id'] . '" onclick="return confirm('. '\'Are you sure?\'' . ')">ลบ</a></li>'
             . '</ul>'
             . '</div>'

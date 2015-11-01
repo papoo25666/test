@@ -1,7 +1,7 @@
 <?php
-$response['issuss'] = array();
+$response['issues'] = array();
 $item = array();
-$item['issus'] = "API   ";
-array_push($response['issuss'] , $item);
+$item['issues'] = "API   ";
+array_push($response['issues'] , $item);
 echo json_encode($response);
 ?>
