@@ -7,9 +7,11 @@
 .breadcrumb > li > a {
     text-decoration: none;
     font-family: sukhumvit;
+    font-weight: bold;
     font-size: 1.2em
 }
 
 .breadcrumb > li + li:before {
     color: #333;
+    font-weight: bold;
 }

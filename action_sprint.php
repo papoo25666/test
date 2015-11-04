@@ -133,12 +133,12 @@ if (!ManageSession::isLogged()) {
                                         <ul class="dropdown-menu" style="background-color: #333">
                                             <li><a href="#">แก้ไข</a></li>
                                             <li>
-                                                <a href="add_sprint.php?id=<?php echo $row['id']; ?>">
+                                                <a href="add_sprint.php?id=<?php echo $row['id']; ?>&name=<?php echo $row['sbl_name']; ?>">
                                                     เพิ่ม User Story
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="action_issues.php">
+                                                <a href="action_issues.php?id=<?php echo $row['id']; ?>">
                                                     ปัญหา
                                                 </a>
                                             </li>
@@ -151,7 +151,8 @@ if (!ManageSession::isLogged()) {
                                         </ul>
                                     </div>
                                     <div style="background-color: #333;padding: 10px">
-                                        <a href="sprint_backlog.php?id=<?php echo $row['id']; ?>" class="link-sprint">
+                                        <a href="sprint_backlog.php?id=<?php echo $row['id']; ?>"
+                                           class="link-sprint">
                                             <?php echo $row['sbl_name']; ?>
                                         </a>
                                     </div>
@@ -201,7 +202,7 @@ if (!ManageSession::isLogged()) {
         $('#form-add-sprint').submit(function () {
             var data = $('#form-add-sprint').serializeArray();
             $.ajax({
-                url: 'libs/sprint.php',
+                url: 'libs/add_sprint.php',
                 data: data,
                 type: 'post',
                 success: function (state) {

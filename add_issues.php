@@ -78,38 +78,32 @@ if (!ManageSession::isLogged()) {
     <!--End Navbar-->
 
     <section class="content container-fluid" style="min-height: 500px;margin-top: 50px">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-sm-12">
-            <h3 class="sprint-backlog-centent" style="font-family: sukhumvit;font-weight: bold;font-size: 2em">
-                <?php
-                $id = $_GET['id'];
-                include_once "configs/config.php";
-                include_once "classes/ManageSprint.php";
-                $db = new ManageSprint();
-                $result = $db->getSprintById($id);
-                foreach ($result as $row) {
-                    echo $row['sbl_name'];
-                }
-                ?>
-            </h3>
-
-            <div class="row" style="margin: 0;">
-                <table>
-                    <thead>
-                    <tr style="font-weight: 500">
-                        <th>USER STORY</th>
-                        <th>TASKS</th>
-                        <th>STATE</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td></td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
+        <div class="col-lg-8 col-md-8 col-sm-10 col-xs-10 col-lg-offset-2 col-md-offset-2"
+             style="margin-top: 40px;padding: 0">
+            <form class="form" action="" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label class="control-label" style="font-family: sukhumvit;font-size: 1.2em">หัวข้อ</label>
+                    <textarea class="form-control" name="issues_content"></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" style="font-family: sukhumvit;font-size: 1.2em">ระดับปัญหา</label>
+                    <select class="form-control" name="issues_status">
+                        <option>ปกติ</option>
+                        <option>ด่วน</option>
+                        <option>ด่วนที่สุด</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" style="font-family: sukhumvit;font-size: 1.2em">รูปประกอบ</label>
+                    <input type="file" class="form-control" name="issues_image"/>
+                </div>
+                <div class="form-group text-center">
+                    <button class="form-control btn btn-warning" type="submit"
+                            style="font-family: sukhumvit;font-size: 1.2em;width: 40%;height: 40px">เพิ่มปัญหา
+                    </button>
+                </div>
+            </form>
         </div>
-
     </section>
 
     <!--Footer-->
@@ -143,31 +137,6 @@ if (!ManageSession::isLogged()) {
 <script type="application/javascript" src="js/bootstrap.min.js"></script>
 <script type="application/javascript" src="js/angular.min.js"></script>
 
-<script type="application/javascript">
-    $(function () {
-        $('.withripple:first-child').addClass('active');
-        $('.withripple:first-child').click();
-    });
-
-    $(function () {
-        $('.withripple').click(function () {
-            var content = $(this).text();
-            console.log('content : ' + content);
-            $('.withripple').removeClass('active');
-            $(this).addClass('active');
-            $('.sprint-backlog-centent').text(content);
-        });
-    });
-
-    $(function () {
-        $('table tr').mouseover(function () {
-            $('table tr').removeClass("success");
-            $(this).addClass("success");
-            $(this).css("cursor", "pointer");
-        });
-
-    });
-</script>
 
 </body>
 </html>

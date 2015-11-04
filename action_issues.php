@@ -78,7 +78,16 @@ if (!ManageSession::isLogged()) {
     <!--End Navbar-->
 
     <section class="content container-fluid" style="min-height: 500px;margin-top: 50px">
-
+        <div class="row col-lg-10 col-md-10 col-sm-12 col-xs-10 col-lg-offset-1 col-md-offset-1"
+             style="margin-top: 40px;padding: 0">
+            <a class="btn btn-warning" href="add_issues.php"
+               style="font-family: sukhumvit;font-size: 1.2em;">
+                เพิ่มปัญหา
+            </a>
+        </div>
+        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 col-lg-offset-1 col-md-offset-1"
+             style="background-color: #E0E0E0;height: 400px;margin-top: 5px">
+        </div>
     </section>
 
     <!--Footer-->

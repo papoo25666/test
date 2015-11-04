@@ -94,14 +94,14 @@ if (!ManageSession::isPO()) {
                                 <a href="action_sprint.php">Sprint Backlog</a>
                             </li>
                             <li class="active">
-                                เพิ่ม Sprint Backlog
+                                เพิ่ม User Story
                             </li>
                         </div>
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"
                              style=" background-color: #E0E0E0;padding-top: 10px;padding-left: 30px;padding-right:
                              30px;padding-bottom: 20px
                         ">
-                            <h3 style="font-family: sukhumvit;font-weight: bold">Sprint <?php echo $_GET['id']; ?></h3>
+                            <h3 style="font-family: sukhumvit;font-weight: bold"><?php echo $_GET['name']; ?></h3>
 
                             <form class="form form-add-sprint" role="form" method="post" action="">
                                 <?php include_once "classes/ManageUserStory.php"; ?>
@@ -131,9 +131,13 @@ if (!ManageSession::isPO()) {
                                 </ul>
                             </div>
                             <div class="text-center" style="margin-top: 10px">
-                                <button class="btn btn-warning"
+                                <button class="btn btn-warning" id="submit-story"
+                                        onclick="return confirm('คุณต้องการเพิ่ม User Story ทั้งหมดหรือไม่?')"
                                         style="font-family: sukhumvit;font-size: 1.2em;width: 200px">ตกลง
                                 </button>
+                                <a href="sprint_backlog.php?id=<?php echo $_GET['id']; ?>" class="alert-for-success"
+                                   style="font-size: 1.2em;font-weight: bold;font-family: sukhumvit;margin-left: 10px"></a>
+
                             </div>
                         </div>
                     </div>
@@ -174,12 +178,27 @@ if (!ManageSession::isPO()) {
 <script type="application/javascript" src="js/angular.min.js"></script>
 <script type="application/javascript">
     $(function () {
+        var data = [];
         $('.form-add-sprint').submit(function () {
             var id = $('#user_story').val();
             var content = $('#user_story option:selected').text();
+            //push id for story
+            data.push(id);
+
             var text = '<li class="list-group-item" style="font-weight: normal">' + content + '</li>';
-            //$.ajax({});
+
             $('.list-group.story').append(text);
+            return false;
+        });
+        $('#submit-story').click(function () {
+            $.ajax({
+                url: "libs/add_story_for_sprint.php",
+                data: {story: data, id: <?php echo $_GET['id']; ?>},
+                type: 'post',
+                success: function (msg) {
+                    $('.alert-for-success').text("คลิกเพื่อดูผลลัพท์");
+                }
+            });
             return false;
         });
     });

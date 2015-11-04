@@ -28,6 +28,14 @@ class ManageSprint
         return $this->result->fetchAll();
     }
 
+    public function getSprintById($id)
+    {
+        $this->result = $this->db->prepare("SELECT *FROM sprint_backlog WHERE id = ?");
+        $value = array($id);
+        $this->result->execute($value);
+        return $this->result->fetchAll();
+    }
+
     public function getSprint()
     {
         $this->result = $this->db->prepare("SELECT *FROM sprint_backlog");
@@ -43,9 +51,21 @@ class ManageSprint
         return $this->result->rowCount();
     }
 
-    public function getInfo()
+    //check name sprint ซ้ำ
+    public function getInfo($sbl)
     {
+        $this->result = $this->db->prepare("SELECT *FROM sprint_backlog WHERE sbl_name = ?");
+        $value = array($sbl);
+        $this->result->execute($value);
+        return $this->result->rowCount();
+    }
 
+    public function insertUserStoryForSprint($sprint_id, $story_id)
+    {
+        $this->result = $this->db->prepare("INSERT INTO `scrum`.`sprint_backlog_has_user_story` (`id`, `sprint_backlog_id`, `user_story_id`) VALUES (null,?,?)");
+        $value = array($sprint_id, $story_id);
+        $this->result->execute($value);
+        return $this->result->rowCount();
     }
 }
 
