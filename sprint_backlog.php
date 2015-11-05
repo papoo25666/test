@@ -102,9 +102,18 @@ if (!ManageSession::isLogged()) {
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td></td>
-                    </tr>
+                    <?php
+                    $db = new ManageSprint();
+                    $result = $db->getUserStoryBySprintId($id);
+                    foreach ($result as $row) {
+                        ?>
+                        <tr>
+                            <td>
+                                <a href="add_tasks.php?sprint_id=<?php echo $_GET['id']; ?>&story_id=<?php echo $row['user_story_id']; ?>"><?php echo $row['user_story_name']; ?>
+                            </td>
+                            </a>
+                        </tr>
+                    <?php } ?>
                     </tbody>
                 </table>
             </div>
