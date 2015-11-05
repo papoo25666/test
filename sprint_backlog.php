@@ -98,6 +98,7 @@ if (!ManageSession::isLogged()) {
                     <tr style="font-weight: 500">
                         <th>USER STORY</th>
                         <th>TASKS</th>
+                        <th>Volunteer</th>
                         <th>STATE</th>
                     </tr>
                     </thead>
@@ -109,7 +110,9 @@ if (!ManageSession::isLogged()) {
                         ?>
                         <tr>
                             <td>
-                                <a href="add_tasks.php?sprint_id=<?php echo $_GET['id']; ?>&story_id=<?php echo $row['user_story_id']; ?>"><?php echo $row['user_story_name']; ?>
+                                <a style="font-family: sukhumvit;font-size: 1.2em;color: #000"
+                                    href="add_tasks.php?sprint_id=<?php echo $_GET['id']; ?>&story_id=<?php echo $row['user_story_id']; ?>">
+                                    <?php echo $row['user_story_name']; ?></a>
                             </td>
                             </a>
                         </tr>

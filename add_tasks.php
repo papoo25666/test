@@ -101,32 +101,30 @@ if (!ManageSession::isPO()) {
                              style=" background-color: #E0E0E0;padding-top: 10px;padding-left: 30px;padding-right:
                              30px;padding-bottom: 20px
                         ">
-                            <form class="form form-add-sprint" role="form" method="post" action="">
-                                <?php include_once "classes/ManageSprint.php"; ?>
-                                <?php
-                                $sprint_id = $_GET['sprint_id'];
-                                $story_id = $_GET['story_id'];
-                                $db = new ManageSprint();
-                                $result = $db->getUserStoryBySprintId($sprint_id);
-                                ?>
-                                <div class="form-group  form-inline">
-                                    <select id="user_story" class="form-control" style="width: 85%">
-                                        <?php
-                                        foreach ($result as $row) {
-                                            ?>
-                                            <option value="<?php echo $row['id']; ?>">
-                                                <?php echo $row['user_story_name']; ?>
-                                            </option>
-                                        <?php } ?>
-                                    </select>
-                                    <button type="submit" class="btn btn-warning"
-                                            style="font-family: sukhumvit;font-size: 1.2em;">Estimate Task
-                                    </button>
-                                </div>
-                                <div></div>
-                            </form>
+
+                            <?php include_once "classes/ManageUserStory.php"; ?>
+                            <?php
+                            $sprint_id = $_GET['sprint_id'];
+                            $story_id = $_GET['story_id'];
+                            $db = new ManageUserStory();
+                            $result = $db->getUserStoryById($story_id);
+                            ?>
+                            <div>
+                                <h3 style="font-family: sukhumvit;font-weight: bold" class="text-center">
+                                    <?php
+                                    foreach ($result as $row) {
+                                        ?>
+                                        <?php echo $row['user_story_name']; ?>
+                                    <?php } ?>
+                                </h3>
+                                <button class="btn btn-warning" id="btn-estimation"
+                                        style="font-size: 1.2em;font-family: sukhumvit;margin-bottom: 5px">เพิ่ม
+                                    Estimate
+                                </button>
+                            </div>
+
                             <div class="list" style="background-color: #fff;height: 300px">
-                                <ul class="list-group story" style="overflow: auto;height: 300px;">
+                                <ul class="list-group estimation-box" style="overflow: auto;height: 300px;">
 
                                 </ul>
                             </div>
@@ -176,5 +174,18 @@ if (!ManageSession::isPO()) {
 <script type="application/javascript" src="js/jquery-1.11.3.min.js"></script>
 <script type="application/javascript" src="js/bootstrap.min.js"></script>
 <script type="application/javascript" src="js/angular.min.js"></script>
+<script type="application/javascript">
+    $(function () {
+        $('#btn-estimation').click(function () {
+            var tag = '<div class="form-group form-inline" style="margin: 10px">'
+                + '<input class="form-control" placeholder="Task name" type="text" style="width: 30%" />'
+                + '<input class="form-control" placeholder="Volunteer" type="text" style="width: 30%" />'
+                + '<input class="form-control" placeholder="Estimate value" type="text" style="width: 30%" />'
+                + '<button class="btn btn-info" style="font-family: sukhumvit">ตกลง</button>'
+                + '</div>';
+            $('.estimation-box').append(tag);
+        });
+    });
+</script>
 </body>
 </html>
