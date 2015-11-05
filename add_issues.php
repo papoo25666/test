@@ -80,10 +80,20 @@ if (!ManageSession::isLogged()) {
     <section class="content container-fluid" style="min-height: 500px;margin-top: 50px">
         <div class="col-lg-8 col-md-8 col-sm-10 col-xs-10 col-lg-offset-2 col-md-offset-2"
              style="margin-top: 40px;padding: 0">
+            <?php
+            include_once "libs/issues.php";
+            if (isset($success)) {
+                echo "<h3 style='font-family: sukhumvit;font-size: 1.2em;font-weight: bold'>" . "<a href='action_issues.php?id=" . $_GET['id'] . "'>" . $success . "</a></h3>";
+            } else {
+                echo "<h3 style='font-family: sukhumvit;font-size: 1.2em;font-weight: bold'>" . $success . "</h3>";
+            }
+            ?>
             <form class="form" action="" method="post" enctype="multipart/form-data">
                 <div class="form-group">
                     <label class="control-label" style="font-family: sukhumvit;font-size: 1.2em">หัวข้อ</label>
-                    <textarea class="form-control" name="issues_content"></textarea>
+                    <textarea class="form-control" name="issues_content" required></textarea>
+                    <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>" required/>
+                    <input type="hidden" name="insert" value="insert" required/>
                 </div>
                 <div class="form-group">
                     <label class="control-label" style="font-family: sukhumvit;font-size: 1.2em">ระดับปัญหา</label>
@@ -95,7 +105,7 @@ if (!ManageSession::isLogged()) {
                 </div>
                 <div class="form-group">
                     <label class="control-label" style="font-family: sukhumvit;font-size: 1.2em">รูปประกอบ</label>
-                    <input type="file" class="form-control" name="issues_image"/>
+                    <input type="file" class="form-control" name="issues_image" required/>
                 </div>
                 <div class="form-group text-center">
                     <button class="form-control btn btn-warning" type="submit"

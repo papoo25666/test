@@ -18,6 +18,7 @@ if (isset($_POST['sprint_name'])) {
             . '<li><a href="#">แก้ไข</a></li> '
             . '<li><a href="add_sprint.php?id=' . $row['id'] . '">เพิ่ม User Story</a></li>'
             . '<li><a href="action_issues.php?id=' . $row['id'] . '">ปัญหา</a></li>'
+            .'<li><a href="summary.php?id=' . $row['id'] . '">ดู Burndown Chart</a></li>'
             . '<li><a href="delete_sprint.php?id=' . $row['id'] . '" onclick="return confirm(' . '\'Are you sure?\'' . ')">ลบ</a></li>'
             . '</ul>'
             . '</div>'

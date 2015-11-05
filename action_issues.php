@@ -77,16 +77,36 @@ if (!ManageSession::isLogged()) {
     </section>
     <!--End Navbar-->
 
-    <section class="content container-fluid" style="min-height: 500px;margin-top: 50px">
+    <section class="content container-fluid" style="min-height: 600px;margin-top: 50px">
         <div class="row col-lg-10 col-md-10 col-sm-12 col-xs-10 col-lg-offset-1 col-md-offset-1"
              style="margin-top: 40px;padding: 0">
-            <a class="btn btn-warning" href="add_issues.php"
+            <a class="btn btn-warning" href="add_issues.php?id=<?php echo $_GET['id']; ?>"
                style="font-family: sukhumvit;font-size: 1.2em;">
                 เพิ่มปัญหา
             </a>
         </div>
         <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 col-lg-offset-1 col-md-offset-1"
-             style="background-color: #E0E0E0;height: 400px;margin-top: 5px">
+             style="background-color: #E0E0E0;height: 500px;margin-top: 5px">
+            <ul class="list-group" style="overflow: auto;height: 500px;">
+                <?php include_once "classes/ManageIssues.php"; ?>
+                <?php
+                $db = new ManageIssues();
+                $result = $db->getIssuesById($_GET['id']);
+                foreach ($result as $row) {
+                    ?>
+                    <li style="border-left: 0;border-right: 0;border-bottom: 3px;border-top: 0;
+                    border-style: solid;margin-top: 5px;border-color: #F5F5F5">
+                        <div class="text-center">
+                            <img class="img img-rounded" style="height: 250px"
+                                 src="<?php echo $row['issue_image_path']; ?>"/>
+
+                            <h3 style="font-family: sukhumvit;font-size: 1.3em;font-weight: bold">
+                                <?php echo $row['issue_desc']; ?>
+                            </h3>
+                        </div>
+                    </li>
+                <?php } ?>
+            </ul>
         </div>
     </section>
 

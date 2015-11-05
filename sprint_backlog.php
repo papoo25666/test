@@ -111,10 +111,12 @@ if (!ManageSession::isLogged()) {
                         <tr>
                             <td>
                                 <a style="font-family: sukhumvit;font-size: 1.2em;color: #000"
-                                    href="add_tasks.php?sprint_id=<?php echo $_GET['id']; ?>&story_id=<?php echo $row['user_story_id']; ?>">
+                                   href="add_tasks.php?sprint_id=<?php echo $_GET['id']; ?>&story_id=<?php echo $row['user_story_id']; ?>">
                                     <?php echo $row['user_story_name']; ?></a>
                             </td>
-                            </a>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                         </tr>
                     <?php } ?>
                     </tbody>

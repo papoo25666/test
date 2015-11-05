@@ -143,6 +143,11 @@ if (!ManageSession::isLogged()) {
                                                 </a>
                                             </li>
                                             <li>
+                                                <a href="summary.php?id=<?php echo $row['id']; ?>">
+                                                    ดู Burndown Chart
+                                                </a>
+                                            </li>
+                                            <li>
                                                 <a href="delete_sprint.php?id=<?php echo $row['id']; ?>"
                                                    onclick="return confirm('Are you sure?')">
                                                     ลบ
