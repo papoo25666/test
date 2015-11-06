@@ -1,12 +1,20 @@
 <?php
+$id = $_GET['id'];
 $response['issues'] = array();
 $item = array();
-for ($i = 1; $i <= 10; $i++) {
-    $item['issues'] = "API not working";
-    $item['date'] = "2015-11-4";
-    $item['status'] = "ด่วนมาก";
+include_once "../configs/config.php";
+include_once "../classes/ManageIssues.php";
+$db = new ManageIssues();
+$result = $db->getIssuesById($id);
+
+foreach ($result as $row) {
+    $item['id'] = $row['id'];
+    $item['issues'] = $row['issue_desc'];
+    $item['date'] = $row['issue_date'];
+    $item['issues_image'] = $row['issue_image_path'];
+    $item['status'] = $row['issue_status'];
+
     array_push($response['issues'], $item);
 }
-
 echo json_encode($response);
 ?>
