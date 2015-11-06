@@ -33,13 +33,13 @@ class ManageUsers
         return $this->result->rowCount();
     }
 
-    public function registerUser($username, $password, $fname, $lname, $email, $user_type_id)
+    public function registerUser($username, $password, $fname, $lname, $email, $user_type_id, $image_path)
     {
         $salt = "23143453458923scrum232342532";
         //hash password
         $password = hash_hmac('sha256', $password, $salt);
-        $this->result = $this->db->prepare("INSERT INTO users(username, password, fname, lname, email, user_types_id) VALUES(?,?,?,?,?,?)");
-        $value = array($username, $password, $fname, $lname, $email, $user_type_id);
+        $this->result = $this->db->prepare("INSERT INTO users(username, password ,profile_picture , fname, lname, email, user_types_id) VALUES(?,?,?,?,?,?,?)");
+        $value = array($username, $password, $image_path, $fname, $lname, $email, $user_type_id);
         $this->result->execute($value);
         return $this->result->rowCount();
     }
@@ -64,6 +64,14 @@ class ManageUsers
     {
         $this->result = $this->db->prepare("SELECT *FROM user_types LEFT JOIN users ON users.user_types_id = user_types.id WHERE users.username = ?");
         $value = array($username);
+        $this->result->execute($value);
+        return $this->result->fetchAll();
+    }
+
+    public function getUserInfoById($id)
+    {
+        $this->result = $this->db->prepare("SELECT *FROM users WHERE id = ?");
+        $value = array($id);
         $this->result->execute($value);
         return $this->result->fetchAll();
     }

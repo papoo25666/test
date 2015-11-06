@@ -12,11 +12,15 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
         $counts = $conn->loginUser($username, $password);
         if ($counts == 1) {
             $data = $conn->getUserRole($username);
-            foreach ($data as $row)
+            foreach ($data as $row) {
                 $role = $row['user_type_name'];
+                $user_id = $row['id'];
+            }
             $_SESSION['state'] = "logged";
             $_SESSION['role'] = $role;
             $_SESSION['username'] = $username;
+            $_SESSION['user_id'] = $user_id;
+
             header("location:index.php");
         } else {
             $err = "username หรือ password ผิด";

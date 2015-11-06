@@ -94,6 +94,7 @@ if (!ManageSession::isLogged()) {
                     <textarea class="form-control" name="issues_content" required></textarea>
                     <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>" required/>
                     <input type="hidden" name="insert" value="insert" required/>
+                    <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id']; ?>">
                 </div>
                 <div class="form-group">
                     <label class="control-label" style="font-family: sukhumvit;font-size: 1.2em">ระดับปัญหา</label>

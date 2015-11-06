@@ -15,19 +15,28 @@ if (isset($_POST['fname']) && isset($_POST['lname'])
         $password = $_POST['password'];
         $email = $_POST['email'];
         $role = $_POST['role'];
+        $image = $_FILES['image']['name'];
 
-        include_once "/classes/ManageUsers.php";
-        $conn = new ManageUsers();
-        if ($conn->getUserCount($username) == 0) {
-            $counts = $conn->registerUser($username, $password, $fname, $lname, $email, $role);
-            if ($counts > 0) {
-                $success = "ลงทะเบียนสำเร็จ";
+        $tmp = explode(".", $image);
+        $rename = round(microtime(true)) . "." . end($tmp);
+
+        if (move_uploaded_file($_FILES['image']['tmp_name'], 'profiles_images/' . $rename)) {
+            include_once "/classes/ManageUsers.php";
+            $conn = new ManageUsers();
+            if ($conn->getUserCount($username) == 0) {
+                $counts = $conn->registerUser($username, $password, $fname, $lname, $email, $role, 'profiles_images/' . $rename);
+                if ($counts > 0) {
+                    $success = "ลงทะเบียนสำเร็จ";
+                } else {
+                    $warning = "ลงทะเบียนไม่สำเร็จ กรุณาลองใหม่อีกครั้ง";
+                }
             } else {
-                $warning = "ลงทะเบียนไม่สำเร็จ กรุณาลองใหม่อีกครั้ง";
+                $warning = "ชื่อผู้ใช้งาน(username) นี้ถูกใช้งานแล้ว";
             }
         } else {
-            $warning = "ชื่อผู้ใช้งาน(username) นี้ถูกใช้งานแล้ว";
+            $err = "ลงทะเบียนไม่สำเร็จ กรุณาลองใหม่อีกครั้ง";
         }
+
     } else {
         $err = "กรุณกรอกข้อมูลให้ครบ";
     }

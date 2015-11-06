@@ -13,10 +13,10 @@ class ManageIssues
         $this->db = $conn->connect();
     }
 
-    public function insertIssues($desc, $image, $status, $sprint_id)
+    public function insertIssues($desc, $image, $status, $sprint_id, $user_id)
     {
-        $this->result = $this->db->prepare("INSERT INTO issues(id,issue_desc,issue_date,issue_image_path,issue_status,sprint_backlog_id) VALUES (null,?,NOW(),?,?,?)");
-        $value = array($desc, $image, $status, $sprint_id);
+        $this->result = $this->db->prepare("INSERT INTO issues(id,issue_desc,issue_date,issue_image_path,issue_status,sprint_backlog_id,users_id) VALUES (null,?,NOW(),?,?,?,?)");
+        $value = array($desc, $image, $status, $sprint_id, $user_id);
         $this->result->execute($value);
         return $this->result->rowCount();
     }
@@ -26,8 +26,15 @@ class ManageIssues
 
     }
 
-    public function getIssuesById($id)
+    public function getIssuesWithAvatarById($id)
     {
+        $this->result = $this->db->prepare("SELECT *FROM issues LEFT JOIN users ON sprint_backlog_id = ? AND users.id = issues.users_id");
+        $value = array($id);
+        $this->result->execute($value);
+        return $this->result->fetchAll();
+    }
+
+    public function getIssuesById($id){
         $this->result = $this->db->prepare("SELECT *FROM issues WHERE sprint_backlog_id = ?");
         $value = array($id);
         $this->result->execute($value);

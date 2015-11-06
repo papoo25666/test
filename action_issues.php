@@ -91,18 +91,22 @@ if (!ManageSession::isLogged()) {
                 <?php include_once "classes/ManageIssues.php"; ?>
                 <?php
                 $db = new ManageIssues();
-                $result = $db->getIssuesById($_GET['id']);
+                $result = $db->getIssuesWithAvatarById($_GET['id']);
                 foreach ($result as $row) {
                     ?>
-                    <li style="border-left: 0;border-right: 0;border-bottom: 3px;border-top: 0;
-                    border-style: solid;margin-top: 5px;border-color: #F5F5F5">
+                    <li>
+                        <div class="text-center" style="background-color: #fff;margin-top: 3px">
+                            <img class="img img-circle" src="<?php echo $row['profile_picture']; ?>"
+                                 style="width: 100px;padding: 5px"/>
+
+                            <h3 style="font-size: 1.5em;font-weight: bold;margin: 0;padding: 3px;font-family: sukhumvit"><?php echo $row['username']; ?></h3>
+                        </div>
                         <div class="text-center">
                             <img class="img img-rounded" style="height: 250px"
                                  src="<?php echo $row['issue_image_path']; ?>"/>
-
                         </div>
                         <div class="text-center" style="background-color: #fff;">
-                            <h3 style="font-family: sukhumvit;font-size: 1.3em;font-weight: bold;
+                            <h3 style="font-family: sukhumvit;font-size: 1.5em;font-weight: bold;
                             padding-top: 10px;margin: 0;margin-top: 3px">
                                 <?php echo $row['issue_desc']; ?>
                             </h3>

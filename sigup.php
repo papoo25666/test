@@ -38,8 +38,8 @@ if (ManageSession::isLogged()) {
             <a class="navbar-brand" href="index.php">Scrum Board</a>
         </div>
     </section>
-    <!--End Navbar-->
 
+    <!--End Navbar-->
     <section class="content">
         <div class="" style="margin-top: 70px">
             <div class="row" style="margin:0;px;padding: 40px;">
@@ -49,12 +49,19 @@ if (ManageSession::isLogged()) {
                         style="color: #333;font-weight: bold;margin-top: 10px;font-family: sukhumvit;font-size: 3em;;">
                         SIGN UP</h2>
                     <?php include_once "/libs/register.php"; ?>
-                    <form role="form" class="form-horizontal" action="" method="post"
+                    <form role="form" class="form-horizontal" action="" method="post" enctype="multipart/form-data"
                           style="margin-top: 10px;padding: 10px">
                         <?php if (isset($success)) echo "<span style='margin-left: -10px;margin-bottom: 10px;color: green;'>" . $success . "<a href='login.php' style='font-weight: bold'>  คลิกเพื่อเข้าสู่ระบบ</a></span>"; ?>
                         <?php if (isset($warning)) echo "<span  style='margin-left: -10px;margin-bottom: 10px;color: orangered'>" . $warning . "</span>"; ?>
                         <?php if (isset($err)) echo "<span style='margin-left: -10px;margin-bottom: 10px;color: red'>" . $err . "</span>"; ?>
                         <div class="form-group" style="margin-top: 10px">
+                            <div class="col-lg-12" style="padding-left: 0">
+                                <label style="font-family: sukhumvit;font-size: 1.2em" class="control-label">Profile picture</label>
+                                <input type="file" class="form-control" id="image" name="image"
+                                    placeholder="profile">
+                            </div>
+                        </div>
+                        <div class="form-group">
                             <div class="col-lg-12" style="padding-left: 0">
                                 <input type="text" class="form-control" id="fname" name="fname"
                                        placeholder="First name">
