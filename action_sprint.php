@@ -133,22 +133,22 @@ if (!ManageSession::isLogged()) {
                                         <ul class="dropdown-menu" style="background-color: #333">
                                             <li><a href="#">แก้ไข</a></li>
                                             <li>
-                                                <a href="add_sprint.php?id=<?php echo $row['id']; ?>&name=<?php echo $row['sbl_name']; ?>">
+                                                <a href="add_sprint.php?id=<?php echo $row['sbl_id']; ?>&name=<?php echo $row['sbl_name']; ?>">
                                                     เพิ่ม User Story
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="action_issues.php?id=<?php echo $row['id']; ?>">
+                                                <a href="action_issues.php?id=<?php echo $row['sbl_id']; ?>">
                                                     ปัญหา
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="summary.php?id=<?php echo $row['id']; ?>">
+                                                <a href="summary.php?id=<?php echo $row['sbl_id']; ?>">
                                                     ดู Burndown Chart
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="delete_sprint.php?id=<?php echo $row['id']; ?>"
+                                                <a href="delete_sprint.php?id=<?php echo $row['sbl_id']; ?>"
                                                    onclick="return confirm('Are you sure?')">
                                                     ลบ
                                                 </a>

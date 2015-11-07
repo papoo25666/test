@@ -7,6 +7,14 @@ $password = $_POST['password'];
 $db = new ManageUsers();
 $status = $db->loginUser($username, $password);
 $response = array();
+if ($status == 1) {
+    $users = $db->loginWithDisplayUsername($username);
+    foreach ($users as $row) {
+        $response['username'] = $row['username'];
+        $response['user_id'] = $row['user_id'];
+        $response['role'] = $row['user_type_name'];
+    }
+}
 $response['success'] = $status;
 echo json_encode($response);
 ?>

@@ -15,7 +15,7 @@ class ManageIssues
 
     public function insertIssues($desc, $image, $status, $sprint_id, $user_id)
     {
-        $this->result = $this->db->prepare("INSERT INTO issues(id,issue_desc,issue_date,issue_image_path,issue_status,sprint_backlog_id,users_id) VALUES (null,?,NOW(),?,?,?,?)");
+        $this->result = $this->db->prepare("INSERT INTO issues(issue_id,issue_desc,issue_date,issue_image_path,issue_status,sprint_backlog_id,users_id) VALUES (null,?,NOW(),?,?,?,?)");
         $value = array($desc, $image, $status, $sprint_id, $user_id);
         $this->result->execute($value);
         return $this->result->rowCount();
@@ -28,7 +28,7 @@ class ManageIssues
 
     public function getIssuesWithAvatarById($id)
     {
-        $this->result = $this->db->prepare("SELECT *FROM issues LEFT JOIN users ON sprint_backlog_id = ? AND users.id = issues.users_id");
+        $this->result = $this->db->prepare("SELECT *FROM issues LEFT JOIN users ON sprint_backlog_id = ? AND users.user_id = issues.users_id");
         $value = array($id);
         $this->result->execute($value);
         return $this->result->fetchAll();

@@ -121,7 +121,7 @@ if (!ManageSession::isPO()) {
                                            id="userstory_price"/>
                                 </div>
                                 <div class="form-group text-center">
-                                    <input type="hidden" name="id" value="<?php echo $row['id']; ?>"/>
+                                    <input type="hidden" name="id" value="<?php echo $row['user_story_id']; ?>"/>
                                     <input type="hidden" name="action" value="edit"/>
                                     <button type="submit" class="btn btn-success">SUBMIT</button>
                                 </div>

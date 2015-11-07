@@ -123,9 +123,9 @@ if (!ManageSession::isLogged()) {
                                 ?>
                                 <td class="value" style="text-align: right"><?php echo $price; ?></td>
                                 <td class="action" style="width: 15%">
-                                    <a href="edit_backlog.php?id=<?php echo $row['id'] ?>"
+                                    <a href="edit_backlog.php?id=<?php echo $row['user_story_id'] ?>"
                                        style="display: inline;">แก้ไข </a> | <a
-                                        href="delete_backlog.php?id=<?php echo $row['id'] ?>"
+                                        href="delete_backlog.php?id=<?php echo $row['user_story_id'] ?>"
                                         style="display: inline;">ลบ</a>
                                 </td>
                             </tr>

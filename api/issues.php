@@ -13,6 +13,7 @@ $result = $db->getIssuesWithAvatarById($id);
 
 foreach ($result as $row) {
 
+    $item['id'] = $row['issue_id'];
     $item['issues'] = $row['issue_desc'];
     $item['date'] = $row['issue_date'];
     $item['issues_image'] = $row['issue_image_path'];

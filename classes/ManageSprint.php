@@ -15,7 +15,7 @@ class ManageSprint
 
     public function insertSprint($name)
     {
-        $this->result = $this->db->prepare("INSERT INTO sprint_backlog(id,sbl_name,sbl_date) VALUES (null,?,NOW())");
+        $this->result = $this->db->prepare("INSERT INTO sprint_backlog(sbl_id,sbl_name,sbl_date) VALUES (null,?,NOW())");
         $value = array($name);
         $this->result->execute($value);
         return $this->result->rowCount();
@@ -23,7 +23,7 @@ class ManageSprint
 
     public function getLastSprint()
     {
-        $this->result = $this->db->prepare("SELECT *FROM sprint_backlog ORDER BY id DESC LIMIT 1;");
+        $this->result = $this->db->prepare("SELECT *FROM sprint_backlog ORDER BY sbl_id DESC LIMIT 1;");
         $this->result->execute();
         return $this->result->fetchAll();
     }

@@ -22,7 +22,7 @@ class ManageUserStory
 
     public function getUserStoryById($id)
     {
-        $this->result = $this->db->prepare("SELECT *FROM user_story WHERE id = ?");
+        $this->result = $this->db->prepare("SELECT *FROM user_story WHERE user_story_id = ?");
         $value = array($id);
         $this->result->execute($value);
         $data = $this->result->fetchAll();
@@ -40,7 +40,7 @@ class ManageUserStory
 
     public function deleteStoryItems($id)
     {
-        $this->result = $this->db->prepare("DELETE FORM user_story WHERE id = ?");
+        $this->result = $this->db->prepare("DELETE FORM user_story WHERE user_story_id = ?");
         $value = array($id);
         $this->result->execute($value);
         return $this->result->rowCount();
@@ -48,7 +48,7 @@ class ManageUserStory
 
     public function editStoryItems($user_story_name, $user_story_price, $id)
     {
-        $this->result = $this->db->prepare("UPDATE user_story SET user_story_name = ?,user_story_price = ? WHERE id = ?");
+        $this->result = $this->db->prepare("UPDATE user_story SET user_story_name = ?,user_story_price = ? WHERE user_story_id = ?");
         $value = array($user_story_name, $user_story_price, $id);
         $this->result->execute($value);
         return $this->result->rowCount();

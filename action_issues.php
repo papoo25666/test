@@ -95,25 +95,36 @@ if (!ManageSession::isLogged()) {
                 foreach ($result as $row) {
                     ?>
                     <li>
-                        <div class="text-center" style="background-color: #fff;margin-top: 3px">
-                            <img class="img img-circle" src="<?php echo $row['profile_picture']; ?>"
-                                 style="width: 100px;padding: 5px"/>
+                        <div class="text-center" style="background-color: #ffffff;margin-top: 3px">
+                            <div class="row" style="margin: 0;padding: 10px">
+                                <div class="col-lg-2">
+                                    <img class="img img-circle" src="<?php echo $row['profile_picture']; ?>"
+                                         style="width: 100px;padding: 5px;display: "/>
 
-                            <h3 style="font-size: 1.5em;font-weight: bold;margin: 0;padding: 3px;font-family: sukhumvit"><?php echo $row['username']; ?></h3>
-                        </div>
-                        <div class="text-center">
-                            <img class="img img-rounded" style="height: 250px"
-                                 src="<?php echo $row['issue_image_path']; ?>"/>
+                                    <h3 style="font-size: 1.5em;font-weight: bold;margin: 0;padding: 3px;font-family: sukhumvit;">
+                                        <?php echo $row['username']; ?>
+                                    </h3>
+                                </div>
+                                <div class="col-lg-10">
+                                    <img class="img img-rounded" style="width: 90%;padding-bottom: 5px"
+                                         src="<?php echo $row['issue_image_path']; ?>"/>
+                                </div>
+                                <div class="col-lg-12 text-center" style="background-color: #333">
+                                    <h3 style="font-family: sukhumvit;font-size: 1.5em;font-weight: bold;color: #fff;
+                            padding-top: 10px;margin: 0;margin-top: 3px">
+                                        <?php echo $row['issue_desc']; ?>
+                                    </h3>
+
+                                    <h3 style="font-family: sukhumvit;font-size: 1.3em;font-weight: bold;color: #fff">
+                                        <?php echo $row['issue_status']; ?> | <?php echo $row['issue_date']; ?>
+                                    </h3>
+
+                                </div>
+                            </div>
                         </div>
                         <div class="text-center" style="background-color: #fff;">
-                            <h3 style="font-family: sukhumvit;font-size: 1.5em;font-weight: bold;
-                            padding-top: 10px;margin: 0;margin-top: 3px">
-                                <?php echo $row['issue_desc']; ?>
-                            </h3>
 
-                            <h3 style="font-family: sukhumvit;font-size: 1.3em;font-weight: bold">
-                                <?php echo $row['issue_status']; ?> | <?php echo $row['issue_date']; ?>
-                            </h3>
+
                         </div>
                     </li>
                 <?php } ?>

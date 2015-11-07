@@ -79,7 +79,7 @@ if (!ManageSession::isLogged()) {
 
             <div class="col-lg-3 col-md-3 col-sm-3">
                 <div class="text-center" style="background-color: #333;height: 90px;padding: 30px">
-                    <a href="issues.php" class="link-sprint">Issuss</a>
+                    <a href="issues.php" class="link-sprint">Issues</a>
                 </div>
             </div>
         </div>

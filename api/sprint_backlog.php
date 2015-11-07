@@ -6,7 +6,7 @@ $result = $db->getSprint();
 $response['sprints'] = array();
 foreach ($result as $row) {
     $items = array();
-    $items['id'] = $row['id'];
+    $items['id'] = $row['sbl_id'];
     $items['sprint'] = $row['sbl_name'];
     $items['created'] = $row['sbl_date'];
 

@@ -70,9 +70,17 @@ class ManageUsers
 
     public function getUserInfoById($id)
     {
-        $this->result = $this->db->prepare("SELECT *FROM users WHERE id = ?");
+        $this->result = $this->db->prepare("SELECT *FROM users WHERE user_id = ?");
         $value = array($id);
         $this->result->execute($value);
+        return $this->result->fetchAll();
+    }
+
+    public function loginWithDisplayUsername($username)
+    {
+        $this->result = $this->db->prepare("SELECT *FROM users INNER JOIN user_types ON users.username = ? AND users.user_types_id = user_types.id");
+        $values = array($username);
+        $this->result->execute($values);
         return $this->result->fetchAll();
     }
 }
