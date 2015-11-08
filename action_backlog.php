@@ -126,6 +126,7 @@ if (!ManageSession::isLogged()) {
                                     <a href="edit_backlog.php?id=<?php echo $row['user_story_id'] ?>"
                                        style="display: inline;">แก้ไข </a> | <a
                                         href="delete_backlog.php?id=<?php echo $row['user_story_id'] ?>"
+                                        onclick="return confirm('Are you sure?')"
                                         style="display: inline;">ลบ</a>
                                 </td>
                             </tr>

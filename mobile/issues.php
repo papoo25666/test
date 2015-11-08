@@ -10,7 +10,9 @@ $tmp = explode(".", $image);
 $rename = round(microtime(true)) . '.' . end($tmp);
 $response = array();
 //upload to server path
-if (move_uploaded_file($_FILES['issues_image']['tmp_name'], "issues/" . $rename)) {
+
+$move = move_uploaded_file($_FILES['issues_image']['tmp_name'], "../issues/" . $rename);
+if ($move) {
     include_once "../configs/config.php";
     include_once "../classes/ManageIssues.php";
     $db = new ManageIssues();
@@ -18,10 +20,11 @@ if (move_uploaded_file($_FILES['issues_image']['tmp_name'], "issues/" . $rename)
     if ($result == 1) {
         $response['success'] = "1";
     } else {
-        $response['success'] = "0";
+        $response['success'] = $result;
     }
 } else {
-    $response['success'] = "0";
+    $response['success'] = $image;
 }
+
 echo json_encode($response);
 ?>

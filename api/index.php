@@ -58,29 +58,33 @@ if (!ManageSession::isLogged()) {
     <!--End Navbar-->
 
     <section class="content" style="min-height: 500px;margin-top: 70px">
-        <div class="col-lg-12 col-md-12 col-sm-12">
-            <div class="col-lg-3 col-md-3 col-sm-3">
-                <div class="text-center" style="background-color: #333;height: 90px;padding: 30px">
-                    <a href="user_story.php" class="link-sprint">User Story</a>
-                </div>
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <div class="text-center" style="background-color: #333;height: 90px;padding: 30px;margin-top: 10px">
+                <a href="user_story.php" class="link-sprint">User Story</a>
             </div>
+        </div>
 
-            <div class="col-lg-3 col-md-3 col-sm-3">
-                <div class="text-center" style="background-color: #333;height: 90px;padding: 30px">
-                    <a href="priority.php" class="link-sprint">Priority</a>
-                </div>
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <div class="text-center" style="background-color: #333;height: 90px;padding: 30px;margin-top: 10px">
+                <a href="priority.php" class="link-sprint">Priority</a>
             </div>
+        </div>
 
-            <div class="col-lg-3 col-md-3 col-sm-3">
-                <div class="text-center" style="background-color: #333;height: 90px;padding: 30px">
-                    <a href="sprint_backlog.php" class="link-sprint">Sprint Backlog</a>
-                </div>
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <div class="text-center" style="background-color: #333;height: 90px;padding: 30px;margin-top: 10px">
+                <a href="sprint_backlog.php" class="link-sprint">Sprint Backlog</a>
             </div>
+        </div>
 
-            <div class="col-lg-3 col-md-3 col-sm-3">
-                <div class="text-center" style="background-color: #333;height: 90px;padding: 30px">
-                    <a href="issues.php" class="link-sprint">Issues</a>
-                </div>
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <div class="text-center" style="background-color: #333;height: 90px;padding: 30px;margin-top: 10px">
+                <a href="issues.php" class="link-sprint">Issues</a>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <div class="text-center" style="background-color: #333;height: 90px;padding: 30px;margin-top: 10px">
+                <a href="account.php" class="link-sprint">Account</a>
             </div>
         </div>
     </section>

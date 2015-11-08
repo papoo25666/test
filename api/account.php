@@ -13,6 +13,7 @@ if (empty($id) == false) {
         $response['username'] = $row['username'];
         $response['fname'] = $row['fname'];
         $response['lname'] = $row['lname'];
+        $response['email'] = $row['email'];
     }
 }else {
     $response['avatar'] = "";

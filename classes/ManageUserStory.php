@@ -40,7 +40,7 @@ class ManageUserStory
 
     public function deleteStoryItems($id)
     {
-        $this->result = $this->db->prepare("DELETE FORM user_story WHERE user_story_id = ?");
+        $this->result = $this->db->prepare("DELETE FROM user_story WHERE user_story_id = ?");
         $value = array($id);
         $this->result->execute($value);
         return $this->result->rowCount();

@@ -18,6 +18,7 @@ if (!ManageSession::isLogged()) {
     <link rel="stylesheet" href="css/button.css"/>
     <link rel="stylesheet" href="css/navbar.css"/>
     <link rel="stylesheet" href="css/tables.css"/>
+    <link rel="stylesheet" href="css/breadcrumb.css"/>
 
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -78,57 +79,68 @@ if (!ManageSession::isLogged()) {
     <!--End Navbar-->
 
     <section class="content container-fluid" style="min-height: 600px;margin-top: 50px">
+
         <div class="row col-lg-8 col-md-8 col-sm-12 col-xs-10 col-lg-offset-2 col-md-offset-2"
              style="margin-top: 40px;padding: 0">
-            <a class="btn btn-warning" href="add_issues.php?id=<?php echo $_GET['id']; ?>"
-               style="font-family: sukhumvit;font-size: 1.2em;">
-                เพิ่มปัญหา
-            </a>
-        </div>
-        <div class="col-lg-8 col-md-8 col-sm-10 col-xs-12 col-lg-offset-2 col-md-offset-2"
-             style="background-color: #E0E0E0;height: 500px;margin-top: 5px">
-            <ul class="list-group" style="overflow: auto;height: 500px;">
-                <?php include_once "classes/ManageIssues.php"; ?>
-                <?php
-                $db = new ManageIssues();
-                $result = $db->getIssuesWithAvatarById($_GET['id']);
-                foreach ($result as $row) {
-                    ?>
+            <div class="row">
+                <div class="breadcrumb">
                     <li>
-                        <div class="text-center" style="background-color: #ffffff;margin-top: 3px">
-                            <div class="row" style="margin: 0;padding: 10px">
-                                <div class="col-lg-2">
-                                    <img class="img img-circle" src="<?php echo $row['profile_picture']; ?>"
-                                         style="width: 100px;padding: 5px;display: "/>
+                        <a href="action_sprint.php">Sprint Backlog</a>
+                    </li>
+                    <li class="active">
+                        ปัญหา
+                    </li>
+                </div>
+                <a class="btn btn-warning" href="add_issues.php?id=<?php echo $_GET['id']; ?>"
+                   style="font-family: sukhumvit;font-size: 1.2em;">
+                    เพิ่มปัญหา
+                </a>
+            </div>
 
-                                    <h3 style="font-size: 1.5em;font-weight: bold;margin: 0;padding: 3px;font-family: sukhumvit;">
-                                        <?php echo $row['username']; ?>
-                                    </h3>
-                                </div>
-                                <div class="col-lg-10">
-                                    <img class="img img-rounded" style="width: 90%;padding-bottom: 5px"
-                                         src="<?php echo $row['issue_image_path']; ?>"/>
-                                </div>
-                                <div class="col-lg-12 text-center" style="background-color: #333">
-                                    <h3 style="font-family: sukhumvit;font-size: 1.5em;font-weight: bold;color: #fff;
+        </div>
+        <div class="row">
+            <div class="col-lg-8 col-md-8 col-sm-10 col-xs-12 col-lg-offset-2 col-md-offset-2"
+                 style="background-color: #E0E0E0;height: 500px;margin-top: 5px">
+
+                <ul class="list-group" style="overflow: auto;height: 500px;">
+                    <?php include_once "classes/ManageIssues.php"; ?>
+                    <?php
+                    $db = new ManageIssues();
+                    $result = $db->getIssuesWithAvatarById($_GET['id']);
+                    foreach ($result as $row) {
+                        ?>
+                        <li>
+                            <div class="text-center" style="background-color: #ffffff;margin-top: 3px">
+                                <div class="row" style="margin: 0;padding: 10px">
+                                    <div class="col-lg-2">
+                                        <img class="img img-circle" src="<?php echo $row['profile_picture']; ?>"
+                                             style="width: 100px;padding: 5px;display: "/>
+
+                                        <h3 style="font-size: 1.5em;font-weight: bold;margin: 0;padding: 3px;font-family: sukhumvit;">
+                                            <?php echo $row['username']; ?>
+                                        </h3>
+                                    </div>
+                                    <div class="col-lg-10">
+                                        <img class="img img-rounded" style="width: 90%;padding-bottom: 5px"
+                                             src="<?php echo $row['issue_image_path']; ?>"/>
+                                    </div>
+                                    <div class="col-lg-12 text-center" style="background-color: #333">
+                                        <h3 style="font-family: sukhumvit;font-size: 1.5em;font-weight: bold;color: #fff;
                             padding-top: 10px;margin: 0;margin-top: 3px">
-                                        <?php echo $row['issue_desc']; ?>
-                                    </h3>
+                                            <?php echo $row['issue_desc']; ?>
+                                        </h3>
 
-                                    <h3 style="font-family: sukhumvit;font-size: 1.3em;font-weight: bold;color: #fff">
-                                        <?php echo $row['issue_status']; ?> | <?php echo $row['issue_date']; ?>
-                                    </h3>
+                                        <h3 style="font-family: sukhumvit;font-size: 1.3em;font-weight: bold;color: #fff">
+                                            <?php echo $row['issue_status']; ?> | <?php echo $row['issue_date']; ?>
+                                        </h3>
 
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="text-center" style="background-color: #fff;">
-
-
-                        </div>
-                    </li>
-                <?php } ?>
-            </ul>
+                        </li>
+                    <?php } ?>
+                </ul>
+            </div>
         </div>
     </section>
 
