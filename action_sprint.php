@@ -156,7 +156,7 @@ if (!ManageSession::isLogged()) {
                                         </ul>
                                     </div>
                                     <div style="background-color: #333;padding: 10px">
-                                        <a href="sprint_backlog.php?id=<?php echo $row['id']; ?>"
+                                        <a href="sprint_backlog.php?id=<?php echo $row['sbl_id']; ?>"
                                            class="link-sprint">
                                             <?php echo $row['sbl_name']; ?>
                                         </a>

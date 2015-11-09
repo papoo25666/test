@@ -18,6 +18,7 @@ if (!ManageSession::isLogged()) {
     <link rel="stylesheet" href="css/button.css"/>
     <link rel="stylesheet" href="css/navbar.css"/>
     <link rel="stylesheet" href="css/tables.css"/>
+    <link rel="stylesheet" href="css/breadcrumb.css"/>
 
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -80,12 +81,18 @@ if (!ManageSession::isLogged()) {
     <section class="content container-fluid" style="min-height: 500px;margin-top: 50px">
         <div class="col-lg-8 col-md-8 col-sm-10 col-xs-10 col-lg-offset-2 col-md-offset-2"
              style="margin-top: 40px;padding: 0">
+            <div class="breadcrumb">
+                <li>
+                    <a href="action_sprint.php">Sprint Backlog</a>
+                </li>
+                <li class="active">
+                    เพิ่มปัญหา
+                </li>
+            </div>
             <?php
             include_once "libs/issues.php";
             if (isset($success)) {
                 echo "<h3 style='font-family: sukhumvit;font-size: 1.2em;font-weight: bold'>" . "<a href='action_issues.php?id=" . $_GET['id'] . "'>" . $success . "</a></h3>";
-            } else {
-                echo "<h3 style='font-family: sukhumvit;font-size: 1.2em;font-weight: bold'>" . $success . "</h3>";
             }
             ?>
             <form class="form" action="" method="post" enctype="multipart/form-data">

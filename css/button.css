@@ -39,3 +39,15 @@
     background-color: #0091EA;
     border-color: transparent;
 }
+
+.btn-danger {
+    border-radius: 0;
+}
+.btn-danger:hover {
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    border-radius: 5px;
+    border-color: transparent;
+}

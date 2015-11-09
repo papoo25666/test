@@ -28,7 +28,7 @@ class ManageIssues
 
     public function getIssuesWithAvatarById($id)
     {
-        $this->result = $this->db->prepare("SELECT *FROM issues LEFT JOIN users ON sprint_backlog_id = ? AND users.user_id = issues.users_id");
+        $this->result = $this->db->prepare("SELECT *FROM issues INNER JOIN users ON sprint_backlog_id = ? AND users.user_id = issues.users_id");
         $value = array($id);
         $this->result->execute($value);
         return $this->result->fetchAll();

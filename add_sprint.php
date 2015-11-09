@@ -110,21 +110,25 @@ if (!ManageSession::isPO()) {
                                 $result = $db->getUserStory();
                                 ?>
                                 <div class="form-group  form-inline">
-                                    <select id="user_story" class="form-control" style="width: 94%">
+                                    <select id="user_story" class="form-control" style="width: 90%">
                                         <?php
                                         foreach ($result as $row) {
                                             ?>
-                                            <option value="<?php echo $row['id']; ?>">
-                                                <?php echo $row['id'] . '. ' . $row['user_story_name']; ?>
+                                            <option value="<?php echo $row['user_story_id']; ?>">
+                                                <?php echo $row['user_story_id'] . '. ' . $row['user_story_name']; ?>
                                             </option>
                                         <?php } ?>
                                     </select>
                                     <button type="submit" class="btn btn-warning"
-                                            style="font-family: sukhumvit;font-size: 1.2em;">เพิ่ม
+                                            style="font-family: sukhumvit;font-size: 1.2em;">
+                                        เพิ่ม
+                                    </button>
+                                    <button type="button" class="btn btn-danger" id="btn-delete"
+                                            style="font-family: sukhumvit;font-size: 1.2em;">ลบ
                                     </button>
                                 </div>
-                                <div></div>
                             </form>
+
                             <div class="list" style="background-color: #fff;height: 300px">
                                 <ul class="list-group story" style="overflow: auto;height: 300px;">
 
@@ -185,11 +189,14 @@ if (!ManageSession::isPO()) {
             //push id for story
             data.push(id);
 
+            //console.log("data : " + data.length);
+
             var text = '<li class="list-group-item" style="font-weight: normal">' + content + '</li>';
 
             $('.list-group.story').append(text);
             return false;
         });
+
         $('#submit-story').click(function () {
             $.ajax({
                 url: "libs/add_story_for_sprint.php",
@@ -199,6 +206,17 @@ if (!ManageSession::isPO()) {
                     $('.alert-for-success').text("คลิกเพื่อดูผลลัพท์");
                 }
             });
+            return false;
+        });
+
+        //button delete
+        $('button#btn-delete').click(function () {
+            $('.list-group.story > .list-group-item').remove();
+
+            data = [];
+
+            //console.log("data : " + data.length);
+
             return false;
         });
     });

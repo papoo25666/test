@@ -121,7 +121,7 @@ if (!ManageSession::isLogged()) {
                                         </h3>
                                     </div>
                                     <div class="col-lg-10">
-                                        <img class="img img-rounded" style="width: 90%;padding-bottom: 5px"
+                                        <img class="img img-rounded" style="width: 75%;padding-bottom: 5px"
                                              src="<?php echo $row['issue_image_path']; ?>"/>
                                     </div>
                                     <div class="col-lg-12 text-center" style="background-color: #333">
