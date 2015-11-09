@@ -18,6 +18,7 @@ if (!ManageSession::isLogged()) {
     <link rel="stylesheet" href="css/button.css"/>
     <link rel="stylesheet" href="css/navbar.css"/>
     <link rel="stylesheet" href="css/tables.css"/>
+    <link rel="stylesheet" href="css/breadcrumb.css" />
 
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -77,9 +78,17 @@ if (!ManageSession::isLogged()) {
     </section>
     <!--End Navbar-->
 
-    <section class="content container-fluid" style="min-height: 500px;margin-top: 50px">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-sm-12">
-            <h3 class="sprint-backlog-centent" style="font-family: sukhumvit;font-weight: bold;font-size: 2em">
+    <section class="content container-fluid" style="min-height: 500px;margin-top: 70px">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-sm-12" style="margin-top: 10px">
+            <div class="breadcrumb">
+                <li>
+                    <a href="action_sprint.php">Sprint Backlog</a>
+                </li>
+                <li class="active">
+
+                </li>
+            </div>
+            <h3 class="sprint-backlog-centent" style="font-family: sukhumvit;font-weight: bold;font-size: 2em;margin-top: 0">
                 <?php
                 $id = $_GET['id'];
                 include_once "configs/config.php";

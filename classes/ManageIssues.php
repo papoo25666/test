@@ -34,12 +34,23 @@ class ManageIssues
         return $this->result->fetchAll();
     }
 
-    public function getIssuesById($id){
+    public function getIssuesById($id)
+    {
         $this->result = $this->db->prepare("SELECT *FROM issues WHERE sprint_backlog_id = ?");
         $value = array($id);
         $this->result->execute($value);
         return $this->result->fetchAll();
     }
+
+    public function getIssuesCommentWithAvatarById($id)
+    {
+        $this->result = $this->db->prepare("SELECT *FROM issues INNER JOIN users ON issues.issue_id = ? AND users.user_id = issues.users_id");
+        $value = array($id);
+        $this->result->execute($value);
+        return $this->result->fetchAll();
+    }
+
+
 }
 
 ?>

@@ -12,11 +12,12 @@ if (!ManageSession::isLogged()) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Scrum Board</title>
     <link href="css/bootstrap.min.css" rel="stylesheet"/>
-    <link href ="css/font-awesome.min.css" rel = "stylesheet" />
-    <link href ="css/custom_style.css" rel = "stylesheet" />
+    <link href="css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="css/custom_style.css" rel="stylesheet"/>
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="css/navbar.css" />
-    <link rel="stylesheet" href="css/button.css" />
+    <link rel="stylesheet" href="css/navbar.css"/>
+    <link rel="stylesheet" href="css/button.css"/>
+    <link rel="stylesheet" href="css/breadcrumb.css"/>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -62,11 +63,17 @@ if (!ManageSession::isLogged()) {
 
     <section class="content" style="min-height: 530px;margin-top: 50px">
         <div class="col-lg-12 col-md-12 col-sm-12">
-
             <div class="col-lg-8 col-md-8 col-sm-8 col-lg-offset-2 col-md-offset-2 col-sm-offset-2"
-                 style="background-color: #333;min-height: 380px;margin-top: 80px;padding-left: 0; padding-right: 0">
-
-                <img  class="img img-responsive" style="min-height: 380px;width: 100%"/>
+                 style="min-height: 390px;margin-top: 50px;padding-left: 0; padding-right: 0">
+                <div class="breadcrumb">
+                    <li>
+                        <a href="action_sprint.php">Sprint Backlog</a>
+                    </li>
+                    <li class="active">
+                        Burndown Chart
+                    </li>
+                </div>
+                <img class="img img-responsive" style="min-height: 380px;width: 100%;background-color: #333;"/>
             </div>
         </div>
     </section>

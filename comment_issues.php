@@ -18,8 +18,8 @@ if (!ManageSession::isLogged()) {
     <link rel="stylesheet" href="css/button.css"/>
     <link rel="stylesheet" href="css/navbar.css"/>
     <link rel="stylesheet" href="css/tables.css"/>
-    <link rel="stylesheet" href="css/breadcrumb.css"/>
     <link rel="stylesheet" href="css/backlog.css"/>
+    <link rel="stylesheet" href="css/breadcrumb.css"/>
 
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -100,47 +100,93 @@ if (!ManageSession::isLogged()) {
                     <?php } ?>
                 </div>
             </div>
-            <div class="col-lg-8 col-md-8 col-sm-10 col-xs-10">
+
+            <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12"
+                >
                 <div class="breadcrumb">
                     <li>
                         <a href="action_sprint.php">Sprint Backlog</a>
                     </li>
+                    <li>
+                        <a href="action_issues.php?id=<?php echo $_GET['sprint_id']; ?>">ปัญหา</a>
+                    </li>
                     <li class="active">
-                        เพิ่มปัญหา
+                        ตอบปัญหา
                     </li>
                 </div>
-                <?php
-                include_once "libs/issues.php";
-                if (isset($success)) {
-                    echo "<h3 style='font-family: sukhumvit;font-size: 1.2em;font-weight: bold'>" . "<a href='action_issues.php?id=" . $_GET['id'] . "'>" . $success . "</a></h3>";
-                }
-                ?>
-                <form class="form" action="" method="post" enctype="multipart/form-data">
-                    <div class="form-group">
-                        <label class="control-label" style="font-family: sukhumvit;font-size: 1.2em">หัวข้อ</label>
-                        <textarea class="form-control" name="issues_content" required></textarea>
-                        <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>" required/>
-                        <input type="hidden" name="insert" value="insert" required/>
-                        <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id']; ?>">
+                <ul class="list-group" style="overflow: auto;height: 500px;background-color: #E0E0E0;">
+                    <?php include_once "classes/ManageIssues.php"; ?>
+                    <?php
+                    $db = new ManageIssues();
+                    $result = $db->getIssuesCommentWithAvatarById($_GET['id']);
+                    foreach ($result as $row) {
+                        ?>
+                        <li>
+                            <div class="text-center" style="">
+                                <div class="row" style="margin: 0;padding: 10px">
+                                    <div class="col-lg-2">
+                                        <img class="img img-circle" src="<?php echo $row['profile_picture']; ?>"
+                                             style="width: 100px;padding: 5px; "/>
+
+                                        <h3 style="font-size: 1.5em;font-weight: bold;margin: 0;padding: 3px;font-family: sukhumvit;">
+                                            <?php echo $row['username']; ?>
+                                        </h3>
+                                    </div>
+                                    <div class="col-lg-6 col-lg-offset-1">
+                                        <img class="img img-thumbnail" style="width: 90%;padding-bottom: 5px;padding: 0"
+                                             src="<?php echo $row['issue_image_path']; ?>"/>
+                                    </div>
+                                    <div class="col-lg-12 text-center">
+                                        <div class="col-lg-6 col-lg-offset-3" style="background-color: #333">
+                                            <h3 style="font-family: sukhumvit;font-size: 1.2em;font-weight: bold;color: #fff;
+                            padding-top: 10px;margin: 0;margin-top: 3px">
+                                                <?php echo $row['issue_desc']; ?>
+                                            </h3>
+
+                                            <h3 style="font-family: sukhumvit;font-size: 1.3em;font-weight: bold;color: #fff">
+                                                <?php echo $row['issue_status']; ?> | <?php echo $row['issue_date']; ?>
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    <?php } ?>
+                    <?php
+                    include_once "classes/ManageComment.php";
+                    $db = new ManageComment();
+                    $result = $db->getCommentByIssueId($_GET['id']);
+                    foreach ($result as $row) {
+                        ?>
+                        <li style="height: 85px;">
+                            <div class="text-center">
+                                <div class="row text-center" style="margin: 0;">
+                                    <div class="col-lg-1 col-lg-offset-3">
+                                        <img src="<?php echo $row['profile_picture']; ?>" class="img-circle"
+                                             style="width: 80px;height: 80px;display: inline"/>
+                                    </div>
+                                    <div class="col-lg-2">
+                                        <h3 style="font-family: sukhumvit;font-size: 1.4em;font-weight: bold;color: #333">
+                                            <?php echo $row['comment_content']; ?>
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    <?php } ?>
+                    <div class="col-lg-6 col-lg-offset-3">
+                        <form class="form" id="comments" method="post" style="margin-top: 10px">
+                            <div class="form-group" style="margin: 0">
+                                <input class="form-control" name="content" id="content"
+                                       style="height: 50px;border-radius: 0"/>
+                                <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>"/>
+                            </div>
+                            <div class="form-group pull-right" style="margin-top: 3px">
+                                <button type="submit" class="btn btn-warning">ตกลง</button>
+                            </div>
+                        </form>
                     </div>
-                    <div class="form-group">
-                        <label class="control-label" style="font-family: sukhumvit;font-size: 1.2em">ระดับปัญหา</label>
-                        <select class="form-control" name="issues_status">
-                            <option>ปกติ</option>
-                            <option>ด่วน</option>
-                            <option>ด่วนที่สุด</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label" style="font-family: sukhumvit;font-size: 1.2em">รูปประกอบ</label>
-                        <input type="file" class="form-control" name="issues_image" required/>
-                    </div>
-                    <div class="form-group text-center">
-                        <button class="form-control btn btn-warning" type="submit"
-                                style="font-family: sukhumvit;font-size: 1.2em;width: 40%;height: 40px">เพิ่มปัญหา
-                        </button>
-                    </div>
-                </form>
+                </ul>
             </div>
         </div>
     </section>
@@ -175,7 +221,25 @@ if (!ManageSession::isLogged()) {
 <script type="application/javascript" src="js/jquery-1.11.3.min.js"></script>
 <script type="application/javascript" src="js/bootstrap.min.js"></script>
 <script type="application/javascript" src="js/angular.min.js"></script>
+<script type="application/javascript">
+    $(function () {
+        $('#comments').submit(function () {
+            var data = $('#comments').serializeArray();
+            $.ajax({
+                url: 'libs/comment.php',
+                data: data,
+                type: 'post',
+                success: function (msg) {
+                    if(msg == "success"){
+                        location.reload();
+                    }
+                }
+            });
 
+            return false;
+        });
+    });
+</script>
 
 </body>
 </html>

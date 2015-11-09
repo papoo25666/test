@@ -18,6 +18,7 @@ if (!ManageSession::isLogged()) {
     <link rel="stylesheet" href="css/button.css"/>
     <link rel="stylesheet" href="css/navbar.css"/>
     <link rel="stylesheet" href="css/tables.css"/>
+    <link rel="stylesheet" href="css/backlog.css"/>
     <link rel="stylesheet" href="css/breadcrumb.css"/>
 
 
@@ -78,11 +79,30 @@ if (!ManageSession::isLogged()) {
     </section>
     <!--End Navbar-->
 
-    <section class="content container-fluid" style="min-height: 600px;margin-top: 50px">
+    <section class="content container-fluid" style="min-height: 500px;margin-top: 70px">
+        <div class="row" style="margin-top: 10px;margin-bottom: 20px;margin-left: 0;margin-right: 0">
+            <div class="col-lg-2 col-md-2 col-sm-2">
+                <div class="list-group">
+                    <a type="button" href="backlog_item.php" class="list-group-item">
+                        <img src="images/ic_home.png" style="width: 20px;height: 20px">
+                        แสดง Product Backlog
+                    </a>
+                    <a type="button" href="action_sprint.php" class="list-group-item">
+                        <img src="images/ic_home.png" style="width: 20px;height: 20px">
+                        แสดง Sprint Backlog</a>
+                    <?php if (ManageSession::isPO() || ManageSession::isAdmin()) { ?>
+                        <a href="action_backlog.php" type="button" class="list-group-item">
+                            <img src="images/ic_mode.png" style="width: 20px;height: 20px">
+                            แก้ไข Product Backlog</a>
+                        <a type="button" href="action_priority.php" class="list-group-item">
+                            <img src="images/ic_mode.png" style="width: 20px;height: 20px">
+                            แก้ไข Prioriry</a>
+                    <?php } ?>
+                </div>
+            </div>
 
-        <div class="row col-lg-8 col-md-8 col-sm-12 col-xs-10 col-lg-offset-2 col-md-offset-2"
-             style="margin-top: 40px;padding: 0">
-            <div class="row">
+            <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12"
+                >
                 <div class="breadcrumb">
                     <li>
                         <a href="action_sprint.php">Sprint Backlog</a>
@@ -92,17 +112,11 @@ if (!ManageSession::isLogged()) {
                     </li>
                 </div>
                 <a class="btn btn-warning" href="add_issues.php?id=<?php echo $_GET['id']; ?>"
-                   style="font-family: sukhumvit;font-size: 1.2em;">
+                   style="font-family: sukhumvit;font-size: 1.2em;margin-bottom: 5px">
                     เพิ่มปัญหา
                 </a>
-            </div>
 
-        </div>
-        <div class="row">
-            <div class="col-lg-8 col-md-8 col-sm-10 col-xs-12 col-lg-offset-2 col-md-offset-2"
-                 style="background-color: #E0E0E0;height: 500px;margin-top: 5px">
-
-                <ul class="list-group" style="overflow: auto;height: 500px;">
+                <ul class="list-group" style="overflow: auto;height: 500px;background-color: #E0E0E0;">
                     <?php include_once "classes/ManageIssues.php"; ?>
                     <?php
                     $db = new ManageIssues();
@@ -110,18 +124,18 @@ if (!ManageSession::isLogged()) {
                     foreach ($result as $row) {
                         ?>
                         <li>
-                            <div class="text-center" style="background-color: #ffffff;margin-top: 3px">
+                            <div class="text-center" style="">
                                 <div class="row" style="margin: 0;padding: 10px">
                                     <div class="col-lg-2">
                                         <img class="img img-circle" src="<?php echo $row['profile_picture']; ?>"
-                                             style="width: 100px;padding: 5px;display: "/>
+                                             style="width: 100px;padding: 5px; "/>
 
                                         <h3 style="font-size: 1.5em;font-weight: bold;margin: 0;padding: 3px;font-family: sukhumvit;">
                                             <?php echo $row['username']; ?>
                                         </h3>
                                     </div>
                                     <div class="col-lg-10">
-                                        <img class="img img-rounded" style="width: 75%;padding-bottom: 5px"
+                                        <img class="img img-rounded" style="width: 70%;padding-bottom: 5px"
                                              src="<?php echo $row['issue_image_path']; ?>"/>
                                     </div>
                                     <div class="col-lg-12 text-center" style="background-color: #333">
@@ -134,6 +148,12 @@ if (!ManageSession::isLogged()) {
                                             <?php echo $row['issue_status']; ?> | <?php echo $row['issue_date']; ?>
                                         </h3>
 
+                                        <div>
+                                            <a class="btn btn-info" style="margin: 10px"
+                                               href="comment_issues.php?id=<?php echo $row['issue_id'] . '&sprint_id=' . $_GET['id']; ?>">
+                                                ตอบ
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
