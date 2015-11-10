@@ -133,7 +133,8 @@ if (!ManageSession::isLogged()) {
                                         </h3>
                                     </div>
                                     <div class="col-lg-8">
-                                        <img class="img img-thumbnail" style="width: 100%;padding-bottom: 5px;padding: 0"
+                                        <img class="img img-thumbnail"
+                                             style="width: 100%;padding-bottom: 5px;padding: 0"
                                              src="<?php echo $row['issue_image_path']; ?>"/>
                                     </div>
                                     <div class="col-lg-12 text-center">
@@ -161,12 +162,15 @@ if (!ManageSession::isLogged()) {
                         <li style="height: 85px;">
                             <div class="text-center">
                                 <div class="row text-center" style="margin: 0;">
-                                    <div class="col-lg-1 col-lg-offset-3">
+                                    <div class="col-lg-1 col-lg-offset-2">
                                         <img src="<?php echo $row['profile_picture']; ?>" class="img-circle"
                                              style="width: 80px;height: 80px;display: inline"/>
                                     </div>
-                                    <div class="col-lg-2">
-                                        <h3 style="font-family: sukhumvit;font-size: 1.4em;font-weight: bold;color: #333">
+                                    <div class="col-lg-7"
+                                         style="text-align: left;">
+                                        <h3 style="font-family: sukhumvit;font-size: 1.4em;font-weight: bold;color: #333;padding-bottom: 15px;
+                                        border-style: solid;border-color: #333;border-left: 0;border-top: 0;border-right: 0;
+                                        ">
                                             <?php echo $row['comment_content']; ?>
                                         </h3>
                                     </div>
@@ -230,7 +234,7 @@ if (!ManageSession::isLogged()) {
                 data: data,
                 type: 'post',
                 success: function (msg) {
-                    if(msg == "success"){
+                    if (msg == "success") {
                         location.reload();
                     }
                 }
