@@ -132,12 +132,12 @@ if (!ManageSession::isLogged()) {
                                             <?php echo $row['username']; ?>
                                         </h3>
                                     </div>
-                                    <div class="col-lg-6 col-lg-offset-1">
-                                        <img class="img img-thumbnail" style="width: 90%;padding-bottom: 5px;padding: 0"
+                                    <div class="col-lg-8">
+                                        <img class="img img-thumbnail" style="width: 100%;padding-bottom: 5px;padding: 0"
                                              src="<?php echo $row['issue_image_path']; ?>"/>
                                     </div>
                                     <div class="col-lg-12 text-center">
-                                        <div class="col-lg-6 col-lg-offset-3" style="background-color: #333">
+                                        <div class="col-lg-8 col-lg-offset-2" style="background-color: #333">
                                             <h3 style="font-family: sukhumvit;font-size: 1.2em;font-weight: bold;color: #fff;
                             padding-top: 10px;margin: 0;margin-top: 3px">
                                                 <?php echo $row['issue_desc']; ?>
@@ -174,7 +174,7 @@ if (!ManageSession::isLogged()) {
                             </div>
                         </li>
                     <?php } ?>
-                    <div class="col-lg-6 col-lg-offset-3">
+                    <div class="col-lg-8 col-lg-offset-2">
                         <form class="form" id="comments" method="post" style="margin-top: 10px">
                             <div class="form-group" style="margin: 0">
                                 <input class="form-control" name="content" id="content"
