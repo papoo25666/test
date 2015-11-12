@@ -16,7 +16,7 @@ class ManageIssues
     public function insertIssues($desc, $image, $status, $sprint_id, $user_id, $issue_topic)
     {
         $this->result = $this->db->prepare("INSERT INTO issues(issue_id,issue_topic ,issue_desc,issue_date,issue_image_path,issue_status,sprint_backlog_id,users_id) VALUES (null,?,?,NOW(),?,?,?,?)");
-        $value = array($desc, $image, $status, $sprint_id, $user_id);
+        $value = array($issue_topic, $desc, $image, $status, $sprint_id, $user_id);
         $this->result->execute($value);
         return $this->result->rowCount();
     }

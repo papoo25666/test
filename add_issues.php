@@ -114,7 +114,11 @@ if (!ManageSession::isLogged()) {
                 ?>
                 <form class="form" action="" method="post" enctype="multipart/form-data">
                     <div class="form-group">
-                        <label class="control-label" style="font-family: sukhumvit;font-size: 1.2em">หัวข้อ</label>
+                        <label style="font-family: sukhumvit;font-size: 1.2em" class="control-label">เรื่อง</label>
+                        <input class="form-control" name="issues_topic" id="issues_topic"/>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" style="font-family: sukhumvit;font-size: 1.2em">รายละเอียด</label>
                         <textarea class="form-control" name="issues_content" required></textarea>
                         <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>" required/>
                         <input type="hidden" name="insert" value="insert" required/>

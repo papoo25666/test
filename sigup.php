@@ -65,29 +65,29 @@ if (ManageSession::isLogged()) {
                         <div class="form-group">
                             <div class="col-lg-12" style="padding-left: 0">
                                 <input type="text" class="form-control" id="fname" name="fname"
-                                       placeholder="First name">
+                                       placeholder="ชื่อจริง">
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-lg-12" style="padding-left: 0">
-                                <input type="text" class="form-control" id="lname" name="lname" placeholder="Last name">
+                                <input type="text" class="form-control" id="lname" name="lname" placeholder="นาสกุล">
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-lg-12" style="padding-left: 0">
                                 <input type="text" class="form-control" id="username" name="username"
-                                       placeholder="Username">
+                                       placeholder="ชื่อผู้ใช้">
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-lg-12" style="padding-left: 0">
                                 <input type="password" class="form-control" id="password" name="password"
-                                       placeholder="Password">
+                                       placeholder="รหัสผ่าน">
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-lg-12" style="padding-left: 0">
-                                <input type="email" class="form-control" id="email" placeholder="Email" name="email">
+                                <input type="email" class="form-control" id="email" placeholder="อีเมลล์" name="email">
                             </div>
                         </div>
                         <div class="form-group">

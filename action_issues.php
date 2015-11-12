@@ -110,7 +110,7 @@ if (!ManageSession::isLogged()) {
                 </div>
                 <a class="btn btn-warning" href="add_issues.php?id=<?php echo $_GET['id']; ?>"
                    style="font-family: sukhumvit;font-size: 1.2em;margin-bottom: 5px">
-                    เพิ่มปัญหา
+                    โพสประเด็นหรือปัญหา
                 </a>
 
                 <ul class="list-group" style="overflow: auto;height: 500px;background-color: #E0E0E0;">
@@ -121,9 +121,9 @@ if (!ManageSession::isLogged()) {
                     foreach ($result as $row) {
                         ?>
                         <li>
-                            <div class="text-center" style="">
+                            <div style="">
                                 <div class="row" style="margin: 0;padding: 10px">
-                                    <div class="col-lg-2">
+                                    <div class="col-lg-2 text-center">
                                         <img class="img img-circle" src="<?php echo $row['profile_picture']; ?>"
                                              style="width: 100px;padding: 5px; "/>
 
@@ -132,25 +132,31 @@ if (!ManageSession::isLogged()) {
                                         </h3>
                                     </div>
                                     <div class="col-lg-10">
-                                        <img class="img img-rounded" style="width: 70%;padding-bottom: 5px"
-                                             src="<?php echo $row['issue_image_path']; ?>"/>
-                                    </div>
-                                    <div class="col-lg-12 text-center" style="background-color: #333">
-                                        <h3 style="font-family: sukhumvit;font-size: 1.5em;font-weight: bold;color: #fff;
-                            padding-top: 10px;margin: 0;margin-top: 3px">
-                                            <?php echo $row['issue_desc']; ?>
+                                        <h3 style="font-family: sukhumvit;font-size: 1.5em;font-weight: bold;
+                            padding-top: 10px;margin: 0;">
+                                            หัวข้อ : <?php echo $row['issue_topic']; ?>
                                         </h3>
-
-                                        <h3 style="font-family: sukhumvit;font-size: 1.3em;font-weight: bold;color: #fff">
-                                            <?php echo $row['issue_status']; ?> | <?php echo $row['issue_date']; ?>
+                                        <h3 style="font-family: sukhumvit;font-size: 1.5em;font-weight: bold;
+                            margin: 0;margin-top: 3px;margin-bottom: 5px">
+                                            รายละเอียด : <?php echo $row['issue_desc']; ?>
                                         </h3>
-
+                                        <h3 style="font-family: sukhumvit;font-size: 1.3em;font-weight: bold;margin: 0;margin-bottom: 5px">
+                                            ระดับประเด็น : <?php echo $row['issue_status']; ?>
+                                        </h3>
+                                        <h3 style="font-family: sukhumvit;font-size: 1.3em;font-weight: bold;margin: 0">
+                                            โพสเมื่อ : <?php echo $row['issue_date']; ?>
+                                        </h3>
                                         <div>
-                                            <a class="btn btn-info" style="margin: 10px"
+                                            <a class="btn btn-info" style="margin-top: 10px;margin-bottom: 10px"
                                                href="comment_issues.php?id=<?php echo $row['issue_id'] . '&sprint_id=' . $_GET['id']; ?>">
                                                 ตอบ
                                             </a>
                                         </div>
+
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <img class="img img-rounded" style="width: 100%;padding-bottom: 5px"
+                                             src="<?php echo $row['issue_image_path']; ?>"/>
                                     </div>
                                 </div>
                             </div>

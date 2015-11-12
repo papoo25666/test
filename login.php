@@ -49,15 +49,16 @@
                     <?php if (isset($err)) echo "<span class='alert-danger' style='width: auto'>" . $err . "</span>"; ?>
                     <div class="form-group" style="color: #000">
                         <label class="control-label" style="font-family: sukhumvit;font-size: 1.2em">username</label>
-                        <input class="form-control" type="texts" id="username" name="username" placeholder="username"/>
+                        <input class="form-control" type="texts" id="username" name="username"
+                               placeholder="ชื่อผู้ใช้"/>
                     </div>
                     <div class="form-group" style="color: #000">
                         <label class="control-label" style="font-family: sukhumvit;font-size: 1.2em">password</label>
                         <input class="form-control" type="password" id="password" name="password"
-                               placeholder="password"/>
+                               placeholder="รหัสผ่าน"/>
                     </div>
                     <div class="form-group">
-                        <a href="sigup.php">Don't have account</a>
+                        <a href="sigup.php" style="font-family: sukhumvit;font-size: 16px;font-weight: bold">ยังไม่มีบัญชีผู้ใช้</a>
                     </div>
                     <div class="text-center">
                         <button class="btn btn-success" type="submit" style="width: 100%">LOG IN</button>

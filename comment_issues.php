@@ -94,9 +94,6 @@ if (!ManageSession::isLogged()) {
                         <a href="action_backlog.php" type="button" class="list-group-item">
                             <img src="images/ic_mode.png" style="width: 20px;height: 20px">
                             แก้ไข Product Backlog</a>
-                        <a type="button" href="action_priority.php" class="list-group-item">
-                            <img src="images/ic_mode.png" style="width: 20px;height: 20px">
-                            แก้ไข Prioriry</a>
                     <?php } ?>
                 </div>
             </div>
@@ -122,9 +119,9 @@ if (!ManageSession::isLogged()) {
                     foreach ($result as $row) {
                         ?>
                         <li>
-                            <div class="text-center" style="">
+                            <div>
                                 <div class="row" style="margin: 0;padding: 10px">
-                                    <div class="col-lg-2">
+                                    <div class="col-lg-2 text-center">
                                         <img class="img img-circle" src="<?php echo $row['profile_picture']; ?>"
                                              style="width: 100px;padding: 5px; "/>
 
@@ -132,22 +129,32 @@ if (!ManageSession::isLogged()) {
                                             <?php echo $row['username']; ?>
                                         </h3>
                                     </div>
-                                    <div class="col-lg-8">
+                                    <div class="col-lg-10">
+                                        <h3 style="font-family: sukhumvit;font-size: 1.3em;font-weight: bold;
+                            padding-top: 10px;margin: 0;">
+                                            หัวข้อ : <?php echo $row['issue_topic']; ?>
+                                        </h3>
+
+                                        <h3 style="font-family: sukhumvit;font-size: 1.2em;font-weight: bold;
+                                            margin: 0;margin-top: 3px;margin-bottom: 5px">
+                                            รายละเอียด : <?php echo $row['issue_desc']; ?>
+                                        </h3>
+
+                                        <h3 style="font-family: sukhumvit;font-size: 1.2em;font-weight: bold;
+                                        margin: 0;margin-bottom: 5px">
+                                            ระดับประเด็น : <?php echo $row['issue_status']; ?>
+                                        </h3>
+
+                                        <h3 style="font-family: sukhumvit;font-size: 1.2em;font-weight: bold;margin: 0;margin-bottom: 5px">
+                                            โพสเมื่อ : <?php echo $row['issue_date']; ?>
+                                        </h3>
+
+                                    </div>
+                                    <div class="col-lg-12">
                                         <img class="img img-thumbnail"
                                              style="width: 100%;padding-bottom: 5px;padding: 0"
                                              src="<?php echo $row['issue_image_path']; ?>"/>
-                                    </div>
-                                    <div class="col-lg-12 text-center">
-                                        <div class="col-lg-8 col-lg-offset-2" style="background-color: #333">
-                                            <h3 style="font-family: sukhumvit;font-size: 1.2em;font-weight: bold;color: #fff;
-                            padding-top: 10px;margin: 0;margin-top: 3px">
-                                                <?php echo $row['issue_desc']; ?>
-                                            </h3>
 
-                                            <h3 style="font-family: sukhumvit;font-size: 1.3em;font-weight: bold;color: #fff">
-                                                <?php echo $row['issue_status']; ?> | <?php echo $row['issue_date']; ?>
-                                            </h3>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -162,11 +169,11 @@ if (!ManageSession::isLogged()) {
                         <li style="height: 85px;">
                             <div class="text-center">
                                 <div class="row text-center" style="margin: 0;">
-                                    <div class="col-lg-1 col-lg-offset-2">
+                                    <div class="col-lg-1">
                                         <img src="<?php echo $row['profile_picture']; ?>" class="img-circle"
                                              style="width: 80px;height: 80px;display: inline"/>
                                     </div>
-                                    <div class="col-lg-7"
+                                    <div class="col-lg-11"
                                          style="text-align: left;">
                                         <h3 style="font-family: sukhumvit;font-size: 1.4em;font-weight: bold;color: #333;padding-bottom: 15px;
                                         border-style: solid;border-color: #333;border-left: 0;border-top: 0;border-right: 0;
@@ -178,11 +185,11 @@ if (!ManageSession::isLogged()) {
                             </div>
                         </li>
                     <?php } ?>
-                    <div class="col-lg-8 col-lg-offset-2">
+                    <div class="col-lg-12">
                         <form class="form" id="comments" method="post" style="margin-top: 10px">
                             <div class="form-group" style="margin: 0">
                                 <input class="form-control" name="content" id="content"
-                                       style="height: 50px;border-radius: 0"/>
+                                       style="height: 70px;border-radius: 0"/>
                                 <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>"/>
                             </div>
                             <div class="form-group pull-right" style="margin-top: 3px">
