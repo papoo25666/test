@@ -11,6 +11,8 @@ foreach ($result as $row) {
     $value = $row['user_story_price'];
     $value = number_format($value, 2, ".", ",");
     $items['value'] = $value;
+    $items['priority'] = $row['user_story_priority'];
+    $items['status'] = $row['user_story_state'];
 
     array_push($response['items'], $items);
 }

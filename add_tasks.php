@@ -24,6 +24,13 @@ if (!ManageSession::isPO()) {
     <link rel="stylesheet" href="css/backlog.css"/>
     <link rel="stylesheet" href="css/breadcrumb.css"/>
 
+    <style type="text/css">
+        input[type="text"] {
+            border-radius: 0;
+            margin-right: 2px;
+        }
+    </style>
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -81,9 +88,6 @@ if (!ManageSession::isPO()) {
                             <a href="action_backlog.php" type="button" class="list-group-item">
                                 <img src="images/ic_mode.png" style="width: 20px;height: 20px">
                                 แก้ไข Product Backlog</a>
-                            <a type="button" href="action_priority.php" class="list-group-item">
-                                <img src="images/ic_mode.png" style="width: 20px;height: 20px">
-                                แก้ไข Prioriry</a>
                         <?php } ?>
                     </div>
                 </div>
@@ -118,8 +122,7 @@ if (!ManageSession::isPO()) {
                                     <?php } ?>
                                 </h3>
                                 <button class="btn btn-warning" id="btn-estimation"
-                                        style="font-size: 1.2em;font-family: sukhumvit;margin-bottom: 5px">เพิ่ม
-                                    Estimate
+                                        style="font-size: 1.2em;font-family: sukhumvit;margin-bottom: 5px">เพิ่ม Task
                                 </button>
                             </div>
 

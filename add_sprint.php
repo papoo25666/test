@@ -112,7 +112,7 @@ if (!ManageSession::isPO()) {
                                         foreach ($result as $row) {
                                             ?>
                                             <option value="<?php echo $row['user_story_id']; ?>">
-                                                <?php echo $row['user_story_id'] . '. ' . $row['user_story_name']; ?>
+                                                <?php echo $row['user_story_name'] . '[' . $row['user_story_priority'] . '] [' . $row['user_story_state'] . ']'; ?>
                                             </option>
                                         <?php } ?>
                                     </select>
