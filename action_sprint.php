@@ -95,8 +95,6 @@ if (!ManageSession::isLogged()) {
                         <div class="col-lg-10 col-md-10 col-sm-10" style="padding: 0;">
                             <form class="form" id="form-add-sprint" method="post">
                                 <div class="form-group form-inline">
-                                    <input type="text" class="form-control" name="sprint_name" id="sprint_name"
-                                           style="width: 50%"/>
                                     <button type="submit" class="btn btn-warning form-control"
                                             style="font-family: sukhumvit;font-size: 1.2em">
                                         เพิ่ม Sprint Backlog
@@ -202,10 +200,19 @@ if (!ManageSession::isLogged()) {
 <script type="application/javascript">
     $(function () {
         $('#form-add-sprint').submit(function () {
-            var data = $('#form-add-sprint').serializeArray();
+            <?php
+            $counts = new ManageSprint();
+            $c = $counts->getSprintCount();
+            foreach($c as $row){
+                $co = $row['counts'];
+            }
+             ?>
+            var count = parseInt(<?php echo $co; ?>);
+            count = count + 1;
+            var word = "SPRINT BACKLOG " + count;
             $.ajax({
                 url: 'libs/add_sprint.php',
-                data: data,
+                data: {sprint_name: word},
                 type: 'post',
                 success: function (state) {
                     $('.list').append(state);

@@ -15,8 +15,9 @@ class ManageSprint
 
     public function insertSprint($name)
     {
-        $this->result = $this->db->prepare("INSERT INTO sprint_backlog(sbl_id,sbl_name,sbl_date) VALUES (null,?,NOW())");
-        $value = array($name);
+        $end_date = date("Y-m-d", strtotime("+2 week"));
+        $this->result = $this->db->prepare("INSERT INTO sprint_backlog(sbl_id,sbl_name,sbl_started,sbl_end) VALUES (null,?,NOW(),?)");
+        $value = array($name, $end_date);
         $this->result->execute($value);
         return $this->result->rowCount();
     }
@@ -33,6 +34,13 @@ class ManageSprint
         $this->result = $this->db->prepare("SELECT *FROM sprint_backlog WHERE sbl_id = ?");
         $value = array($id);
         $this->result->execute($value);
+        return $this->result->fetchAll();
+    }
+
+    public function getSprintCount()
+    {
+        $this->result = $this->db->prepare("SELECT COUNT(*) AS counts FROM sprint_backlog");
+        $this->result->execute();
         return $this->result->fetchAll();
     }
 

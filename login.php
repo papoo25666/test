@@ -42,6 +42,7 @@
                     WELCOME</h2>
 
                 <?php include "libs/auth.php"; ?>
+
                 <div class="imgage-login"
                      style="background-image: url('<?php if (isset($err)) echo 'images/user_login_err.png'; else echo 'images/user_login.png'; ?>')">
                 </div>

@@ -8,7 +8,7 @@ foreach ($result as $row) {
     $items = array();
     $items['id'] = $row['sbl_id'];
     $items['sprint'] = $row['sbl_name'];
-    $items['created'] = $row['sbl_date'];
+    $items['started'] = $row['sbl_date'];
 
     array_push($response['sprints'], $items);
 }
