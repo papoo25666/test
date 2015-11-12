@@ -13,7 +13,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
         if ($counts == 1) {
             $data = $conn->getUserRole($username);
             foreach ($data as $row) {
-                $role = $row['user_type_name'];
+                $role = $row['user_role'];
                 $user_id = $row['user_id'];
             }
             $_SESSION['state'] = "logged";

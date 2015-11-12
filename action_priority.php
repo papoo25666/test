@@ -111,7 +111,7 @@ if (!ManageSession::isLogged()) {
                             foreach ($result as $row) {
                                 ?>
                                 <tr style="font-family: sukhumvit;font-size: 17px;font-weight: 500">
-                                    <td class="id"><?php echo $row['id'] ?></td>
+                                    <td class="id"><?php echo $row['user_story_id'] ?></td>
                                     <td class="name"><?php echo $row['user_story_name'] ?></td>
                                     <?php
                                     $price = $row['user_story_price'];

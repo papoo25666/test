@@ -79,13 +79,10 @@ if (!ManageSession::isLogged()) {
                             <a type="button" href="action_backlog.php" class="list-group-item">
                                 <img src="images/ic_mode.png" style="width: 20px;height: 20px">
                                 แก้ไข Product Backlog</a>
-                            <a type="button" href="action_priority.php" class="list-group-item">
-                                <img src="images/ic_mode.png" style="width: 20px;height: 20px">
-                                แก้ไข Prioriry</a>
                         <?php } ?>
                     </div>
                 </div>
-                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
                     <div class="breadcrumb">
                         <li>
                             <a href="backlog_item.php">Product Backlog</a>
@@ -97,9 +94,9 @@ if (!ManageSession::isLogged()) {
                     <table>
                         <thead>
                         <tr>
-                            <th>ID</th>
-                            <th>NAME</th>
+                            <th>USER STORY</th>
                             <th>VALUE</th>
+                            <th>PRIORITY</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -113,37 +110,13 @@ if (!ManageSession::isLogged()) {
                             $id += 1;
                             ?>
                             <tr style="font-family: sukhumvit;font-size: 17px;font-weight: 500">
-                                <td class="id"><?php echo $id; ?></td>
-                                <td class="name"><?php echo $row['user_story_name'] ?></td>
+                                <td class="name"><?php echo $row['user_story_name'].' <strong>['.$row['user_story_state'].'] </strong>'; ?></td>
                                 <?php
                                 $price = $row['user_story_price'];
                                 $price = number_format($price, 2, ".", ",");
                                 ?>
                                 <td class="value" style="text-align: right"><?php echo $price; ?></td>
-                            </tr>
-                        <?php } ?>
-                        </tbody>
-                    </table>
-                </div>
-
-                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
-                    <table>
-                        <thead>
-                        <tr>
-                            <th>PRIORITY</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <?php
-                        $pt = new ManageUserStory();
-                        $result = $pt->getPrioriry();
-                        foreach ($result as $row) {
-                            $value = explode(",", $row['priority']);
-                        }
-                        foreach ($value as $row) {
-                            ?>
-                            <tr>
-                                <td><?php echo $row; ?></td>
+                                <td class="priority"><?php echo $row['user_story_priority']; ?></td>
                             </tr>
                         <?php } ?>
                         </tbody>

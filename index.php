@@ -60,7 +60,7 @@
             <div class="jumbotron text-center" style="background-color: #3D5AFE;margin-bottom: 0">
                 <h1 class="text-center" style="color:#fff;font-family: sukhumvit">ระบบติดตามการทำงานของสกรัมทีม</h1>
 
-                <h3>Issue and Progress tracking designed for Scrum team</h3>
+                <h3>Issue and Progress tracking designed for Scrum Team</h3>
 
                 <div class="container" style="margin-top: 30px">
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-lg-offset-4 col-md-offset-4 col-sm-offset-4">

@@ -81,9 +81,6 @@ if (!ManageSession::isPO()) {
                             <a href="action_backlog.php" type="button" class="list-group-item">
                                 <img src="images/ic_mode.png" style="width: 20px;height: 20px">
                                 แก้ไข Product Backlog</a>
-                            <a type="button" href="action_priority.php" class="list-group-item">
-                                <img src="images/ic_mode.png" style="width: 20px;height: 20px">
-                                แก้ไข Prioriry</a>
                         <?php } ?>
                     </div>
                 </div>

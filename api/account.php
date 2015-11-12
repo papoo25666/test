@@ -14,8 +14,9 @@ if (empty($id) == false) {
         $response['fname'] = $row['fname'];
         $response['lname'] = $row['lname'];
         $response['email'] = $row['email'];
+        $response['role'] = $row['user_role'];
     }
-}else {
+} else {
     $response['avatar'] = "";
 }
 echo json_encode($response);

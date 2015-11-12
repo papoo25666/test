@@ -30,10 +30,10 @@ class ManageUserStory
     }
 
 
-    public function insertUserStory($userstory, $value)
+    public function insertUserStory($userstory, $value, $state, $priority)
     {
-        $this->result = $this->db->prepare("INSERT INTO user_story(user_story_name, user_story_price) VALUES (?,?)");
-        $value = array($userstory, $value);
+        $this->result = $this->db->prepare("INSERT INTO user_story(user_story_name, user_story_price,user_story_state,user_story_priority) VALUES (?,?,?,?)");
+        $value = array($userstory, $value, $state, $priority);
         $this->result->execute($value);
         return $this->result->rowCount();
     }
@@ -46,33 +46,10 @@ class ManageUserStory
         return $this->result->rowCount();
     }
 
-    public function editStoryItems($user_story_name, $user_story_price, $id)
+    public function editStoryItems($user_story_name, $user_story_price, $state, $priority, $id)
     {
-        $this->result = $this->db->prepare("UPDATE user_story SET user_story_name = ?,user_story_price = ? WHERE user_story_id = ?");
-        $value = array($user_story_name, $user_story_price, $id);
-        $this->result->execute($value);
-        return $this->result->rowCount();
-    }
-
-    public function getPrioriry()
-    {
-        $this->result = $this->db->prepare("SELECT *FROM priority WHERE id = 1");
-        $this->result->execute();
-        return $this->result->fetchAll();
-    }
-
-    public function deletePriority($id)
-    {
-        $this->result = $this->db->prepare("DELETE FROM priority WHERE id = ?");
-        $value = array($id);
-        $this->result->execute($value);
-        return $this->result->rowCount();
-    }
-
-    public function editPriority($id, $priority)
-    {
-        $this->result = $this->db->prepare("UPDATE priority SET priority = ? WHERE id = ?");
-        $value = array($priority, $id);
+        $this->result = $this->db->prepare("UPDATE user_story SET user_story_name = ?,user_story_price = ?,user_story_priority = ?,user_story_state = ? WHERE user_story_id = ?");
+        $value = array($user_story_name, $user_story_price, $priority, $state, $id);
         $this->result->execute($value);
         return $this->result->rowCount();
     }

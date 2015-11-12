@@ -78,9 +78,6 @@ if (!ManageSession::isLogged()) {
                             <a href="action_backlog.php" type="button" class="list-group-item active">
                                 <img src="images/ic_mode.png" style="width: 20px;height: 20px">
                                 แก้ไข Product Backlog</a>
-                            <a type="button" href="action_priority.php" class="list-group-item">
-                                <img src="images/ic_mode.png" style="width: 20px;height: 20px">
-                                แก้ไข Prioriry</a>
                         <?php } ?>
                     </div>
                 </div>
@@ -96,11 +93,11 @@ if (!ManageSession::isLogged()) {
                     <table>
                         <thead>
                         <tr>
-                            <th>ID</th>
-                            <th>NAME <a href="add_backlog.php"
-                                        style="margin-left: 10px;font-family: sukhumvit;font-size: 1.1em"
-                                        class="btn btn-warning">เพิ่ม USER STORY</a></th>
+                            <th>USER STORY <a href="add_backlog.php"
+                                              style="margin-left: 10px;font-family: sukhumvit;font-size: 1.1em"
+                                              class="btn btn-warning">เพิ่ม USER STORY</a></th>
                             <th>VALUE</th>
+                            <th>PRIORITY</th>
                             <th>ACTION</th>
                         </tr>
                         </thead>
@@ -115,13 +112,13 @@ if (!ManageSession::isLogged()) {
                             $id += 1;
                             ?>
                             <tr style="font-family: sukhumvit;font-size: 17px;font-weight: 500">
-                                <td><?php echo $id; ?></td>
-                                <td class="name"><?php echo $row['user_story_name'] ?></td>
+                                <td class="name"><?php echo $row['user_story_name'] . ' <strong>[' . $row['user_story_state'] . '] </strong>' ?></td>
                                 <?php
                                 $price = $row['user_story_price'];
                                 $price = number_format($price, 2, ".", ",");
                                 ?>
                                 <td class="value" style="text-align: right"><?php echo $price; ?></td>
+                                <td><?php echo $row['user_story_priority']; ?></td>
                                 <td class="action" style="width: 15%">
                                     <a href="edit_backlog.php?id=<?php echo $row['user_story_id'] ?>"
                                        style="display: inline;">แก้ไข </a> | <a

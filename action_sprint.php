@@ -79,9 +79,6 @@ if (!ManageSession::isLogged()) {
                             <a href="action_backlog.php" type="button" class="list-group-item">
                                 <img src="images/ic_mode.png" style="width: 20px;height: 20px">
                                 แก้ไข Product Backlog</a>
-                            <a href="action_priority.php" type="button" class="list-group-item">
-                                <img src="images/ic_mode.png" style="width: 20px;height: 20px">
-                                แก้ไข Prioriry</a>
                         <?php } ?>
                     </div>
                 </div>

@@ -12,7 +12,7 @@ if ($status == 1) {
     foreach ($users as $row) {
         $response['username'] = $row['username'];
         $response['user_id'] = $row['user_id'];
-        $response['role'] = $row['user_type_name'];
+        $response['role'] = $row['user_role'];
     }
 }
 $response['success'] = $status;

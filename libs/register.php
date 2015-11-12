@@ -14,7 +14,7 @@ if (isset($_POST['fname']) && isset($_POST['lname'])
         $username = $_POST['username'];
         $password = $_POST['password'];
         $email = $_POST['email'];
-        $role = $_POST['role'];
+        $role = $_POST['user_role'];
         $image = $_FILES['image']['name'];
 
         $tmp = explode(".", $image);

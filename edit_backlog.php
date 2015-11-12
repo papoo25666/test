@@ -79,9 +79,6 @@ if (!ManageSession::isPO()) {
                             <a href="action_backlog.php" type="button" class="list-group-item active">
                                 <img src="images/ic_mode.png" style="width: 20px;height: 20px">
                                 แก้ไข Product Backlog</a>
-                            <a type="button" href="action_priority.php" class="list-group-item">
-                                <img src="images/ic_mode.png" style="width: 20px;height: 20px">
-                                แก้ไข Prioriry</a>
                         <?php } ?>
                     </div>
                 </div>
@@ -119,6 +116,33 @@ if (!ManageSession::isPO()) {
                                            placeholder="user story price"
                                            value="<?php echo $row['user_story_price']; ?>"
                                            id="userstory_price"/>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">PRIORITY</label>
+                                    <input placeholder="priority" class="form-control"
+                                           name="userstory_priority" id="userstory_priority"
+                                           value="<?php echo $row['user_story_priority']; ?>"/>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">STATE</label>
+                                    <select placeholder="state" class="form-control"
+                                            name="userstory_state" id="userstory_state"
+                                        >
+                                        <?php
+                                        $state = $row['user_story_state'];
+                                        ?>
+                                        <option>
+                                            <?php echo $state; ?>
+                                        </option>
+                                        <option>
+                                            <?php
+                                            if ($state != "เคยถูกหยิบเข้า Sprint แล้ว")
+                                                echo "เคยถูกหยิบเข้า Sprint แล้ว";
+                                            else
+                                                echo "ยังไม่ถูกหยิบ";
+                                            ?>
+                                        </option>
+                                    </select>
                                 </div>
                                 <div class="form-group text-center">
                                     <input type="hidden" name="id" value="<?php echo $row['user_story_id']; ?>"/>

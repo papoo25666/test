@@ -80,9 +80,6 @@ if (!ManageSession::isPO()) {
                             <a href="action_backlog.php" type="button" class="list-group-item active">
                                 <img src="images/ic_mode.png" style="width: 20px;height: 20px">
                                 แก้ไข Product Backlog</a>
-                            <a type="button" href="action_priority.php" class="list-group-item">
-                                <img src="images/ic_mode.png" style="width: 20px;height: 20px">
-                                แก้ไข Prioriry</a>
                         <?php } ?>
                     </div>
                 </div>
@@ -112,6 +109,24 @@ if (!ManageSession::isPO()) {
                                     <input class="form-control" type="text" name="userstory_price"
                                            placeholder="ราคา user story"
                                            id="userstory_price"/>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label" style="font-family: sukhumvit;font-size: 1.2em">สถานะ
+                                        USER STORY</label>
+                                    <select class="form-control" name="userstory_state"
+                                            id="userstory_state">
+                                        <option>ยังไม่ถูกหยิบ</option>
+                                        <option>เคยถูกหยิบเข้า Sprint แล้ว</option>
+                                    </select>
+
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label" style="font-family: sukhumvit;font-size: 1.2em">ลำดับความสำคัญของ
+                                        USER STORY</label>
+                                    <input class="form-control" type="number"
+                                           name="userstory_priority" placeholder="ลำดับความสำคัญของ USER STORY"
+                                           id="userstory_priority"/>
+
                                 </div>
                                 <div class="form-group text-center">
                                     <input type="hidden" name="action" value="add"/>

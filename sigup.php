@@ -56,9 +56,10 @@ if (ManageSession::isLogged()) {
                         <?php if (isset($err)) echo "<span style='margin-left: -10px;margin-bottom: 10px;color: red'>" . $err . "</span>"; ?>
                         <div class="form-group" style="margin-top: 10px">
                             <div class="col-lg-12" style="padding-left: 0">
-                                <label style="font-family: sukhumvit;font-size: 1.2em" class="control-label">Profile picture</label>
+                                <label style="font-family: sukhumvit;font-size: 1.2em" class="control-label">Profile
+                                    picture</label>
                                 <input type="file" class="form-control" id="image" name="image"
-                                    placeholder="profile">
+                                       placeholder="profile">
                             </div>
                         </div>
                         <div class="form-group">
@@ -91,16 +92,10 @@ if (ManageSession::isLogged()) {
                         </div>
                         <div class="form-group">
                             <div class="col-lg-12" style="padding-left: 0">
-                                <select name="role" class="form-control">
-                                    <?php
-                                    include_once "classes/ManageUsers.php";
-                                    $conn = new ManageUsers();
-                                    $result = $conn->getRole();
-                                    foreach ($result as $row) {
-                                        ?>
-                                        <option
-                                            value="<?php echo $row['id']; ?>"><?php echo $row['user_type_name']; ?></option>
-                                    <?php } ?>
+                                <select name="user_role" class="form-control">
+                                    <option>Product Owner</option>
+                                    <option>Scrum Master</option>
+                                    <option>Development Team</option>
                                 </select>
                             </div>
                         </div>
