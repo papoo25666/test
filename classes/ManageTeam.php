@@ -20,9 +20,24 @@ class ManageTeam
         return $this->result->rowCount();
     }
 
+    public function deleteTeam($id)
+    {
+        $this->result = $this->db->prepare("DELETE FROM team WHERE team_id = ?");
+        $value = array($id);
+        $this->result->execute($value);
+        return $this->result->rowCount();
+    }
+
     public function editTeam()
     {
 
+    }
+
+    public function getAllTeam()
+    {
+        $this->result = $this->db->prepare("SELECT *FROM team");
+        $this->result->execute();
+        return $this->result->fetchAll();
     }
 }
 
