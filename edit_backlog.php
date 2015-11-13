@@ -72,9 +72,13 @@ if (!ManageSession::isPO()) {
                         <a type="button" href="backlog_item.php" class="list-group-item">
                             <img src="images/ic_home.png" style="width: 20px;height: 20px">
                             แสดง Product Backlog</a>
-                        <a type="button" href="action_sprint.php" class="list-group-item">
-                            <img src="images/ic_home.png" style="width: 20px;height: 20px">
-                            แสดง Sprint Backlog</a>
+                        <?php
+                        if (ManageSession::isSM() || ManageSession::isTeam()) {
+                            ?>
+                            <a type="button" href="action_sprint.php" class="list-group-item">
+                                <img src="images/ic_home.png" style="width: 20px;height: 20px">
+                                แสดง Sprint Backlog</a>
+                        <?php } ?>
                         <?php if (ManageSession::isPO() || ManageSession::isAdmin()) { ?>
                             <a href="action_backlog.php" type="button" class="list-group-item active">
                                 <img src="images/ic_mode.png" style="width: 20px;height: 20px">

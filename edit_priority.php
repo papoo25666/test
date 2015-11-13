@@ -70,9 +70,13 @@ if (!ManageSession::isLogged()) {
                             <img src="images/ic_home.png" style="width: 20px;height: 20px">
                             แสดง Product Backlog
                         </a>
-                        <a type="button" href="action_sprint.php" class="list-group-item">
-                            <img src="images/ic_home.png" style="width: 20px;height: 20px">
-                            แสดง Sprint Backlog</a>
+                        <?php
+                        if (ManageSession::isSM() || ManageSession::isTeam()) {
+                            ?>
+                            <a type="button" href="action_sprint.php" class="list-group-item">
+                                <img src="images/ic_home.png" style="width: 20px;height: 20px">
+                                แสดง Sprint Backlog</a>
+                        <?php } ?>
                         <?php if (ManageSession::isPO() || ManageSession::isAdmin()) { ?>
                             <a href="action_backlog.php" type="button" class="list-group-item">
                                 <img src="images/ic_mode.png" style="width: 20px;height: 20px">
@@ -101,8 +105,8 @@ if (!ManageSession::isLogged()) {
                                                value="<?php echo $row['priority']; ?>"/>
 
                                         <button value="<?php echo $row['id']; ?>&action=delete"
-                                           class="btn btn-danger btn-delete"
-                                           >
+                                                class="btn btn-danger btn-delete"
+                                            >
                                             Delete
                                         </button>
                                     </div>
@@ -149,7 +153,7 @@ if (!ManageSession::isLogged()) {
 <script type="application/javascript" src="js/angular.min.js"></script>
 <script type="application/javascript">
     $(function () {
-        $('.btn-delete').click(function(){
+        $('.btn-delete').click(function () {
             var data = $(this).val();
             alert(data);
             return true;

@@ -71,10 +71,14 @@ if (!ManageSession::isLogged()) {
                             <img src="images/ic_home.png" style="width: 20px;height: 20px">
                             แสดง Product Backlog
                         </a>
-                        <a type="button" href="action_sprint.php" class="list-group-item">
-                            <img src="images/ic_home.png" style="width: 20px;height: 20px">
-                            แสดง Sprint
-                            Backlog</a>
+                        <?php
+                        if (ManageSession::isSM() || ManageSession::isTeam()) {
+                            ?>
+                            <a type="button" href="action_sprint.php" class="list-group-item">
+                                <img src="images/ic_home.png" style="width: 20px;height: 20px">
+                                แสดง Sprint
+                                Backlog</a>
+                        <?php } ?>
                         <?php if (ManageSession::isPO() || ManageSession::isAdmin()) { ?>
                             <a type="button" href="action_backlog.php" class="list-group-item">
                                 <img src="images/ic_mode.png" style="width: 20px;height: 20px">
@@ -110,7 +114,7 @@ if (!ManageSession::isLogged()) {
                             $id += 1;
                             ?>
                             <tr style="font-family: sukhumvit;font-size: 17px;font-weight: 500">
-                                <td class="name"><?php echo $row['user_story_name'].' <strong>['.$row['user_story_state'].'] </strong>'; ?></td>
+                                <td class="name"><?php echo $row['user_story_name'] . ' <strong>[' . $row['user_story_state'] . '] </strong>'; ?></td>
                                 <?php
                                 $price = $row['user_story_price'];
                                 $price = number_format($price, 2, ".", ",");

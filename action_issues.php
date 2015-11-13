@@ -87,9 +87,13 @@ if (!ManageSession::isLogged()) {
                         <img src="images/ic_home.png" style="width: 20px;height: 20px">
                         แสดง Product Backlog
                     </a>
-                    <a type="button" href="action_sprint.php" class="list-group-item">
-                        <img src="images/ic_home.png" style="width: 20px;height: 20px">
-                        แสดง Sprint Backlog</a>
+                    <?php
+                    if (ManageSession::isSM() || ManageSession::isTeam()) {
+                        ?>
+                        <a type="button" href="action_sprint.php" class="list-group-item">
+                            <img src="images/ic_home.png" style="width: 20px;height: 20px">
+                            แสดง Sprint Backlog</a>
+                    <?php } ?>
                     <?php if (ManageSession::isPO() || ManageSession::isAdmin()) { ?>
                         <a href="action_backlog.php" type="button" class="list-group-item">
                             <img src="images/ic_mode.png" style="width: 20px;height: 20px">
@@ -136,16 +140,20 @@ if (!ManageSession::isLogged()) {
                             padding-top: 10px;margin: 0;">
                                             หัวข้อ : <?php echo $row['issue_topic']; ?>
                                         </h3>
+
                                         <h3 style="font-family: sukhumvit;font-size: 1.5em;font-weight: bold;
                             margin: 0;margin-top: 3px;margin-bottom: 5px">
                                             รายละเอียด : <?php echo $row['issue_desc']; ?>
                                         </h3>
+
                                         <h3 style="font-family: sukhumvit;font-size: 1.3em;font-weight: bold;margin: 0;margin-bottom: 5px">
                                             ระดับประเด็น : <?php echo $row['issue_status']; ?>
                                         </h3>
+
                                         <h3 style="font-family: sukhumvit;font-size: 1.3em;font-weight: bold;margin: 0">
                                             โพสเมื่อ : <?php echo $row['issue_date']; ?>
                                         </h3>
+
                                         <div>
                                             <a class="btn btn-info" style="margin-top: 10px;margin-bottom: 10px"
                                                href="comment_issues.php?id=<?php echo $row['issue_id'] . '&sprint_id=' . $_GET['id']; ?>">
