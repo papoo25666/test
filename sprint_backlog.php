@@ -18,7 +18,7 @@ if (!ManageSession::isLogged()) {
     <link rel="stylesheet" href="css/button.css"/>
     <link rel="stylesheet" href="css/navbar.css"/>
     <link rel="stylesheet" href="css/tables.css"/>
-    <link rel="stylesheet" href="css/breadcrumb.css" />
+    <link rel="stylesheet" href="css/breadcrumb.css"/>
 
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -88,11 +88,13 @@ if (!ManageSession::isLogged()) {
 
                 </li>
             </div>
-            <h3 class="sprint-backlog-centent" style="font-family: sukhumvit;font-weight: bold;font-size: 2em;margin-top: 0">
+            <h3 class="sprint-backlog-centent"
+                style="font-family: sukhumvit;font-weight: bold;font-size: 2em;margin-top: 0">
                 <?php
                 $id = $_GET['id'];
                 include_once "configs/config.php";
                 include_once "classes/ManageSprint.php";
+                include_once "classes/ManageTasks.php";
                 $db = new ManageSprint();
                 $result = $db->getSprintById($id);
                 foreach ($result as $row) {
@@ -113,23 +115,34 @@ if (!ManageSession::isLogged()) {
                     </thead>
                     <tbody>
                     <?php
+                    $story_id = $row['user_story_id'];
+                    $conn = new ManageTasks();
+
                     $db = new ManageSprint();
                     $result = $db->getUserStoryBySprintId($id);
                     foreach ($result as $row) {
+                        $list = $conn->getTaskByStoryId($row['user_story_id']);
                         ?>
-                        <tr>
-                            <td>
+                        <tr style="background-color: #EEEEEE">
+                            <td rowspan="<?php echo count($list) + 1; ?>">
                                 <a style="font-family: sukhumvit;font-size: 1.2em;color: #000"
                                    href="add_tasks.php?sprint_id=<?php echo $_GET['id']; ?>&story_id=<?php echo $row['user_story_id']; ?>">
                                     <?php echo $row['user_story_name']; ?></a>
                             </td>
-                            <?php ?>
-                            <td>
-
-                            </td>
-                            <td></td>
-                            <td></td>
                         </tr>
+                        <?php foreach ($list as $data) { ?>
+                            <tr style="background-color: transparent">
+                                <td>
+                                    <?php echo $data['task_name']; ?>
+                                </td>
+                                <td>
+                                    <?php echo $data['task_volunteer']; ?>
+                                </td>
+                                <td>
+                                    <?php echo $data['task_state']; ?>
+                                </td>
+                            </tr>
+                        <?php } ?>
                     <?php } ?>
                     </tbody>
                 </table>

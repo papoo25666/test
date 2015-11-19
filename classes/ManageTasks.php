@@ -27,6 +27,14 @@ class ManageTasks
         $this->result->execute();
         return $this->result->fetchAll();
     }
+
+    public function getTaskByStoryId($user_story_id)
+    {
+        $this->result = $this->db->prepare("SELECT *FROM tasks INNER JOIN user_story ON user_story.user_story_id = ? AND tasks.user_story_id = ?");
+        $value = array($user_story_id, $user_story_id);
+        $this->result->execute($value);
+        return $this->result->fetchAll();
+    }
 }
 
 ?>

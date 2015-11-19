@@ -168,7 +168,7 @@ if (ManageSession::isPO()) {
                                     <?php
                                     include_once "classes/ManageTasks.php";
                                     $conn = new ManageTasks();
-                                    $result = $conn->getAllTask();
+                                    $result = $conn->getTaskByStoryId($story_id);
                                     foreach ($result as $row) {
                                         ?>
                                         <li class="list-group-item"
