@@ -108,7 +108,7 @@ if (ManageSession::isPO()) {
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"
                              style=" background-color: #E0E0E0;padding-top: 10px;padding-left: 30px;
                              padding-right:30px;padding-bottom: 20px">
-                            <h3 style="font-family: sukhumvit;font-weight: bold">
+                            <h3 style="font-family: sukhumvit;font-weight: bold">เลือกทีมสำหรับ
                                 <?php
                                 $id = $_GET['id'];
                                 include_once "classes/ManageSprint.php";
@@ -119,24 +119,31 @@ if (ManageSession::isPO()) {
                                 }
                                 ?>
                             </h3>
-                            <select class="form-control" name="team" style="width: 90%;display: inline">
-                                <?php include_once "classes/ManageTeam.php"; ?>
-                                <?php
-                                $conn = new ManageTeam();
-                                $result = $conn->getAllTeam();
-                                foreach ($result as $row) {
-                                    ?>
-                                    <option><?php echo $row['team_name']; ?></option>
-                                <?php } ?>
-                            </select>
-                            <button class="btn btn-warning" style="width: 70px">
-                                เลือก
-                            </button>
+
+                            <form class="form" id="team-form">
+                                <input type="hidden" name="sprint-id" id="sprint-id" value="<?php echo $id; ?>"/>
+                                <select class="form-control" name="team" id="team" style="width: 90%;display: inline">
+                                    <?php include_once "classes/ManageTeam.php"; ?>
+                                    <?php
+                                    $conn = new ManageTeam();
+                                    $result = $conn->getAllTeam();
+                                    foreach ($result as $row) {
+                                        ?>
+                                        <option value="<?php echo $row['team_id']; ?>">
+                                            <?php echo $row['team_name']; ?>
+                                        </option>
+                                    <?php } ?>
+                                </select>
+                                <button class="btn btn-warning" type="submit" style="width: 70px">
+                                    เลือก
+                                </button>
+                            </form>
+                            <h4 class="info-team"
+                                style="font-family: sukhumvit;font-weight: bold;margin-top: 20px"></h4>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
     </section>
 
     <!--Footer-->
@@ -169,6 +176,21 @@ if (ManageSession::isPO()) {
 <script type="application/javascript" src="js/jquery-1.11.3.min.js"></script>
 <script type="application/javascript" src="js/bootstrap.min.js"></script>
 <script type="application/javascript" src="js/angular.min.js"></script>
-
+<script type="application/javascript">
+    $(function () {
+        $('#team-form').submit(function () {
+            var data = $('#team-form').serializeArray();
+            $.ajax({
+                url: 'libs/select_team.php',
+                data: data,
+                type: 'post',
+                success: function (msg) {
+                    $('.info-team').text(msg);
+                }
+            });
+            return false;
+        });
+    });
+</script>
 </body>
 </html>

@@ -140,7 +140,7 @@ if (!ManageSession::isLogged()) {
                                             <?php
                                             if (ManageSession::isSM()) {
                                                 ?>
-                                                <li><a href="selete_team.php?id=<?php echo $row['sbl_id']; ?>">เลือกทีม</a></li>
+                                                <li><a href="select_team.php?id=<?php echo $row['sbl_id']; ?>">เลือกทีม</a></li>
                                             <?php } ?>
                                             <li>
                                                 <a href="add_sprint.php?id=<?php echo $row['sbl_id']; ?>&name=<?php echo $row['sbl_name']; ?>">

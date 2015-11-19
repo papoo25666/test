@@ -39,6 +39,22 @@ class ManageTeam
         $this->result->execute();
         return $this->result->fetchAll();
     }
+
+    public function insertTeamForSprint($sprintId, $teamId)
+    {
+        $this->result = $this->db->prepare("INSERT INTO sprint_backlog_has_team VALUES (null,?,?)");
+        $value = array($sprintId, $teamId);
+        $this->result->execute($value);
+        return $this->result->rowCount();
+    }
+
+    public function checkForInsertTeamForSprint($sprintId)
+    {
+        $this->result = $this->db->prepare("SELECT *FROM sprint_backlog_has_team WHERE sbl_id = ?");
+        $value = array($sprintId);
+        $this->result->execute($value);
+        return $this->result->rowCount();
+    }
 }
 
 ?>

@@ -20,6 +20,7 @@ if (!ManageSession::isLogged()) {
     <link rel="stylesheet" href="css/tables.css"/>
     <link rel="stylesheet" href="css/backlog.css"/>
     <link rel="stylesheet" href="css/breadcrumb.css"/>
+    <link rel="stylesheet" href="css/prettyPhoto.css"/>
 
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -134,9 +135,9 @@ if (!ManageSession::isLogged()) {
                         <li>
                             <div style="">
                                 <div class="row" style="margin: 0;padding: 10px">
-                                    <div class="col-lg-2 text-center">
+                                    <div class="col-lg-2 text-center ">
                                         <img class="img img-circle" src="<?php echo $row['profile_picture']; ?>"
-                                             style="width: 100px;padding: 5px; "/>
+                                             style="width: 100px;padding: 5px;height: 100px"/>
 
                                         <h3 style="font-size: 1.5em;font-weight: bold;margin: 0;padding: 3px;font-family: sukhumvit;">
                                             <?php echo $row['username']; ?>
@@ -171,7 +172,7 @@ if (!ManageSession::isLogged()) {
                                     </div>
                                     <div class="col-lg-12">
                                         <img class="img img-rounded" style="width: 100%;padding-bottom: 5px"
-                                             src="<?php echo $row['issue_image_path']; ?>"/>
+                                             src="<?php echo $row['issue_image_path']; ?>" />
                                     </div>
                                 </div>
                             </div>
@@ -212,7 +213,6 @@ if (!ManageSession::isLogged()) {
 <script type="application/javascript" src="js/jquery-1.11.3.min.js"></script>
 <script type="application/javascript" src="js/bootstrap.min.js"></script>
 <script type="application/javascript" src="js/angular.min.js"></script>
-
 
 </body>
 </html>
