@@ -139,7 +139,7 @@ if (ManageSession::isPO()) {
                                 </button>
                             </form>
                             <h4 class="info-team"
-                                style="font-family: sukhumvit;font-weight: bold;margin-top: 20px"></h4>
+                                style="font-family: sukhumvit;font-weight: bold;margin-top: 20px;color: #3997e6"></h4>
                         </div>
                     </div>
                 </div>

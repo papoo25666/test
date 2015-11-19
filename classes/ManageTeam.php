@@ -55,6 +55,7 @@ class ManageTeam
         $this->result->execute($value);
         return $this->result->rowCount();
     }
+
 }
 
 ?>

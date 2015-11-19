@@ -88,6 +88,16 @@ class ManageSprint
         $this->result->execute($value);
         return $this->result->fetchAll();
     }
+
+    public function getSprintInfoWithTeam($sprintId)
+    {
+        $this->result = $this->db->prepare("SELECT *FROM sprint_backlog INNER JOIN sprint_backlog_has_team "
+            . "ON (sprint_backlog.sbl_id = ? AND sprint_backlog_has_team.sbl_id = ?) "
+            . "INNER JOIN team ON team.team_id = sprint_backlog_has_team.team_id");
+        $value = array($sprintId, $sprintId);
+        $this->result->execute($value);
+        return $this->result->fetchAll();
+    }
 }
 
 ?>

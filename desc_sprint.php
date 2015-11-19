@@ -3,6 +3,9 @@ include_once "classes/ManageSession.php";
 if (!ManageSession::isLogged()) {
     header("location:login.php");
 }
+if (ManageSession::isPO()) {
+    header("location:action_backlog.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +22,6 @@ if (!ManageSession::isLogged()) {
     <link rel="stylesheet" href="css/button.css"/>
     <link rel="stylesheet" href="css/tables.css"/>
     <link rel="stylesheet" href="css/backlog.css"/>
-    <link rel="stylesheet" href="css/link.css"/>
     <link rel="stylesheet" href="css/breadcrumb.css"/>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -75,7 +77,7 @@ if (!ManageSession::isLogged()) {
                         <?php
                         if (ManageSession::isSM() || ManageSession::isTeam()) {
                             ?>
-                            <a type="button" href="action_sprint.php" class="list-group-item active">
+                            <a type="button" href="action_sprint.php" class="list-group-item">
                                 <img src="images/ic_home.png" style="width: 20px;height: 20px">
                                 แสดง Sprint Backlog</a>
                         <?php } ?>
@@ -100,96 +102,36 @@ if (!ManageSession::isLogged()) {
                                 <a href="action_sprint.php">Sprint Backlog</a>
                             </li>
                             <li class="active">
-
+                                รายละเอียด
                             </li>
                         </div>
-                        <div class="col-lg-10 col-md-10 col-sm-10" style="padding: 0;">
-                            <form class="form" id="form-add-sprint" method="post">
-                                <div class="form-group form-inline">
-                                    <button type="submit" class="btn btn-warning form-control"
-                                            style="font-family: sukhumvit;font-size: 1.2em">
-                                        เพิ่ม Sprint Backlog
-                                    </button>
-                                </div>
-                            </form>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"
+                             style=" background-color: #E0E0E0;padding-top: 10px;padding-left: 30px;
+                             padding-right:30px;padding-bottom: 20px">
+                            <h3 style="font-family: sukhumvit;font-weight: bold">รายละเอียดของ
+                                <?php
+                                $id = $_GET['id'];
+                                include_once "classes/ManageSprint.php";
+                                $conn = new ManageSprint();
+                                $result = $conn->getSprintById($id);
+                                foreach ($result as $row) {
+                                    echo $row['sbl_name'];
+                                }
+                                ?>
+                            </h3>
+                            <?php
+                            $result = $conn->getSprintInfoWithTeam($id);
+                            foreach ($result as $row) {
+                                ?>
+                                <h3 style="font-family: sukhumvit;font-size: 1.5em">เริ่มวันที่ : <?php echo $row['sbl_started']; ?></h3>
+                                <h3 style="font-family: sukhumvit;font-size: 1.5em">สิ้นสุดวันที่ : <?php echo $row['sbl_end']; ?></h3>
+                                <h3 style="font-family: sukhumvit;font-size: 1.5em">ทีมที่รับผิดชอบ
+                                    : <?php echo $row['team_name']; ?></h3>
+                            <?php } ?>
                         </div>
-
-                    </div>
-                    <div class="list" style="margin-top: 10px">
-                        <?php include_once "configs/config.php"; ?>
-                        <?php include_once "classes/ManageSprint.php"; ?>
-                        <?php
-                        $db = new ManageSprint();
-                        $result = $db->getSprint();
-                        foreach ($result as $row) {
-                            ?>
-                            <div class="col-lg-3 col-md-3 col-sm-3 col-6" style="padding-left: 0">
-                                <div class="text-center"
-                                     style="background-color: #757575;height: 140px;margin-bottom: 15px">
-                                    <img src="images/ic_build.png" class="img img-rounded"/>
-
-                                    <div class="btn-group pull-right">
-                                        <button class="btn btn-default dropdown-toggle" type="button"
-                                                data-toggle="dropdown" aria-haspopup="true"
-                                                aria-expanded="false"
-                                                style="border-radius: 0"
-                                            >
-                                            <span class="caret"></span>
-                                        </button>
-                                        <ul class="dropdown-menu" style="background-color: #333">
-                                            <?php
-                                            if (ManageSession::isSM()) {
-                                                ?>
-                                                <li>
-                                                    <a href="select_team.php?id=<?php echo $row['sbl_id']; ?>">เลือกทีม</a>
-                                                </li>
-                                            <?php } ?>
-                                            <li>
-                                                <a href="add_sprint.php?id=<?php echo $row['sbl_id']; ?>&name=<?php echo $row['sbl_name']; ?>">
-                                                    เพิ่ม User Story
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="action_issues.php?id=<?php echo $row['sbl_id']; ?>">
-                                                    ปัญหา
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="summary.php?id=<?php echo $row['sbl_id']; ?>">
-                                                    ดู Burndown Chart
-                                                </a>
-                                            </li>
-                                            <?php
-                                            if (ManageSession::isSM()) {
-                                                ?>
-                                                <li>
-                                                    <a href="delete_sprint.php?id=<?php echo $row['sbl_id']; ?>"
-                                                       onclick="return confirm('Are you sure?')">
-                                                        ลบ
-                                                    </a>
-                                                </li>
-                                            <?php } ?>
-                                            <li>
-                                                <a href="desc_sprint.php?id=<?php echo $row['sbl_id']; ?>">
-                                                    รายละเอียด
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div style="background-color: #333;padding: 10px">
-                                        <a href="sprint_backlog.php?id=<?php echo $row['sbl_id']; ?>"
-                                           class="link-sprint">
-                                            <?php echo $row['sbl_name']; ?>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        <?php } ?>
-                        <!-- end php-->
                     </div>
                 </div>
             </div>
-        </div>
     </section>
 
     <!--Footer-->
@@ -222,27 +164,16 @@ if (!ManageSession::isLogged()) {
 <script type="application/javascript" src="js/jquery-1.11.3.min.js"></script>
 <script type="application/javascript" src="js/bootstrap.min.js"></script>
 <script type="application/javascript" src="js/angular.min.js"></script>
-
 <script type="application/javascript">
     $(function () {
-        $('#form-add-sprint').submit(function () {
-            <?php
-            $counts = new ManageSprint();
-            $c = $counts->getSprintCount();
-            foreach($c as $row){
-                $co = $row['counts'];
-            }
-             ?>
-            var count = parseInt(<?php echo $co; ?>);
-            count = count + 1;
-            var word = "SPRINT BACKLOG " + count;
+        $('#team-form').submit(function () {
+            var data = $('#team-form').serializeArray();
             $.ajax({
-                url: 'libs/add_sprint.php',
-                data: {sprint_name: word},
+                url: 'libs/select_team.php',
+                data: data,
                 type: 'post',
-                success: function (state) {
-                    if (state == "success")
-                        location.reload();
+                success: function (msg) {
+                    $('.info-team').text(msg);
                 }
             });
             return false;

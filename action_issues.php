@@ -171,8 +171,10 @@ if (!ManageSession::isLogged()) {
 
                                     </div>
                                     <div class="col-lg-12">
-                                        <img class="img img-rounded" style="width: 100%;padding-bottom: 5px"
-                                             src="<?php echo $row['issue_image_path']; ?>" />
+                                        <div class="text-center">
+                                            <img class="img img-rounded text-center" style="width: 85%;padding-bottom: 5px"
+                                                 src="<?php echo $row['issue_image_path']; ?>" />
+                                        </div>
                                     </div>
                                 </div>
                             </div>
