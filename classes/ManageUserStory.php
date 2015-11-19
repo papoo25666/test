@@ -14,7 +14,7 @@ class ManageUserStory
 
     public function getUserStory()
     {
-        $this->result = $this->db->prepare("SELECT *FROM user_story");
+        $this->result = $this->db->prepare("SELECT *FROM user_story ORDER BY user_story_priority DESC");
         $this->result->execute();
         $data = $this->result->fetchAll();
         return $data;

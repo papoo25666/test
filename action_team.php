@@ -114,7 +114,7 @@ if (!ManageSession::isLogged()) {
                                            required/>
                                     <button type="submit" class="btn btn-warning form-control"
                                             style="font-family: sukhumvit;font-size: 1.2em">
-                                        สร้างชื่อ Team Development
+                                        เพิ่ม Team Development
                                     </button>
                                 </div>
                             </form>

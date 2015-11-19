@@ -36,7 +36,7 @@ class ManageIssues
 
     public function getIssuesById($id)
     {
-        $this->result = $this->db->prepare("SELECT *FROM issues WHERE sprint_backlog_id = ?");
+        $this->result = $this->db->prepare("SELECT *FROM issues WHERE sprint_backlog_id = ? ORDER BY issue_id DESC");
         $value = array($id);
         $this->result->execute($value);
         return $this->result->fetchAll();

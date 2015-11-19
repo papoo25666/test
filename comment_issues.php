@@ -134,7 +134,7 @@ if (!ManageSession::isLogged()) {
                                 <div class="row" style="margin: 0;padding: 10px">
                                     <div class="col-lg-2 text-center">
                                         <img class="img img-circle" src="<?php echo $row['profile_picture']; ?>"
-                                             style="width: 100px;padding: 5px; "/>
+                                             style="width: 100px;padding: 5px;height: 100px"/>
 
                                         <h3 style="font-size: 1.5em;font-weight: bold;margin: 0;padding: 3px;font-family: sukhumvit;">
                                             <?php echo $row['username']; ?>
