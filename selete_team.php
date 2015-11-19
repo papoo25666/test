@@ -3,8 +3,8 @@ include_once "classes/ManageSession.php";
 if (!ManageSession::isLogged()) {
     header("location:login.php");
 }
-if (!ManageSession::isPO()) {
-    header("location:backlog_item.php");
+if (ManageSession::isPO()) {
+    header("location:action_backlog.php");
 }
 ?>
 <!DOCTYPE html>
@@ -89,61 +89,51 @@ if (!ManageSession::isPO()) {
                             </a>
                         <?php } ?>
                         <?php if (ManageSession::isPO() || ManageSession::isAdmin()) { ?>
-                            <a href="action_backlog.php" type="button" class="list-group-item active">
+                            <a href="action_backlog.php" type="button" class="list-group-item">
                                 <img src="images/ic_mode.png" style="width: 20px;height: 20px">
                                 แก้ไข Product Backlog</a>
                         <?php } ?>
                     </div>
                 </div>
                 <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
-                    <div class="breadcrumb">
-                        <li>
-                            <a href="edit_backlog.php">แก้ไข Product Backlog</a>
-                        </li>
-                        <li class="active">
-
-                        </li>
-                    </div>
-                    <table>
-                        <thead>
-                        <tr>
-                            <th>USER STORY <a href="add_backlog.php"
-                                              style="margin-left: 10px;font-family: sukhumvit;font-size: 1.1em"
-                                              class="btn btn-warning">เพิ่ม USER STORY</a></th>
-                            <th>VALUE</th>
-                            <th>PRIORITY</th>
-                            <th>ACTION</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <?php
-                        include "configs/config.php";
-                        include "classes/ManageUserStory.php";
-                        $db = new ManageUserStory();
-                        $result = $db->getUserStory();
-                        $id = 0;
-                        foreach ($result as $row) {
-                            $id += 1;
-                            ?>
-                            <tr style="font-family: sukhumvit;font-size: 17px;font-weight: 500">
-                                <td class="name"><?php echo $row['user_story_name'] . ' <strong>[' . $row['user_story_state'] . '] </strong>' ?></td>
+                    <div class="">
+                        <div class="breadcrumb">
+                            <li>
+                                <a href="action_sprint.php">Sprint Backlog</a>
+                            </li>
+                            <li class="active">
+                                เลือกทีม
+                            </li>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"
+                             style=" background-color: #E0E0E0;padding-top: 10px;padding-left: 30px;
+                             padding-right:30px;padding-bottom: 20px">
+                            <h3 style="font-family: sukhumvit;font-weight: bold">
                                 <?php
-                                $price = $row['user_story_price'];
-                                $price = number_format($price, 2, ".", ",");
+                                $id = $_GET['id'];
+                                include_once "classes/ManageSprint.php";
+                                $conn = new ManageSprint();
+                                $result = $conn->getSprintById($id);
+                                foreach ($result as $row) {
+                                    echo $row['sbl_name'];
+                                }
                                 ?>
-                                <td class="value" style="text-align: right"><?php echo $price; ?></td>
-                                <td><?php echo $row['user_story_priority']; ?></td>
-                                <td class="action" style="width: 15%">
-                                    <a href="edit_backlog.php?id=<?php echo $row['user_story_id'] ?>"
-                                       style="display: inline;">แก้ไข </a> | <a
-                                        href="delete_backlog.php?id=<?php echo $row['user_story_id'] ?>"
-                                        onclick="return confirm('Are you sure?')"
-                                        style="display: inline;">ลบ</a>
-                                </td>
-                            </tr>
-                        <?php } ?>
-                        </tbody>
-                    </table>
+                            </h3>
+                            <select class="form-control" name="team" style="width: 90%;display: inline">
+                                <?php include_once "classes/ManageTeam.php"; ?>
+                                <?php
+                                $conn = new ManageTeam();
+                                $result = $conn->getAllTeam();
+                                foreach ($result as $row) {
+                                    ?>
+                                    <option><?php echo $row['team_name']; ?></option>
+                                <?php } ?>
+                            </select>
+                            <button class="btn btn-warning" style="width: 70px">
+                                เลือก
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -179,7 +169,6 @@ if (!ManageSession::isPO()) {
 <script type="application/javascript" src="js/jquery-1.11.3.min.js"></script>
 <script type="application/javascript" src="js/bootstrap.min.js"></script>
 <script type="application/javascript" src="js/angular.min.js"></script>
-
 
 </body>
 </html>

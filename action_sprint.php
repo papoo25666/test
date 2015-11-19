@@ -137,7 +137,11 @@ if (!ManageSession::isLogged()) {
                                             <span class="caret"></span>
                                         </button>
                                         <ul class="dropdown-menu" style="background-color: #333">
-                                            <li><a href="#">แก้ไข</a></li>
+                                            <?php
+                                            if (ManageSession::isSM()) {
+                                                ?>
+                                                <li><a href="selete_team.php?id=<?php echo $row['sbl_id']; ?>">เลือกทีม</a></li>
+                                            <?php } ?>
                                             <li>
                                                 <a href="add_sprint.php?id=<?php echo $row['sbl_id']; ?>&name=<?php echo $row['sbl_name']; ?>">
                                                     เพิ่ม User Story
@@ -153,12 +157,16 @@ if (!ManageSession::isLogged()) {
                                                     ดู Burndown Chart
                                                 </a>
                                             </li>
-                                            <li>
-                                                <a href="delete_sprint.php?id=<?php echo $row['sbl_id']; ?>"
-                                                   onclick="return confirm('Are you sure?')">
-                                                    ลบ
-                                                </a>
-                                            </li>
+                                            <?php
+                                            if (ManageSession::isSM()) {
+                                                ?>
+                                                <li>
+                                                    <a href="delete_sprint.php?id=<?php echo $row['sbl_id']; ?>"
+                                                       onclick="return confirm('Are you sure?')">
+                                                        ลบ
+                                                    </a>
+                                                </li>
+                                            <?php } ?>
                                         </ul>
                                     </div>
                                     <div style="background-color: #333;padding: 10px">

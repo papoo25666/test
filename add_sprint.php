@@ -3,7 +3,7 @@ include_once "classes/ManageSession.php";
 if (!ManageSession::isLogged()) {
     header("location:login.php");
 }
-if (!ManageSession::isPO()) {
+if (ManageSession::isPO()) {
     header("location:action_backlog.php");
 }
 ?>
