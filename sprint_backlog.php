@@ -123,7 +123,10 @@ if (!ManageSession::isLogged()) {
                                    href="add_tasks.php?sprint_id=<?php echo $_GET['id']; ?>&story_id=<?php echo $row['user_story_id']; ?>">
                                     <?php echo $row['user_story_name']; ?></a>
                             </td>
-                            <td></td>
+                            <?php ?>
+                            <td>
+
+                            </td>
                             <td></td>
                             <td></td>
                         </tr>

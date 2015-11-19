@@ -3,7 +3,7 @@ include_once "classes/ManageSession.php";
 if (!ManageSession::isLogged()) {
     header("location:login.php");
 }
-if (!ManageSession::isPO()) {
+if (ManageSession::isPO()) {
     header("location:action_backlog.php");
 }
 ?>
@@ -113,11 +113,11 @@ if (!ManageSession::isPO()) {
                             </li>
                         </div>
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"
-                             style=" background-color: #E0E0E0;padding-top: 10px;padding-left: 30px;padding-right:
-                             30px;padding-bottom: 20px
-                        ">
-
-                            <?php include_once "classes/ManageUserStory.php"; ?>
+                             style=" background-color: #E0E0E0;padding: 10px 30px 20px 30px;">
+                            <?php
+                            include_once "classes/ManageUserStory.php";
+                            include_once "classes/ManageSprint.php";
+                            ?>
                             <?php
                             $sprint_id = $_GET['sprint_id'];
                             $story_id = $_GET['story_id'];
@@ -125,6 +125,17 @@ if (!ManageSession::isPO()) {
                             $result = $db->getUserStoryById($story_id);
                             ?>
                             <div>
+                                <?php
+                                $conn = new ManageSprint();
+                                $list = $conn->getSprintById($sprint_id);
+                                foreach ($list as $row) {
+                                    ?>
+                                    <a href="sprint_backlog.php?id=<?php echo $row['sbl_id']; ?>">
+                                        <h3 style="font-family: sukhumvit;font-weight: bold">
+                                            <?php echo $row['sbl_name']; ?>
+                                        </h3>
+                                    </a>
+                                <?php } ?>
                                 <h3 style="font-family: sukhumvit;font-weight: bold" class="text-center">
                                     <?php
                                     foreach ($result as $row) {
@@ -132,14 +143,41 @@ if (!ManageSession::isPO()) {
                                         <?php echo $row['user_story_name']; ?>
                                     <?php } ?>
                                 </h3>
-                                <button class="btn btn-warning" id="btn-estimation"
-                                        style="font-size: 1.2em;font-family: sukhumvit;margin-bottom: 5px">เพิ่ม Task
-                                </button>
                             </div>
 
-                            <div class="list" style="background-color: #fff;height: 300px">
+                            <div class="list" style="background-color: #fff;height: 400px">
+                                <?php
+                                include_once "libs/add_task_for_sprint.php";
+                                ?>
                                 <ul class="list-group estimation-box" style="overflow: auto;height: 300px;">
-
+                                    <form class="form-group form-inline" style="margin: 10px" method="post" action="">
+                                        <input class="form-control" placeholder="Task name" name="task_name"
+                                               id="task_name" type="text" style="width: 30%"/>
+                                        <input class="form-control" placeholder="Volunteer" type="text"
+                                               style="width: 30%" name="task_volunteer" id="task_volunteer"/>
+                                        <input class="form-control" placeholder="Estimate value" type="text"
+                                               style="width: 30%" name="task_estimate" id="task_estimate"/>
+                                        <input type="hidden" name="sprint_id" id="sprint_id"
+                                               value="<?php echo $sprint_id; ?>"/>
+                                        <input type="hidden" name="story_id" id="story_id"
+                                               value="<?php echo $story_id; ?>"/>
+                                        <button class="btn btn-info" type="submit" style="font-family: sukhumvit">
+                                            ตกลง
+                                        </button>
+                                    </form>
+                                    <?php
+                                    include_once "classes/ManageTasks.php";
+                                    $conn = new ManageTasks();
+                                    $result = $conn->getAllTask();
+                                    foreach ($result as $row) {
+                                        ?>
+                                        <li class="list-group-item"
+                                            style="font-weight: normal">
+                                            <strong>Task</strong> : <?php echo $row['task_name']; ?>,
+                                            <strong>Volunteer</strong> : <?php echo $row['task_volunteer']; ?>,
+                                            <strong>Estimate value</strong> : <?php echo $row['task_volunteer']; ?>
+                                        </li>
+                                    <?php } ?>
                                 </ul>
                             </div>
                             <div class="text-center" style="margin-top: 10px">
@@ -149,7 +187,6 @@ if (!ManageSession::isPO()) {
                                 </button>
                                 <a href="sprint_backlog.php?id=<?php echo $_GET['id']; ?>" class="alert-for-success"
                                    style="font-size: 1.2em;font-weight: bold;font-family: sukhumvit;margin-left: 10px"></a>
-
                             </div>
                         </div>
                     </div>
@@ -188,18 +225,6 @@ if (!ManageSession::isPO()) {
 <script type="application/javascript" src="js/jquery-1.11.3.min.js"></script>
 <script type="application/javascript" src="js/bootstrap.min.js"></script>
 <script type="application/javascript" src="js/angular.min.js"></script>
-<script type="application/javascript">
-    $(function () {
-        $('#btn-estimation').click(function () {
-            var tag = '<div class="form-group form-inline" style="margin: 10px">'
-                + '<input class="form-control" placeholder="Task name" type="text" style="width: 30%" />'
-                + '<input class="form-control" placeholder="Volunteer" type="text" style="width: 30%" />'
-                + '<input class="form-control" placeholder="Estimate value" type="text" style="width: 30%" />'
-                + '<button class="btn btn-info" style="font-family: sukhumvit">ตกลง</button>'
-                + '</div>';
-            $('.estimation-box').append(tag);
-        });
-    });
-</script>
+
 </body>
 </html>

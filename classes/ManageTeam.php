@@ -56,6 +56,14 @@ class ManageTeam
         return $this->result->rowCount();
     }
 
+    public function changeTeam($sprintId, $teamId)
+    {
+        $this->result = $this->db->prepare("UPDATE sprint_backlog_has_team SET team_id = ? WHERE sbl_id = ?");
+        $value = array($teamId, $sprintId);
+        $this->result->execute($value);
+        return $this->result->rowCount();
+    }
+
 }
 
 ?>

@@ -121,13 +121,37 @@ if (ManageSession::isPO()) {
                             </h3>
                             <?php
                             $result = $conn->getSprintInfoWithTeam($id);
-                            foreach ($result as $row) {
-                                ?>
-                                <h3 style="font-family: sukhumvit;font-size: 1.5em">เริ่มวันที่ : <?php echo $row['sbl_started']; ?></h3>
-                                <h3 style="font-family: sukhumvit;font-size: 1.5em">สิ้นสุดวันที่ : <?php echo $row['sbl_end']; ?></h3>
-                                <h3 style="font-family: sukhumvit;font-size: 1.5em">ทีมที่รับผิดชอบ
-                                    : <?php echo $row['team_name']; ?></h3>
-                            <?php } ?>
+                            if (count($result) != 0) {
+                                foreach ($result as $row) {
+                                    ?>
+                                    <h3 style="font-family: sukhumvit;font-size: 1.5em">เริ่มวันที่
+                                        : <?php echo $row['sbl_started']; ?></h3>
+                                    <h3 style="font-family: sukhumvit;font-size: 1.5em">สิ้นสุดวันที่
+                                        : <?php echo $row['sbl_end']; ?></h3>
+                                    <h3 style="font-family: sukhumvit;font-size: 1.5em">ทีมที่รับผิดชอบ
+                                        : <?php
+                                        if (empty($row['team_name']) == false)
+                                            echo $row['team_name'];
+                                        else
+                                            echo "-";
+                                        ?>
+                                    </h3>
+                                <?php }
+                            } else { ?>
+                                <?php
+                                $result = $conn->getSprintById($id);
+                                foreach ($result as $row) {
+                                    ?>
+                                    <h3 style="font-family: sukhumvit;font-size: 1.5em">เริ่มวันที่
+                                        : <?php echo $row['sbl_started']; ?></h3>
+                                    <h3 style="font-family: sukhumvit;font-size: 1.5em">สิ้นสุดวันที่
+                                        : <?php echo $row['sbl_end']; ?></h3>
+                                    <h3 style="font-family: sukhumvit;font-size: 1.5em">ทีมที่รับผิดชอบ :
+                                        ไม่ได้กำหนดทีมโดย Scrum Master
+
+                                    </h3>
+                                <?php }
+                            } ?>
                         </div>
                     </div>
                 </div>

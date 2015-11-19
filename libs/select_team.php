@@ -15,7 +15,12 @@ if (isset($_POST['sprint-id']) && isset($_POST['team'])) {
                 echo "เลือกไม่สำเร็จ";
             }
         } else {
-            echo "SPRINT นี้ได้กำหนดทีมพัฒนาไว้แล้ว";
+            $result = $conn->changeTeam($sprintId, $teamId);
+            if ($result == 1) {
+                echo "เลือกสำเร็จ [แก้ไข]";
+            } else {
+                echo "แก้ไขไม่สำเร็จ";
+            }
         }
     }
 }
