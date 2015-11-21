@@ -55,40 +55,56 @@
     <!--End Navbar-->
 
     <!--Welcome message -->
-    <section class="header-content" style="margin-top: 70px;min-height: 500px;">
+    <section class="header-content" style="margin-top: 70px;min-height: 550px;">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <div class="col-lg-4 col-md-4 col-sm-4 col-lg-offset-4 col-md-offset-4 text-center">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-lg-offset-4 col-md-offset-4">
                 <?php
+
+                $id = $_GET['id'];
+
                 include_once "classes/ManageUsers.php";
                 $conn = new ManageUsers();
                 $result = $conn->getUserInfo($_SESSION['username']);
                 foreach ($result as $row) {
-                ?>
-                <a class="pull-right" href="edit_profile.php?id=<?php echo $row['user_id']; ?>"
-                   style="font-family: sukhumvit;font-size: 1.5em">
-                    Edit
-                </a>
-                <img class="img-circle" src="<?php echo $row['profile_picture']; ?>"
-                     style="width: 200px;height: 200px"/>
-
-                <h2 style="font-family: sukhumvit;color: #000;font-weight: bold"><?php echo $row['fname'] . " " . $row['lname']; ?></h2>
-            </div>
-
-            <div class="col-lg-4 col-md-4 col-sm-4 col-lg-offset-4 col-md-offset-4">
-                <h2 style="font-family: sukhumvit;color: #000;"><?php echo "อีเมล : " . $row['email']; ?></h2>
-
-                <h2 style="font-family: sukhumvit;color: #000;"><?php echo "บทบาท : " . $row['user_role']; ?></h2>
-
-                <h2 style="font-family: sukhumvit;color: #000;">ทีม :
-                    <?php
-                    $team = $conn->getUserTeam($row['user_id']);
-                    foreach ($team as $data)
-                        echo $data['team_name'];
                     ?>
-                </h2>
+                    <div class="row text-center">
+                        <img src="<?php echo $row['profile_picture']; ?>" class="img-circle"
+                             style="width: 200px;height: 200px"/>
+                    </div>
+
+                    <form role="form" id="edit-form" method="post">
+                        <h4 style="font-family: sukhumvit;color: #0091EA;" id="status-text"></h4>
+
+                        <div class="form-group">
+                            <label class="control-label"
+                                   style="font-family: sukhumvit;color: #000;">ชื่อผู้ใช้งาน</label>
+                            <input type="text" class="form-control" name="username" id="username"
+                                   value="<?php echo $row['username']; ?>"/>
+
+                            <label class="control-label"
+                                   style="font-family: sukhumvit;color: #000;">ชื่อ</label>
+                            <input type="text" class="form-control" name="fname" id="fname"
+                                   value="<?php echo $row['fname']; ?>"/>
+                            <label class="control-label"
+                                   style="font-family: sukhumvit;color: #000;">นามสกุล</label>
+                            <input type="text" class="form-control" name="lname" id="lname"
+                                   value="<?php echo $row['lname']; ?>"/>
+                            <label class="control-label"
+                                   style="font-family: sukhumvit;color: #000;">อีเมล</label>
+                            <input type="text" class="form-control" name="email" id="email"
+                                   value="<?php echo $row['email']; ?>"/>
+
+                            <input type="hidden" value="<?php echo $id; ?>" name="id" id="id"/>
+                        </div>
+                        <div class="form-group text-center">
+                            <button type="submit" class="btn btn-warning"
+                                    style="font-family: sukhumvit;width: 60%">
+                                ตกลง
+                            </button>
+                        </div>
+                    </form>
+                <?php } ?>
             </div>
-            <?php } ?>
-        </div>
     </section>
 
     <!--Footer-->
@@ -121,5 +137,21 @@
 <script type="application/javascript" src="js/jquery-1.11.3.min.js"></script>
 <script type="application/javascript" src="js/bootstrap.min.js"></script>
 <script type="application/javascript" src="js/angular.min.js"></script>
+<script type="application/javascript">
+    $(function () {
+        $('#edit-form').submit(function () {
+            var data = $('#edit-form').serializeArray();
+            $.ajax({
+                url: 'libs/edit_profile.php',
+                data: data,
+                type: 'post',
+                success: function (msg) {
+                    $('#status-text').text(msg);
+                }
+            });
+            return false;
+        });
+    });
+</script>
 </body>
 </html>
