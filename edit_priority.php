@@ -50,7 +50,8 @@ if (!ManageSession::isLogged()) {
                            aria-haspopup="true"
                            aria-expanded="false"><?php echo $_SESSION['username']; ?> <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="backlog_item.php" style="padding: 10px">Prodoct Backlog items</a></li>
+                            <li><a href="backlog_item.php" style="padding: 10px">Product Backlog items</a></li>
+                            <li><a href="profiles.php" style="padding: 10px">Profile</a></li>
                             <li role="separator" class="divider"></li>
                             <li><a href="logout.php" style="padding: 10px">Logout</a></li>
                         </ul>

@@ -76,6 +76,14 @@ class ManageUsers
         $this->result->execute($values);
         return $this->result->fetchAll();
     }
+
+    public function getUserTeam($user_id)
+    {
+        $this->result = $this->db->prepare("SELECT *FROM team INNER JOIN users ON team.team_id = 1 AND users.user_id = ?");
+        $values = array($user_id);
+        $this->result->execute($values);
+        return $this->result->fetchAll();
+    }
 }
 
 ?>

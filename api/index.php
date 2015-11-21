@@ -93,6 +93,12 @@ if (!ManageSession::isLogged()) {
                 <a href="comment.php" class="link-sprint">Comments</a>
             </div>
         </div>
+
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <div class="text-center" style="background-color: #333;height: 90px;padding: 30px;margin-top: 10px">
+                <a href="desc_sprint.php" class="link-sprint">Sprint Description</a>
+            </div>
+        </div>
     </section>
 
     <!--Footer-->

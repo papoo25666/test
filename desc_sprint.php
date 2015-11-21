@@ -148,10 +148,16 @@ if (ManageSession::isPO()) {
                                         : <?php echo $row['sbl_end']; ?></h3>
                                     <h3 style="font-family: sukhumvit;font-size: 1.5em">ทีมที่รับผิดชอบ :
                                         ไม่ได้กำหนดทีมโดย Scrum Master
-
                                     </h3>
                                 <?php }
                             } ?>
+
+                            <?php
+                            $result = $conn->getCountBySprintId($id);
+                            ?>
+                            <h3 style="font-family: sukhumvit;font-size: 1.5em">จำนวน User Story ภายใน Sprint
+                                : <?php echo count($result); ?>
+                            </h3>
                         </div>
                     </div>
                 </div>
