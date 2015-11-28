@@ -101,7 +101,7 @@ class ManageSprint
 
     public function getCountBySprintId($sprintId)
     {
-        $this->result = $this->db->prepare("SELECT *FROM sprint_backlog_has_user_story WHERE sprint_backlog_id = ?");
+        $this->result = $this->db->prepare("SELECT *FROM sprint_backlog_has_user_story WHERE sbl_story_id = ?");
         $value = array($sprintId);
         $this->result->execute($value);
         return $this->result->fetchAll();

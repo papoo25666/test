@@ -11,18 +11,18 @@ if (isset($_POST['username']) && isset($_POST['fname']) && isset($_POST['lname']
         $lname = $_POST['lname'];
         $email = $_POST['email'];
         $userId = $_POST['id'];
+        $team_id = $_POST['team'];
 
         $conn = new ManageUsers();
-        $info = $conn->getUserCount($username);
-        if ($info > 0) {
-            echo "ชื่อผู้ใช้งานถูกใช้งานแล้ว";
-        } else {
-            $result = $conn->editUser($username, $fname, $lname, $email, $userId);
-            if ($result == 1) {
-                echo "แก้ไขสำเร็จ";
-                $_SESSION['username'] = $username;
-            }
+
+        $result = $conn->editUser($username, $fname, $lname, $email, $userId, $team_id);
+        if ($result == 1) {
+            echo "แก้ไขสำเร็จ";
+            $_SESSION['username'] = $username;
+        }else {
+            echo "แก้ไขไม่สำเร็จ";
         }
+
     }
 } else {
     echo "แก้ไขไม่สำเร็จ";

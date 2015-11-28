@@ -145,11 +145,6 @@ if (!ManageSession::isLogged()) {
                                         <ul class="dropdown-menu" style="background-color: #333">
                                             <li><a href="#">แก้ไข</a></li>
                                             <li>
-                                                <a href="add_team.php?id=<?php echo $row['team_id']; ?>">
-                                                    เพิ่มสมาชิก
-                                                </a>
-                                            </li>
-                                            <li>
                                                 <a href="delete_team.php?id=<?php echo $row['team_id']; ?>"
                                                    onclick="return confirm('Are you sure?')">
                                                     ลบ

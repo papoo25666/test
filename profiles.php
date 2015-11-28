@@ -81,9 +81,14 @@
 
                 <h2 style="font-family: sukhumvit;color: #000;">ทีม :
                     <?php
-                    $team = $conn->getUserTeam($row['user_id']);
-                    foreach ($team as $data)
-                        echo $data['team_name'];
+                    $team = $conn->getUserTeam($row['user_id'], $row['team_id']);
+                    foreach ($team as $data) {
+                        if ($data['team_name'] == "") {
+                            echo "-";
+                        } else {
+                            echo $data['team_name'];
+                        }
+                    }
                     ?>
                 </h2>
             </div>

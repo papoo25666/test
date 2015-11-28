@@ -55,7 +55,7 @@
     <!--End Navbar-->
 
     <!--Welcome message -->
-    <section class="header-content" style="margin-top: 70px;min-height: 550px;">
+    <section class="header-content" style="margin-top: 70px;min-height: 600px;">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="col-lg-4 col-md-4 col-sm-4 col-lg-offset-4 col-md-offset-4">
                 <?php
@@ -93,7 +93,19 @@
                                    style="font-family: sukhumvit;color: #000;">อีเมล</label>
                             <input type="text" class="form-control" name="email" id="email"
                                    value="<?php echo $row['email']; ?>"/>
-
+                            <label class="control-label"
+                                   style="font-family: sukhumvit;color: #000;">ทีม</label>
+                            <select name="team" id="team" class="form-control">
+                                <?php
+                                include_once "classes/ManageTeam.php";
+                                $teamCon = new ManageTeam();
+                                $team = $teamCon->getAllTeam();
+                                foreach ($team as $data) {
+                                    ?>
+                                    <option
+                                        value="<?php echo $data['team_id']; ?>"><?php echo $data['team_name']; ?></option>
+                                <?php } ?>
+                            </select>
                             <input type="hidden" value="<?php echo $id; ?>" name="id" id="id"/>
                         </div>
                         <div class="form-group text-center">

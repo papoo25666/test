@@ -77,18 +77,18 @@ class ManageUsers
         return $this->result->fetchAll();
     }
 
-    public function getUserTeam($user_id)
+    public function getUserTeam($user_id, $team_id)
     {
-        $this->result = $this->db->prepare("SELECT *FROM team INNER JOIN users ON team.team_id = 1 AND users.user_id = ?");
-        $values = array($user_id);
+        $this->result = $this->db->prepare("SELECT *FROM team INNER JOIN users ON users.user_id = ? AND team.team_id = ?");
+        $values = array($user_id, $team_id);
         $this->result->execute($values);
         return $this->result->fetchAll();
     }
 
-    public function editUser($username, $fname, $lname, $email, $id)
+    public function editUser($username, $fname, $lname, $email, $id, $team_id)
     {
-        $this->result = $this->db->prepare("UPDATE users SET username = ?,fname = ?,lname = ?, email = ? WHERE user_id = ?");
-        $values = array($username, $fname, $lname, $email, $id);
+        $this->result = $this->db->prepare("UPDATE users SET username = ?,fname = ?,lname = ?, email = ?,team_id = ? WHERE user_id = ?");
+        $values = array($username, $fname, $lname, $email, $team_id, $id);
         $this->result->execute($values);
         return $this->result->rowCount();
     }
