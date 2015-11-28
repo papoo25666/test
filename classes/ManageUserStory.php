@@ -20,6 +20,15 @@ class ManageUserStory
         return $data;
     }
 
+    public function editUserStoryState($storyId)
+    {
+        $text = "เคยถูกหยิบแล้ว";
+        $this->result = $this->db->prepare("UPDATE user_story SET user_story_state = ?,user_story_priority = 0 WHERE user_story_id = ?");
+        $value = array($text, $storyId);
+        $this->result->execute($value);
+        return $this->result->rowCount();
+    }
+
     public function getUserStoryById($id)
     {
         $this->result = $this->db->prepare("SELECT *FROM user_story WHERE user_story_id = ?");

@@ -109,9 +109,10 @@ if (!ManageSession::isLogged()) {
                     <thead>
                     <tr style="font-weight: 500">
                         <th>USER STORY</th>
-                        <th>TASKS</th>
-                        <th>Volunteer</th>
-                        <th>STATE</th>
+                        <th class="text-center">TASKS</th>
+                        <th class="text-center">ESTIMATE VALUE</th>
+                        <th class="text-center">VOLUNTEER</th>
+                        <th class="text-center">STATE</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -133,13 +134,16 @@ if (!ManageSession::isLogged()) {
                         </tr>
                         <?php foreach ($list as $data) { ?>
                             <tr style="background-color: transparent">
-                                <td>
+                                <td class="text-center">
                                     <?php echo $data['task_name']; ?>
                                 </td>
-                                <td>
+                                <td class="text-center">
+                                    <?php echo $data['task_value']; ?>
+                                </td>
+                                <td class="text-center">
                                     <?php echo $data['task_volunteer']; ?>
                                 </td>
-                                <td>
+                                <td class="text-center">
                                     <?php echo $data['task_state']; ?>
                                 </td>
                             </tr>

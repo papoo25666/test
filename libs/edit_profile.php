@@ -19,6 +19,7 @@ if (isset($_POST['username']) && isset($_POST['fname']) && isset($_POST['lname']
             if ($result == 1) {
                 echo "แก้ไขสำเร็จ";
                 $_SESSION['username'] = $username;
+                $_SESSION['team'] = "on";
             } else {
                 echo "แก้ไขไม่สำเร็จ";
             }
@@ -28,6 +29,7 @@ if (isset($_POST['username']) && isset($_POST['fname']) && isset($_POST['lname']
             if ($result == 1) {
                 echo "แก้ไขสำเร็จ";
                 $_SESSION['username'] = $username;
+                $_SESSION['team'] = "on";
             } else {
                 echo "แก้ไขไม่สำเร็จ";
             }

@@ -20,6 +20,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
             $_SESSION['role'] = $role;
             $_SESSION['username'] = $username;
             $_SESSION['user_id'] = $user_id;
+            $_SESSION['team'] = "off";
 
             header("location:index.php");
         } else {
