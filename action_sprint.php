@@ -138,13 +138,9 @@ if (!ManageSession::isLogged()) {
                                             <span class="caret"></span>
                                         </button>
                                         <ul class="dropdown-menu" style="background-color: #333">
-                                            <?php
-                                            if (ManageSession::isSM()) {
-                                                ?>
-                                                <li>
-                                                    <a href="select_team.php?id=<?php echo $row['sbl_id']; ?>">เลือกทีม</a>
-                                                </li>
-                                            <?php } ?>
+                                            <li>
+                                                <a href="select_team.php?id=<?php echo $row['sbl_id']; ?>">เลือกทีม</a>
+                                            </li>
                                             <li>
                                                 <a href="add_sprint.php?id=<?php echo $row['sbl_id']; ?>&name=<?php echo $row['sbl_name']; ?>">
                                                     เพิ่ม User Story

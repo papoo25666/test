@@ -92,6 +92,22 @@ class ManageUsers
         $this->result->execute($values);
         return $this->result->rowCount();
     }
+
+    public function editUserWithoutTeam($username, $fname, $lname, $email, $id)
+    {
+        $this->result = $this->db->prepare("UPDATE users SET username = ?,fname = ?,lname = ?, email = ? WHERE user_id = ?");
+        $values = array($username, $fname, $lname, $email, $id);
+        $this->result->execute($values);
+        return $this->result->rowCount();
+    }
+
+    public function getUserByTeamId($teamId)
+    {
+        $this->result = $this->db->prepare("SELECT *FROM users WHERE team_id = ?");
+        $value = array($teamId);
+        $this->result->execute($value);
+        return $this->result->fetchAll();
+    }
 }
 
 ?>

@@ -11,18 +11,27 @@ if (isset($_POST['username']) && isset($_POST['fname']) && isset($_POST['lname']
         $lname = $_POST['lname'];
         $email = $_POST['email'];
         $userId = $_POST['id'];
-        $team_id = $_POST['team'];
 
         $conn = new ManageUsers();
 
-        $result = $conn->editUser($username, $fname, $lname, $email, $userId, $team_id);
-        if ($result == 1) {
-            echo "แก้ไขสำเร็จ";
-            $_SESSION['username'] = $username;
-        }else {
-            echo "แก้ไขไม่สำเร็จ";
+        if (empty($_POST['team'])) {
+            $result = $conn->editUserWithoutTeam($username, $fname, $lname, $email, $userId);
+            if ($result == 1) {
+                echo "แก้ไขสำเร็จ";
+                $_SESSION['username'] = $username;
+            } else {
+                echo "แก้ไขไม่สำเร็จ";
+            }
+        } else {
+            $team_id = $_POST['team'];
+            $result = $conn->editUser($username, $fname, $lname, $email, $userId, $team_id);
+            if ($result == 1) {
+                echo "แก้ไขสำเร็จ";
+                $_SESSION['username'] = $username;
+            } else {
+                echo "แก้ไขไม่สำเร็จ";
+            }
         }
-
     }
 } else {
     echo "แก้ไขไม่สำเร็จ";

@@ -73,7 +73,7 @@ class ManageSprint
 
     public function insertUserStoryForSprint($sprint_id, $story_id)
     {
-        $this->result = $this->db->prepare("INSERT INTO scrum.sprint_backlog_has_user_story (sbl_story_id, sprint_backlog_id, user_story_id) VALUES (null,?,?)");
+        $this->result = $this->db->prepare("INSERT INTO scrum.sprint_backlog_has_user_story (sbl_story_id, sbl_id, user_story_id) VALUES (null,?,?)");
         $value = array($sprint_id, $story_id);
         $this->result->execute($value);
         return $this->result->rowCount();
@@ -82,7 +82,7 @@ class ManageSprint
     public function getUserStoryBySprintId($id)
     {
         $this->result = $this->db->prepare("SELECT *FROM user_story "
-            . "INNER JOIN sprint_backlog_has_user_story ON sprint_backlog_has_user_story.sprint_backlog_id = ? "
+            . "INNER JOIN sprint_backlog_has_user_story ON sprint_backlog_has_user_story.sbl_id = ? "
             . "AND user_story.user_story_id = sprint_backlog_has_user_story.user_story_id");
         $value = array($id);
         $this->result->execute($value);

@@ -3,9 +3,15 @@ if (isset($_POST['sprint-id']) && isset($_POST['team'])) {
     if (empty($_POST['sprint-id']) == false && empty($_POST['team']) == false) {
         include_once "../configs/config.php";
         include_once "../classes/ManageTeam.php";
+        include_once "../classes/ManageUsers.php";
+
         $conn = new ManageTeam();
         $sprintId = $_POST['sprint-id'];
         $teamId = $_POST['team'];
+
+        $userConn = new ManageUsers();
+        $data = $userConn->getUserByTeamId($teamId);
+
         $check = $conn->checkForInsertTeamForSprint($sprintId);
         if ($check == 0) {
             $result = $conn->insertTeamForSprint($sprintId, $teamId);

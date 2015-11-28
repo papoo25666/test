@@ -1,4 +1,6 @@
-<?php if (!isset($_SESSION)) session_start(); ?>
+<?php
+session_start();
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -93,19 +95,21 @@
                                    style="font-family: sukhumvit;color: #000;">อีเมล</label>
                             <input type="text" class="form-control" name="email" id="email"
                                    value="<?php echo $row['email']; ?>"/>
-                            <label class="control-label"
-                                   style="font-family: sukhumvit;color: #000;">ทีม</label>
-                            <select name="team" id="team" class="form-control">
-                                <?php
-                                include_once "classes/ManageTeam.php";
-                                $teamCon = new ManageTeam();
-                                $team = $teamCon->getAllTeam();
-                                foreach ($team as $data) {
-                                    ?>
-                                    <option
-                                        value="<?php echo $data['team_id']; ?>"><?php echo $data['team_name']; ?></option>
-                                <?php } ?>
-                            </select>
+                            <?php if (!ManageSession::isSM() && !ManageSession::isPO()) { ?>
+                                <label class="control-label"
+                                       style="font-family: sukhumvit;color: #000;">ทีม</label>
+                                <select name="team" id="team" class="form-control">
+                                    <?php
+                                    include_once "classes/ManageTeam.php";
+                                    $teamCon = new ManageTeam();
+                                    $team = $teamCon->getAllTeam();
+                                    foreach ($team as $data) {
+                                        ?>
+                                        <option
+                                            value="<?php echo $data['team_id']; ?>"><?php echo $data['team_name']; ?></option>
+                                    <?php } ?>
+                                </select>
+                            <?php } ?>
                             <input type="hidden" value="<?php echo $id; ?>" name="id" id="id"/>
                         </div>
                         <div class="form-group text-center">
