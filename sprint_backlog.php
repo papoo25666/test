@@ -144,7 +144,19 @@ if (!ManageSession::isLogged()) {
                                     <?php echo $data['task_volunteer']; ?>
                                 </td>
                                 <td class="text-center">
-                                    <?php echo $data['task_state']; ?>
+
+                                    <?php
+                                    $state = array($data['task_state'], "To Do", "Doing", "Done");
+                                    $state = array_unique($state);
+                                    ?>
+                                    <select id="task_state" class="form-control">
+                                        <?php
+                                        foreach ($state as $i) {
+                                            ?>
+                                            <option
+                                                value="<?php echo $data['task_id']; ?>"><?php echo $i; ?></option>
+                                        <?php } ?>
+                                    </select>
                                 </td>
                             </tr>
                         <?php } ?>
@@ -186,6 +198,26 @@ if (!ManageSession::isLogged()) {
 <script type="application/javascript" src="js/jquery-1.11.3.min.js"></script>
 <script type="application/javascript" src="js/bootstrap.min.js"></script>
 <script type="application/javascript" src="js/angular.min.js"></script>
+
+<script type="application/javascript">
+    $(function () {
+        $('select').on('change', function () {
+            var taskId = $('option:selected', this).val();
+            var taskState = $('option:selected', this).text();
+
+            $.ajax({
+                url: 'libs/update_task_state.php',
+                data: {taskId: taskId, taskState: taskState},
+                type: 'post',
+                success: function (msg) {
+                    console.log(msg);
+                }
+            });
+
+            return false;
+        });
+    });
+</script>
 
 <script type="application/javascript">
     $(function () {

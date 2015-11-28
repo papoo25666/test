@@ -35,6 +35,14 @@ class ManageTasks
         $this->result->execute($value);
         return $this->result->fetchAll();
     }
+
+    public function editTask($taskId, $taskState)
+    {
+        $this->result = $this->db->prepare("UPDATE tasks SET task_state = ? WHERE task_id = ?");
+        $value = array($taskState, $taskId);
+        $this->result->execute($value);
+        return $this->result->rowCount();
+    }
 }
 
 ?>
