@@ -51,6 +51,14 @@ class ManageSprint
         return $this->result->fetchAll();
     }
 
+    public function getSprintWitHistory($userId)
+    {
+        $this->result = $this->db->prepare("SELECT *FROM sprint_backlog INNER JOIN history ON history.user_id = ? AND sprint_backlog.sbl_id = history.sbl_id");
+        $value = array($userId);
+        $this->result->execute($value);
+        return $this->result->fetchAll();
+    }
+
     public function deleteSprint($id)
     {
         $value = array($id);

@@ -20,6 +20,13 @@ class ManageHistory
         return $this->result->rowCount();
     }
 
+    public function getHistoryInfo($sbl_id, $user_id)
+    {
+        $this->result = $this->db->prepare("SELECT *FROM history WHERE sbl_id = ? AND user_id = ?");
+        $value = array($sbl_id, $user_id);
+        $this->result->execute($value);
+        return $this->result->rowCount();
+    }
 }
 
 ?>

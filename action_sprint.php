@@ -121,67 +121,131 @@ if (!ManageSession::isLogged()) {
                         <?php include_once "classes/ManageSprint.php"; ?>
                         <?php
                         $db = new ManageSprint();
-                        $result = $db->getSprint();
-                        foreach ($result as $row) {
-                            ?>
-                            <div class="col-lg-3 col-md-3 col-sm-3 col-6" style="padding-left: 0">
-                                <div class="text-center"
-                                     style="background-color: #757575;height: 140px;margin-bottom: 15px">
-                                    <img src="images/ic_build.png" class="img img-rounded"/>
+                        if (ManageSession::isTeam()) {
+                            $result = $db->getSprintWitHistory($_SESSION['user_id']);
+                            foreach ($result as $row) {
+                                ?>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-6" style="padding-left: 0">
+                                    <div class="text-center"
+                                         style="background-color: #757575;height: 140px;margin-bottom: 15px">
+                                        <img src="images/ic_build.png" class="img img-rounded"/>
 
-                                    <div class="btn-group pull-right">
-                                        <button class="btn btn-default dropdown-toggle" type="button"
-                                                data-toggle="dropdown" aria-haspopup="true"
-                                                aria-expanded="false"
-                                                style="border-radius: 0"
-                                            >
-                                            <span class="caret"></span>
-                                        </button>
-                                        <ul class="dropdown-menu" style="background-color: #333">
-                                            <li>
-                                                <a href="select_team.php?id=<?php echo $row['sbl_id']; ?>">เลือกทีม</a>
-                                            </li>
-                                            <li>
-                                                <a href="add_sprint.php?id=<?php echo $row['sbl_id']; ?>&name=<?php echo $row['sbl_name']; ?>">
-                                                    เพิ่ม User Story
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="action_issues.php?id=<?php echo $row['sbl_id']; ?>">
-                                                    ปัญหา
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="summary.php?id=<?php echo $row['sbl_id']; ?>">
-                                                    ดู Burndown Chart
-                                                </a>
-                                            </li>
-                                            <?php
-                                            if (ManageSession::isSM()) {
-                                                ?>
+                                        <div class="btn-group pull-right">
+                                            <button class="btn btn-default dropdown-toggle" type="button"
+                                                    data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false"
+                                                    style="border-radius: 0"
+                                                >
+                                                <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu" style="background-color: #333">
                                                 <li>
-                                                    <a href="delete_sprint.php?id=<?php echo $row['sbl_id']; ?>"
-                                                       onclick="return confirm('Are you sure?')">
-                                                        ลบ
+                                                    <a href="select_team.php?id=<?php echo $row['sbl_id']; ?>">เลือกทีม</a>
+                                                </li>
+                                                <li>
+                                                    <a href="add_sprint.php?id=<?php echo $row['sbl_id']; ?>&name=<?php echo $row['sbl_name']; ?>">
+                                                        เพิ่ม User Story
                                                     </a>
                                                 </li>
-                                            <?php } ?>
-                                            <li>
-                                                <a href="desc_sprint.php?id=<?php echo $row['sbl_id']; ?>">
-                                                    รายละเอียด
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div style="background-color: #333;padding: 10px">
-                                        <a href="sprint_backlog.php?id=<?php echo $row['sbl_id']; ?>"
-                                           class="link-sprint">
-                                            <?php echo $row['sbl_name']; ?>
-                                        </a>
+                                                <li>
+                                                    <a href="action_issues.php?id=<?php echo $row['sbl_id']; ?>">
+                                                        ปัญหา
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="summary.php?id=<?php echo $row['sbl_id']; ?>">
+                                                        ดู Burndown Chart
+                                                    </a>
+                                                </li>
+                                                <?php
+                                                if (ManageSession::isSM()) {
+                                                    ?>
+                                                    <li>
+                                                        <a href="delete_sprint.php?id=<?php echo $row['sbl_id']; ?>"
+                                                           onclick="return confirm('Are you sure?')">
+                                                            ลบ
+                                                        </a>
+                                                    </li>
+                                                <?php } ?>
+                                                <li>
+                                                    <a href="desc_sprint.php?id=<?php echo $row['sbl_id']; ?>">
+                                                        รายละเอียด
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div style="background-color: #333;padding: 10px">
+                                            <a href="sprint_backlog.php?id=<?php echo $row['sbl_id']; ?>"
+                                               class="link-sprint">
+                                                <?php echo $row['sbl_name']; ?>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        <?php } ?>
+                            <?php }
+                        } else {
+                            $result = $db->getSprint();
+                            foreach ($result as $row) {
+                                ?>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-6" style="padding-left: 0">
+                                    <div class="text-center"
+                                         style="background-color: #757575;height: 140px;margin-bottom: 15px">
+                                        <img src="images/ic_build.png" class="img img-rounded"/>
+
+                                        <div class="btn-group pull-right">
+                                            <button class="btn btn-default dropdown-toggle" type="button"
+                                                    data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false"
+                                                    style="border-radius: 0"
+                                                >
+                                                <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu" style="background-color: #333">
+                                                <li>
+                                                    <a href="select_team.php?id=<?php echo $row['sbl_id']; ?>">เลือกทีม</a>
+                                                </li>
+                                                <li>
+                                                    <a href="add_sprint.php?id=<?php echo $row['sbl_id']; ?>&name=<?php echo $row['sbl_name']; ?>">
+                                                        เพิ่ม User Story
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="action_issues.php?id=<?php echo $row['sbl_id']; ?>">
+                                                        ปัญหา
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="summary.php?id=<?php echo $row['sbl_id']; ?>">
+                                                        ดู Burndown Chart
+                                                    </a>
+                                                </li>
+                                                <?php
+                                                if (ManageSession::isSM()) {
+                                                    ?>
+                                                    <li>
+                                                        <a href="delete_sprint.php?id=<?php echo $row['sbl_id']; ?>"
+                                                           onclick="return confirm('Are you sure?')">
+                                                            ลบ
+                                                        </a>
+                                                    </li>
+                                                <?php } ?>
+                                                <li>
+                                                    <a href="desc_sprint.php?id=<?php echo $row['sbl_id']; ?>">
+                                                        รายละเอียด
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div style="background-color: #333;padding: 10px">
+                                            <a href="sprint_backlog.php?id=<?php echo $row['sbl_id']; ?>"
+                                               class="link-sprint">
+                                                <?php echo $row['sbl_name']; ?>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php }
+                        } ?>
                         <!-- end php-->
                     </div>
                 </div>
