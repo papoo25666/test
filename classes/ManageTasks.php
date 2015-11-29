@@ -43,6 +43,15 @@ class ManageTasks
         $this->result->execute($value);
         return $this->result->rowCount();
     }
+
+    public function editTaskWithEndDate($taskId, $taskState)
+    {
+
+        $this->result = $this->db->prepare("UPDATE tasks SET task_state = ?,task_end = NOW() WHERE task_id = ?");
+        $value = array($taskState, $taskId);
+        $this->result->execute($value);
+        return $this->result->rowCount();
+    }
 }
 
 ?>

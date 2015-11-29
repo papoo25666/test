@@ -4,7 +4,7 @@ include_once "classes/ManageSession.php";
 if (!ManageSession::isLogged()) {
     header("location:login.php");
 }
-if ($_SESSION['team'] != "on" && ManageSession::isTeam()) {
+if ($_SESSION['team'] == "" && ManageSession::isTeam()) {
     header("location:edit_profile.php?id=" . $_SESSION['user_id']);
 }
 ?>

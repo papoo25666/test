@@ -175,10 +175,20 @@ if (!ManageSession::isLogged()) {
                                             </ul>
                                         </div>
                                         <div style="background-color: #333;padding: 10px">
-                                            <a href="sprint_backlog.php?id=<?php echo $row['sbl_id']; ?>"
-                                               class="link-sprint">
-                                                <?php echo $row['sbl_name']; ?>
-                                            </a>
+                                            <?php
+                                            $now = strtotime('now');
+                                            if ($now >= strtotime($row['sbl_end'])) {
+                                                ?>
+                                                <a href="summary.php?id=<?php echo $row['sbl_id']; ?>"
+                                                   class="link-sprint" style="color: #ff6441">
+                                                    <?php echo $row['sbl_name']; ?>
+                                                </a>
+                                            <?php } else { ?>
+                                                <a href="sprint_backlog.php?id=<?php echo $row['sbl_id']; ?>"
+                                                   class="link-sprint" aria-disabled="true">
+                                                    <?php echo $row['sbl_name']; ?>
+                                                </a>
+                                            <?php } ?>
                                         </div>
                                     </div>
                                 </div>
@@ -237,10 +247,20 @@ if (!ManageSession::isLogged()) {
                                             </ul>
                                         </div>
                                         <div style="background-color: #333;padding: 10px">
-                                            <a href="sprint_backlog.php?id=<?php echo $row['sbl_id']; ?>"
-                                               class="link-sprint">
-                                                <?php echo $row['sbl_name']; ?>
-                                            </a>
+                                            <?php
+                                            $now = strtotime('now');
+                                            if ($now >= strtotime($row['sbl_end'])) {
+                                                ?>
+                                                <a href="summary.php?id=<?php echo $row['sbl_id']; ?>"
+                                                   class="link-sprint" style="color: #ff6441">
+                                                    <?php echo $row['sbl_name']; ?>
+                                                </a>
+                                            <?php } else { ?>
+                                                <a href="sprint_backlog.php?id=<?php echo $row['sbl_id']; ?>"
+                                                   class="link-sprint" aria-disabled="true">
+                                                    <?php echo $row['sbl_name']; ?>
+                                                </a>
+                                            <?php } ?>
                                         </div>
                                     </div>
                                 </div>
