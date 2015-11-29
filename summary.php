@@ -28,6 +28,84 @@ if (ManageSession::isPO()) {
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <script type="application/javascript" src="js/Chart.js"></script>
+
+    <script>
+        <?php
+                 $sprintId = $_GET['id'];
+
+                 include_once "classes/ManageSummary.php";
+                 include_once "classes/ManageSprint.php";
+
+                 $summaryConn = new ManageSummary();
+                 $sprintConn = new ManageSprint();
+
+                 $day = array();
+
+                 //หาวันเริ่ม Sprint
+                 $resultSprint = $sprintConn->getSprintById($sprintId);
+                 foreach ($resultSprint as $splitDay) {
+                     array_push($day, $splitDay['sbl_started']);
+                     $next = strtotime($splitDay['sbl_started']);
+                 }
+
+                 //หาจำนวนวัน 14 วันแล้วเก็บใน array
+                 for ($i = 1; $i <= 14; $i++) {
+                     $next = strtotime("+1 days", $next);
+                     $convert = date('Y-m-d', $next);
+                     array_push($day, $convert);
+                 }
+
+                 //หาแต่ละวัน Burn ไปเท่าไหร่?
+                 $plot = array();
+                 for ($i = 0; $i < count($day); $i++) {
+                     $resultPlot = $summaryConn->getPlotChart($day[$i], $sprintId);
+                     foreach ($resultPlot as $p) {
+                         array_push($plot, $p['Plot']);
+                     }
+                 }
+
+                 //หา Max ของ Estimate ทั้งหมด
+                 $resultSummary = $summaryConn->getSumEstimate($sprintId);
+                 foreach ($resultSummary as $point)
+                     $max = $point['EstimateSum'];
+
+                 ?>
+        var randomScalingFactor = function () {
+            return Math.round(Math.random() * 100)
+        };
+        var lineChartData = {
+            labels: ["Day 0", "Day 1", "Day 2", "Day 3", "Day 4", "Day 5", "Day 6",
+                "Day 7", "Day 8", "Day 9", "Day 10", "Day 11", "Day 12", "Day 13", "Day 14"],
+            datasets: [
+                {
+                    label: "Burn Down Chart",
+                    fillColor: "rgba(140,158,255,0.2)",
+                    strokeColor: "rgba(126,87,194,0.5)",
+                    pointColor: "rgba(126,87,194,1)",
+                    pointStrokeColor: "#fff",
+                    pointHighlightFill: "#fff",
+                    pointHighlightStroke: "rgba(151,187,205,1)",
+                    data: [
+                        <?php echo $max; ?>
+                        <?php
+                        for ($i = 0; $i < count($plot); $i++) {
+                            $max -= $plot[$i];
+                            echo ",".$max;
+                        }
+                        ?>
+                    ]
+                }
+            ]
+        }
+        window.onload = function () {
+            var ctx = document.getElementById("burn_down_chart").getContext("2d");
+            window.myLine = new Chart(ctx).Line(lineChartData, {
+                responsive: true
+            });
+        }
+    </script>
 </head>
 <body>
 <div class="wrapper" style="background-color: #d9e0e7;">
@@ -65,7 +143,7 @@ if (ManageSession::isPO()) {
     </section>
     <!--End Navbar-->
 
-    <section class="content" style="min-height: 530px;margin-top: 50px">
+    <section class="content" style="min-height: 530px;margin-top: 30px">
         <div class="col-lg-12 col-md-12 col-sm-12">
             <div class="col-lg-8 col-md-8 col-sm-8 col-lg-offset-2 col-md-offset-2 col-sm-offset-2"
                  style="min-height: 390px;margin-top: 50px;padding-left: 0; padding-right: 0">
@@ -74,16 +152,18 @@ if (ManageSession::isPO()) {
                         <a href="action_sprint.php">Sprint Backlog</a>
                     </li>
                     <li class="active">
-                        Burndown Chart
+                        Burn Down Chart
                     </li>
                 </div>
-                <img class="img img-responsive" style="min-height: 380px;width: 100%;background-color: #333;"/>
+                <div>
+                    <canvas id="burn_down_chart"></canvas>
+                </div>
             </div>
         </div>
     </section>
 
     <!--Footer-->
-    <section class="footer-content">
+    <section class="footer-content" style="margin-top: 20px">
         <footer style="padding: 20px">
             <div class="container">
                 <div class="row hidden-xs">
@@ -112,9 +192,6 @@ if (ManageSession::isPO()) {
 <script type="application/javascript" src="js/jquery-1.11.3.min.js"></script>
 <script type="application/javascript" src="js/bootstrap.min.js"></script>
 <script type="application/javascript" src="js/angular.min.js"></script>
-
-<script type="application/javascript">
-</script>
 
 </body>
 </html>
