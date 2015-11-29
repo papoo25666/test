@@ -156,7 +156,7 @@ if (ManageSession::isPO()) {
                             $result = $conn->getCountBySprintId($id);
                             ?>
                             <h3 style="font-family: sukhumvit;font-size: 1.5em">จำนวน User Story ภายใน Sprint
-                                : <?php echo count($result); ?>
+                                : <?php echo $result; ?>
                             </h3>
                         </div>
                     </div>

@@ -143,9 +143,13 @@ if (!ManageSession::isLogged()) {
                                                     <a href="select_team.php?id=<?php echo $row['sbl_id']; ?>">เลือกทีม</a>
                                                 </li>
                                                 <li>
-                                                    <a href="add_sprint.php?id=<?php echo $row['sbl_id']; ?>&name=<?php echo $row['sbl_name']; ?>">
-                                                        เพิ่ม User Story
-                                                    </a>
+                                                    <?php
+                                                    if ($now < strtotime($row['sbl_end'])) {
+                                                        ?>
+                                                        <a href="add_sprint.php?id=<?php echo $row['sbl_id']; ?>&name=<?php echo $row['sbl_name']; ?>">
+                                                            เพิ่ม User Story
+                                                        </a>
+                                                    <?php } ?>
                                                 </li>
                                                 <li>
                                                     <a href="action_issues.php?id=<?php echo $row['sbl_id']; ?>">
@@ -185,7 +189,7 @@ if (!ManageSession::isLogged()) {
                                                 </a>
                                             <?php } else { ?>
                                                 <a href="sprint_backlog.php?id=<?php echo $row['sbl_id']; ?>"
-                                                   class="link-sprint" aria-disabled="true">
+                                                   class="link-sprint">
                                                     <?php echo $row['sbl_name']; ?>
                                                 </a>
                                             <?php } ?>
@@ -214,11 +218,15 @@ if (!ManageSession::isLogged()) {
                                                 <li>
                                                     <a href="select_team.php?id=<?php echo $row['sbl_id']; ?>">เลือกทีม</a>
                                                 </li>
-                                                <li>
-                                                    <a href="add_sprint.php?id=<?php echo $row['sbl_id']; ?>&name=<?php echo $row['sbl_name']; ?>">
-                                                        เพิ่ม User Story
-                                                    </a>
-                                                </li>
+                                                <?php
+                                                if ($now < strtotime($row['sbl_end'])) {
+                                                    ?>
+                                                    <li>
+                                                        <a href="add_sprint.php?id=<?php echo $row['sbl_id']; ?>&name=<?php echo $row['sbl_name']; ?>">
+                                                            เพิ่ม User Story
+                                                        </a>
+                                                    </li>
+                                                <?php } ?>
                                                 <li>
                                                     <a href="action_issues.php?id=<?php echo $row['sbl_id']; ?>">
                                                         ปัญหา
