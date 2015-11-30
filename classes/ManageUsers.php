@@ -77,10 +77,10 @@ class ManageUsers
         return $this->result->fetchAll();
     }
 
-    public function getUserTeam($user_id, $team_id)
+    public function getUserTeam($user_id)
     {
-        $this->result = $this->db->prepare("SELECT *FROM team INNER JOIN users ON users.user_id = ? AND team.team_id = ?");
-        $values = array($user_id, $team_id);
+        $this->result = $this->db->prepare("SELECT *FROM team INNER JOIN users ON users.user_id = ? AND team.team_id = users.team_id");
+        $values = array($user_id);
         $this->result->execute($values);
         return $this->result->fetchAll();
     }

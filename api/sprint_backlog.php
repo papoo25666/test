@@ -1,8 +1,12 @@
 <?php
 include_once "../configs/config.php";
 include_once "../classes/ManageSprint.php";
+
+$userId = $_GET['id'];
+
 $db = new ManageSprint();
-$result = $db->getSprint();
+$result = $db->getSprintWitHistory($userId);
+
 $response['sprints'] = array();
 foreach ($result as $row) {
     $items = array();

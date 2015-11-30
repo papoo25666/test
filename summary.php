@@ -171,7 +171,6 @@ if (ManageSession::isPO()) {
                     <h3 style="font-family: sukhumvit;font-size: 1.35em;padding: 10px;color: #fff;margin: 0">
                         ค่า Estimate ทั้งหมด :
                         <?php
-                        $taskConn = new ManageTasks();
                         foreach ($resultSummary as $point) {
                             echo $point['EstimateSum'];
                             $maxEstimate = $point['EstimateSum'];

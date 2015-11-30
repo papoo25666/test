@@ -158,7 +158,7 @@ if (!ManageSession::isLogged()) {
                                                 </li>
                                                 <li>
                                                     <a href="summary.php?id=<?php echo $row['sbl_id']; ?>">
-                                                        ดู Burndown Chart
+                                                        ดู Burn Down Chart
                                                     </a>
                                                 </li>
                                                 <?php
@@ -234,7 +234,7 @@ if (!ManageSession::isLogged()) {
                                                 </li>
                                                 <li>
                                                     <a href="summary.php?id=<?php echo $row['sbl_id']; ?>">
-                                                        ดู Burndown Chart
+                                                        ดู Burn Down Chart
                                                     </a>
                                                 </li>
                                                 <?php
