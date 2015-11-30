@@ -52,6 +52,14 @@ class ManageTasks
         $this->result->execute($value);
         return $this->result->rowCount();
     }
+
+    public function getCountTaskBySprintId($sprintId)
+    {
+        $this->result = $this->db->prepare("SELECT *FROM tasks WHERE sbl_id = ?");
+        $value = array($sprintId);
+        $this->result->execute($value);
+        return $this->result->rowCount();
+    }
 }
 
 ?>

@@ -156,14 +156,52 @@ if (ManageSession::isPO()) {
                     </li>
                 </div>
                 <div>
+                    <h3 style="font-family: sukhumvit;font-size: 1.35em;font-weight: bold;padding: 0;margin: 0">
+                        ค่าของการ Estimate
+                    </h3>
                     <canvas id="burn_down_chart"></canvas>
+                    <h3 style="font-family: sukhumvit;font-size: 1.35em;font-weight: bold;padding: 0;margin: 0;text-align: right">
+                        จำนวนวัน
+                    </h3>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2">
+                <?php include_once "classes/ManageTasks.php"; ?>
+                <div style="background-color: #333;height: 130px;margin-top: 50px">
+                    <h3 style="font-family: sukhumvit;font-size: 1.35em;padding: 10px;color: #fff;margin: 0">
+                        ค่า Estimate ทั้งหมด :
+                        <?php
+                        $taskConn = new ManageTasks();
+                        foreach ($resultSummary as $point) {
+                            echo $point['EstimateSum'];
+                            $maxEstimate = $point['EstimateSum'];
+                        }
+                        ?>
+                    </h3>
+
+                    <h3 style="font-family: sukhumvit;font-size: 1.35em;padding: 10px;color: #fff;margin: 0">
+                        จำนวน Task ทั้งหมด :
+                        <?php
+                        $taskConn = new ManageTasks();
+                        echo $taskConn->getCountTaskBySprintId($sprintId);
+                        $countOfTask = $taskConn->getCountTaskBySprintId($sprintId);
+                        ?>
+                    </h3>
+
+                    <h3 style="font-family: sukhumvit;font-size: 1.35em;padding: 10px;color: #fff;margin: 0">
+                        Velocity :
+                        <?php
+                        echo number_format($maxEstimate / $countOfTask, 2 , "." , ".");
+                        ?>
+                    </h3>
+
                 </div>
             </div>
         </div>
     </section>
 
     <!--Footer-->
-    <section class="footer-content" style="margin-top: 20px">
+    <section class="footer-content" style="margin-top: 60px">
         <footer style="padding: 20px">
             <div class="container">
                 <div class="row hidden-xs">

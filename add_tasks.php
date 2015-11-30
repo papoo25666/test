@@ -176,7 +176,7 @@ if (ManageSession::isPO()) {
                                             style="font-weight: normal">
                                             <strong>Task</strong> : <?php echo $row['task_name']; ?>,
                                             <strong>Volunteer</strong> : <?php echo $row['task_volunteer']; ?>,
-                                            <strong>Estimate value</strong> : <?php echo $row['task_volunteer']; ?>
+                                            <strong>Estimate value</strong> : <?php echo $row['task_value']; ?>
                                         </li>
                                     <?php } ?>
                                 </ul>
