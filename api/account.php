@@ -17,6 +17,7 @@ if (empty($id) == false) {
         $response['role'] = $row['user_role'];
     }
     $team = $db->getUserTeam($id);
+
     foreach($team as $row) {
         $response['team'] = $row['team_name'];
     }

@@ -114,6 +114,14 @@ class ManageSprint
         $this->result->execute($value);
         return $this->result->rowCount();
     }
+
+    public function getStartDateById($sprintId)
+    {
+        $this->result = $this->db->prepare("SELECT *FROM sprint_backlog WHERE sbl_id = ?");
+        $value = array($sprintId);
+        $this->result->execute($value);
+        return $this->result->fetchAll();
+    }
 }
 
 ?>

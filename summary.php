@@ -55,6 +55,10 @@ if (ManageSession::isPO()) {
                      $next = strtotime("+1 days", $next);
                      $convert = date('Y-m-d', $next);
                      array_push($day, $convert);
+
+                    if (date('Y-m-d', strtotime('now')) == $convert) {
+                            break;
+                    }
                  }
 
                  //หาแต่ละวัน Burn ไปเท่าไหร่?
@@ -159,17 +163,18 @@ if (ManageSession::isPO()) {
                     <h3 style="font-family: sukhumvit;font-size: 1.35em;font-weight: bold;padding: 0;margin: 0">
                         ค่าของการ Estimate
                     </h3>
+
                     <canvas id="burn_down_chart"></canvas>
                     <h3 style="font-family: sukhumvit;font-size: 1.35em;font-weight: bold;padding: 0;margin: 0;text-align: right">
                         จำนวนวัน
                     </h3>
                 </div>
             </div>
-            <div class="col-lg-2 col-md-2 col-sm-2">
+            <div class="col-lg-2 col-md-2 col-sm-2" style="padding-right: 0">
                 <?php include_once "classes/ManageTasks.php"; ?>
-                <div style="background-color: #333;height: 130px;margin-top: 50px">
-                    <h3 style="font-family: sukhumvit;font-size: 1.35em;padding: 10px;color: #fff;margin: 0">
-                        ค่า Estimate ทั้งหมด :
+                <div style="background-color: #333;height: 125px;margin-top: 50px">
+                    <h3 style="font-family: sukhumvit;font-size: 1.3em;padding: 5px;color: #fff;margin: 0">
+                        ผลรวมของ Task ทั้งหมด :
                         <?php
                         foreach ($resultSummary as $point) {
                             echo $point['EstimateSum'];
@@ -178,7 +183,7 @@ if (ManageSession::isPO()) {
                         ?>
                     </h3>
 
-                    <h3 style="font-family: sukhumvit;font-size: 1.35em;padding: 10px;color: #fff;margin: 0">
+                    <h3 style="font-family: sukhumvit;font-size: 1.3em;padding: 5px;color: #fff;margin: 0">
                         จำนวน Task ทั้งหมด :
                         <?php
                         $taskConn = new ManageTasks();
@@ -187,12 +192,24 @@ if (ManageSession::isPO()) {
                         ?>
                     </h3>
 
-                    <h3 style="font-family: sukhumvit;font-size: 1.35em;padding: 10px;color: #fff;margin: 0">
+
+                    <h3 style="font-family: sukhumvit;font-size: 1.3em;padding: 5px;color: #fff;margin: 0">
                         Velocity :
                         <?php
-                        echo number_format($maxEstimate / $countOfTask, 2 , "." , ".");
+                        echo number_format($maxEstimate / $countOfTask, 2, ".", ".");
                         ?>
                     </h3>
+
+                    <h3 style="font-family: sukhumvit;font-size: 1.3em;padding: 5px;color: #fff;margin: 0">
+                        วันที่เริ่ม :
+                        <?php
+                        $start = $sprintConn->getStartDateById($sprintId);
+                        foreach ($start as $startDate) {
+                            echo $startDate['sbl_started'];
+                        }
+                        ?>
+                    </h3>
+
 
                 </div>
             </div>
