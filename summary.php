@@ -51,6 +51,16 @@ if (ManageSession::isPO()) {
                      $next = strtotime($splitDay['sbl_started']);
                  }
 
+                 $startEstimate = "";
+                 $startSprint = array();
+                 //หาค่าวันแรกที่ Estimate
+                 foreach ($resultSprint as $splitDay) {
+                 $resultStart = $summaryConn->getStartDateById($_GET['id'], $splitDay['sbl_started']);
+                    foreach ($resultStart as $startEstimate) {
+                        $startEstimate = $startEstimate['Start'];
+                    }
+                 }
+
                  //หาจำนวนวัน 14 วันแล้วเก็บใน array
                  for ($i = 1; $i <= 14; $i++) {
                      $next = strtotime("+1 days", $next);
@@ -62,7 +72,7 @@ if (ManageSession::isPO()) {
                     }
                  }
 
-                 //หาแต่ละวัน Burn ไปเท่าไหร่?
+                 //หาแต่ละวัน Burn ไปเท่าไหร่? ค่า task
                  $plot = array();
                  for ($i = 0; $i < count($day); $i++) {
                      $resultPlot = $summaryConn->getPlotChart($day[$i], $sprintId);
@@ -93,17 +103,22 @@ if (ManageSession::isPO()) {
                     pointHighlightFill: "#fff",
                     pointHighlightStroke: "rgba(151,187,205,1)",
                     data: [
-                        <?php echo $max; ?>
+                        <?php echo $startEstimate; ?>
                         <?php
                         for ($i = 0; $i < count($plot); $i++) {
-                            $max -= $plot[$i];
-                            echo ",".$max;
+//                        if($plot[$i] > 0){
+//                           $max += $plot[$i];
+//                        }
+                        $max -= $plot[$i];
+                        echo ",".$max;
                         }
                         ?>
                     ]
                 }
             ]
         }
+
+        console.log(<?php echo $startEstimate; ?>);
         window.onload = function () {
             var ctx = document.getElementById("burn_down_chart").getContext("2d");
             window.myLine = new Chart(ctx).Line(lineChartData, {
@@ -163,6 +178,17 @@ if (ManageSession::isPO()) {
                 <div>
                     <h3 style="font-family: sukhumvit;font-size: 1.35em;font-weight: bold;padding: 0;margin: 0">
                         ค่าของการ Estimate
+
+                        <?php
+                        $startSprint = array();
+                        //หาค่าวันแรกที่ Estimate
+                        foreach ($resultSprint as $splitDay) {
+                            $resultStart = $summaryConn->getStartDateById($_GET['id'], $splitDay['sbl_started']);
+                            foreach ($resultStart as $startEstimate) {
+                                echo $startEstimate['Start'];
+                            }
+                        }
+                        ?>
                     </h3>
 
                     <canvas id="burn_down_chart"></canvas>

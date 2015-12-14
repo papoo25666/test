@@ -15,7 +15,7 @@ class ManageTasks
 
     public function insertTask($task_name, $task_value, $task_volunteer, $sprint_id, $story_id)
     {
-        $this->result = $this->db->prepare("INSERT INTO tasks(task_name,task_value,task_volunteer,sbl_id,user_story_id) VALUES(?,?,?,?,?)");
+        $this->result = $this->db->prepare("INSERT INTO tasks(task_name,task_value,task_volunteer,task_start,sbl_id,user_story_id) VALUES(?,?,?,NOW(),?,?)");
         $value = array($task_name, $task_value, $task_volunteer, $sprint_id, $story_id);
         $this->result->execute($value);
         return $this->result->rowCount();
@@ -46,7 +46,6 @@ class ManageTasks
 
     public function editTaskWithEndDate($taskId, $taskState)
     {
-
         $this->result = $this->db->prepare("UPDATE tasks SET task_state = ?,task_end = NOW() WHERE task_id = ?");
         $value = array($taskState, $taskId);
         $this->result->execute($value);
@@ -54,6 +53,14 @@ class ManageTasks
     }
 
     public function getCountTaskBySprintId($sprintId)
+    {
+        $this->result = $this->db->prepare("SELECT *FROM tasks WHERE sbl_id = ?");
+        $value = array($sprintId);
+        $this->result->execute($value);
+        return $this->result->rowCount();
+    }
+
+    public function getEstimateStartDate($sprintId)
     {
         $this->result = $this->db->prepare("SELECT *FROM tasks WHERE sbl_id = ?");
         $value = array($sprintId);

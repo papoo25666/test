@@ -1,5 +1,6 @@
 <?php
 include_once "classes/ManageSession.php";
+date_default_timezone_set("Asia/Bangkok");
 if (!ManageSession::isLogged()) {
     header("location:login.php");
 }
@@ -89,20 +90,25 @@ if (!ManageSession::isLogged()) {
 
                 </li>
             </div>
-            <h3 class="sprint-backlog-centent"
-                style="font-family: sukhumvit;font-weight: bold;font-size: 2em;margin-top: 0">
-                <?php
-                $id = $_GET['id'];
-                include_once "configs/config.php";
-                include_once "classes/ManageSprint.php";
-                include_once "classes/ManageTasks.php";
-                $db = new ManageSprint();
-                $result = $db->getSprintById($id);
-                foreach ($result as $row) {
-                    echo $row['sbl_name'];
-                }
-                ?>
-            </h3>
+            <div>
+                <span class="sprint-backlog-centent"
+                      style="font-family: sukhumvit;font-weight: bold;font-size: 2em;margin-top: 0">
+                    <?php
+                    $id = $_GET['id'];
+                    include_once "configs/config.php";
+                    include_once "classes/ManageSprint.php";
+                    include_once "classes/ManageTasks.php";
+                    $db = new ManageSprint();
+                    $result = $db->getSprintById($id);
+                    foreach ($result as $row) {
+                        echo $row['sbl_name'];
+                    }
+                    ?>
+                </span>
+
+                <a class="btn btn-warning pull-right" href="summary.php?id=<?php echo $_GET['id']; ?>"
+                   style="color: #ffffff">Burn Down Chart</a>
+            </div>
 
             <div class="row" style="margin: 0;">
                 <table>

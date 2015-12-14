@@ -42,6 +42,15 @@ class ManageSummary
         $this->result->execute($value);
         return $this->result->fetchAll();
     }
+
+    public function getStartDateById($sprintId, $date)
+    {
+        $this->result = $this->db->prepare("SELECT SUM(task_value) AS Start FROM tasks INNER JOIN sprint_backlog "
+            . "ON sprint_backlog.sbl_id = ? AND task_start = ? AND sprint_backlog.sbl_id = tasks.sbl_id");
+        $value = array($sprintId, $date);
+        $this->result->execute($value);
+        return $this->result->fetchAll();
+    }
 }
 
 ?>

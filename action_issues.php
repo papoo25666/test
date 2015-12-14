@@ -1,6 +1,6 @@
 <?php
 include_once "classes/ManageSession.php";
-
+date_default_timezone_set("Asia/Bangkok");
 if (!ManageSession::isLogged()) {
     header("location:login.php");
 }
