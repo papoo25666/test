@@ -10,8 +10,10 @@ if (isset($_POST['task_name']) && isset($_POST['task_volunteer']) && isset($_POS
     $sprintId = $_POST['sprint_id'];
     $storyId = $_POST['story_id'];
 
+    $date = date('Y-m-d', strtotime('now'));
+
     $conn = new ManageTasks();
-    $result = $conn->insertTask($task_name, $task_estimate, $task_volunteer, $sprintId, $storyId);
+    $result = $conn->insertTask($task_name, $task_estimate, $task_volunteer, $date, $sprintId, $storyId);
 
     if ($result == 1) {
         header("location: add_tasks.php?sprint_id=" . $storyId . "&story_id=" . $storyId);

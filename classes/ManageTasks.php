@@ -13,10 +13,10 @@ class ManageTasks
         $this->db = $conn->connect();
     }
 
-    public function insertTask($task_name, $task_value, $task_volunteer, $sprint_id, $story_id)
+    public function insertTask($task_name, $task_value, $task_volunteer, $task_start, $sprint_id, $story_id)
     {
-        $this->result = $this->db->prepare("INSERT INTO tasks(task_name,task_value,task_volunteer,task_start,sbl_id,user_story_id) VALUES(?,?,?,NOW(),?,?)");
-        $value = array($task_name, $task_value, $task_volunteer, $sprint_id, $story_id);
+        $this->result = $this->db->prepare("INSERT INTO tasks(task_name,task_value,task_volunteer,task_start,sbl_id,user_story_id) VALUES(?,?,?,?,?,?)");
+        $value = array($task_name, $task_value, $task_volunteer, $task_start, $sprint_id, $story_id);
         $this->result->execute($value);
         return $this->result->rowCount();
     }
@@ -38,16 +38,16 @@ class ManageTasks
 
     public function editTask($taskId, $taskState)
     {
-        $this->result = $this->db->prepare("UPDATE tasks SET task_state = ? WHERE task_id = ?");
+        $this->result = $this->db->prepare("UPDATE tasks SET task_state = ?,task_end = NULL WHERE task_id = ?");
         $value = array($taskState, $taskId);
         $this->result->execute($value);
         return $this->result->rowCount();
     }
 
-    public function editTaskWithEndDate($taskId, $taskState)
+    public function editTaskWithEndDate($taskId, $startDate, $taskState)
     {
-        $this->result = $this->db->prepare("UPDATE tasks SET task_state = ?,task_end = NOW() WHERE task_id = ?");
-        $value = array($taskState, $taskId);
+        $this->result = $this->db->prepare("UPDATE tasks SET task_state = ?,task_end = ? WHERE task_id = ?");
+        $value = array($taskState, $startDate, $taskId);
         $this->result->execute($value);
         return $this->result->rowCount();
     }
