@@ -57,7 +57,7 @@ session_start();
     <!--End Navbar-->
 
     <!--Welcome message -->
-    <section class="header-content" style="margin-top: 70px;min-height: 600px;">
+    <section class="header-content" style="margin-top: 70px;min-height: 620px;">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="col-lg-4 col-md-4 col-sm-4 col-lg-offset-4 col-md-offset-4">
                 <?php

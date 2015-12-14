@@ -4,7 +4,8 @@ if (isset($_GET['id'])) {
     $id = $_GET['id'];
     $db = new ManageUserStory();
 
-    $result = $db->deleteStoryItems($id);
+    //$result = $db->deleteStoryItems($id);
+    $result = $db->editUserStoryWork($id);
     if ($result == 1) {
         header("location: action_backlog.php");
     } else {

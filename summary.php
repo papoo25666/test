@@ -148,7 +148,7 @@ if (ManageSession::isPO()) {
     </section>
     <!--End Navbar-->
 
-    <section class="content" style="min-height: 530px;margin-top: 30px">
+    <section class="content" style="min-height: 600px;margin-top: 30px">
         <div class="col-lg-12 col-md-12 col-sm-12">
             <div class="col-lg-8 col-md-8 col-sm-8 col-lg-offset-2 col-md-offset-2 col-sm-offset-2"
                  style="min-height: 390px;margin-top: 50px;padding-left: 0; padding-right: 0">

@@ -79,7 +79,7 @@ if (!ManageSession::isLogged()) {
     </section>
     <!--End Navbar-->
 
-    <section class="content container-fluid" style="min-height: 500px;margin-top: 70px">
+    <section class="content container-fluid" style="min-height: 650px;margin-top: 70px">
         <div class="col-lg-12 col-md-12 col-sm-12 col-sm-12" style="margin-top: 10px">
             <div class="breadcrumb">
                 <li>
@@ -112,7 +112,7 @@ if (!ManageSession::isLogged()) {
                         <th class="text-center">TASKS</th>
                         <th class="text-center">ESTIMATE VALUE</th>
                         <th class="text-center">VOLUNTEER</th>
-                        <th class="text-center">STATE</th>
+                        <th class="text-center">STATUS</th>
                     </tr>
                     </thead>
                     <tbody>
