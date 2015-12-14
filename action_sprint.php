@@ -139,11 +139,16 @@ if (!ManageSession::isLogged()) {
                                                 <span class="caret"></span>
                                             </button>
                                             <ul class="dropdown-menu" style="background-color: #333">
-                                                <li>
-                                                    <a href="select_team.php?id=<?php echo $row['sbl_id']; ?>">เลือกทีม</a>
-                                                </li>
+                                                <?php
+                                                $now = strtotime('now');
+                                                if ($now < strtotime($row['sbl_end'])) { ?>
+                                                    <li>
+                                                        <a href="select_team.php?id=<?php echo $row['sbl_id']; ?>">เลือกทีม</a>
+                                                    </li>
+                                                <?php } ?>
                                                 <li>
                                                     <?php
+                                                    $now = strtotime('now');
                                                     if ($now < strtotime($row['sbl_end'])) {
                                                         ?>
                                                         <a href="add_sprint.php?id=<?php echo $row['sbl_id']; ?>&name=<?php echo $row['sbl_name']; ?>">
@@ -151,6 +156,7 @@ if (!ManageSession::isLogged()) {
                                                         </a>
                                                     <?php } ?>
                                                 </li>
+
                                                 <li>
                                                     <a href="action_issues.php?id=<?php echo $row['sbl_id']; ?>">
                                                         ปัญหา

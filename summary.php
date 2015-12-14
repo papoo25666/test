@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set("Asia/Bangkok");
 include_once "classes/ManageSession.php";
 if (!ManageSession::isLogged()) {
     header("location:login.php");
@@ -172,7 +173,7 @@ if (ManageSession::isPO()) {
             </div>
             <div class="col-lg-2 col-md-2 col-sm-2" style="padding-right: 0">
                 <?php include_once "classes/ManageTasks.php"; ?>
-                <div style="background-color: #333;height: 125px;margin-top: 50px">
+                <div style="background-color: #333;height: 145px;margin-top: 50px">
                     <h3 style="font-family: sukhumvit;font-size: 1.3em;padding: 5px;color: #fff;margin: 0">
                         ผลรวมของ Task ทั้งหมด :
                         <?php
@@ -210,6 +211,15 @@ if (ManageSession::isPO()) {
                         ?>
                     </h3>
 
+                    <h3 style="font-family: sukhumvit;font-size: 1.3em;padding: 5px;color: #fff;margin: 0">
+                        วันที่สิ้นสุด :
+                        <?php
+                        $start = $sprintConn->getStartDateById($sprintId);
+                        foreach ($start as $startDate) {
+                            echo $startDate['sbl_end'];
+                        }
+                        ?>
+                    </h3>
 
                 </div>
             </div>

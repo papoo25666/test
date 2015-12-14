@@ -182,12 +182,7 @@ if (ManageSession::isPO()) {
                                 </ul>
                             </div>
                             <div class="text-center" style="margin-top: 10px">
-                                <button class="btn btn-warning" id="submit-story"
-                                        onclick="return confirm('คุณต้องการเพิ่ม User Story ทั้งหมดหรือไม่?')"
-                                        style="font-family: sukhumvit;font-size: 1.2em;width: 200px">ตกลง
-                                </button>
-                                <a href="sprint_backlog.php?id=<?php echo $_GET['id']; ?>" class="alert-for-success"
-                                   style="font-size: 1.2em;font-weight: bold;font-family: sukhumvit;margin-left: 10px"></a>
+
                             </div>
                         </div>
                     </div>

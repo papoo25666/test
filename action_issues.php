@@ -1,5 +1,6 @@
 <?php
 include_once "classes/ManageSession.php";
+
 if (!ManageSession::isLogged()) {
     header("location:login.php");
 }
@@ -121,10 +122,21 @@ if (!ManageSession::isLogged()) {
                         ปัญหา
                     </li>
                 </div>
-                <a class="btn btn-warning" href="add_issues.php?id=<?php echo $_GET['id']; ?>"
-                   style="font-family: sukhumvit;font-size: 1.2em;margin-bottom: 5px">
-                    โพสประเด็นหรือปัญหา
-                </a>
+                <?php
+                include_once "configs/config.php";
+                include_once "classes/ManageSprint.php";
+                $db = new ManageSprint();
+                $now = strtotime('now');
+                $result = $db->getSprintById($_GET['id']);
+                foreach ($result as $row) {
+                    if ($now < strtotime($row['sbl_end'])) {
+                        ?>
+                        <a class="btn btn-warning" href="add_issues.php?id=<?php echo $_GET['id']; ?>"
+                           style="font-family: sukhumvit;font-size: 1.2em;margin-bottom: 5px">
+                            โพสประเด็นหรือปัญหา
+                        </a>
+                    <?php }
+                } ?>
 
                 <ul class="list-group" style="overflow: auto;height: 500px;background-color: #E0E0E0;">
                     <?php include_once "classes/ManageIssues.php"; ?>
@@ -173,8 +185,9 @@ if (!ManageSession::isLogged()) {
                                     </div>
                                     <div class="col-lg-12">
                                         <div class="text-center">
-                                            <img class="img img-rounded text-center" style="width: 85%;padding-bottom: 5px"
-                                                 src="<?php echo $row['issue_image_path']; ?>" />
+                                            <img class="img img-rounded text-center"
+                                                 style="width: 85%;padding-bottom: 5px"
+                                                 src="<?php echo $row['issue_image_path']; ?>"/>
                                         </div>
                                     </div>
                                 </div>
