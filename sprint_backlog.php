@@ -118,7 +118,7 @@ if (!ManageSession::isLogged()) {
                         <th class="text-center">TASKS</th>
                         <th class="text-center">ESTIMATE VALUE</th>
                         <th class="text-center">VOLUNTEER</th>
-                        <th class="text-center">STATUS</th>
+                        <th class="text-center" style="width: 13%">STATUS</th>
                     </tr>
                     </thead>
                     <tbody>
