@@ -166,7 +166,7 @@ if (ManageSession::isPO()) {
                                 foreach ($list as $row) {
                                     ?>
                                     <li>
-                                        <h4 style="font-family: sukhumvit;font-size: 1.3em"><?php echo $row['user_story_name']; ?></h4>
+                                        <h4 style="font-family: sukhumvit;font-size: 1.4em"><?php echo $row['user_story_name']; ?></h4>
                                     </li>
                                 <?php } ?>
                             </ul>
