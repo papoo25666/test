@@ -61,6 +61,7 @@ if (ManageSession::isPO()) {
                     }
                  }
 
+                 $halfValue = 0;
                  //หาจำนวนวัน 14 วันแล้วเก็บใน array
                  for ($i = 1; $i <= 14; $i++) {
                     $next = strtotime("+1 days", $next);
@@ -91,6 +92,7 @@ if (ManageSession::isPO()) {
                  foreach ($resultSummary as $point)
                     $max = $point['EstimateSum'];
                 //end if of check existing task
+                $max -= $halfValue;
         ?>
         var randomScalingFactor = function () {
             return Math.round(Math.random() * 100)
@@ -114,10 +116,6 @@ if (ManageSession::isPO()) {
                             if($i == 6){
                                 $max += $halfValue;
                                 continue;
-                            }
-                            if($i == 7){
-                                $max -= $halfValue;
-                                $half = $max;
                             }
                             $max -= $plot[$i];
                             echo ",".$max;
@@ -149,6 +147,7 @@ if (ManageSession::isPO()) {
             </button>
             <a class="navbar-brand" href="index.php">Scrum Board</a>
         </div>
+
         <div class="navbar-collapse collapse navbar-inverse-collapse">
             <?php include_once "classes/ManageSession.php"; ?>
             <ul class="nav navbar-nav navbar-right" style="margin-right: 0">
@@ -184,6 +183,11 @@ if (ManageSession::isPO()) {
                         Burn Down Chart
                     </li>
                 </div>
+                <a class="btn btn-warning" style="margin: 5px;width: 80px"
+                   href="sprint_backlog.php?id=<?php echo $_GET['id']; ?>">
+                    กลับ
+                </a>
+
                 <div>
                     <h3 style="font-family: sukhumvit;font-size: 1.35em;font-weight: bold;padding: 0;margin: 0">
                         ค่าของการ Estimate

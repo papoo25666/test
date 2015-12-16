@@ -131,7 +131,7 @@ if (!ManageSession::isLogged()) {
                     foreach ($result as $row) {
                         $list = $conn->getTaskByStoryId($row['user_story_id']);
                         ?>
-                        <tr style="background-color: #EEEEEE">
+                        <tr style="background-color: #EEEEEE;border: 1px solid #333;border-top: 0;border-right: 0;border-left: 0">
                             <td rowspan="<?php echo count($list) + 1; ?>">
                                 <a style="font-family: sukhumvit;font-size: 1.2em;color: #000"
                                    href="add_tasks.php?sprint_id=<?php echo $_GET['id']; ?>&story_id=<?php echo $row['user_story_id']; ?>">
@@ -140,7 +140,7 @@ if (!ManageSession::isLogged()) {
                         </tr>
                         <?php foreach ($list as $data) { ?>
                             <tr style="background-color: transparent">
-                                <td class="text-center">
+                                <td class="text-center" >
                                     <?php echo $data['task_name']; ?>
                                 </td>
                                 <td class="text-center">
