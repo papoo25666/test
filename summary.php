@@ -43,51 +43,53 @@ if (ManageSession::isPO()) {
                  $sprintConn = new ManageSprint();
                  $taskConn = new ManageTasks();
 
-                    echo "console.log('is');";
-                     $day = array();
-                     //หาวันเริ่ม Sprint
-                     $resultSprint = $sprintConn->getSprintById($_GET['id']);
-                     foreach ($resultSprint as $splitStartDay) {
-                         array_push($day, $splitStartDay['sbl_started']);
-                         $next = strtotime($splitStartDay['sbl_started']);
-                     }
+                 $day = array();
+                 //หาวันเริ่ม Sprint
+                 $resultSprint = $sprintConn->getSprintById($_GET['id']);
+                 foreach ($resultSprint as $splitStartDay) {
+                    array_push($day, $splitStartDay['sbl_started']);
+                    $next = strtotime($splitStartDay['sbl_started']);
+                 }
 
-                     $startSprint = array();
-                     //หาค่าวันแรกที่ Estimate
-                     foreach ($resultSprint as $splitDay) {
-                     $resultStart = $summaryConn->getStartDateById($_GET['id'], $splitDay['sbl_started']);
-                        foreach ($resultStart as $startEstimate) {
-                            $startEstimate = $startEstimate['Start'];
-                        }
-                     }
+                 $startSprint = array();
+                 $startTask = "";
+                 //หาค่าวันแรกที่ Estimate
+                 foreach ($resultSprint as $splitDay) {
+                    $resultStart = $summaryConn->getStartDateById($_GET['id'], $splitDay['sbl_started']);
+                    foreach ($resultStart as $startEstimate) {
+                        $startTask = $startEstimate['Start'];
+                    }
+                 }
 
-                     //หาจำนวนวัน 14 วันแล้วเก็บใน array
-                     for ($i = 1; $i <= 14; $i++) {
-                         $next = strtotime("+1 days", $next);
-                         $convert = date('Y-m-d', $next);
-                         array_push($day, $convert);
-                        if (date('Y-m-d', strtotime('now')) == $convert) {
-                                break;
+                 //หาจำนวนวัน 14 วันแล้วเก็บใน array
+                 for ($i = 1; $i <= 14; $i++) {
+                    $next = strtotime("+1 days", $next);
+                    $convert = date('Y-m-d', $next);
+                    array_push($day, $convert);
+
+                    if($i == 7){
+                        $halfDate = $taskConn->getTaskValueHalfOfSprint($_GET['id'] , $convert);
+                        foreach($halfDate as $row) {
+                            $halfValue =  $row['Half'];
                         }
-                        if($i == 7){
-                            $halfDate = $taskConn->getTaskValueHalfOfSprint($_GET['id'] , $convert);
-                            foreach($halfDate as $row) {
-                                $halfValue =  $row['Half'];
-                            }
-                        }
-                     }
-                     //หาแต่ละวัน Burn ไปเท่าไหร่? ค่า task
-                     $plot = array();
-                     for ($i = 0; $i < count($day); $i++) {
-                         $resultPlot = $summaryConn->getPlotChart($day[$i], $sprintId);
-                         foreach ($resultPlot as $p) {
-                             array_push($plot, $p['Plot']);
-                         }
-                     }
-                     //หา Max ของ Estimate ทั้งหมด
-                     $resultSummary = $summaryConn->getSumEstimate($sprintId);
-                     foreach ($resultSummary as $point)
-                         $max = $point['EstimateSum'];
+                    }
+                    if (date('Y-m-d', strtotime('now')) == $convert) {
+                        break;
+                    }
+                 }
+
+                 //หาแต่ละวัน Burn ไปเท่าไหร่? ค่า task
+                 $plot = array();
+                 for ($i = 0; $i < count($day); $i++) {
+                    $resultPlot = $summaryConn->getPlotChart($day[$i], $sprintId);
+                    foreach ($resultPlot as $p) {
+                        array_push($plot, $p['Plot']);
+                    }
+                 }
+                 //หา Max ของ Estimate ทั้งหมด
+                 $resultSummary = $summaryConn->getSumEstimate($sprintId);
+                 foreach ($resultSummary as $point)
+                    $max = $point['EstimateSum'];
                 //end if of check existing task
         ?>
         var randomScalingFactor = function () {
@@ -106,9 +108,17 @@ if (ManageSession::isPO()) {
                     pointHighlightFill: "#fff",
                     pointHighlightStroke: "rgba(151,187,205,1)",
                     data: [
-                        <?php echo $startEstimate; ?>
+                        <?php echo $startTask; ?>
                         <?php
                         for ($i = 0; $i < count($plot); $i++) {
+                            if($i == 6){
+                                $max += $halfValue;
+                                continue;
+                            }
+                            if($i == 7){
+                                $max -= $halfValue;
+                                $half = $max;
+                            }
                             $max -= $plot[$i];
                             echo ",".$max;
                         }
@@ -117,7 +127,7 @@ if (ManageSession::isPO()) {
                 }
             ]
         }
-
+        <?php echo "console.log('7 : ".$half.",".$halfValue."');"; ?>
         window.onload = function () {
             var ctx = document.getElementById("burn_down_chart").getContext("2d");
             window.myLine = new Chart(ctx).Line(lineChartData, {

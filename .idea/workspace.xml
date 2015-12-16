@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b83c9af4-d766-4356-b561-2a451746cd5a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/ManageTasks.php" afterPath="$PROJECT_DIR$/classes/ManageTasks.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sprint_backlog.php" afterPath="$PROJECT_DIR$/sprint_backlog.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/summary.php" afterPath="$PROJECT_DIR$/summary.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -83,11 +81,42 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ManageTasks.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="summary.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/summary.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="1.4748201">
+              <caret line="114" column="40" selection-start-line="114" selection-start-column="40" selection-end-line="114" selection-end-column="40" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#ul#0;n#div#1;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#li#0;n#ul#0;n#div#1;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#li#1;n#ul#0;n#li#0;n#ul#0;n#div#1;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#li#3;n#ul#0;n#li#0;n#ul#0;n#div#1;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h3#0;n#div#1;n#div#0;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h3#1;n#div#1;n#div#0;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h3#0;n#div#0;n#div#1;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h3#1;n#div#0;n#div#1;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h3#2;n#div#0;n#div#1;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h3#3;n#div#0;n#div#1;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h3#4;n#div#0;n#div#1;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#section#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#footer#0;n#section#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#div#0;n#footer#0;n#section#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ManageTasks.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/classes/ManageTasks.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3381295">
-              <caret line="70" column="66" selection-start-line="70" selection-start-column="66" selection-end-line="70" selection-end-column="66" />
+            <state vertical-scroll-proportion="-8.133333">
+              <caret line="72" column="121" selection-start-line="72" selection-start-column="44" selection-end-line="72" selection-end-column="121" />
               <folding>
                 <marker date="1450265509131" expanded="true" signature="381:487" placeholder="INSERT INTO ..." />
                 <marker date="1450265509131" expanded="true" signature="765:805" placeholder="SELECT *FROM..tasks..." />
@@ -96,105 +125,8 @@
                 <marker date="1450265509131" expanded="true" signature="1670:1732" placeholder="UPDATE tasks..." />
                 <marker date="1450265509131" expanded="true" signature="1986:2021" placeholder="SELECT *FROM..tasks..." />
                 <marker date="1450265509131" expanded="true" signature="2251:2286" placeholder="SELECT *FROM..tasks..." />
-                <marker date="1450265509131" expanded="true" signature="2531:2589" placeholder="SELECT *FROM..tasks..." />
-                <marker date="1450265509131" expanded="true" signature="2531:2608" placeholder="SELECT SUM(t..." />
+                <marker date="1450265509131" expanded="true" signature="2531:2608" placeholder="SELECT SUM(t..tasks..." />
                 <marker date="1450265509131" expanded="true" signature="2846:2881" placeholder="SELECT *FROM..tasks..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sprint_backlog.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sprint_backlog.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.6">
-              <caret line="90" column="21" selection-start-line="90" selection-start-column="21" selection-end-line="90" selection-end-column="21" />
-              <folding>
-                <element signature="n#style#0;n#th#4;n#tr#0;n#thead#0;n#table#0;n#div#2;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#tr#1;n#tbody#0;n#table#0;n#div#2;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="summary.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/summary.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.033334">
-              <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#ul#0;n#div#1;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1450264100694" expanded="true" signature="6754:7152" placeholder="..." />
-                <marker date="1450264100694" expanded="true" signature="6822:6835" placeholder="..." />
-                <marker date="1450264100694" expanded="true" signature="6930:6943" placeholder="..." />
-                <marker date="1450264100694" expanded="true" signature="7093:7106" placeholder="..." />
-                <marker date="1450264100694" expanded="true" signature="7314:7348" placeholder="..." />
-                <marker date="1450264100694" expanded="true" signature="7349:8899" placeholder="..." />
-                <marker date="1450264100694" expanded="true" signature="7401:8899" placeholder="..." />
-                <marker date="1450264100694" expanded="true" signature="7502:8384" placeholder="..." />
-                <marker date="1450264100694" expanded="true" signature="7527:7595" placeholder="..." />
-                <marker date="1450264100694" expanded="true" signature="7637:7888" placeholder="..." />
-                <marker date="1450264100694" expanded="true" signature="7662:7759" placeholder="..." />
-                <marker date="1450264100694" expanded="true" signature="7799:7865" placeholder="..." />
-                <marker date="1450264100694" expanded="true" signature="7910:8365" placeholder="..." />
-                <marker date="1450264100694" expanded="true" signature="7943:8022" placeholder="..." />
-                <marker date="1450264100694" expanded="true" signature="8023:8092" placeholder="..." />
-                <marker date="1450264100694" expanded="true" signature="8185:8282" placeholder="..." />
-                <marker date="1450264100694" expanded="true" signature="8283:8342" placeholder="..." />
-                <marker date="1450264100694" expanded="true" signature="8445:8461" placeholder="..." />
-                <marker date="1450264100694" expanded="true" signature="8462:8899" placeholder="..." />
-                <marker date="1450264100694" expanded="true" signature="8557:8610" placeholder="..." />
-                <marker date="1450264100694" expanded="true" signature="8611:8899" placeholder="..." />
-                <marker date="1450264100694" expanded="true" signature="8644:8718" placeholder="..." />
-                <marker date="1450264100694" expanded="true" signature="8719:8899" placeholder="..." />
-                <marker date="1450264100694" expanded="true" signature="9093:9167" placeholder="..." />
-                <marker date="1450264100694" expanded="true" signature="9168:9511" placeholder="..." />
-                <marker date="1450264100694" expanded="true" signature="9546:9620" placeholder="..." />
-                <marker date="1450264100694" expanded="true" signature="9621:9825" placeholder="..." />
-                <marker date="1450264100694" expanded="true" signature="9859:9933" placeholder="..." />
-                <marker date="1450264100694" expanded="true" signature="9934:10179" placeholder="..." />
-                <marker date="1450264100694" expanded="true" signature="10307:10381" placeholder="..." />
-                <marker date="1450264100694" expanded="true" signature="10382:10629" placeholder="..." />
-                <marker date="1450264100694" expanded="true" signature="10856:10872" placeholder="..." />
-                <marker date="1450264100694" expanded="true" signature="10873:11774" placeholder="..." />
-                <marker date="1450264100694" expanded="true" signature="10898:10911" placeholder="..." />
-                <marker date="1450264100694" expanded="true" signature="10912:11759" placeholder="..." />
-                <marker date="1450264100694" expanded="true" signature="10948:11741" placeholder="..." />
-                <marker date="1450264100694" expanded="true" signature="10992:11430" placeholder="..." />
-                <marker date="1450264100694" expanded="true" signature="11062:11138" placeholder="..." />
-                <marker date="1450264100694" expanded="true" signature="11208:11271" placeholder="..." />
-                <marker date="1450264100694" expanded="true" signature="11341:11407" placeholder="..." />
-                <marker date="1450264100694" expanded="true" signature="11464:11722" placeholder="..." />
-                <marker date="1450264100694" expanded="true" signature="11510:11699" placeholder="..." />
-                <marker date="1450264100694" expanded="true" signature="11546:11580" placeholder="..." />
-                <marker date="1450264100694" expanded="true" signature="11581:11672" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ManageSprint.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classes/ManageSprint.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="38.166668">
-              <caret line="50" column="41" selection-start-line="50" selection-start-column="41" selection-end-line="50" selection-end-column="41" />
-              <folding>
-                <marker date="1450123797129" expanded="true" signature="400:487" placeholder="INSERT INTO ..." />
-                <marker date="1450123797129" expanded="true" signature="708:764" placeholder="SELECT *FROM..sprint_backlog..." />
-                <marker date="1450123797129" expanded="true" signature="941:985" placeholder="SELECT *FROM..sprint_backlog..." />
-                <marker date="1450123797129" expanded="true" signature="1194:1239" placeholder="SELECT COUNT..sprint_backlog..." />
-                <marker date="1450123797129" expanded="true" signature="1408:1435" placeholder="SELECT *FROM..sprint_backlog..." />
-                <marker date="1450123797129" expanded="true" signature="1621:1733" placeholder="SELECT *FROM..sprint_backlog..." />
-                <marker date="1450123797129" expanded="true" signature="1970:2016" placeholder="DELETE FROM ..." />
-                <marker date="1450123797129" expanded="true" signature="2099:2142" placeholder="DELETE FROM ..." />
-                <marker date="1450123797129" expanded="true" signature="2347:2393" placeholder="SELECT *FROM..sprint_backlog..." />
-                <marker date="1450123797129" expanded="true" signature="2634:2737" placeholder="INSERT INTO ..." />
-                <marker date="1450123797129" expanded="true" signature="2975:3192" placeholder="SELECT *FROM..user_story..." />
-                <marker date="1450123797129" expanded="true" signature="3417:3649" placeholder="SELECT *FROM..sprint_backlog..." />
-                <marker date="1450123797129" expanded="true" signature="3888:3947" placeholder="SELECT *FROM..sprint_backlog_has_user_story..." />
-                <marker date="1450123797129" expanded="true" signature="4173:4217" placeholder="SELECT *FROM..sprint_backlog..." />
               </folding>
             </state>
           </provider>
@@ -203,8 +135,8 @@
       <file leaf-file-name="ManageSummary.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/classes/ManageSummary.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.433333">
-              <caret line="47" column="75" selection-start-line="47" selection-start-column="70" selection-end-line="47" selection-end-column="75" />
+            <state vertical-scroll-proportion="-9.733334">
+              <caret line="46" column="5" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
               <folding>
                 <marker date="1450124114412" expanded="true" signature="323:478" placeholder="SELECT *FROM..tasks..." />
                 <marker date="1450124114412" expanded="true" signature="703:864" placeholder="SELECT SUM(t..tasks..." />
@@ -280,8 +212,8 @@
         <option value="$PROJECT_DIR$/desc_sprint.php" />
         <option value="$PROJECT_DIR$/configs/config.php" />
         <option value="$PROJECT_DIR$/sprint_backlog.php" />
-        <option value="$PROJECT_DIR$/summary.php" />
         <option value="$PROJECT_DIR$/classes/ManageTasks.php" />
+        <option value="$PROJECT_DIR$/summary.php" />
       </list>
     </option>
   </component>
@@ -341,6 +273,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="Scope">
         <subPane subId="Project Files">
           <PATH>
@@ -384,37 +317,8 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Mockup" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Mockup" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="libs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Mockup" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Mockup" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="classes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -471,7 +375,7 @@
     <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
       <method />
     </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server" server_id="2faa0a7a-3bb8-4166-be3f-946c4c411663" server_name="Scrum">
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
@@ -729,34 +633,40 @@
       <option name="project" value="LOCAL" />
       <updated>1450255461747</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="Fixed SQL for get half of sprint">
+      <created>1450265605244</created>
+      <option name="number" value="00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1450265605244</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="false" />
     <layout>
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22181553" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16764276" sideWeight="0.49448818" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46929133" sideWeight="0.50292826" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46929133" sideWeight="0.49707174" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.47086614" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22181553" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16764276" sideWeight="0.49448818" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.193265" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46929133" sideWeight="0.49707174" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.47086614" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14787701" sideWeight="0.5055118" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3984252" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3984252" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -792,7 +702,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Create Team and Delete" />
     <MESSAGE value="Create select team page" />
     <MESSAGE value="Add pretty photo library" />
     <MESSAGE value="Display status select team for sprint" />
@@ -817,7 +726,8 @@
     <MESSAGE value="Fixed bug time zone" />
     <MESSAGE value="Add user story to desc sprint" />
     <MESSAGE value="Automate Deploy" />
-    <option name="LAST_COMMIT_MESSAGE" value="Automate Deploy" />
+    <MESSAGE value="Fixed SQL for get half of sprint" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed SQL for get half of sprint" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1117,7 +1027,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.49046794">
           <caret line="15" column="38" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1125,18 +1034,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="24.166666">
           <caret line="157" column="58" selection-start-line="157" selection-start-column="58" selection-end-line="157" selection-end-column="58" />
-          <folding>
-            <element signature="n#style#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#a#3;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h3#4;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h3#5;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h3#6;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h4#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#section#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#footer#0;n#section#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#div#0;n#footer#0;n#section#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1450240197060" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1144,12 +1042,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.633333">
           <caret line="50" column="49" selection-start-line="50" selection-start-column="49" selection-end-line="50" selection-end-column="49" />
-          <folding>
-            <marker date="1448720195708" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1448720195708" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1448720195708" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1448720195708" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1157,7 +1049,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-12.6">
           <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1165,14 +1056,47 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.25476602">
           <caret line="11" column="2" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/ManageSprint.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.9844021">
+          <caret line="50" column="41" selection-start-line="50" selection-start-column="41" selection-end-line="50" selection-end-column="41" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sprint_backlog.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8630849">
+          <caret line="90" column="21" selection-start-line="90" selection-start-column="21" selection-end-line="90" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/ManageTasks.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.133333">
+          <caret line="72" column="121" selection-start-line="72" selection-start-column="44" selection-end-line="72" selection-end-column="121" />
+          <folding>
+            <marker date="1450265509131" expanded="true" signature="381:487" placeholder="INSERT INTO ..." />
+            <marker date="1450265509131" expanded="true" signature="765:805" placeholder="SELECT *FROM..tasks..." />
+            <marker date="1450265509131" expanded="true" signature="995:1095" placeholder="SELECT *FROM..tasks..." />
+            <marker date="1450265509131" expanded="true" signature="1344:1409" placeholder="UPDATE tasks..." />
+            <marker date="1450265509131" expanded="true" signature="1670:1732" placeholder="UPDATE tasks..." />
+            <marker date="1450265509131" expanded="true" signature="1986:2021" placeholder="SELECT *FROM..tasks..." />
+            <marker date="1450265509131" expanded="true" signature="2251:2286" placeholder="SELECT *FROM..tasks..." />
+            <marker date="1450265509131" expanded="true" signature="2531:2608" placeholder="SELECT SUM(t..tasks..." />
+            <marker date="1450265509131" expanded="true" signature="2846:2881" placeholder="SELECT *FROM..tasks..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classes/ManageSummary.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.433333">
-          <caret line="47" column="75" selection-start-line="47" selection-start-column="70" selection-end-line="47" selection-end-column="75" />
+        <state vertical-scroll-proportion="-9.733334">
+          <caret line="46" column="5" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
           <folding>
             <marker date="1450124114412" expanded="true" signature="323:478" placeholder="SELECT *FROM..tasks..." />
             <marker date="1450124114412" expanded="true" signature="703:864" placeholder="SELECT SUM(t..tasks..." />
@@ -1182,111 +1106,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classes/ManageSprint.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="38.166668">
-          <caret line="50" column="41" selection-start-line="50" selection-start-column="41" selection-end-line="50" selection-end-column="41" />
-          <folding>
-            <marker date="1450123797129" expanded="true" signature="400:487" placeholder="INSERT INTO ..." />
-            <marker date="1450123797129" expanded="true" signature="708:764" placeholder="SELECT *FROM..sprint_backlog..." />
-            <marker date="1450123797129" expanded="true" signature="941:985" placeholder="SELECT *FROM..sprint_backlog..." />
-            <marker date="1450123797129" expanded="true" signature="1194:1239" placeholder="SELECT COUNT..sprint_backlog..." />
-            <marker date="1450123797129" expanded="true" signature="1408:1435" placeholder="SELECT *FROM..sprint_backlog..." />
-            <marker date="1450123797129" expanded="true" signature="1621:1733" placeholder="SELECT *FROM..sprint_backlog..." />
-            <marker date="1450123797129" expanded="true" signature="1970:2016" placeholder="DELETE FROM ..." />
-            <marker date="1450123797129" expanded="true" signature="2099:2142" placeholder="DELETE FROM ..." />
-            <marker date="1450123797129" expanded="true" signature="2347:2393" placeholder="SELECT *FROM..sprint_backlog..." />
-            <marker date="1450123797129" expanded="true" signature="2634:2737" placeholder="INSERT INTO ..." />
-            <marker date="1450123797129" expanded="true" signature="2975:3192" placeholder="SELECT *FROM..user_story..." />
-            <marker date="1450123797129" expanded="true" signature="3417:3649" placeholder="SELECT *FROM..sprint_backlog..." />
-            <marker date="1450123797129" expanded="true" signature="3888:3947" placeholder="SELECT *FROM..sprint_backlog_has_user_story..." />
-            <marker date="1450123797129" expanded="true" signature="4173:4217" placeholder="SELECT *FROM..sprint_backlog..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sprint_backlog.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.6">
-          <caret line="90" column="21" selection-start-line="90" selection-start-column="21" selection-end-line="90" selection-end-column="21" />
-          <folding>
-            <element signature="n#style#0;n#th#4;n#tr#0;n#thead#0;n#table#0;n#div#2;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#tr#1;n#tbody#0;n#table#0;n#div#2;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/summary.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.033334">
-          <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+        <state vertical-scroll-proportion="1.4748201">
+          <caret line="114" column="40" selection-start-line="114" selection-start-column="40" selection-end-line="114" selection-end-column="40" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#ul#0;n#div#1;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1450264100694" expanded="true" signature="6754:7152" placeholder="..." />
-            <marker date="1450264100694" expanded="true" signature="6822:6835" placeholder="..." />
-            <marker date="1450264100694" expanded="true" signature="6930:6943" placeholder="..." />
-            <marker date="1450264100694" expanded="true" signature="7093:7106" placeholder="..." />
-            <marker date="1450264100694" expanded="true" signature="7314:7348" placeholder="..." />
-            <marker date="1450264100694" expanded="true" signature="7349:8899" placeholder="..." />
-            <marker date="1450264100694" expanded="true" signature="7401:8899" placeholder="..." />
-            <marker date="1450264100694" expanded="true" signature="7502:8384" placeholder="..." />
-            <marker date="1450264100694" expanded="true" signature="7527:7595" placeholder="..." />
-            <marker date="1450264100694" expanded="true" signature="7637:7888" placeholder="..." />
-            <marker date="1450264100694" expanded="true" signature="7662:7759" placeholder="..." />
-            <marker date="1450264100694" expanded="true" signature="7799:7865" placeholder="..." />
-            <marker date="1450264100694" expanded="true" signature="7910:8365" placeholder="..." />
-            <marker date="1450264100694" expanded="true" signature="7943:8022" placeholder="..." />
-            <marker date="1450264100694" expanded="true" signature="8023:8092" placeholder="..." />
-            <marker date="1450264100694" expanded="true" signature="8185:8282" placeholder="..." />
-            <marker date="1450264100694" expanded="true" signature="8283:8342" placeholder="..." />
-            <marker date="1450264100694" expanded="true" signature="8445:8461" placeholder="..." />
-            <marker date="1450264100694" expanded="true" signature="8462:8899" placeholder="..." />
-            <marker date="1450264100694" expanded="true" signature="8557:8610" placeholder="..." />
-            <marker date="1450264100694" expanded="true" signature="8611:8899" placeholder="..." />
-            <marker date="1450264100694" expanded="true" signature="8644:8718" placeholder="..." />
-            <marker date="1450264100694" expanded="true" signature="8719:8899" placeholder="..." />
-            <marker date="1450264100694" expanded="true" signature="9093:9167" placeholder="..." />
-            <marker date="1450264100694" expanded="true" signature="9168:9511" placeholder="..." />
-            <marker date="1450264100694" expanded="true" signature="9546:9620" placeholder="..." />
-            <marker date="1450264100694" expanded="true" signature="9621:9825" placeholder="..." />
-            <marker date="1450264100694" expanded="true" signature="9859:9933" placeholder="..." />
-            <marker date="1450264100694" expanded="true" signature="9934:10179" placeholder="..." />
-            <marker date="1450264100694" expanded="true" signature="10307:10381" placeholder="..." />
-            <marker date="1450264100694" expanded="true" signature="10382:10629" placeholder="..." />
-            <marker date="1450264100694" expanded="true" signature="10856:10872" placeholder="..." />
-            <marker date="1450264100694" expanded="true" signature="10873:11774" placeholder="..." />
-            <marker date="1450264100694" expanded="true" signature="10898:10911" placeholder="..." />
-            <marker date="1450264100694" expanded="true" signature="10912:11759" placeholder="..." />
-            <marker date="1450264100694" expanded="true" signature="10948:11741" placeholder="..." />
-            <marker date="1450264100694" expanded="true" signature="10992:11430" placeholder="..." />
-            <marker date="1450264100694" expanded="true" signature="11062:11138" placeholder="..." />
-            <marker date="1450264100694" expanded="true" signature="11208:11271" placeholder="..." />
-            <marker date="1450264100694" expanded="true" signature="11341:11407" placeholder="..." />
-            <marker date="1450264100694" expanded="true" signature="11464:11722" placeholder="..." />
-            <marker date="1450264100694" expanded="true" signature="11510:11699" placeholder="..." />
-            <marker date="1450264100694" expanded="true" signature="11546:11580" placeholder="..." />
-            <marker date="1450264100694" expanded="true" signature="11581:11672" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/ManageTasks.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3381295">
-          <caret line="70" column="66" selection-start-line="70" selection-start-column="66" selection-end-line="70" selection-end-column="66" />
-          <folding>
-            <marker date="1450265509131" expanded="true" signature="381:487" placeholder="INSERT INTO ..." />
-            <marker date="1450265509131" expanded="true" signature="765:805" placeholder="SELECT *FROM..tasks..." />
-            <marker date="1450265509131" expanded="true" signature="995:1095" placeholder="SELECT *FROM..tasks..." />
-            <marker date="1450265509131" expanded="true" signature="1344:1409" placeholder="UPDATE tasks..." />
-            <marker date="1450265509131" expanded="true" signature="1670:1732" placeholder="UPDATE tasks..." />
-            <marker date="1450265509131" expanded="true" signature="1986:2021" placeholder="SELECT *FROM..tasks..." />
-            <marker date="1450265509131" expanded="true" signature="2251:2286" placeholder="SELECT *FROM..tasks..." />
-            <marker date="1450265509131" expanded="true" signature="2531:2589" placeholder="SELECT *FROM..tasks..." />
-            <marker date="1450265509131" expanded="true" signature="2531:2608" placeholder="SELECT SUM(t..." />
-            <marker date="1450265509131" expanded="true" signature="2846:2881" placeholder="SELECT *FROM..tasks..." />
+            <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#li#0;n#ul#0;n#div#1;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#li#1;n#ul#0;n#li#0;n#ul#0;n#div#1;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#li#3;n#ul#0;n#li#0;n#ul#0;n#div#1;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h3#0;n#div#1;n#div#0;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h3#1;n#div#1;n#div#0;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h3#0;n#div#0;n#div#1;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h3#1;n#div#0;n#div#1;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h3#2;n#div#0;n#div#1;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h3#3;n#div#0;n#div#1;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h3#4;n#div#0;n#div#1;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#footer#0;n#section#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#div#0;n#footer#0;n#section#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
