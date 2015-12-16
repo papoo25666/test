@@ -158,6 +158,18 @@ if (ManageSession::isPO()) {
                             <h3 style="font-family: sukhumvit;font-size: 1.5em">จำนวน User Story ภายใน Sprint
                                 : <?php echo $result; ?>
                             </h3>
+                            <ul>
+                                <?php include_once "classes/ManageSprint.php"; ?>
+                                <?php $db = new ManageSprint(); ?>
+                                <?php
+                                $list = $db->getUserStoryBySprintId($id);
+                                foreach ($list as $row) {
+                                    ?>
+                                    <li>
+                                        <h4 style="font-family: sukhumvit;font-size: 1.3em"><?php echo $row['user_story_name']; ?></h4>
+                                    </li>
+                                <?php } ?>
+                            </ul>
                         </div>
                     </div>
                 </div>
