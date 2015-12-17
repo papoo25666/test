@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b83c9af4-d766-4356-b561-2a451746cd5a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sprint_backlog.php" afterPath="$PROJECT_DIR$/sprint_backlog.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/summary.php" afterPath="$PROJECT_DIR$/summary.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/edit_backlog.php" afterPath="$PROJECT_DIR$/edit_backlog.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Mockup.iws" />
@@ -82,61 +81,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="summary.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/summary.php">
+      <file leaf-file-name="ManageUserStory.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/classes/ManageUserStory.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.4">
-              <caret line="117" column="41" selection-start-line="117" selection-start-column="41" selection-end-line="117" selection-end-column="41" />
+            <state vertical-scroll-proportion="1.1690648">
+              <caret line="70" column="17" selection-start-line="70" selection-start-column="17" selection-end-line="70" selection-end-column="17" />
               <folding>
-                <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sprint_backlog.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/sprint_backlog.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.2050359">
-              <caret line="138" column="33" selection-start-line="138" selection-start-column="33" selection-end-line="138" selection-end-column="33" />
-              <folding>
-                <element signature="n#style#0;n#tr#0;n#tbody#0;n#table#0;n#div#2;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#tr#1;n#tbody#0;n#table#0;n#div#2;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ManageTasks.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classes/ManageTasks.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="72" column="121" selection-start-line="72" selection-start-column="44" selection-end-line="72" selection-end-column="121" />
-              <folding>
-                <marker date="1450265509131" expanded="true" signature="381:487" placeholder="INSERT INTO ..." />
-                <marker date="1450265509131" expanded="true" signature="765:805" placeholder="SELECT *FROM..tasks..." />
-                <marker date="1450265509131" expanded="true" signature="995:1095" placeholder="SELECT *FROM..tasks..." />
-                <marker date="1450265509131" expanded="true" signature="1344:1409" placeholder="UPDATE tasks..." />
-                <marker date="1450265509131" expanded="true" signature="1670:1732" placeholder="UPDATE tasks..." />
-                <marker date="1450265509131" expanded="true" signature="1986:2021" placeholder="SELECT *FROM..tasks..." />
-                <marker date="1450265509131" expanded="true" signature="2251:2286" placeholder="SELECT *FROM..tasks..." />
-                <marker date="1450265509131" expanded="true" signature="2531:2608" placeholder="SELECT SUM(t..tasks..." />
-                <marker date="1450265509131" expanded="true" signature="2846:2881" placeholder="SELECT *FROM..tasks..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ManageSummary.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classes/ManageSummary.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="46" column="5" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
-              <folding>
-                <marker date="1450124114412" expanded="true" signature="323:478" placeholder="SELECT *FROM..tasks..." />
-                <marker date="1450124114412" expanded="true" signature="703:864" placeholder="SELECT SUM(t..tasks..." />
-                <marker date="1450124114412" expanded="true" signature="1093:1305" placeholder="SELECT SUM(t..tasks..." />
-                <marker date="1450124114412" expanded="true" signature="1545:1719" placeholder="SELECT SUM(t..tasks..." />
+                <marker date="1450112679140" expanded="true" signature="302:391" placeholder="SELECT *FROM..user_story..." />
+                <marker date="1450112679140" expanded="true" signature="635:725" placeholder="UPDATE user_..." />
+                <marker date="1450112679140" expanded="true" signature="951:998" placeholder="SELECT *FROM..user_story..." />
+                <marker date="1450112679140" expanded="true" signature="1269:1398" placeholder="INSERT INTO ..." />
+                <marker date="1450112679140" expanded="true" signature="1655:1701" placeholder="DELETE FROM ..." />
+                <marker date="1450112679140" expanded="true" signature="1927:1992" placeholder="UPDATE user_..." />
+                <marker date="1450112679140" expanded="true" signature="2279:2410" placeholder="UPDATE user_..." />
               </folding>
             </state>
           </provider>
@@ -190,7 +147,6 @@
         <option value="$PROJECT_DIR$/select_team.php" />
         <option value="$PROJECT_DIR$/profiles.php" />
         <option value="$PROJECT_DIR$/action_backlog.php" />
-        <option value="$PROJECT_DIR$/edit_backlog.php" />
         <option value="$PROJECT_DIR$/edit_priority.php" />
         <option value="$PROJECT_DIR$/edit_profile.php" />
         <option value="$PROJECT_DIR$/add_sprint.php" />
@@ -209,6 +165,7 @@
         <option value="$PROJECT_DIR$/classes/ManageTasks.php" />
         <option value="$PROJECT_DIR$/summary.php" />
         <option value="$PROJECT_DIR$/sprint_backlog.php" />
+        <option value="$PROJECT_DIR$/edit_backlog.php" />
       </list>
     </option>
   </component>
@@ -296,7 +253,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="mobile" />
+              <option name="myItemId" value="classes" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -640,7 +597,13 @@
       <option name="project" value="LOCAL" />
       <updated>1450273687749</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Fixed sprint backlog">
+      <created>1450296507369</created>
+      <option name="number" value="00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1450296507385</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -653,7 +616,6 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46929133" sideWeight="0.50292826" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.193265" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46929133" sideWeight="0.49707174" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.47086614" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -663,6 +625,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46929133" sideWeight="0.49707174" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -863,13 +826,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classes/ManageUserStory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-31.5">
-          <caret line="45" column="68" selection-start-line="45" selection-start-column="68" selection-end-line="45" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/comment_issues.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.1">
@@ -916,13 +872,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.4">
           <caret line="68" column="50" selection-start-line="68" selection-start-column="50" selection-end-line="68" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/edit_backlog.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.0">
-          <caret line="67" column="50" selection-start-line="67" selection-start-column="50" selection-end-line="67" selection-end-column="50" />
         </state>
       </provider>
     </entry>
@@ -1063,58 +1012,56 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.9844021">
           <caret line="50" column="41" selection-start-line="50" selection-start-column="41" selection-end-line="50" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classes/ManageTasks.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.2357019">
           <caret line="72" column="121" selection-start-line="72" selection-start-column="44" selection-end-line="72" selection-end-column="121" />
-          <folding>
-            <marker date="1450265509131" expanded="true" signature="381:487" placeholder="INSERT INTO ..." />
-            <marker date="1450265509131" expanded="true" signature="765:805" placeholder="SELECT *FROM..tasks..." />
-            <marker date="1450265509131" expanded="true" signature="995:1095" placeholder="SELECT *FROM..tasks..." />
-            <marker date="1450265509131" expanded="true" signature="1344:1409" placeholder="UPDATE tasks..." />
-            <marker date="1450265509131" expanded="true" signature="1670:1732" placeholder="UPDATE tasks..." />
-            <marker date="1450265509131" expanded="true" signature="1986:2021" placeholder="SELECT *FROM..tasks..." />
-            <marker date="1450265509131" expanded="true" signature="2251:2286" placeholder="SELECT *FROM..tasks..." />
-            <marker date="1450265509131" expanded="true" signature="2531:2608" placeholder="SELECT SUM(t..tasks..." />
-            <marker date="1450265509131" expanded="true" signature="2846:2881" placeholder="SELECT *FROM..tasks..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/ManageSummary.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="46" column="5" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
-          <folding>
-            <marker date="1450124114412" expanded="true" signature="323:478" placeholder="SELECT *FROM..tasks..." />
-            <marker date="1450124114412" expanded="true" signature="703:864" placeholder="SELECT SUM(t..tasks..." />
-            <marker date="1450124114412" expanded="true" signature="1093:1305" placeholder="SELECT SUM(t..tasks..." />
-            <marker date="1450124114412" expanded="true" signature="1545:1719" placeholder="SELECT SUM(t..tasks..." />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/summary.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.4">
+        <state vertical-scroll-proportion="0.0">
           <caret line="117" column="41" selection-start-line="117" selection-start-column="41" selection-end-line="117" selection-end-column="41" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sprint_backlog.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.2050359">
-          <caret line="138" column="33" selection-start-line="138" selection-start-column="33" selection-end-line="138" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="151" column="48" selection-start-line="151" selection-start-column="48" selection-end-line="151" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/ManageSummary.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4540728">
+          <caret line="46" column="5" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/edit_backlog.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.2738302">
+          <caret line="149" column="49" selection-start-line="149" selection-start-column="49" selection-end-line="149" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/ManageUserStory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.1690648">
+          <caret line="70" column="17" selection-start-line="70" selection-start-column="17" selection-end-line="70" selection-end-column="17" />
           <folding>
-            <element signature="n#style#0;n#tr#0;n#tbody#0;n#table#0;n#div#2;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#tr#1;n#tbody#0;n#table#0;n#div#2;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1450112679140" expanded="true" signature="302:391" placeholder="SELECT *FROM..user_story..." />
+            <marker date="1450112679140" expanded="true" signature="635:725" placeholder="UPDATE user_..." />
+            <marker date="1450112679140" expanded="true" signature="951:998" placeholder="SELECT *FROM..user_story..." />
+            <marker date="1450112679140" expanded="true" signature="1269:1398" placeholder="INSERT INTO ..." />
+            <marker date="1450112679140" expanded="true" signature="1655:1701" placeholder="DELETE FROM ..." />
+            <marker date="1450112679140" expanded="true" signature="1927:1992" placeholder="UPDATE user_..." />
+            <marker date="1450112679140" expanded="true" signature="2279:2410" placeholder="UPDATE user_..." />
           </folding>
         </state>
       </provider>

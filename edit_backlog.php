@@ -148,8 +148,8 @@ if (!ManageSession::isPO()) {
                                         </option>
                                         <option>
                                             <?php
-                                            if ($state != "เคยถูกหยิบเข้า Sprint แล้ว")
-                                                echo "เคยถูกหยิบเข้า Sprint แล้ว";
+                                            if ($state != "เคยถูกหยิบแล้ว")
+                                                echo "เคยถูกหยิบแล้ว";
                                             else
                                                 echo "ยังไม่ถูกหยิบ";
                                             ?>
