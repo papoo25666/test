@@ -203,11 +203,12 @@ if (ManageSession::isPO()) {
             //remove user story item when user enter เพิ่ม user story
             $('#user_story option[value=' + value + ']').each(function () {
                 $(this).remove();
-
-                if ($('#user_story option').size() <= 0) {
-                    $('#user_story').attr('disabled', 'disabled');
-                }
             });
+
+            if ($('#user_story option').size() <= 0) {
+                $('#user_story').attr('disabled', 'disabled');
+                $("button[type='submit']").attr('disabled', 'disabled');
+            }
 
             return false;
         });
@@ -242,6 +243,7 @@ if (ManageSession::isPO()) {
         $('#user_story option').each(function () {
             $(this).remove();
         });
+        $("button[type='submit']").prop('disabled', false);
 
         $('#user_story').prop("disabled", false);
 
@@ -255,6 +257,7 @@ if (ManageSession::isPO()) {
 
                 if (text.length == 0) {
                     $('#user_story').prop("disabled", true);
+                    $("button[type='submit']").prop('disabled', true);
                     var option = "<option>ไม่มี User Story เพียงพอสำหรับหยิบพัฒนา</option>";
                     $('#user_story').append(option);
                 }

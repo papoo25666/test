@@ -94,10 +94,10 @@
       <file leaf-file-name="add_sprint.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/add_sprint.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6180556">
-              <caret line="257" column="81" selection-start-line="257" selection-start-column="81" selection-end-line="257" selection-end-column="81" />
+            <state vertical-scroll-proportion="1.3472222">
+              <caret line="252" column="8" selection-start-line="252" selection-start-column="8" selection-end-line="252" selection-end-column="8" />
               <folding>
-                <marker date="1450551505099" expanded="true" signature="9735:9754" placeholder="..." />
+                <marker date="1450554009963" expanded="true" signature="9735:9754" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -637,7 +637,13 @@
       <option name="project" value="LOCAL" />
       <updated>1450547859947</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="Fixed bug when team add user story to sprint backlog">
+      <created>1450551701175</created>
+      <option name="number" value="00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1450551701175</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -700,7 +706,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Edit profiles working" />
     <MESSAGE value="Edit Manage Team" />
     <MESSAGE value="Create History class&#10;" />
     <MESSAGE value="SM define role for sprint" />
@@ -725,7 +730,8 @@
     <MESSAGE value="Add Transaction system" />
     <MESSAGE value="Get user story not use with ajax" />
     <MESSAGE value="Get user story not use with ajax#2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Get user story not use with ajax#2" />
+    <MESSAGE value="Fixed bug when team add user story to sprint backlog" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed bug when team add user story to sprint backlog" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1100,7 +1106,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1450551507368" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1450554012794" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1178,10 +1184,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/add_sprint.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6180556">
-          <caret line="257" column="81" selection-start-line="257" selection-start-column="81" selection-end-line="257" selection-end-column="81" />
+        <state vertical-scroll-proportion="1.3472222">
+          <caret line="252" column="8" selection-start-line="252" selection-start-column="8" selection-end-line="252" selection-end-column="8" />
           <folding>
-            <marker date="1450551505099" expanded="true" signature="9735:9754" placeholder="..." />
+            <marker date="1450554009963" expanded="true" signature="9735:9754" placeholder="..." />
           </folding>
         </state>
       </provider>
