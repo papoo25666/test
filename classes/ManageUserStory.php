@@ -72,8 +72,6 @@ class ManageUserStory
         } catch (Exception $e) {
             $this->db->rollBack();
         }
-
-
     }
 
     public function deleteStoryItems($id)

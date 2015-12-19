@@ -224,12 +224,21 @@ if (ManageSession::isPO()) {
         });
     });
 
-    $(function(){
+    $(function () {
+        var list = [];
         $.ajax({
             url: '../libs/get_story_not_use.php',
             type: 'get',
-            success:function(text){
-                $('#user_story').append(text);
+            dataType: 'json',
+            success: function (text) {
+                //list.push(text);
+                console.log(text);
+                for (var i = 0; i < text.length; i++) {
+                    var option = "<option value='" + text[i][0] + "'>"
+                        + text[i][1] + "[" + text[i][2] + "][" + text[i][3] + "][" + text[i][4] + "]</option>";
+
+                    $('#user_story').append(option);
+                }
             }
         });
     });
