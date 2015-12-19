@@ -185,18 +185,30 @@ if (ManageSession::isPO()) {
 <script type="application/javascript" src="js/angular.min.js"></script>
 <script type="application/javascript">
     $(function () {
+
+        loadStory();
+
         var data = [];
         $('.form-add-sprint').submit(function () {
             var id = $('#user_story').val();
             var content = $('#user_story option:selected').text();
+            var value = $('#user_story option:selected').val();
             //push id for story
             data.push(id);
 
-            //console.log("data : " + data.length);
-
-            var text = '<li class="list-group-item" style="font-weight: normal">' + content + '</li>';
+            var text = '<li class="list-group-item" style="font-weight: normal">' + content + ' <strong>[กำลังถูกหยิบ]</strong> ' + '</li>';
 
             $('.list-group.story').append(text);
+
+            //remove user story item when user enter เพิ่ม user story
+            $('#user_story option[value=' + value + ']').each(function () {
+                $(this).remove();
+
+                if ($('#user_story option').size() <= 0) {
+                    $('#user_story').attr('disabled', 'disabled');
+                }
+            });
+
             return false;
         });
 
@@ -218,30 +230,44 @@ if (ManageSession::isPO()) {
 
             data = [];
 
-            //console.log("data : " + data.length);
+            //call again
+            loadStory();
 
             return false;
         });
     });
 
-    $(function () {
-        var list = [];
+    function loadStory() {
+
+        $('#user_story option').each(function () {
+            $(this).remove();
+        });
+
+        $('#user_story').prop("disabled", false);
+
         $.ajax({
-            url: '../libs/get_story_not_use.php',
+            url: 'libs/get_story_not_use.php',
             type: 'get',
             dataType: 'json',
             success: function (text) {
                 //list.push(text);
-                console.log(text);
+                //console.log(text);
+
+                if (text.length == 0) {
+                    $('#user_story').prop("disabled", true);
+                    var option = "<option>ไม่มี User Story เพียงพอสำหรับหยิบพัฒนา</option>";
+                    $('#user_story').append(option);
+                }
+
                 for (var i = 0; i < text.length; i++) {
                     var option = "<option value='" + text[i][0] + "'>"
-                        + text[i][1] + "[" + text[i][2] + "][" + text[i][3] + "][" + text[i][4] + "]</option>";
-
+                        + text[i][1] + " [" + text[i][2] + "] [" + text[i][4] + "]</option>";
                     $('#user_story').append(option);
                 }
             }
         });
-    });
+    }
+
 </script>
 </body>
 </html>

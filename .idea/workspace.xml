@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b83c9af4-d766-4356-b561-2a451746cd5a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/ManageUserStory.php" afterPath="$PROJECT_DIR$/classes/ManageUserStory.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/add_sprint.php" afterPath="$PROJECT_DIR$/add_sprint.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/get_story_not_use.php" afterPath="$PROJECT_DIR$/libs/get_story_not_use.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Mockup.iws" />
@@ -96,10 +94,10 @@
       <file leaf-file-name="add_sprint.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/add_sprint.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.5659722">
-              <caret line="237" column="81" selection-start-line="237" selection-start-column="81" selection-end-line="237" selection-end-column="81" />
+            <state vertical-scroll-proportion="0.6180556">
+              <caret line="257" column="81" selection-start-line="257" selection-start-column="81" selection-end-line="257" selection-end-column="81" />
               <folding>
-                <marker date="1450547800873" expanded="true" signature="9701:9720" placeholder="..." />
+                <marker date="1450551505099" expanded="true" signature="9735:9754" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -633,7 +631,13 @@
       <option name="project" value="LOCAL" />
       <updated>1450544697314</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Get user story not use with ajax#2">
+      <created>1450547859947</created>
+      <option name="number" value="00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1450547859947</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -696,7 +700,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add users profiles" />
     <MESSAGE value="Edit profiles working" />
     <MESSAGE value="Edit Manage Team" />
     <MESSAGE value="Create History class&#10;" />
@@ -721,7 +724,8 @@
     <MESSAGE value="Fixed Bug duplicate user story" />
     <MESSAGE value="Add Transaction system" />
     <MESSAGE value="Get user story not use with ajax" />
-    <option name="LAST_COMMIT_MESSAGE" value="Get user story not use with ajax" />
+    <MESSAGE value="Get user story not use with ajax#2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Get user story not use with ajax#2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1096,7 +1100,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1450547803814" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1450551507368" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1174,10 +1178,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/add_sprint.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.5659722">
-          <caret line="237" column="81" selection-start-line="237" selection-start-column="81" selection-end-line="237" selection-end-column="81" />
+        <state vertical-scroll-proportion="0.6180556">
+          <caret line="257" column="81" selection-start-line="257" selection-start-column="81" selection-end-line="257" selection-end-column="81" />
           <folding>
-            <marker date="1450547800873" expanded="true" signature="9701:9720" placeholder="..." />
+            <marker date="1450551505099" expanded="true" signature="9735:9754" placeholder="..." />
           </folding>
         </state>
       </provider>
