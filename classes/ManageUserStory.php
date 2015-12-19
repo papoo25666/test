@@ -20,6 +20,13 @@ class ManageUserStory
         return $data;
     }
 
+    public function getUserStoryNotUse()
+    {
+        $this->result = $this->db->prepare("SELECT *FROM user_story WHERE user_story_work != 'ซ่อน' AND user_story_state = 'ยังไม่ถูกหยิบ' ORDER BY user_story_priority DESC");
+        $this->result->execute();
+        return $this->result->fetchAll();
+    }
+
     public function editUserStoryState($storyId)
     {
         try {

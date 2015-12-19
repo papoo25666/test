@@ -66,7 +66,7 @@ if (ManageSession::isPO()) {
     </section>
     <!--End Navbar-->
 
-    <section class="content" style="min-height: 620px;margin-top: 70px">
+    <section class="content" style="min-height: 700px;margin-top: 70px">
         <div class="">
             <div class="row" style="margin-top: 10px;margin-bottom: 20px;margin-left: 0;margin-right: 0">
                 <div class="col-lg-2 col-md-2 col-sm-2">
@@ -116,17 +116,11 @@ if (ManageSession::isPO()) {
                                 <?php include_once "classes/ManageUserStory.php"; ?>
                                 <?php
                                 $db = new ManageUserStory();
-                                $result = $db->getUserStory();
+                                $result = $db->getUserStoryNotUse();
                                 ?>
                                 <div class="form-group  form-inline">
                                     <select id="user_story" class="form-control" style="width: 90%">
-                                        <?php
-                                        foreach ($result as $row) {
-                                            ?>
-                                            <option value="<?php echo $row['user_story_id']; ?>">
-                                                <?php echo $row['user_story_name'] . '[' . $row['user_story_priority'] . '] [' . $row['user_story_state'] . ']'; ?>
-                                            </option>
-                                        <?php } ?>
+
                                     </select>
                                     <button type="submit" class="btn btn-warning"
                                             style="font-family: sukhumvit;font-size: 1.2em;">
@@ -227,6 +221,16 @@ if (ManageSession::isPO()) {
             //console.log("data : " + data.length);
 
             return false;
+        });
+    });
+
+    $(function(){
+        $.ajax({
+            url: '../libs/get_story_not_use.php',
+            type: 'get',
+            success:function(text){
+                $('#user_story').append(text);
+            }
         });
     });
 </script>
