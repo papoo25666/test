@@ -66,7 +66,7 @@ if (!ManageSession::isPO()) {
     </section>
     <!--End Navbar-->
 
-    <section class="content" style="min-height: 620px;margin-top: 70px">
+    <section class="content" style="min-height: 700px;margin-top: 70px">
         <div class="">
             <div class="row" style="margin-top: 10px;margin-bottom: 20px;margin-left: 0;margin-right: 0">
                 <div class="col-lg-2 col-md-2 col-sm-2">
@@ -135,9 +135,9 @@ if (!ManageSession::isPO()) {
                                 <td class="value" style="text-align: right"><?php echo $price; ?></td>
                                 <td><?php echo $row['user_story_priority']; ?></td>
                                 <td class="action" style="width: 15%">
-                                    <a href="edit_backlog.php?id=<?php echo $row['user_story_id'] ?>"
+                                    <a href="edit_backlog.php?id=<?php echo $row['user_story_id']; ?>"
                                        style="display: inline;">แก้ไข </a> | <a
-                                        href="delete_backlog.php?id=<?php echo $row['user_story_id'] ?>"
+                                        href="delete_backlog.php?id=<?php echo $row['user_story_id']; ?>"
                                         onclick="return confirm('Are you sure?')"
                                         style="display: inline;">ลบ</a>
                                 </td>

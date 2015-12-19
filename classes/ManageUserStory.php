@@ -43,7 +43,7 @@ class ManageUserStory
     public function insertUserStory($userstory, $value, $state, $priority)
     {
         $this->result = $this->db->prepare("INSERT INTO user_story(user_story_name, user_story_price,user_story_state,user_story_priority,user_story_work) VALUES (?,?,?,?,?)");
-        $value = array($userstory, $value, $state, $priority , "แสดง");
+        $value = array($userstory, $value, $state, $priority, "แสดง");
         $this->result->execute($value);
         return $this->result->rowCount();
     }
@@ -59,8 +59,8 @@ class ManageUserStory
     public function editUserStoryWork($user_story_id)
     {
         $this->result = $this->db->prepare("UPDATE user_story SET user_story_work = ? WHERE user_story_id = ?");
-        $value = array($user_story_id);
-        $this->result->execute("ซ่อน", $value);
+        $value = array("ซ่อน", $user_story_id);
+        $this->result->execute($value);
         return $this->result->rowCount();
     }
 
@@ -68,6 +68,14 @@ class ManageUserStory
     {
         $this->result = $this->db->prepare("UPDATE user_story SET user_story_name = ?,user_story_price = ?,user_story_priority = ?,user_story_state = ? WHERE user_story_id = ?");
         $value = array($user_story_name, $user_story_price, $priority, $state, $id);
+        $this->result->execute($value);
+        return $this->result->rowCount();
+    }
+
+    public function checkDuplicate($user_story_name)
+    {
+        $this->result = $this->db->prepare("SELECT *FROM user_story WHERE  user_story_name = ?");
+        $value = array($user_story_name);
         $this->result->execute($value);
         return $this->result->rowCount();
     }

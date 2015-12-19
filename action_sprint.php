@@ -65,7 +65,7 @@ if (!ManageSession::isLogged()) {
     </section>
     <!--End Navbar-->
 
-    <section class="content" style="min-height: 600px;margin-top: 70px">
+    <section class="content" style="min-height: 700px;margin-top: 70px">
         <div class="">
             <div class="row" style="margin-top: 10px;margin-bottom: 20px;margin-left: 0;margin-right: 0">
                 <div class="col-lg-2 col-md-2 col-sm-2">

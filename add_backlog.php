@@ -65,7 +65,7 @@ if (!ManageSession::isPO()) {
     </section>
     <!--End Navbar-->
 
-    <section class="content" style="min-height: 620px;margin-top: 70px">
+    <section class="content" style="min-height: 720px;margin-top: 70px">
         <div class="">
             <div class="row" style="margin-top: 10px;margin-bottom: 20px;margin-left: 0;margin-right: 0">
                 <div class="col-lg-2 col-md-2 col-sm-2">
@@ -122,16 +122,7 @@ if (!ManageSession::isPO()) {
                                            placeholder="ราคา user story"
                                            id="userstory_price"/>
                                 </div>
-                                <div class="form-group">
-                                    <label class="control-label" style="font-family: sukhumvit;font-size: 1.2em">สถานะ
-                                        USER STORY</label>
-                                    <select class="form-control" name="userstory_state"
-                                            id="userstory_state">
-                                        <option>ยังไม่ถูกหยิบ</option>
-                                        <option>เคยถูกหยิบเข้า Sprint แล้ว</option>
-                                    </select>
-
-                                </div>
+                               
                                 <div class="form-group">
                                     <label class="control-label" style="font-family: sukhumvit;font-size: 1.2em">ลำดับความสำคัญของ
                                         USER STORY</label>

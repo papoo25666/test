@@ -80,7 +80,7 @@ if (!ManageSession::isLogged()) {
     </section>
     <!--End Navbar-->
 
-    <section class="content container-fluid" style="min-height: 650px;margin-top: 70px">
+    <section class="content container-fluid" style="min-height: 720px;margin-top: 70px">
         <div class="col-lg-12 col-md-12 col-sm-12 col-sm-12" style="margin-top: 10px">
             <div class="breadcrumb">
                 <li>
@@ -140,7 +140,7 @@ if (!ManageSession::isLogged()) {
                         </tr>
                         <?php foreach ($list as $data) { ?>
                             <tr style="background-color: transparent">
-                                <td class="text-center" >
+                                <td class="text-center">
                                     <?php echo $data['task_name']; ?>
                                 </td>
                                 <td class="text-center">
@@ -175,7 +175,7 @@ if (!ManageSession::isLogged()) {
     </section>
 
     <!--Footer-->
-    <section class="footer-content">
+    <section class="footer-content" style="margin-top: 30px">
         <footer style="padding: 20px">
             <div class="container">
                 <div class="row hidden-xs">
