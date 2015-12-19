@@ -87,18 +87,36 @@ class ManageUsers
 
     public function editUser($username, $fname, $lname, $email, $id, $team_id)
     {
-        $this->result = $this->db->prepare("UPDATE users SET username = ?,fname = ?,lname = ?, email = ?,team_id = ? WHERE user_id = ?");
-        $values = array($username, $fname, $lname, $email, $team_id, $id);
-        $this->result->execute($values);
-        return $this->result->rowCount();
+        try {
+            $this->db->beginTransaction();
+
+            $this->result = $this->db->prepare("UPDATE users SET username = ?,fname = ?,lname = ?, email = ?,team_id = ? WHERE user_id = ?");
+            $values = array($username, $fname, $lname, $email, $team_id, $id);
+            $this->result->execute($values);
+
+            $this->db->commit();
+
+            return $this->result->rowCount();
+        } catch (Exception $e) {
+            $this->db->rollBack();
+        }
     }
 
     public function editUserWithoutTeam($username, $fname, $lname, $email, $id)
     {
-        $this->result = $this->db->prepare("UPDATE users SET username = ?,fname = ?,lname = ?, email = ? WHERE user_id = ?");
-        $values = array($username, $fname, $lname, $email, $id);
-        $this->result->execute($values);
-        return $this->result->rowCount();
+        try {
+            $this->db->beginTransaction();
+
+            $this->result = $this->db->prepare("UPDATE users SET username = ?,fname = ?,lname = ?, email = ? WHERE user_id = ?");
+            $values = array($username, $fname, $lname, $email, $id);
+            $this->result->execute($values);
+
+            $this->db->commit();
+
+            return $this->result->rowCount();
+        } catch (Exception $e) {
+            $this->db->rollBack();
+        }
     }
 
     public function getUserByTeamId($teamId)

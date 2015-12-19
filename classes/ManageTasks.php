@@ -15,10 +15,19 @@ class ManageTasks
 
     public function insertTask($task_name, $task_value, $task_volunteer, $task_start, $sprint_id, $story_id)
     {
-        $this->result = $this->db->prepare("INSERT INTO tasks(task_name,task_value,task_volunteer,task_start,sbl_id,user_story_id) VALUES(?,?,?,?,?,?)");
-        $value = array($task_name, $task_value, $task_volunteer, $task_start, $sprint_id, $story_id);
-        $this->result->execute($value);
-        return $this->result->rowCount();
+        try {
+            $this->db->beginTransaction();
+
+            $this->result = $this->db->prepare("INSERT INTO tasks(task_name,task_value,task_volunteer,task_start,sbl_id,user_story_id) VALUES(?,?,?,?,?,?)");
+            $value = array($task_name, $task_value, $task_volunteer, $task_start, $sprint_id, $story_id);
+            $this->result->execute($value);
+
+            $this->db->commit();
+
+            return $this->result->rowCount();
+        } catch (Exception $e) {
+            $this->db->rollBack();
+        }
     }
 
     public function getAllTask()
@@ -38,18 +47,37 @@ class ManageTasks
 
     public function editTask($taskId, $taskState)
     {
-        $this->result = $this->db->prepare("UPDATE tasks SET task_state = ?,task_end = NULL WHERE task_id = ?");
-        $value = array($taskState, $taskId);
-        $this->result->execute($value);
-        return $this->result->rowCount();
+        try {
+            $this->db->beginTransaction();
+
+            $this->result = $this->db->prepare("UPDATE tasks SET task_state = ?,task_end = NULL WHERE task_id = ?");
+            $value = array($taskState, $taskId);
+            $this->result->execute($value);
+
+            $this->db->commit();
+
+            return $this->result->rowCount();
+        } catch (Exception $e) {
+            $this->db->rollBack();
+        }
     }
 
     public function editTaskWithEndDate($taskId, $startDate, $taskState)
     {
-        $this->result = $this->db->prepare("UPDATE tasks SET task_state = ?,task_end = ? WHERE task_id = ?");
-        $value = array($taskState, $startDate, $taskId);
-        $this->result->execute($value);
-        return $this->result->rowCount();
+        try {
+            $this->db->beginTransaction();
+
+            $this->result = $this->db->prepare("UPDATE tasks SET task_state = ?,task_end = ? WHERE task_id = ?");
+            $value = array($taskState, $startDate, $taskId);
+            $this->result->execute($value);
+
+            $this->db->commit();
+
+            return $this->result->rowCount();
+        } catch (Exception $e) {
+            $this->db->rollBack();
+        }
+
     }
 
     public function getCountTaskBySprintId($sprintId)

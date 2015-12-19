@@ -14,7 +14,7 @@ if (isset($_POST['userstory_name']) && isset($_POST['userstory_price'])
 
         $db = new ManageUserStory();
         $dup = $db->checkDuplicate($us);
-        if ($db == 0) {
+        if ($dbp == 0) {
             $result = $db->insertUserStory($us, $usp, $state, $priority);
             if ($result == 1) {
                 $success = "เพิ่ม User Story สำเร็จ";

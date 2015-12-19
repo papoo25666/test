@@ -14,18 +14,36 @@ class ManageTeam
 
     public function insertTeam($team)
     {
-        $this->result = $this->db->prepare("INSERT INTO team(team_id,team_name) VALUES (null,?)");
-        $value = array($team);
-        $this->result->execute($value);
-        return $this->result->rowCount();
+        try {
+            $this->db->beginTransaction();
+
+            $this->result = $this->db->prepare("INSERT INTO team(team_id,team_name) VALUES (null,?)");
+            $value = array($team);
+            $this->result->execute($value);
+
+            $this->db->commit();
+
+            return $this->result->rowCount();
+        } catch (Exception $e) {
+            $this->db->rollBack();
+        }
     }
 
     public function deleteTeam($id)
     {
-        $this->result = $this->db->prepare("DELETE FROM team WHERE team_id = ?");
-        $value = array($id);
-        $this->result->execute($value);
-        return $this->result->rowCount();
+        try {
+            $this->db->beginTransaction();
+
+            $this->result = $this->db->prepare("DELETE FROM team WHERE team_id = ?");
+            $value = array($id);
+            $this->result->execute($value);
+
+            $this->db->commit();
+
+            return $this->result->rowCount();
+        } catch (Exception $e) {
+            $this->db->rollBack();
+        }
     }
 
     public function editTeam()
@@ -42,10 +60,20 @@ class ManageTeam
 
     public function insertTeamForSprint($sprintId, $teamId)
     {
-        $this->result = $this->db->prepare("INSERT INTO sprint_backlog_has_team VALUES (null,?,?)");
-        $value = array($sprintId, $teamId);
-        $this->result->execute($value);
-        return $this->result->rowCount();
+        try {
+            $this->db->beginTransaction();
+
+            $this->result = $this->db->prepare("INSERT INTO sprint_backlog_has_team VALUES (null,?,?)");
+            $value = array($sprintId, $teamId);
+            $this->result->execute($value);
+
+            $this->db->commit();
+
+            return $this->result->rowCount();
+        } catch (Exception $e) {
+            $this->db->rollBack();
+        }
+
     }
 
     public function checkForInsertTeamForSprint($sprintId)
@@ -58,12 +86,20 @@ class ManageTeam
 
     public function changeTeam($sprintId, $teamId)
     {
-        $this->result = $this->db->prepare("UPDATE sprint_backlog_has_team SET team_id = ? WHERE sbl_id = ?");
-        $value = array($teamId, $sprintId);
-        $this->result->execute($value);
-        return $this->result->rowCount();
-    }
+        try {
+            $this->db->beginTransaction();
 
+            $this->result = $this->db->prepare("UPDATE sprint_backlog_has_team SET team_id = ? WHERE sbl_id = ?");
+            $value = array($teamId, $sprintId);
+            $this->result->execute($value);
+
+            $this->db->commit();
+
+            return $this->result->rowCount();
+        } catch (Exception $e) {
+            $this->db->rollBack();
+        }
+    }
 }
 
 ?>

@@ -15,11 +15,21 @@ class ManageSprint
 
     public function insertSprint($name)
     {
-        $end_date = date("Y-m-d", strtotime("+2 week"));
-        $this->result = $this->db->prepare("INSERT INTO sprint_backlog(sbl_id,sbl_name,sbl_started,sbl_end) VALUES (null,?,NOW(),?)");
-        $value = array($name, $end_date);
-        $this->result->execute($value);
-        return $this->result->rowCount();
+        try {
+            $this->db->beginTransaction();
+
+            $end_date = date("Y-m-d", strtotime("+2 week"));
+            $this->result = $this->db->prepare("INSERT INTO sprint_backlog(sbl_id,sbl_name,sbl_started,sbl_end) VALUES (null,?,NOW(),?)");
+            $value = array($name, $end_date);
+            $this->result->execute($value);
+
+            $this->db->commit();
+
+            return $this->result->rowCount();
+        } catch (Exception $e) {
+            $this->db->rollBack();
+        }
+
     }
 
     public function getLastSprint()
@@ -61,13 +71,23 @@ class ManageSprint
 
     public function deleteSprint($id)
     {
-        $value = array($id);
-        $issues = $this->db->prepare("DELETE FROM issues WHERE sprint_backlog_id = ?");
-        $issues->execute($value);
+        try {
+            $this->db->beginTransaction();
+            $value = array($id);
+            $issues = $this->db->prepare("DELETE FROM issues WHERE sprint_backlog_id = ?");
+            $issues->execute($value);
+            $this->db->commit();
 
-        $this->result = $this->db->prepare("DELETE FROM sprint_backlog WHERE sbl_id = ?");
-        $this->result->execute($value);
-        return $this->result->rowCount();
+            $this->db->beginTransaction();
+            $this->result = $this->db->prepare("DELETE FROM sprint_backlog WHERE sbl_id = ?");
+            $this->result->execute($value);
+            $this->db->commit();
+
+            return $this->result->rowCount();
+        } catch (Exception $e) {
+            $this->db->rollBack();
+        }
+
     }
 
     //check name sprint ซ้ำ
@@ -81,10 +101,19 @@ class ManageSprint
 
     public function insertUserStoryForSprint($sprint_id, $story_id)
     {
-        $this->result = $this->db->prepare("INSERT INTO scrum.sprint_backlog_has_user_story (sbl_story_id, sbl_id, user_story_id) VALUES (null,?,?)");
-        $value = array($sprint_id, $story_id);
-        $this->result->execute($value);
-        return $this->result->rowCount();
+        try {
+            $this->db->beginTransaction();
+
+            $this->result = $this->db->prepare("INSERT INTO scrum.sprint_backlog_has_user_story (sbl_story_id, sbl_id, user_story_id) VALUES (null,?,?)");
+            $value = array($sprint_id, $story_id);
+            $this->result->execute($value);
+
+            $this->db->commit();
+
+            return $this->result->rowCount();
+        } catch (Exception $e) {
+            $this->db->rollBack();
+        }
     }
 
     public function getUserStoryBySprintId($id)
