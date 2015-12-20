@@ -1,5 +1,6 @@
 <?php
 include_once "classes/ManageSession.php";
+session_start();
 date_default_timezone_set("Asia/Bangkok");
 if (!ManageSession::isLogged()) {
     header("location:login.php");
@@ -148,16 +149,19 @@ if (ManageSession::isPO()) {
                             </div>
 
                             <div class="list" style="background-color: #fff;height: 400px">
-                                <?php
-                                include_once "libs/add_task_for_sprint.php";
-                                ?>
-                                <ul class="list-group estimation-box" style="overflow: auto;height: 300px;">
-                                    <form class="form-group form-inline" style="margin: 10px" method="post" action="">
+                                <ul id="ul-list-task" class="list-group estimation-box"
+                                    style="overflow: auto;height: 300px;">
+                                    <span style="margin-left: 10px;margin-top: 10px;font-size: 1.5em;font-family: sukhumvit;font-weight: bold">
+                                        เพิ่ม Tasks
+                                    </span>
+                                    <span id="warning" style="color: #da9e3d;font-family: sukhumvit;font-weight: bold;margin-left: 10px;font-size: 1.5em"></span>
+                                    <form id="add-task-form" class="form-group form-inline" style="margin: 10px;margin-top: 0"
+                                          method="post">
                                         <input class="form-control" placeholder="Task name" name="task_name"
                                                id="task_name" type="text" style="width: 30%"/>
                                         <input class="form-control" placeholder="Volunteer" type="text"
-                                               value="<?php echo $_SESSION['username']; ?>" style="width: 30%" name="task_volunteer"
-                                               id="task_volunteer" disabled/>
+                                               value="<?php echo $_SESSION['username']; ?>" style="width: 30%"
+                                               name="task_volunteer" id="task_volunteer" disabled/>
                                         <input class="form-control" placeholder="Estimate value" type="text"
                                                style="width: 30%" name="task_estimate" id="task_estimate"/>
                                         <input type="hidden" name="sprint_id" id="sprint_id"
@@ -165,22 +169,14 @@ if (ManageSession::isPO()) {
                                         <input type="hidden" name="story_id" id="story_id"
                                                value="<?php echo $story_id; ?>"/>
                                         <button class="btn btn-info" type="submit" style="font-family: sukhumvit">
-                                            ตกลง
+                                            เพิ่ม Task
                                         </button>
                                     </form>
-                                    <?php
-                                    include_once "classes/ManageTasks.php";
-                                    $conn = new ManageTasks();
-                                    $result = $conn->getTaskByStoryId($story_id);
-                                    foreach ($result as $row) {
-                                        ?>
-                                        <li class="list-group-item"
-                                            style="font-weight: normal">
-                                            <strong>Task</strong> : <?php echo $row['task_name']; ?>,
-                                            <strong>Volunteer</strong> : <?php echo $row['task_volunteer']; ?>,
-                                            <strong>Estimate value</strong> : <?php echo $row['task_value']; ?>
-                                        </li>
-                                    <?php } ?>
+
+                                    <!--add list for task by ajax-->
+                                    <div id="list-task">
+
+                                    </div>
                                 </ul>
                             </div>
                             <div class="text-center" style="margin-top: 10px">
@@ -223,6 +219,42 @@ if (ManageSession::isPO()) {
 <script type="application/javascript" src="js/jquery-1.11.3.min.js"></script>
 <script type="application/javascript" src="js/bootstrap.min.js"></script>
 <script type="application/javascript" src="js/angular.min.js"></script>
+<script type="application/javascript">
+    $(function () {
 
+        getTask();
+
+        $('#add-task-form').submit(function () {
+            var data = $('#add-task-form').serializeArray();
+            $.ajax({
+                url: 'libs/add_task_for_sprint.php',
+                data: data,
+                type: 'post',
+                success: function (msg) {
+                    $('#warning').text(msg);
+                }
+            });
+            $('#task_name').val("");
+            $('#task_estimate').val("");
+            return false;
+        });
+    });
+    $(function () {
+        setInterval(getTask, 1500);
+    });
+
+    function getTask() {
+
+        $.ajax({
+            url: 'libs/get_task_for_estimate.php',
+            type: 'get',
+            data: {id: <?php echo $story_id; ?>},
+            cache: false,
+            success: function (task) {
+                $('#list-task').html(task);
+            }
+        });
+    }
+</script>
 </body>
 </html>

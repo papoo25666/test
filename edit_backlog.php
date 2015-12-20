@@ -142,18 +142,13 @@ if (!ManageSession::isPO()) {
                                         >
                                         <?php
                                         $state = $row['user_story_state'];
-                                        ?>
-                                        <option>
-                                            <?php echo $state; ?>
-                                        </option>
-                                        <option>
-                                            <?php
-                                            if ($state != "เคยถูกหยิบแล้ว")
-                                                echo "เคยถูกหยิบแล้ว";
-                                            else
-                                                echo "ยังไม่ถูกหยิบ";
+
+                                        $status = array($state, 'เคยถูกหยิบแล้ว', 'ยังไม่ถูกหยิบ', 'อยู่ระหว่างการทำงาน');
+                                        $status = array_unique($status);
+                                        foreach ($status as $s) {
                                             ?>
-                                        </option>
+                                            <option><?php echo $s; ?></option>
+                                        <?php } ?>
                                     </select>
                                 </div>
                                 <div class="form-group text-center">

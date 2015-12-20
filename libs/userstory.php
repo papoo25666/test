@@ -31,7 +31,7 @@ if (isset($_POST['userstory_name']) && isset($_POST['userstory_price'])
         $usp = $_POST['userstory_price'];
         $id = $_POST['id'];
         $priority = $_POST['userstory_priority'];
-        $state = 'ยังไม่ถูกหยิบ';
+        $state = $_POST['userstory_state'];
 
         $db = new ManageUserStory();
         $result = $db->editStoryItems($us, $usp, $state, $priority, $id);

@@ -30,6 +30,14 @@ class ManageTasks
         }
     }
 
+    public function getTaskDuplicate($task_name, $story_id)
+    {
+        $this->result = $this->db->prepare("SELECT *FROM tasks WHERE user_story_id = ? AND task_name = ?");
+        $value = array($story_id, $task_name);
+        $this->result->execute($value);
+        return $this->result->rowCount();
+    }
+
     public function getAllTask()
     {
         $this->result = $this->db->prepare("SELECT *FROM tasks ORDER BY task_id DESC");
