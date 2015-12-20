@@ -108,7 +108,7 @@ if (ManageSession::isPO()) {
                         </div>
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"
                              style=" background-color: #E0E0E0;padding-top: 10px;padding-left: 30px;padding-right:
-                             30px;padding-bottom: 20px
+                             30px;padding-bottom: 30px
                         ">
                             <h3 style="font-family: sukhumvit;font-weight: bold"><?php echo $_GET['name']; ?></h3>
 
@@ -119,15 +119,15 @@ if (ManageSession::isPO()) {
                                 $result = $db->getUserStoryNotUse();
                                 ?>
                                 <div class="form-group  form-inline">
-                                    <select id="user_story" class="form-control" style="width: 90%">
+                                    <select id="user_story" class="form-control" style="width: 88%">
 
                                     </select>
                                     <button type="submit" class="btn btn-warning"
                                             style="font-family: sukhumvit;font-size: 1.2em;">
-                                        เพิ่ม
+                                        หยิบ
                                     </button>
-                                    <button type="button" class="btn btn-danger" id="btn-delete"
-                                            style="font-family: sukhumvit;font-size: 1.2em;">ลบ
+                                    <button type="button" class="btn btn-info" id="btn-delete"
+                                            style="font-family: sukhumvit;font-size: 1.2em;">เคลียร์
                                     </button>
                                 </div>
                             </form>
@@ -138,12 +138,12 @@ if (ManageSession::isPO()) {
                                 </ul>
                             </div>
                             <div class="text-center" style="margin-top: 10px">
-                                <button class="btn btn-warning" id="submit-story"
+                                <button class="btn btn-success" id="submit-story"
                                         onclick="return confirm('คุณต้องการเพิ่ม User Story ทั้งหมดหรือไม่?')"
-                                        style="font-family: sukhumvit;font-size: 1.2em;width: 200px">ตกลง
+                                        style="font-family: sukhumvit;font-size: 1.2em;width: 180px;padding: 5px;color: #333 !important;">ตกลง
                                 </button>
                                 <a href="sprint_backlog.php?id=<?php echo $_GET['id']; ?>" class="alert-for-success"
-                                   style="font-size: 1.2em;font-weight: bold;font-family: sukhumvit;margin-left: 10px"></a>
+                                   style="font-size: 1.2em;font-weight: bold;font-family: sukhumvit;margin-left: 10px;"></a>
 
                             </div>
                         </div>
@@ -195,6 +195,7 @@ if (ManageSession::isPO()) {
             var value = $('#user_story option:selected').val();
             //push id for story
             data.push(id);
+            $('#submit-story').prop("disabled", false);
 
             var text = '<li class="list-group-item" style="font-weight: normal">' + content + ' <strong>[กำลังถูกหยิบ]</strong> ' + '</li>';
 
@@ -212,6 +213,10 @@ if (ManageSession::isPO()) {
 
             return false;
         });
+
+        //if not exist user story (add)
+        if(data.length <= 0)
+            $('#submit-story').prop("disabled", true);
 
         $('#submit-story').click(function () {
             $.ajax({
@@ -233,6 +238,7 @@ if (ManageSession::isPO()) {
 
             //call again
             loadStory();
+            $('#submit-story').prop("disabled", true);
 
             return false;
         });

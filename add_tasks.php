@@ -156,7 +156,8 @@ if (ManageSession::isPO()) {
                                         <input class="form-control" placeholder="Task name" name="task_name"
                                                id="task_name" type="text" style="width: 30%"/>
                                         <input class="form-control" placeholder="Volunteer" type="text"
-                                               style="width: 30%" name="task_volunteer" id="task_volunteer"/>
+                                               value="<?php echo $_SESSION['username']; ?>" style="width: 30%" name="task_volunteer"
+                                               id="task_volunteer" disabled/>
                                         <input class="form-control" placeholder="Estimate value" type="text"
                                                style="width: 30%" name="task_estimate" id="task_estimate"/>
                                         <input type="hidden" name="sprint_id" id="sprint_id"

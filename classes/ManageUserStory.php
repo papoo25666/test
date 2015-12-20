@@ -32,7 +32,7 @@ class ManageUserStory
         try {
             $this->db->beginTransaction();
 
-            $text = "เคยถูกหยิบแล้ว";
+            $text = "อยู่ระหว่างการทำงาน";
             $this->result = $this->db->prepare("UPDATE user_story SET user_story_state = ?,user_story_priority = 0 WHERE user_story_id = ?");
             $value = array($text, $storyId);
             $this->result->execute($value);
