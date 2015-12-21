@@ -43,8 +43,6 @@ class ManageUserStory
         } catch (Exception $e) {
             $this->db->rollBack();
         }
-
-
     }
 
     public function getUserStoryById($id)
@@ -131,6 +129,15 @@ class ManageUserStory
     {
         $this->result = $this->db->prepare("SELECT *FROM user_story WHERE  user_story_name = ? AND user_story_work = ?");
         $value = array($user_story_name, "แสดง");
+        $this->result->execute($value);
+        return $this->result->rowCount();
+    }
+
+    public function updateStoryExpire($date)
+    {
+        $this->result = $this->db->prepare("UPDATE user_story INNER JOIN sprint_backlog ON sprint_backlog.sbl_end <= ? "
+            . " AND user_story.user_story_state = ? SET user_story.user_story_state = ?, user_story.user_story_priority = 0");
+        $value = array($date, "อยู่ระหว่างการทำงาน", "เคยถูกหยิบแล้ว");
         $this->result->execute($value);
         return $this->result->rowCount();
     }

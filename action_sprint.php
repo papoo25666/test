@@ -183,6 +183,11 @@ if (!ManageSession::isLogged()) {
                                                         รายละเอียด
                                                     </a>
                                                 </li>
+                                                <li>
+                                                    <a href="libs/update_story_expire.php?id=<?php echo $row['sbl_id']; ?>">
+                                                        อัพเดท User Story
+                                                    </a>
+                                                </li>
                                             </ul>
                                         </div>
                                         <div style="background-color: #333;padding: 10px">
